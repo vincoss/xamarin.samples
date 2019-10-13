@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Default_Forms", "Default_Forms", "{E9685256-7B28-45C5-AB0E-72C2EC658FA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Default_Android", "Default_Android", "{A77F8743-7E86-4E77-AC55-39C5A9AC8E44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Default_iOs", "Default_iOs", "{E7EF9591-3E34-43F4-BB2C-C5CE7E60B20F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Default_Uwp", "Default_Uwp", "{DEDBF203-FCC6-40A7-A708-2A2E06C6E0DA}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBA5D2E9-68F7-4988-A4B4-37630F0445B9}
+	EndGlobalSection
+EndGlobal
