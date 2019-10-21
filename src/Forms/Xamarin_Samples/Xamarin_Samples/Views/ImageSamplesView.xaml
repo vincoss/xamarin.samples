@@ -17,7 +17,8 @@
     -->
     
     <ContentPage.Content>
-        <StackLayout x:Name="images">
+        <ScrollView>
+            <StackLayout x:Name="images">
             <!-- Local Images -->
             <Image Source="temp.png" />
             
@@ -33,6 +34,7 @@
             <Label Text="Downloading Images"/>
             <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
 
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
