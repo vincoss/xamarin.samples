@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="TempImage">temp.png</x:String>
+            <x:String x:Key="TempImageUWP">resources/temp.png</x:String>
+        </ResourceDictionary>
+
+        <Style x:Key="TempImage" TargetType="Image">
+            <Setter Property="HeightRequest" Value="60" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Source">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="UWP" Value="{StaticResource TempImageUWP}" />
+                        <On Platform="iOS, Android" Value="{StaticResource TempImage}" />
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
