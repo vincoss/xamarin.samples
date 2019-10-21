@@ -12,7 +12,7 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new EditorSampleView();
+            MainPage = new EntrySampleView();
         }
 
         protected override void OnStart()

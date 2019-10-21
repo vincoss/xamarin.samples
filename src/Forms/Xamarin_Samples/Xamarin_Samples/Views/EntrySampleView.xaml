@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.Views.EntrySampleView">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Display Customization-->
+            <Label Text="Display Customization"/>
+            <Entry Text="I am an Entry" />
+            <!--Setting Placeholder Text-->
+            <Label Text="Setting Placeholder Text"/>
+            <!--Preventing Text Entry-->
+            <Label Text="Preventing Text Entry"/>
+            <Entry Text="This is a read-only Entry" IsReadOnly="true" />
+            <!--Limiting Input Length-->
+            <Label Text="Limiting Input Length"/>
+            <Entry Text="Some short" MaxLength="5" />
+            <!--Password Fields-->
+            <Label Text="Password Fields"/>
+            <Entry IsPassword="true" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
