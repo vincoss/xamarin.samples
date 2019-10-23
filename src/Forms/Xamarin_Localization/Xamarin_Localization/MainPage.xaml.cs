@@ -24,6 +24,18 @@ namespace Xamarin_Localization
 
         public void Sample()
         {
+            // NOTE: Ensure that you have translated value already in the resource file
+            /*
+             * Localize at the application level
+                We have seen how the application can be localized for the chosen language of the device. 
+                However, we can also localize the text at the application level regardless of the language selected on the device
+
+            //For Android and iOS,
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+ 
+            //For UWP,
+            CultureInfo.CurrentUICulture = new CultureInfo("fr-FR");
+            */
             AppResources.Culture = new CultureInfo("sk-SK");
 
             // Using Resources in Code
