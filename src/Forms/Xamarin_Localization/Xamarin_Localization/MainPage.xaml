@@ -13,7 +13,7 @@
         <Entry Placeholder="{ex:Translate TuesdayKey}" />
         <Button Text="{ex:Translate WeekDayKey}" />
         <!--Localizing XAML more verbose-->
-        <Button Text="{ex:TranslateExtension Text=WeekDayKey}" />
+        <Button Text="{ex:TranslateExtension Text=TuesdayKey}" />
 
         <Label Text="Code behind"/>
         <!--Code behind-->
