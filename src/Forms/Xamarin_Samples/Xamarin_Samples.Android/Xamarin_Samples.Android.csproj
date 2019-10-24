@@ -63,6 +63,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Lobster-Regular.ttf" />
+    <AndroidAsset Include="Assets\ionicons.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -85,7 +87,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidAsset Include="Assets\OFL.txt" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin_Samples\Xamarin_Samples.csproj">
       <Project>{961907EA-D9BC-42B5-A05F-D62DD08F5695}</Project>

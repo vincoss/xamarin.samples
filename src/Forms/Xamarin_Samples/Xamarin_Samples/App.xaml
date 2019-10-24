@@ -11,6 +11,13 @@
             <x:String x:Key="TempImageUWP">resources/temp.png</x:String>
         </ResourceDictionary>
 
+        <!--fontawesome-->
+        <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+            <On Platform="iOS" Value="Material Design Icons" />
+            <On Platform="Android" Value="Lobster-Regular.ttf#Material Design Icons" />
+            <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Material Design Icons" />
+        </OnPlatform>
+
         <Style x:Key="TempImage" TargetType="Image">
             <Setter Property="HeightRequest" Value="60" />
             <Setter Property="HorizontalOptions" Value="Center" />
