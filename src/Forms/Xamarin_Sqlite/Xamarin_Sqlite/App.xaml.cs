@@ -13,7 +13,7 @@ namespace Xamarin_Sqlite
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<SqliteDataStore>();
             MainPage = new MainPage();
         }
 
