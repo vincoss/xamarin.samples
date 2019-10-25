@@ -137,6 +137,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\ionicons.ttf" />
     <BundleResource Include="Resources\xamarinlogo.png" />
+    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
+    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
+    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
+    <Content Include="Resources\fontelloicons.ttf" />
     <None Include="Resources\OFL.txt" />
     <Content Include="Resources\temp.png" />
   </ItemGroup>

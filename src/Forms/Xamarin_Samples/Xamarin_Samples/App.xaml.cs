@@ -12,7 +12,7 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new ImageButtonSampleView();
+            MainPage = new UseFontAwesomeSampleView();
         }
 
         protected override void OnStart()

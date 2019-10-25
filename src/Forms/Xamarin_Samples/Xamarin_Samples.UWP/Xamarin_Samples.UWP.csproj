@@ -105,6 +105,10 @@
   <ItemGroup>
     <Content Include="Assets\Fonts\ionicons.ttf" />
     <AndroidResource Include="xamarinlogo.png" />
+    <Content Include="Assets\FontAwesome5Solid.otf" />
+    <Content Include="Assets\FontAwesome5Brands.otf" />
+    <Content Include="Assets\FontAwesome5Regular.otf" />
+    <Content Include="Assets\Fonts\fontelloicons.ttf" />
     <None Include="Assets\Fonts\OFL.txt" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
