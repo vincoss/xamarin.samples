@@ -19,6 +19,9 @@
             <!--Preventing Text Entry-->
             <Label Text="Preventing Text Entry"/>
             <Entry Text="This is a read-only Entry" IsReadOnly="true" />
+            <!--Disabled-->
+            <Label Text="Disabled"/>
+            <Entry Text="This is disabled entry" IsReadOnly="true" />
             <!--Limiting Input Length-->
             <Label Text="Limiting Input Length"/>
             <Entry Text="Some short" MaxLength="5" />
@@ -29,6 +32,9 @@
             <Label Text="Setting the Cursor Position and Text Selection Length"/>
             <Entry Text="Cursor position set" CursorPosition="5" />
             <Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+            <!--Entry with ReturnType=Send-->
+            <Label Text="Entry with ReturnType=Send"/>
+            <Entry Text="Entry with ReturnType=Send" ReturnType="Send" />
             <!--Displaying a Clear Button-->
             <Label Text="Displaying a Clear Button"/>
             <Entry Text="Xamarin.Forms" ClearButtonVisibility="WhileEditing" />

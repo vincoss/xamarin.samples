@@ -9,6 +9,8 @@
         https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images?tabs=windows
         https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/images-icons/
         https://docs.microsoft.com/en-us/windows/uwp/design/style/app-icons-and-logos
+        https://forums.xamarin.com/discussion/17729/image-placeholder
+        https://docs.microsoft.com/en-us/windows/uwp/design/style/app-icons-and-logos
     
         #Page, ToolbarItem, ImageCell contains property
              BackgroundImageSource="{StaticResource TempImage}"
@@ -28,12 +30,20 @@
             <!-- From Embedded resources 
                 Use only if same size of the image is shared on every platform
             -->
+            <Label Text="This image is an embedded resource, referenced in XAML. The same image file is used, regardless of the pixel density of the device (eg. iOS Retina)." />
             <Image Source="{local:ImageResource Xamarin_Samples.Resources.embeddedtemp.png}" />
 
             <!-- Downloading Images -->
             <Label Text="Downloading Images"/>
-            <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
+                <Image Source="https://aka.ms/campus.jpg" />
 
+            <Label Text="Downloading Images and caching"/>
+                <Image IsVisible="True">
+                    <Image.Source>
+                        <UriImageSource Uri="https://aka.ms/campus.jpg"
+                                        CacheValidity="10:00:00.0" />
+                    </Image.Source>
+                </Image>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

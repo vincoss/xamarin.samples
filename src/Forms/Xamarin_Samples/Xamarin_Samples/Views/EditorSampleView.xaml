@@ -22,12 +22,15 @@
                 <!--Preventing Text Entry-->
                 <Label Text="Preventing Text Entry"/>
                 <Editor Text="This is a read-only Editor" IsReadOnly="true" />
+                <!--Disabled-->
+                <Label Text="Disabled"/>
+                <Editor IsEnabled="false" Text="This is a disabled editor" />
                 <!--Limiting Input Length-->
                 <Label Text="Limiting Input Length"/>
                 <Editor Text="Long text, text, text, text, text, text, text, text, text, text, text, text, text, text, text" MaxLength="10" />
                 <!--Auto-Sizing an Editor-->
                 <Label Text="Auto-Sizing an Editor"/>
-                <Editor Text="Enter text here" AutoSize="TextChanges" />
+                <Editor Text="Enter text here" AutoSize="TextChanges" BackgroundColor="Orange" />
                 <!--Customizing the Keyboard-->
                 <Label Text="Customizing the Keyboard"/>
                 <Editor Keyboard="Chat" />

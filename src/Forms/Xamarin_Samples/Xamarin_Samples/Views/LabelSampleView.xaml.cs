@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,19 @@ namespace Xamarin_Samples.Views
                 FormattedText = formattedString,
                 LineBreakMode = LineBreakMode.WordWrap
             };
+        }
+
+        void OnLineHeightChanged(object sender, TextChangedEventArgs args)
+        {
+            var lineHeight = ((Entry)sender).Text;
+            try
+            {
+                _lineHeightLabel.LineHeight = double.Parse(lineHeight);
+            }
+            catch (FormatException ex)
+            {
+                Debug.WriteLine($"Can't parse {lineHeight}. {ex.Message}");
+            }
         }
     }
 }

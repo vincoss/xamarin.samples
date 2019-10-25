@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 
 namespace Xamarin_Samples.Extensions
 {
+    [Preserve(AllMembers = true)]
     [ContentProperty(nameof(Source))]
     public class ImageResourceExtension : IMarkupExtension
     {

@@ -19,11 +19,17 @@
                 <Label Text="This is text with strikethrough." TextDecorations="Strikethrough" />
                 <Label Text="This is underlined text with strikethrough." TextDecorations="Underline, Strikethrough" />
                 <!-- Colours -->
-                <Label TextColor="#77d065" FontSize = "20" Text="This is a green label." />
+                <Label TextColor="#77d065" FontSize = "20" Text="This is a green label." FontAttributes="Bold" />
                 <!-- Truncation and wrapping -->
                 <Label Text="This is long long long long long long long long long long long long long long long long long long long long long long long long." LineBreakMode="WordWrap"/>
                 <!-- Displaying a specific number of lines -->
                 <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nulla eu felis fringilla vulputate. Nullam porta eleifend lacinia. Donec at iaculis tellus."
+                   LineBreakMode="WordWrap"
+                   MaxLines="2" />
+                <!--Events-->
+                <Entry Placeholder="Enter line height" TextChanged="OnLineHeightChanged"/>
+                <Label x:Name="_lineHeightLabel" 
+                   Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nulla eu felis fringilla vulputate. Nullam porta eleifend lacinia. Donec at iaculis tellus."
                    LineBreakMode="WordWrap"
                    MaxLines="2" />
                 <!-- Formatted text -->
