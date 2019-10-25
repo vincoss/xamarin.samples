@@ -12,7 +12,7 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new UseFontAwesomeSampleView();
+            MainPage = new NavigationPage(new CheckBoxSampleView());
         }
 
         protected override void OnStart()

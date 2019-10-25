@@ -2,8 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:fontawesome="clr-namespace:FontAwesome"
-             x:Class="Xamarin_Samples.Views.UseFontAwesomeSampleView">
-    
+             x:Class="Xamarin_Samples.Views.UseFontAwesomeSampleView"
+             Title="&#xe800; Test"
+             BackgroundColor="#698071">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="&#xe800;"  Order="Primary" Priority="1"/>
+        <ToolbarItem Text="&#xe803;"  Order="Primary" Priority="1" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
 

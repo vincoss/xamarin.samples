@@ -3,6 +3,9 @@
 Add xamarin git ignore file
 clone xamarin samples
 
+## Next
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/creating-mobile-apps-xamarin-forms/
+
 
 resources test fore each culture
 packate sign certificate
