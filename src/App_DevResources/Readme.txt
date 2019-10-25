@@ -13,3 +13,4 @@ packate sign certificate
 initial splash screen
 File Types
 	otfs, swg
+dropbox vs google drive and other
