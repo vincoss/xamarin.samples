@@ -18,7 +18,7 @@ namespace Xamarin_Sqlite.Services
 
             bool isCreated = File.Exists(_path);
 
-            CreateTables().Wait();
+            CreateTables();
 
             if (!isCreated)
             {
@@ -28,11 +28,11 @@ namespace Xamarin_Sqlite.Services
 
         #region Setup database
 
-        public async Task CreateTables()
+        public void CreateTables()
         {
             var db = GetConnection(_path);
 
-            await db.CreateTableAsync<Item>();
+             db.CreateTableAsync<Item>().Wait();
         }
         
         public SQLiteAsyncConnection GetConnection(string path)
