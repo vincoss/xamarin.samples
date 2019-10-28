@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_Samples.Interfaces;
 
 namespace Xamarin_Samples.Views
 {
@@ -45,6 +46,17 @@ namespace Xamarin_Samples.Views
                 var uri = new Uri(String.Format("sms:{0}?body={1}", phoneNo, "text message"));
                 await Launcher.OpenAsync(uri);
             }
+        }
+
+        public void SendEmailService()
+        {
+            var recipients = new[] { "" }.ToList();
+            var ccs = new[] { "" }.ToList();
+            var subject = "";
+            var body = "";
+            var bodyHtml = "";
+
+            DependencyService.Get<IEmailService>().CreateEmail(recipients, ccs, subject, body, bodyHtml);
         }
 
     }
