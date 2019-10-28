@@ -14,3 +14,7 @@ initial splash screen
 File Types
 	otfs, swg
 dropbox vs google drive and other
+https://stripe.com/au
+https://www.authorize.net/sign-up/pricing/
+https://github.com/essensoft/payment/tree/dev/src
+	see raccoon blog for payment posts

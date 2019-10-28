@@ -6,62 +6,54 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="embeddedtemp.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\embeddedtemp.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\CustomStylesSampleView.xaml.cs">
-      <DependentUpon>CustomStylesSampleView.xaml</DependentUpon>
+    <Compile Update="Views\CarouselPageTemplateView.xaml.cs">
+      <DependentUpon>CarouselPageTemplateView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\BuiltInStylesSampleView.xaml">
+    <EmbeddedResource Update="Views\CarouselPageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CheckBoxSampleView.xaml">
+    <EmbeddedResource Update="Views\ContentPageOneView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CustomStylesSampleView.xaml">
+    <EmbeddedResource Update="Views\MasterDetailPageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditorSampleView.xaml">
+    <EmbeddedResource Update="Views\MasterDetailPageViewDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EntrySampleView.xaml">
+    <EmbeddedResource Update="Views\MasterDetailPageViewMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FontsSampleView.xaml">
+    <EmbeddedResource Update="Views\ModalPageContactView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\HyperlinkLabelSampleView.xaml">
+    <EmbeddedResource Update="Views\ModalPageParentView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ImageButtonSampleView.xaml">
+    <EmbeddedResource Update="Views\ModalPageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ImageSamplesView.xaml">
+    <EmbeddedResource Update="Views\PageOneView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LabelSampleView.xaml">
+    <EmbeddedResource Update="Views\PageThreeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NavigationSampleView.xaml">
+    <EmbeddedResource Update="Views\PageTwoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SendEmailSampleView.xaml">
+    <EmbeddedResource Update="Views\TabbedPageOneView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\UseFontAwesomeSampleView.xaml">
+    <EmbeddedResource Update="Views\TabbedPageTemplateView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
