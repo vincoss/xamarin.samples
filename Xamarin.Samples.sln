@@ -81,7 +81,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin_Navigation.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin_Navigation.iOS", "src\Xamarin_Navigation\Xamarin_Navigation.iOS\Xamarin_Navigation.iOS.csproj", "{1D6910C4-75BA-4F08-9316-563CF34EAFA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin_Navigation", "src\Xamarin_Navigation\Xamarin_Navigation\Xamarin_Navigation.csproj", "{89CFC6C0-0B07-4A5A-AAB8-3B66874C0665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin_Navigation", "src\Xamarin_Navigation\Xamarin_Navigation\Xamarin_Navigation.csproj", "{89CFC6C0-0B07-4A5A-AAB8-3B66874C0665}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

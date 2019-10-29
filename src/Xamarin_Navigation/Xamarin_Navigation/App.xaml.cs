@@ -11,7 +11,7 @@ namespace Xamarin_Navigation
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PageOneView(DateTime.Now));
+            MainPage = new NavigationPage(new SettingView());
         }
 
         protected override void OnStart()
