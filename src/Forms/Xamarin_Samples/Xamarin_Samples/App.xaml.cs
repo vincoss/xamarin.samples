@@ -12,7 +12,7 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SendEmailSampleView());
+            MainPage = new NavigationPage(new SearchBarView());
         }
 
         protected override void OnStart()
