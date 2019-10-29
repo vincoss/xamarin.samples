@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Xamarin_Samples.Extensions;assembly=Xamarin_Samples"
              x:Class="Xamarin_Samples.Views.SearchBarView">
 
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/searchbar
+    -->
+    
     <StackLayout>
         <SearchBar x:Name="searchBar"
                    HorizontalOptions="Fill"
