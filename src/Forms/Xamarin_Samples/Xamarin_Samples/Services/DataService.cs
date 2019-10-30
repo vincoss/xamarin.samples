@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Xamarin_Samples.Services
 {
@@ -109,6 +110,12 @@ namespace Xamarin_Samples.Services
         {
             var normalizedQuery = queryString?.ToLower() ?? "";
             return Fruits.Where(f => f.ToLowerInvariant().StartsWith(normalizedQuery)).ToList();
+        }
+
+        public async Task<IEnumerable<string>> GetSearchResults(int pageIndex, int pageSize)
+        {
+            await Task.Delay(2000);
+            return Fruits.Skip(pageIndex * pageSize).Take(pageSize).ToList();
         }
     }
 }
