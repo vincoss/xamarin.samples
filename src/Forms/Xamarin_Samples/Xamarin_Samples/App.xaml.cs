@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin_Samples.Views;
@@ -12,7 +13,8 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new EssentialsTextToSpeechView());
+            VersionTracking.Track();
+            MainPage = new NavigationPage(new EssentialsVersionTrackingView());
         }
 
         protected override void OnStart()

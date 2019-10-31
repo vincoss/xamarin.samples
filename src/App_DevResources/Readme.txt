@@ -12,7 +12,7 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/essentials/unit-converters?context=xamarin/xamarin-forms
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/
 
 
 review
