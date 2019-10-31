@@ -6,10 +6,9 @@ add sample for list view detail template
                       Detail="{Binding Date}" />
         </DataTemplate>
 		https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/deepdive?pivots=windows
-navigation NavigationManager
 icons binding from view model StaticResource
 dev dock for API
-clone xamarin samples
+clone & xamarin samples
 localization
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
@@ -20,8 +19,6 @@ https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/
 
 
 review
-https://nicksnettravels.builttoroam.com/mvvm-navigation/
-https://stackoverflow.com/questions/43254396/xamarin-form-page-navigation-in-mvvm
 https://github.com/bramborman/UWPHelper 
 
 
