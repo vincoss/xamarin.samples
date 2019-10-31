@@ -41,5 +41,7 @@
       <string>FontAwesome5Solid.otf</string>
       <string>fontelloicons.ttf</string>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Fill in a reason why your app needs access to location.</string>
 </dict>
 </plist>
