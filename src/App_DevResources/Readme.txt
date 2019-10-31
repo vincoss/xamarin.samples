@@ -1,6 +1,11 @@
 ﻿
 ## Tasks
-select control,
+add sample for list view detail template
+	<DataTemplate>
+            <TextCell Text="{Binding Text}"
+                      Detail="{Binding Date}" />
+        </DataTemplate>
+		https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/deepdive?pivots=windows
 navigation NavigationManager
 icons binding from view model StaticResource
 dev dock
@@ -12,7 +17,7 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/
+https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/
 
 
 review
