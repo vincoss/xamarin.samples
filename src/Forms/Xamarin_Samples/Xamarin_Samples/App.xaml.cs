@@ -12,7 +12,7 @@ namespace Xamarin_Samples
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MapView());
+            MainPage = new NavigationPage(new EssentialsTextToSpeechView());
         }
 
         protected override void OnStart()
