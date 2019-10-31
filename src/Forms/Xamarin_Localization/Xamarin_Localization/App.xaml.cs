@@ -9,6 +9,7 @@ namespace Xamarin_Localization
 {
     public partial class App : Application
     {
+        public static string CurrentLanguage = "en-US";
         public App()
         {
             InitializeComponent();
@@ -54,7 +55,15 @@ namespace Xamarin_Localization
                 var ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
                 AppResources.Culture = ci; // set the RESX for resource localization
                 DependencyService.Get<ILocalize>().SetLocale(ci); // set the Thread for locale-aware methods
+
+
+                SetLanguage();
             }
+        }
+
+        private void SetLanguage() // TODO:
+        {
+            MessagingCenter.Send<object, CultureChangedMessage>(this, string.Empty, new CultureChangedMessage(App.CurrentLanguage));
         }
     }
 }
