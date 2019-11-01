@@ -11,13 +11,13 @@ using Xamarin_Samples.ViewModels;
 namespace Xamarin_Samples.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListViewInfiniteScrollView : ContentPage
+    public partial class UI_ListViewInfiniteScrollView : ContentPage
     {
-        public ListViewInfiniteScrollView()
+        public UI_ListViewInfiniteScrollView()
         {
             InitializeComponent();
 
-            var model = new ListViewInfiniteScrollViewModel();
+            var model = new UI_ListViewInfiniteScrollViewModel();
             BindingContext = model;
             model.Initialize();
         }

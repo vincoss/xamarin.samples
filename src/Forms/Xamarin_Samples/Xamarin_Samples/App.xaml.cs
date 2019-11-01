@@ -14,7 +14,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_PickerView());
+            MainPage = new NavigationPage(new UI_ListViewInteractivityView());
         }
 
         protected override void OnStart()

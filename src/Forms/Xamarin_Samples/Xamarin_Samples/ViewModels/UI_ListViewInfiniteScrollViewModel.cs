@@ -9,12 +9,12 @@ using Xamarin_Samples.Services;
 
 namespace Xamarin_Samples.ViewModels
 {
-    public class ListViewInfiniteScrollViewModel : BaseViewModel
+    public class UI_ListViewInfiniteScrollViewModel : BaseViewModel
     {
         private const int PageSize = 10;
         private readonly DataService dataService = new DataService();
 
-        public ListViewInfiniteScrollViewModel()
+        public UI_ListViewInfiniteScrollViewModel()
         {
             SearchResults = new ObservableCollection<string>();
             RefreshCommand = new Command(OnRefreshCommand);
