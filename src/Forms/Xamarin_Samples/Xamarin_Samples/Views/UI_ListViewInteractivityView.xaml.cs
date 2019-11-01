@@ -18,9 +18,10 @@ namespace Xamarin_Samples.Views
 
         public UI_ListViewInteractivityView()
         {
-            InitializeComponent();
 
             items = new ObservableCollection<string>(DataService.Fruits);
+
+            InitializeComponent();
         }
 
         void OnSelection(object sender, SelectedItemChangedEventArgs e)
