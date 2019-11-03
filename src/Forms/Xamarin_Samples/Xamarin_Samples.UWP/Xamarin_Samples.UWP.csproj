@@ -103,6 +103,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angry.png" />
     <Content Include="Assets\Fonts\ionicons.ttf" />
     <AndroidResource Include="xamarinlogo.png" />
     <Content Include="Assets\FontAwesome5Solid.otf" />

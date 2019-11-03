@@ -6,11 +6,14 @@
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/customizing-cell-appearance
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/data-and-databinding
     -->
     
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <!--String Values-->
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
                 <Label Text="ListView - ItemsSource - String Values" />
                 <ListView>
@@ -61,6 +64,7 @@
                     </ListView.ItemsSource>
                 </ListView>
 
+                <!--Custom Cells-->
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
                 <Label Text="ListView - CustomCell" />
                 <ListView x:Name="listViewCustom" ItemsSource="{Binding Fruits}">
