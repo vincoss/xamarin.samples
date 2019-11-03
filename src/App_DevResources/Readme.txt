@@ -8,7 +8,10 @@ add sample for list view detail template
 		https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/deepdive?pivots=windows
 TableView.
 	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/tableview
+Add sample for splash screen
 icons binding from view model StaticResource
+create samples navigation should be able to see all samples
+
 dev dock for API
 https://zapier.com/blog/how-to-use-tags-and-labels/
 clone & xamarin samples
