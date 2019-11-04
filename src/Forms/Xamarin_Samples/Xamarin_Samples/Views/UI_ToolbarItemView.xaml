@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Samples.Views.UI_ToolbarItemView"
-             Title="ToolbarItem - Title">
+             Title="ToolbarItem - Title - UI_ToolbarItemView">
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/toolbaritem

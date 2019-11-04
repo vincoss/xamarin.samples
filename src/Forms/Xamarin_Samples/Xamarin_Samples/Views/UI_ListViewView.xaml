@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:f="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
-             x:Class="Xamarin_Samples.Views.UI_ListViewView">
+             x:Class="Xamarin_Samples.Views.UI_ListViewView"
+             Title="UI_ListViewView">
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/

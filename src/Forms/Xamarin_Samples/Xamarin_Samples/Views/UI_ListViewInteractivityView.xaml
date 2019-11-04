@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Samples.Views.UI_ListViewInteractivityView"
-             xmlns:local="clr-namespace:Xamarin_Samples.Views;assembly=Xamarin_Samples">
+             xmlns:local="clr-namespace:Xamarin_Samples.Views;assembly=Xamarin_Samples"
+             Title="UI_ListViewInteractivityView">
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="ListView Interactivity" />

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:fontawesome="clr-namespace:FontAwesome"
              x:Class="Xamarin_Samples.Views.UseFontAwesomeSampleView"
-             Title="&#xe800; Test"
+             Title="&#xe800; UseFontAwesomeSampleView"
              BackgroundColor="#698071">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="&#xe800;"  Order="Primary" Priority="1"/>
