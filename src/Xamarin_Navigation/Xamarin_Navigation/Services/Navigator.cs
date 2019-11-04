@@ -61,7 +61,8 @@ namespace Xamarin_Navigation.Services
             {
                 page.BindingContext = model;
             }
-           return  Application.Current.MainPage.Navigation.PushModalAsync(page);
+            var npage = new NavigationPage(page); // TO show navigation bar
+           return  Application.Current.MainPage.Navigation.PushModalAsync(npage);
         }
 
         private Page Get(Type type)

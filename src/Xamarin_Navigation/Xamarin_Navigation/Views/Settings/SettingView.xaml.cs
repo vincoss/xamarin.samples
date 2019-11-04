@@ -20,5 +20,16 @@ namespace Xamarin_Navigation.Views
 
            BindingContext = new SettingViewModel(new Navigator());
         }
+
+        protected override void OnAppearing()
+        {
+            var na = this.Navigation;
+            if(na != null)
+            {
+
+            }
+
+            base.OnAppearing();
+        }
     }
 }
