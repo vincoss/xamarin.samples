@@ -3,9 +3,10 @@
 
 TableView.
 	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/tableview
+ContentPage.ToolbarItems
 Add sample for splash screen
 icons binding from view model StaticResource
-create samples navigation should be able to see all samples
+samples add navigation
 
 dev dock for API
 https://zapier.com/blog/how-to-use-tags-and-labels/

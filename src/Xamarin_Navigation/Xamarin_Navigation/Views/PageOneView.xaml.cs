@@ -19,46 +19,5 @@ namespace Xamarin_Navigation.Views
             // Passing Data when Navigating
             lblDate.Text = date.ToString();
         }
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            NavigationPage.SetBackButtonTitle(this, "Back to Main Page");
-            await Navigation.PushAsync(new PageTwoView());
-        }
-
-        private async void btnTabbedPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new TabbedPageOneView());
-        }
-
-        private async void btnTabbedPageTemplate_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new TabbedPageTemplateView());
-        }
-
-        private async void btnCarouselPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CarouselPageView());
-        }
-
-        private async void btnCarouselPageTemplate_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CarouselPageTemplateView());
-        }
-
-        private async void btnMasterDetailPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MasterDetailPageView());
-        }
-
-        private async void btnModelPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new ModalPageView());
-        }
-
-        private async void btnModelPageDetail_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new ModalPageParentView());
-        }
     }
 }

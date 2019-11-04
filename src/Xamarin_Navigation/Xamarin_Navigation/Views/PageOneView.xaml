@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Page One"
-             x:Class="Xamarin_Navigation.Views.PageOneView">
+             x:Class="Xamarin_Navigation.Views.PageOneView"
+             Title="Page One - PageOneView">
 
     <ContentPage.Content>
         <StackLayout>
@@ -10,14 +10,6 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Label x:Name="lblDate"/>
-            <Button Text="Page Two" Clicked="Button_Clicked"/>
-            <Button x:Name="btnTabbedPage" Text="Tabbed Page" Clicked="btnTabbedPage_Clicked"/>
-            <Button x:Name="btnTabbedPageTemplate" Text="Tabbed Page Template" Clicked="btnTabbedPageTemplate_Clicked"/>
-            <Button x:Name="btnCarouselPage" Text="Carousel Page" Clicked="btnCarouselPage_Clicked"/>
-            <Button x:Name="btnCarouselPageTemplate" Text="Carousel Page - ItemTemplate" Clicked="btnCarouselPageTemplate_Clicked"/>
-            <Button x:Name="btnMasterDetailPage" Text="MasterDetailPage" Clicked="btnMasterDetailPage_Clicked"/>
-            <Button x:Name="btnModelPage" Text="Search - ModalPage" Clicked="btnModelPage_Clicked"/>
-            <Button x:Name="btnModelPageDetail" Text="ModalPage - Detail Contact" Clicked="btnModelPageDetail_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

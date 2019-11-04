@@ -6,7 +6,8 @@
             BarBackgroundColor="Orange"
             BarTextColor="Black"
             SelectedTabColor="Pink"
-            UnselectedTabColor="Green">
+            UnselectedTabColor="Green"
+            Title="TabbedPageOneView">
     
   <!--Pages can be added as references or inline-->
   <ContentPage Title="Tab 1" BackgroundColor="SteelBlue" />
