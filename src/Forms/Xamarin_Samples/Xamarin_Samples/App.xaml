@@ -34,6 +34,13 @@
                 <On Platform="UWP" Value="/Assets/Fonts/fontelloicons.ttf#fontello" />
             </OnPlatform>
 
+            <!--NavigationPage.TitleView backcolour-->
+            <!--<Color x:Key="Primary">#484559</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>-->
+            
         </ResourceDictionary>
 
         <!--fontawesome-->

@@ -144,6 +144,7 @@
     <BundleResource Include="Resources\angry.png" />
     <Content Include="Resources\fontelloicons.ttf" />
     <None Include="Resources\OFL.txt" />
+    <BundleResource Include="Resources\save.png" />
     <Content Include="Resources\temp.png" />
   </ItemGroup>
 </Project>

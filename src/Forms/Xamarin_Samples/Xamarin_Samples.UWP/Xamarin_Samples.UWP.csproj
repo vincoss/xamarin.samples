@@ -141,6 +141,7 @@
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Resources\embeddedtemp.png" />
     <Content Include="Resources\temp.png" />
+    <Content Include="save.png" />
     <Content Include="temp.png" />
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_TableViewView());
+            MainPage = new NavigationPage(new UI_NavigationToolbarView());
         }
 
         protected override void OnStart()
