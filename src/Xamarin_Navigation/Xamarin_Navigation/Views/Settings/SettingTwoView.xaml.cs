@@ -21,5 +21,13 @@ namespace Xamarin_Navigation.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        protected override void OnAppearing()
+        {
+            //NavigationPage.SetHasNavigationBar(this, true); //get your navbar back
+            //NavigationPage.SetHasBackButton(this, true); //get your back button back
+
+            base.OnAppearing();
+        }
     }
 }
