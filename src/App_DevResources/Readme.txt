@@ -18,6 +18,9 @@ telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
 	dbsite, navigation, last used,location,errors and many more
 
+## Fea
+date time settings and formats if used for imput
+
 ## Next
 https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/
 
