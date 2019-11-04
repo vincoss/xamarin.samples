@@ -1,8 +1,10 @@
 ﻿
 ## Tasks
 
+get latest validation result model
 
-
+validation
+	https://chaseflorell.github.io/xamarin/2017/10/04/realtime-validation-in-xamarin-forms-with-fluentvalidation/
 
 
 Add sample for splash screen
@@ -17,12 +19,8 @@ localization
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
 	dbsite, navigation, last used,location,errors and many more
-validation
-	http://bsubramanyamraju.blogspot.com/2018/03/fluent-validation-how-to-validate.html
-	https://github.com/james-russo/XamarinForms-UnobtrusiveValidationPlugin
-	https://chaseflorell.github.io/xamarin/2017/10/04/realtime-validation-in-xamarin-forms-with-fluentvalidation/
-	https://www.syncfusion.com/blogs/post/how-to-implement-xamarin-forms-validation.aspx
-	http://www.sanya-andreichuk.com/2017/10/fluent-validation-in-xamarin-forms.html
+
+
 
 ## Fea
 date time settings and formats if used for imput
