@@ -34,9 +34,11 @@ https://github.com/bramborman/UWPHelper
 
 ## Other
 
-The user name or password is incorrect.
-No Internet connection
-Success
+device_id can be used with apikey as a custom attribute
+
+0	Connected
+1	No Internet Access
+2	Invalid or expired token
 
 Task<string> CanConnect() // returns resource_key
 {
