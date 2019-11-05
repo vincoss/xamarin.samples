@@ -18,6 +18,7 @@ namespace Xamarin_Samples.ViewModels
         {
             SearchResults = new ObservableCollection<string>();
             RefreshCommand = new Command(OnRefreshCommand);
+            LoadMoreCommand = new Command(OnLoadMoreCommand);
         }
 
         public async void Initialize()
@@ -45,10 +46,17 @@ namespace Xamarin_Samples.ViewModels
 
         private async void OnRefreshCommand()
         {
+            SearchResults.Clear();
+            await DownloadDataAsync();
+        }
+
+        private async void OnLoadMoreCommand()
+        {
             await DownloadDataAsync();
         }
 
         public ICommand RefreshCommand { get; private set; }
+        public ICommand LoadMoreCommand { get; private set; }
 
         private ObservableCollection<string> _searchResults;
 
