@@ -17,36 +17,35 @@ namespace Xamarin_Samples.Views
             InitializeComponent();
 
             List<Page> pages = new List<Page>();
-            pages.Add(new AppInformationView());
-            pages.Add(new BrowserView());
-            pages.Add(new BuiltInStylesSampleView());
-            pages.Add(new CheckBoxSampleView());
-            pages.Add(new CustomStylesSampleView());
-            pages.Add(new DeviceDisplayInformationView());
-            pages.Add(new DeviceInfoView());
-            pages.Add(new EditorSampleView());
-            pages.Add(new EmailView());
-            pages.Add(new EntrySampleView());
+            pages.Add(new Essentials_AppInformationView());
+            pages.Add(new Essentials_BrowserView());
+            pages.Add(new UI_BuiltInStylesSampleView());
+            pages.Add(new UI_CheckBoxSampleView());
+            pages.Add(new UI_CustomStylesSampleView());
+            pages.Add(new Essentials_DeviceDisplayInformationView());
+            pages.Add(new Essentials_DeviceInfoView());
+            pages.Add(new UI_EditorSampleView());
+            pages.Add(new Essentials_EmailView());
+            pages.Add(new UI_EntrySampleView());
             pages.Add(new EssentialsShareView());
             pages.Add(new EssentialsSmsView());
             pages.Add(new EssentialsTextToSpeechView());
             pages.Add(new EssentialsVersionTrackingView());
-            pages.Add(new FileSystemView());
-            pages.Add(new FontsSampleView());
-            pages.Add(new GeocodingView());
-            pages.Add(new GeolocationView());
-            pages.Add(new HyperlinkLabelSampleView());
-            pages.Add(new ImageButtonSampleView());
-            pages.Add(new ImageSamplesView());
-            pages.Add(new LabelSampleView());
-            pages.Add(new LauncherView());
-            pages.Add(new MapView());
-            pages.Add(new NavigationSampleView());
-            pages.Add(new PhoneDialerView());
-            pages.Add(new PreferencesView());
-            pages.Add(new SearchBarView());
-            pages.Add(new SecureStorageView());
-            pages.Add(new SendEmailSampleView());
+            pages.Add(new Essentials_FileSystemView());
+            pages.Add(new UI_FontsSampleView());
+            pages.Add(new Essentials_GeocodingView());
+            pages.Add(new Essentials_GeolocationView());
+            pages.Add(new UI_HyperlinkLabelSampleView());
+            pages.Add(new UI_ImageButtonSampleView());
+            pages.Add(new UI_ImageSamplesView());
+            pages.Add(new UI_LabelSampleView());
+            pages.Add(new Essentials_LauncherView());
+            pages.Add(new Essentials_MapView());
+            pages.Add(new Essentials_PhoneDialerView());
+            pages.Add(new Essentials_PreferencesView());
+            pages.Add(new UI_SearchBarView());
+            pages.Add(new Essentials_SecureStorageView());
+            pages.Add(new Essentials_SendEmailSampleView());
 
             pages.Add(new UI_ListViewGroupingView());
             pages.Add(new UI_ListViewInfiniteScrollView());
@@ -57,7 +56,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new UI_TableViewView());
             pages.Add(new UI_ToolbarItemView());
 
-            pages.Add(new UseFontAwesomeSampleView());
+            pages.Add(new UI_UseFontAwesomeSampleView());
         
             ListOfPages.ItemsSource = pages;
         }

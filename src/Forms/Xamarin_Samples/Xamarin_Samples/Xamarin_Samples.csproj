@@ -19,40 +19,115 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\CustomStylesSampleView.xaml.cs">
-      <DependentUpon>CustomStylesSampleView.xaml</DependentUpon>
+    <Compile Update="Views\UI_BuiltInStylesSampleView.xaml.cs">
+      <DependentUpon>UI_BuiltInStylesSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_CheckBoxSampleView.xaml.cs">
+      <DependentUpon>UI_CheckBoxSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_EditorSampleView.xaml.cs">
+      <DependentUpon>UI_EditorSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_EntrySampleView.xaml.cs">
+      <DependentUpon>UI_EntrySampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_EmailView.xaml.cs">
+      <DependentUpon>Essentials_EmailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_DeviceInfoView.xaml.cs">
+      <DependentUpon>Essentials_DeviceInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_DeviceDisplayInformationView.xaml.cs">
+      <DependentUpon>Essentials_DeviceDisplayInformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_BrowserView.xaml.cs">
+      <DependentUpon>Essentials_BrowserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_AppInformationView.xaml.cs">
+      <DependentUpon>Essentials_AppInformationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_CustomStylesSampleView.xaml.cs">
+      <DependentUpon>UI_CustomStylesSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_FileSystemView.xaml.cs">
+      <DependentUpon>Essentials_FileSystemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_GeolocationView.xaml.cs">
+      <DependentUpon>Essentials_GeolocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_GeocodingView.xaml.cs">
+      <DependentUpon>Essentials_GeocodingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_LauncherView.xaml.cs">
+      <DependentUpon>Essentials_LauncherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_MapView.xaml.cs">
+      <DependentUpon>Essentials_MapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_SendEmailSampleView.xaml.cs">
+      <DependentUpon>Essentials_SendEmailSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_SecureStorageView.xaml.cs">
+      <DependentUpon>Essentials_SecureStorageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_PreferencesView.xaml.cs">
+      <DependentUpon>Essentials_PreferencesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Essentials_PhoneDialerView.xaml.cs">
+      <DependentUpon>Essentials_PhoneDialerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_FontsSampleView.xaml.cs">
+      <DependentUpon>UI_FontsSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_ImageButtonSampleView.xaml.cs">
+      <DependentUpon>UI_ImageButtonSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_ImageSamplesView.xaml.cs">
+      <DependentUpon>UI_ImageSamplesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_LabelSampleView.xaml.cs">
+      <DependentUpon>UI_LabelSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_SearchBarView.xaml.cs">
+      <DependentUpon>UI_SearchBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_HyperlinkLabelSampleView.xaml.cs">
+      <DependentUpon>UI_HyperlinkLabelSampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UI_UseFontAwesomeSampleView.xaml.cs">
+      <DependentUpon>UI_UseFontAwesomeSampleView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AppInformationView.xaml">
+    <EmbeddedResource Update="Views\Essentials_AppInformationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BrowserView.xaml">
+    <EmbeddedResource Update="Views\Essentials_BrowserView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\BuiltInStylesSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_BuiltInStylesSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CheckBoxSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_CheckBoxSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CustomStylesSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_CustomStylesSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DeviceDisplayInformationView.xaml">
+    <EmbeddedResource Update="Views\Essentials_DeviceDisplayInformationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DeviceInfoView.xaml">
+    <EmbeddedResource Update="Views\Essentials_DeviceInfoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditorSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_EditorSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EmailView.xaml">
+    <EmbeddedResource Update="Views\Essentials_EmailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EntrySampleView.xaml">
+    <EmbeddedResource Update="Views\UI_EntrySampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\EssentialsShareView.xaml">
@@ -67,55 +142,52 @@
     <EmbeddedResource Update="Views\EssentialsVersionTrackingView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FileSystemView.xaml">
+    <EmbeddedResource Update="Views\Essentials_FileSystemView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FontsSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_FontsSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GeocodingView.xaml">
+    <EmbeddedResource Update="Views\Essentials_GeocodingView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\GeolocationView.xaml">
+    <EmbeddedResource Update="Views\Essentials_GeolocationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HomeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\HyperlinkLabelSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_HyperlinkLabelSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ImageButtonSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_ImageButtonSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ImageSamplesView.xaml">
+    <EmbeddedResource Update="Views\UI_ImageSamplesView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LabelSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_LabelSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LauncherView.xaml">
+    <EmbeddedResource Update="Views\Essentials_LauncherView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MapView.xaml">
+    <EmbeddedResource Update="Views\Essentials_MapView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NavigationSampleView.xaml">
+    <EmbeddedResource Update="Views\Essentials_PhoneDialerView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PhoneDialerView.xaml">
+    <EmbeddedResource Update="Views\Essentials_PreferencesView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PreferencesView.xaml">
+    <EmbeddedResource Update="Views\UI_SearchBarView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SearchBarView.xaml">
+    <EmbeddedResource Update="Views\Essentials_SecureStorageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SecureStorageView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\SendEmailSampleView.xaml">
+    <EmbeddedResource Update="Views\Essentials_SendEmailSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TableViewSamples\DataIntentXaml.xaml">
@@ -160,7 +232,7 @@
     <EmbeddedResource Update="Views\UI_ToolbarItemView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\UseFontAwesomeSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_UseFontAwesomeSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

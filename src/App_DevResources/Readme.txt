@@ -9,6 +9,7 @@ Add sample for splash screen
 icons binding from view model StaticResource
 prefix UI samples with UI_
 read about tags
+database encryption
 dev dock for API
 https://zapier.com/blog/how-to-use-tags-and-labels/
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images?tabs=windows
@@ -17,7 +18,7 @@ localization
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
 	dbsite, navigation, last used,location,errors and many more
-
+https://developer.okta.com/blog/2018/02/01/secure-aspnetcore-webapi-token-auth
 
 
 ## Fea
@@ -31,4 +32,33 @@ review
 https://github.com/bramborman/UWPHelper 
 
 
+## Other
 
+The user name or password is incorrect.
+No Internet connection
+Success
+
+Task<string> CanConnect() // returns resource_key
+{
+	successful
+	no internet
+	invalid_grant token expired or invalid
+}
+Enum
+	No connection
+	Has connection & invalid_grant
+	Success
+	
+## Throoting
+	should be able throot requests per user
+	
+## API Tokens
+	See Google API key
+	shall be able generate token for the use to be used for example 2 weeks
+		valid from 60 minutes expire 24 hours
+	https://blog.timekit.io/google-oauth-invalid-grant-nightmare-and-how-to-fix-it-9f4efaf1da35
+	https://docs.apigee.com/api-platform/antipatterns/oauth-long-expiration
+	https://medium.com/shoutem/keeping-your-api-tokens-fresh-72059a7b0586
+	https://www.oauth.com/oauth2-servers/access-tokens/access-token-lifetime/
+	https://dzone.com/articles/security-best-practices-for-managing-api-access-to
+	Rhino licencing use for API key that will have pairs what can sync get|post. The APi key is from licence ID
