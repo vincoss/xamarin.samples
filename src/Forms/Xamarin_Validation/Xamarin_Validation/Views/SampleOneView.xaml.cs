@@ -16,5 +16,10 @@ namespace Xamarin_Validation.Views
         {
             InitializeComponent();
         }
+
+        public class SampleOneViewModel
+        {
+
+        }
     }
 }
