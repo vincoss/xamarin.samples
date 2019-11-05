@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Xamarin_Samples.Controls"
-             x:Class="Xamarin_Samples.Views.LabelSampleView">
+             x:Class="Xamarin_Samples.Views.LabelSampleView"
+             Title="LabelSampleView">
 
     <!-- 
     ## Resources

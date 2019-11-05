@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Samples.Views.GeocodingView">
+             x:Class="Xamarin_Samples.Views.GeocodingView"
+             Title="GeocodingView">
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/essentials/geocoding?context=xamarin%2Fxamarin-forms&tabs=uwp
