@@ -8,17 +8,20 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin_Validation.Model;
 using Xamarin_Validation.Validators;
+using Xamarin_Validation.Validation;
+
 
 namespace Xamarin_Validation.ViewModels
 {
     public class UserRegistrationViewModel : INotifyPropertyChanged
     {
-        public ICommand RegisterCommand { get; set; }
-        readonly IValidator _validator;
+        private readonly IValidatorFactory _validatorFactory;
+        private readonly ModelStateDictionary _modelState = new ModelStateDictionary();
 
-        public UserRegistrationViewModel()
+        public UserRegistrationViewModel(IValidatorFactory validatorFactory)
         {
-            _validator = new UserValidator();
+            _validatorFactory = validatorFactory;
+
             RegisterCommand = new Command(RegisterValidation);
         }
 
@@ -33,7 +36,9 @@ namespace Xamarin_Validation.ViewModels
                 ConfirmPassword = ConfirmPassword,
             };
 
-            var validationResults = _validator.Validate(userObj);
+            _validatorFactory.GetValidator<UserValidator>().ToModel(_modelState);
+
+            var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(userObj);
 
             if (validationResults.IsValid)
             {
@@ -93,7 +98,8 @@ namespace Xamarin_Validation.ViewModels
             onChanged?.Invoke();
             OnPropertyChanged(propertyName);
             return true;
-        } 
+        }
+        public ICommand RegisterCommand { get; set; }
 
         #endregion
 

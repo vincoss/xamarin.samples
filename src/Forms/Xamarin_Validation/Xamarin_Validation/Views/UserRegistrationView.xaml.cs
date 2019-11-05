@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin_Validation.Validators;
 using Xamarin_Validation.ViewModels;
 
 namespace Xamarin_Validation.Views
@@ -17,7 +18,7 @@ namespace Xamarin_Validation.Views
         {
             InitializeComponent();
 
-            BindingContext = new UserRegistrationViewModel();
+            BindingContext = new UserRegistrationViewModel(new ValidatorRegistry());
         }
     }
 }

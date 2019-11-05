@@ -50,6 +50,23 @@ Enum
 	No connection
 	Has connection & invalid_grant
 	Success
+
+guid validator
+	guid
+	propertyName
+
+on change validate
+	if (validate.ToModel(model) == true will add into model and do binding
+		save then
+
+calc hash for each file
+create etag for each file wheter it changed
+data stored should have etag and check before send otherwise just send not changed
+
+## other, server api should have build api guid to ensure that api is not fake, client must be able to verify that
+
+Etag for api
+https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/webapi/perform-conditional-operations-using-web-api
 	
 ## Throoting
 	should be able throot requests per user
