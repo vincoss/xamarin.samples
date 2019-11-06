@@ -6,65 +6,7 @@
     
     <ContentPage.Content>
 
-        <!--AbsoluteLayout.LayoutBounds="0.94,1.18,0.5,0.25"-->
-
-        <AbsoluteLayout HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
-
-            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-
-                <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-                    <StackLayout HorizontalOptions="CenterAndExpand"  Margin="0,15,0,0" Orientation="Vertical">
-                        <!--<local:CustomImage Source="logo.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />-->
-
-                        <ImageButton  WidthRequest="150" Source="xamarinlogo.png" HeightRequest="150"/>
-
-                    </StackLayout>
-
-                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" x:Name="MainStack" >
-                        <BoxView BackgroundColor="#F15A35" HeightRequest="1" WidthRequest="400" Margin="0,-2,0,5" />
-                        <Label Text="Toegevoegd:" FontSize="Medium" FontAttributes="Bold" />
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout Orientation="Vertical"  IsVisible="False" Margin="10,0,10,0" x:Name="hideImage1">
-                                <ImageButton HeightRequest="100" WidthRequest="100"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Verwijderen" FontSize="Small" VerticalTextAlignment="Center" />
-                                    <ImageButton Source="xamarinlogo.png" BackgroundColor="White" HeightRequest="40" WidthRequest="40" />
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Margin="10,0,10,0" x:Name="hideImage2" IsVisible="False">
-                                <ImageButton HeightRequest="100" WidthRequest="100"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Verwijderen" FontSize="Small" VerticalTextAlignment="Center" />
-                                    <ImageButton Source="xamarinlogo.png"  BackgroundColor="White" HeightRequest="40" WidthRequest="40" />
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Margin="10,0,10,0" x:Name="hideImage3" IsVisible="False">
-                                <ImageButton HeightRequest="100" WidthRequest="100"/>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="Verwijderen" FontSize="Small" VerticalTextAlignment="Center" />
-                                    <ImageButton Source="xamarinlogo.png" BackgroundColor="White" HeightRequest="40" WidthRequest="40" />
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-
-                    </StackLayout>
-
-                </StackLayout>
-
-            </StackLayout>
-
-            <StackLayout 
-             AbsoluteLayout.LayoutFlags="All"
-             AbsoluteLayout.LayoutBounds="1,1,0.25,0.25">
-
-                <StackLayout HorizontalOptions="End" VerticalOptions="End" Margin="0,0,0,0">
-                    <ImageButton  WidthRequest="150" Source="xamarinlogo.png" HeightRequest="150"/>
-                </StackLayout>
-
-            </StackLayout>
-        </AbsoluteLayout>
-            
-            <!--<Grid>
+         <!--<Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -79,28 +21,29 @@
         </Grid>-->
 
         <!--<StackLayout BackgroundColor="#2D3033">
-            <Button Clicked ="Button_Clicked"
+            <Button 
                             Text="Login"  
                             BackgroundColor="#007F00"
                             BorderColor="#004C00"
                             BorderWidth="1"
                             TextColor="white"
-                        HorizontalOptions="CenterAndExpand"
+                        HorizontalOptions="EndAndExpand"
                         VerticalOptions="EndAndExpand"
+                
                     />
         </StackLayout>-->
         
         <!--Works-->
         <!--<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                --><!-- top controls --><!--
+                 --><!--top controls--><!-- 
                 <Label Text="Enter A Code" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout VerticalOptions="CenterAndExpand">
-                --><!-- middle controls --><!--
+                 --><!--middle controls--><!-- 
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="End">
-                --><!-- bottom controls --><!--
+                 --><!--bottom controls--><!-- 
                 <Button Text="Reveal Code" x:Name="RevealCode" BackgroundColor="Orange" HorizontalOptions="EndAndExpand" />
             </StackLayout>
         </StackLayout>-->
@@ -110,7 +53,7 @@
             <ContentView
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
-                <StackLayout Orientation="Vertical" Spacing="0" >
+                <StackLayout Orientation="Vertical" Spacing="0"  BackgroundColor="Orange">
                     <Entry/>
                 </StackLayout>
             </ContentView>
@@ -118,31 +61,36 @@
                 x:Name="AddButton"
                 HorizontalOptions="End"
                 VerticalOptions="End"
-                WidthRequest="100"
-                HeightRequest="100"
-                CornerRadius="15"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
                 Text="+"
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-35}"
-                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-35}" />
+                FontSize="Large"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-65}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-65}" />
         </RelativeLayout>-->
         
         <!--Sample Two-->
-        <!--<AbsoluteLayout>
-            <StackLayout Orientation="Vertical" Spacing="0" AbsoluteLayout.LayoutFlags="All"
+        <AbsoluteLayout>
+            <StackLayout Orientation="Vertical" Spacing="0" 
+                         AbsoluteLayout.LayoutFlags="All"
                          AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <Entry></Entry>
+                <Entry/>
             </StackLayout>
             <Button 
                 x:Name="AddButton"
                 HorizontalOptions="End"
                 VerticalOptions="End"
-                WidthRequest="30"
-                HeightRequest="30"
-                CornerRadius="15"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="25"
                 Text="+"
+                FontSize="Large"
+                Padding="0"
+                Margin="10"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" />
-        </AbsoluteLayout>-->
+                AbsoluteLayout.LayoutBounds="1,1, AutoSize, AutoSize" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 
 </ContentPage>
