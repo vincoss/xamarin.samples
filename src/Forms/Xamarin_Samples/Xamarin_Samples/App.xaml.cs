@@ -12,7 +12,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_ButtonBottomRightView());
+            MainPage = new NavigationPage(new UI_ListViewButtonBottomRightView());
         }
 
         protected override void OnStart()
