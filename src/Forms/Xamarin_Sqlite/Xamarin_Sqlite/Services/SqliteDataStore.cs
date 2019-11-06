@@ -11,10 +11,15 @@ namespace Xamarin_Sqlite.Services
     public class SqliteDataStore : IDataStore<Item>
     {
         private string _path;
+        private SQLiteAsyncConnection _connection;
 
-        public SqliteDataStore()
+        public SqliteDataStore(string path = null)
         {
-            _path = GetDatabasePath();
+            _path = path;
+            if (string.IsNullOrWhiteSpace(_path))
+            {
+                _path = GetDatabasePath();
+            }
 
             bool isCreated = File.Exists(_path);
 
@@ -34,10 +39,14 @@ namespace Xamarin_Sqlite.Services
 
              db.CreateTableAsync<Item>().Wait();
         }
-        
+
         public SQLiteAsyncConnection GetConnection(string path)
         {
-            return new SQLiteAsyncConnection(path);
+            if (_connection == null)
+            {
+                _connection = new SQLiteAsyncConnection(path);
+            }
+            return _connection;
         }
 
         public string GetDatabasePath()
@@ -98,6 +107,20 @@ namespace Xamarin_Sqlite.Services
             var db = GetConnection(_path);
             var result = await db.UpdateAsync(item);
             return result > 0;
+        }
+
+        public async Task<IEnumerable<Item>> GetItemsAsync(string search)
+        {
+            var db = GetConnection(_path);
+
+            if(string.IsNullOrWhiteSpace(search))
+            {
+                return await db.Table<Item>().ToArrayAsync();
+            }
+
+            var results = await db.Table<Item>().Where(x=> x.Text.StartsWith(search, StringComparison.OrdinalIgnoreCase)).ToListAsync();
+
+            return results;
         }
     }
 }
