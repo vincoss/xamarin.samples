@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +15,7 @@ namespace Xamarin_Samples.Views
 
         private async void btnOpen_Clicked(object sender, EventArgs e)
         {
-             await Browser.OpenAsync("http://www.google.com.au/", BrowserLaunchMode.SystemPreferred);
+            await Browser.OpenAsync("http://www.google.com.au/", BrowserLaunchMode.SystemPreferred);
         }
 
         private async void btnOpenCustom_Clicked(object sender, EventArgs e)

@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace Xamarin_Samples.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UI_CustomStylesSampleView : ContentPage
+    public partial class UI_ButtonBottomRightView : ContentPage
     {
-        public UI_CustomStylesSampleView()
+        public UI_ButtonBottomRightView()
         {
             InitializeComponent();
         }

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -44,7 +42,7 @@ namespace Xamarin_Samples.Views
                                     ImageUrl = "angry.png"
                                 };
 
-                    foreach(var ch in child)
+                    foreach (var ch in child)
                     {
                         parent.Add(ch);
                     }

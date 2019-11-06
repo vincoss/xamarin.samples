@@ -1,8 +1,6 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Xamarin_Samples.Views;
 
 namespace Xamarin_Samples
@@ -14,7 +12,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new HomeView());
+            MainPage = new NavigationPage(new UI_ButtonBottomRightView());
         }
 
         protected override void OnStart()

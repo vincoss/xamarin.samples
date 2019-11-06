@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,11 +22,11 @@ namespace Xamarin_Samples.Views
     }
 
     public class UI_PickerViewModel : BaseViewModel
-    { 
+    {
         public UI_PickerViewModel()
         {
             Fruits = (from x in DataService.Fruits
-                     select new Fruit { Name = x}).ToArray();
+                      select new Fruit { Name = x }).ToArray();
 
             SelectedFruit = Fruits.SingleOrDefault(x => x.Name == "Coconut");
         }
