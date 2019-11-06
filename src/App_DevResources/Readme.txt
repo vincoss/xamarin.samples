@@ -5,7 +5,6 @@ get latest validation result model
 validation
 	https://chaseflorell.github.io/xamarin/2017/10/04/realtime-validation-in-xamarin-forms-with-fluentvalidation/
 
-sqlite search like
 Add sample for splash screen
 icons binding from view model StaticResource
 prefix UI samples with UI_

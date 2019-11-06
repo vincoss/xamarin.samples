@@ -77,8 +77,6 @@ namespace Xamarin_Validation.Validation
                 _modelState.HasErrorsChanged += ModelStateDictionary_HasErrorsChanged;
             }
         }
-
-
     }
 
     public class ErrorIndexer

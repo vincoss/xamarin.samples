@@ -8,7 +8,7 @@ namespace Xamarin_Validation.Validation
 {
     public static class ValidationExtensions
     {
-        public static void ToModel(this IValidator validator, ModelStateDictionary model)
+        public static void ValidateToModel(this IValidator validator, object value, ModelStateDictionary model)
         {
             if (validator == null)
             {
@@ -18,7 +18,12 @@ namespace Xamarin_Validation.Validation
             {
                 throw new ArgumentNullException(nameof(model));
             }
-            throw new NotImplementedException();
+            var result = validator.Validate(value);
+
+            foreach(var error in result.Errors)
+            {
+                model.AddError(error.PropertyName, error.ErrorMessage);
+            }
         }
     }
 }

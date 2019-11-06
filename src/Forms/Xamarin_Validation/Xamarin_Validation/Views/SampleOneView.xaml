@@ -10,7 +10,8 @@
             <Label Text="Value is required" FontSize="Small" TextColor="Red" Margin="0" Padding="0"/>
 
             <Entry Text="{Binding UserName, Mode=TwoWay}" />
-            <Label Text="{Binding Error[Name]}" TextColor="Red"/>
+            <Label Text="{Binding Error[UserName]}" TextColor="Red"/>
+            <Button Text="Ok" Command="{Binding OkCommand}"/>
 
         </StackLayout>
     </ContentPage.Content>

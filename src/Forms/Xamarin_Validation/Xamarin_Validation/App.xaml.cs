@@ -11,7 +11,7 @@ namespace Xamarin_Validation
         {
             InitializeComponent();
 
-            MainPage = new UserRegistrationView();
+            MainPage = new SampleOneView();
         }
 
         protected override void OnStart()

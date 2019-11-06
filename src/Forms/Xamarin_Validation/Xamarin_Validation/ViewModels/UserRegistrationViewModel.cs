@@ -36,7 +36,7 @@ namespace Xamarin_Validation.ViewModels
                 ConfirmPassword = ConfirmPassword,
             };
 
-            _validatorFactory.GetValidator<UserValidator>().ToModel(_modelState);
+            _validatorFactory.GetValidator<UserValidator>().ValidateToModel(userObj, _modelState);
 
             var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(userObj);
 
