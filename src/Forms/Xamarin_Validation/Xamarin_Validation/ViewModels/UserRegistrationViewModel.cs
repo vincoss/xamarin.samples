@@ -15,7 +15,6 @@ namespace Xamarin_Validation.ViewModels
     public class UserRegistrationViewModel : INotifyPropertyChanged
     {
         private readonly IValidatorRegistry _validatorFactory;
-        private readonly ModelStateDictionary _modelState = new ModelStateDictionary();
 
         public UserRegistrationViewModel(IValidatorRegistry validatorFactory)
         {
@@ -35,7 +34,7 @@ namespace Xamarin_Validation.ViewModels
                 ConfirmPassword = ConfirmPassword,
             };
 
-            var validationResults = _validatorFactory.GetValidator<UserInfo>().Validate(userObj);
+            var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(userObj);
 
             if (validationResults.IsValid)
             {

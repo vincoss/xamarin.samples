@@ -1,16 +1,6 @@
 ﻿
 ## Tasks to learn
 
-# Validation
-get latest validation result model
-validation
-	https://chaseflorell.github.io/xamarin/2017/10/04/realtime-validation-in-xamarin-forms-with-fluentvalidation/
-
-on change validate
-	if (validate.ToModel(model) == true will add into model and do binding
-		save then
-	must be able to grigger validation on property change
-
 
 Add sample for splash screen
 icons binding from view model StaticResource

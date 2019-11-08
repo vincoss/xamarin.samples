@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 
 namespace Xamarin_Validation.Validation
 {
-    public class ModelStateDictionary : IDictionary<string, List<string>>, INotifyPropertyChanged
+    public class ModelStateDictionary : IEnumerable<string>
     {
         private readonly Dictionary<string, List<string>> _stateDictionary = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
 
@@ -16,32 +14,24 @@ namespace Xamarin_Validation.Validation
         {
         }
 
-        public ModelStateDictionary(ModelStateDictionary dictionary)
-        {
-            if (dictionary == null)
-            {
-                throw new ArgumentNullException("dictionary");
-            }
-            foreach (var entry in dictionary)
-            {
-                this.Add(entry);
-            }
-        }
-
         public void Add(KeyValuePair<string, List<string>> pair)
         {
-            this.Add(pair.Key, pair.Value ?? new List<string>());
+            Add(pair.Key, pair.Value ?? new List<string>());
         }
 
         public void Add(string key, List<string> items)
         {
+            if (string.IsNullOrWhiteSpace(nameof(key)))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
             if (items == null)
             {
-                throw new ArgumentNullException("items");
+                throw new ArgumentNullException(nameof(items));
             }
             foreach (var item in items)
             {
-                this.AddError(key, item);
+                AddError(key, item);
             }
         }
 
@@ -49,89 +39,58 @@ namespace Xamarin_Validation.Validation
         {
             if (string.IsNullOrWhiteSpace(key))
             {
-                throw new ArgumentNullException("key");
+                throw new ArgumentNullException(nameof(key));
+            }
+            if (string.IsNullOrWhiteSpace(errorMessage))
+            {
+                throw new ArgumentNullException(nameof(errorMessage));
             }
             var messages = GetModelStateForKey(key);
             if (messages.Any(x => string.Equals(x, errorMessage, StringComparison.InvariantCultureIgnoreCase)) == false)
             {
                 messages.Add(errorMessage);
             }
-            OnHasErrorsChanged(new PropertyNameEventArgs(key));
         }
-
-        public void Clear()
-        {
-            var keys = this.Keys.ToList();
-            foreach (var propertyName in keys)
-            {
-                this.Remove(propertyName);
-                this.OnHasErrorsChanged(new PropertyNameEventArgs(propertyName));
-            }
-        }
-
-        public bool Contains(KeyValuePair<string, List<string>> pair)
-        {
-            return this.ContainsKey(pair.Key);
-        }
-
-        public bool ContainsKey(string key)
-        {
-            return _stateDictionary.ContainsKey(key);
-        }
-
-        public void CopyTo(KeyValuePair<string, List<string>>[] array, int arrayIndex)
-        {
-            throw new NotSupportedException();
-        }
-
-        public void Merge(ModelStateDictionary dictionary)
-        {
-            if (dictionary == null)
-            {
-                return;
-            }
-            foreach (var entry in dictionary)
-            {
-                this[entry.Key] = entry.Value ?? new List<string>();
-                this.OnHasErrorsChanged(new PropertyNameEventArgs(entry.Key));
-            }
-        }
-
-        public bool Remove(KeyValuePair<string, List<string>> item)
-        {
-            return Remove(item.Key);
-        }
-
         public bool Remove(string key)
         {
             if (string.IsNullOrWhiteSpace(key))
             {
-                throw new ArgumentNullException("key");
+                throw new ArgumentNullException(nameof(key));
             }
             bool result = _stateDictionary.Remove(key);
-            if (result)
-            {
-                OnHasErrorsChanged(new PropertyNameEventArgs(key));
-            }
             return result;
         }
 
-        public bool TryGetValue(string key, out List<string> value)
+        public void Clear()
         {
-            if (string.IsNullOrWhiteSpace(key))
+            var keys = Keys.ToList();
+            foreach (var propertyName in keys)
             {
-                throw new ArgumentNullException("key");
+                Remove(propertyName);
             }
-            return _stateDictionary.TryGetValue(key, out value);
+        }
+
+        public string GetValue(string key)
+        {
+            if(_stateDictionary.ContainsKey(key))
+            {
+                return _stateDictionary[key].FirstOrDefault();
+            }
+            return null;
         }
 
         #region Private methods
+
+        private IEnumerable<string> GetValues()
+        {
+            return _stateDictionary.Values.SelectMany(x => x).ToList();
+        }
 
         private List<string> GetModelStateForKey(string key)
         {
             if (key == null)
             {
-                throw new ArgumentNullException("key");
+                throw new ArgumentNullException(nameof(key));
             }
             List<string> modelState;
             if (TryGetValue(key, out modelState) == false)
@@ -141,38 +100,13 @@ namespace Xamarin_Validation.Validation
             }
             return modelState;
         }
-
-        private void OnHasErrorsChanged(PropertyNameEventArgs e)
+        public bool TryGetValue(string key, out List<string> value)
         {
-            var handler = this.HasErrorsChanged;
-            if (handler != null)
+            if (string.IsNullOrWhiteSpace(key))
             {
-                handler(this, e);
+                throw new ArgumentNullException(nameof(key));
             }
-            OnPropertyChange("IsValid");
-        }
-
-        protected virtual void OnPropertyChange(string propertyName)
-        {
-            var handler = this.PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
-        #region IEnumerable Members
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IEnumerable)_stateDictionary).GetEnumerator();
-        }
-
-        public IEnumerator<KeyValuePair<string, List<string>>> GetEnumerator()
-        {
-            return _stateDictionary.GetEnumerator();
+            return _stateDictionary.TryGetValue(key, out value);
         }
 
         #endregion
@@ -184,57 +118,34 @@ namespace Xamarin_Validation.Validation
             get { return _stateDictionary.Count; }
         }
 
-        public bool IsReadOnly
-        {
-            get { return ((IDictionary<string, List<string>>)_stateDictionary).IsReadOnly; }
-        }
-
         public bool IsValid
         {
-            get { return Values.All(x => x.Count == 0); }
+            get { return Values.Any(); }
         }
 
         public ICollection<string> Keys
         {
             get { return _stateDictionary.Keys; }
         }
-
-        public ICollection<List<string>> Values
+        public IEnumerable<string> Values
         {
-            get { return _stateDictionary.Values; }
+            get { return GetValues(); }
         }
 
-        public List<string> this[string key]
+        #endregion
+
+        #region IEnumerable<string>
+
+        public IEnumerator<string> GetEnumerator()
         {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(key))
-                {
-                    return new List<string>();
-                }
-                List<string> value;
-                _stateDictionary.TryGetValue(key, out value);
-                return value;
-            }
-            set { _stateDictionary[key] = value; }
+            return GetValues().GetEnumerator();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public event PropertyNameErrorEventHandler HasErrorsChanged;
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        } 
 
         #endregion
     }
-
-    public class PropertyNameEventArgs : EventArgs
-    {
-        public PropertyNameEventArgs(string propertyName)
-        {
-            PropertyName = propertyName;
-        }
-
-        public string PropertyName { get; private set; }
-    }
-
-    public delegate void PropertyNameErrorEventHandler(object sender, PropertyNameEventArgs args);
 }

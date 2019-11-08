@@ -21,10 +21,9 @@ namespace Xamarin_Validation.Views
             BindingContext = new SampleOneViewModel(new ValidatorRegistry());
         }
 
-        public class SampleOneViewModel : BaseViewModel
+        public class SampleOneViewModel : ValidationViewModelBase
         {
             private readonly IValidatorRegistry _validatorFactory;
-            private readonly ModelStateDictionary _modelState = new ModelStateDictionary();
 
             public SampleOneViewModel(IValidatorRegistry validatorFactory)
             {
@@ -40,27 +39,12 @@ namespace Xamarin_Validation.Views
                     UserName = UserName
                 };
 
-                _validatorFactory.GetValidator<UserValidator>().ValidateToModel(userObj, _modelState);
+                _validatorFactory.GetValidator<UserValidator>().ValidateToModel(userObj, ModelState);
 
                 OnPropertyChanged("Item");
             }
 
             public ICommand OkCommand { get; private set; }
-
-            [IndexerName("Item")]
-            public string this[string propertyName]
-            {
-                get
-                {
-                    string error = null;
-                    if (_modelState.ContainsKey(propertyName))
-                    {
-                        var items = _modelState[propertyName];
-                        error = items.FirstOrDefault();
-                    }
-                    return error;
-                }
-            }
 
             private string _userName;
 
