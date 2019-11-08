@@ -25,3 +25,7 @@ https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/
 review
 https://github.com/bramborman/UWPHelper 
 
+## Other
+
+#Security
+If you’re writing a healthcare app and you want to see if it’s HIPAA secure then put your device into airplane mode and if you can still log into the app then it’s probably not compliant with the HIPAA regulations.
