@@ -242,8 +242,4 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Behaviors\" />
-  </ItemGroup>
 </Project>

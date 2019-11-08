@@ -1,4 +1,5 @@
 ﻿using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Xamarin_Samples.ViewModels
@@ -7,7 +8,7 @@ namespace Xamarin_Samples.ViewModels
     {
         public ICommand ClickCommand => new Command<string>((url) =>
         {
-            Device.OpenUri(new System.Uri(url));
+            Launcher.OpenAsync(new System.Uri(url));
         });
     }
 }
