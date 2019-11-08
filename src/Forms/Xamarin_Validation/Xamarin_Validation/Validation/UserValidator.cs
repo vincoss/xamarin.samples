@@ -5,7 +5,7 @@ using System.Text;
 using Xamarin_Validation.Model;
 
 
-namespace Xamarin_Validation.Validators
+namespace Xamarin_Validation.Validation
 {
     public class UserValidator : AbstractValidator<UserInfo>
     {

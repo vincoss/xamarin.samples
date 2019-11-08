@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin_Validation.Validators;
 
 namespace Xamarin_Validation.Validation
 {
@@ -18,8 +17,8 @@ namespace Xamarin_Validation.Validation
             {
                 throw new ArgumentNullException(nameof(model));
             }
+            model.Clear();
             var result = validator.Validate(value);
-
             foreach(var error in result.Errors)
             {
                 model.AddError(error.PropertyName, error.ErrorMessage);

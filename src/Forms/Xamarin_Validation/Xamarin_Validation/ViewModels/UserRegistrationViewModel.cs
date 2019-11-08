@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin_Validation.Model;
-using Xamarin_Validation.Validators;
 using Xamarin_Validation.Validation;
 
 
@@ -15,10 +14,10 @@ namespace Xamarin_Validation.ViewModels
 {
     public class UserRegistrationViewModel : INotifyPropertyChanged
     {
-        private readonly IValidatorFactory _validatorFactory;
+        private readonly IValidatorRegistry _validatorFactory;
         private readonly ModelStateDictionary _modelState = new ModelStateDictionary();
 
-        public UserRegistrationViewModel(IValidatorFactory validatorFactory)
+        public UserRegistrationViewModel(IValidatorRegistry validatorFactory)
         {
             _validatorFactory = validatorFactory;
 
@@ -36,9 +35,7 @@ namespace Xamarin_Validation.ViewModels
                 ConfirmPassword = ConfirmPassword,
             };
 
-            _validatorFactory.GetValidator<UserValidator>().ValidateToModel(userObj, _modelState);
-
-            var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(userObj);
+            var validationResults = _validatorFactory.GetValidator<UserInfo>().Validate(userObj);
 
             if (validationResults.IsValid)
             {

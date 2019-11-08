@@ -7,10 +7,10 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="User Name" Text="{Binding UserName}" HorizontalOptions="FillAndExpand"  Margin="0" />
-            <Label Text="Value is required" FontSize="Small" TextColor="Red" Margin="0" Padding="0"/>
+            <Label Text="Value is required" FontSize="Small"  Margin="0" Padding="0"/>
 
             <Entry Text="{Binding UserName, Mode=TwoWay}" />
-            <Label Text="{Binding Error[UserName]}" TextColor="Red"/>
+            <Label Text="{Binding [UserName], Mode=OneWay}"/>
             <Button Text="Ok" Command="{Binding OkCommand}"/>
 
         </StackLayout>
