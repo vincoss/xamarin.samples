@@ -3,6 +3,10 @@
 
 clean all samples
 review all xamarin-forms-samples
+font awsome icons samples
+glut test build sample with sample project
+Exit app for each platform test
+read docker networking
 
 read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
