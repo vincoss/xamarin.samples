@@ -27,6 +27,10 @@ https://github.com/bramborman/UWPHelper
 
 ## Other
 
+## Terms
+https://forums.xamarin.com/discussion/90563/how-to-add-a-terms-and-conditions-page
+https://ux.stackexchange.com/questions/83178/how-to-present-the-terms-of-service-and-privacy-policy-to-the-user-in-an-app
+
 dev documentation for API
 
 #Security
