@@ -1,9 +1,10 @@
 ﻿
 ## Tasks to learn
 
+glutre publish
++navigation sample always init void OnAppearing()
 clean all samples
 review all xamarin-forms-samples
-glut test build sample with sample project
 Exit app for each platform test
 read docker networking
 font awsome icons samples
@@ -12,6 +13,7 @@ read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
 
 localization
+	see xamarin-fomms-samples there is loc sample
 
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/

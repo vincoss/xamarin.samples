@@ -63,6 +63,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ApplicationContext.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

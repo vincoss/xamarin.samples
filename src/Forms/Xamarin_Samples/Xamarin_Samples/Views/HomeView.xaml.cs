@@ -13,6 +13,7 @@ namespace Xamarin_Samples.Views
             InitializeComponent();
 
             List<Page> pages = new List<Page>();
+            pages.Add(new ExitAppView());
             pages.Add(new Essentials_AppInformationView());
             pages.Add(new Essentials_BrowserView());
             pages.Add(new UI_BuiltInStylesSampleView());
