@@ -2,10 +2,8 @@
 ## Tasks to learn
 
 glutre publish
-+navigation sample always init void OnAppearing()
 clean all samples
-review all xamarin-forms-samples
-Exit app for each platform test
+review all xamarin-forms-samples	
 read docker networking
 font awsome icons samples
 
