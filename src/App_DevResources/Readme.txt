@@ -2,11 +2,12 @@
 ## Tasks to learn
 
 glutre publish
-
+TableView
 clean all samples
 review all xamarin-forms-samples	
 read docker networking
 font awsome icons samples
+password store location
 
 read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
@@ -22,7 +23,7 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/get-started/tutorials/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/markup-extensions/consuming
 
 review
 https://github.com/bramborman/UWPHelper 
@@ -30,6 +31,7 @@ https://github.com/bramborman/UWPHelper
 ## Other
 
 ios vm
+android However, Android 5.0 (API 21) is recommended as the minimum API.
 
 ## API
 https://apidoc.gruntify.com/?version=latest#972f7339-313e-7ed1-a638-3da0a96feb85
