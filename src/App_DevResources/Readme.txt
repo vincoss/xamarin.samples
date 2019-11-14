@@ -6,6 +6,7 @@ TableView
 logging
 clean all samples
 review all xamarin-forms-samples	
+e shot cont review
 read docker networking
 font awsome icons samples
 password store location
