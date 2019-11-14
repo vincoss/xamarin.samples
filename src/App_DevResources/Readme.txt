@@ -2,6 +2,7 @@
 ## Tasks to learn
 
 glutre publish
+
 clean all samples
 review all xamarin-forms-samples	
 read docker networking
@@ -11,7 +12,10 @@ read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
 
 localization
-	see xamarin-fomms-samples there is loc sample
+	see xamarin-fomms-samples TodoLocalized
+	see xamarin-fomms-samples TodoLocalizedRTL
+	see xamarin-fomms-samples UsingResxLocalization
+	see xamarin-fomms-samples UsingResxLocalization
 
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
@@ -24,6 +28,11 @@ review
 https://github.com/bramborman/UWPHelper 
 
 ## Other
+
+ios vm
+
+## API
+https://apidoc.gruntify.com/?version=latest#972f7339-313e-7ed1-a638-3da0a96feb85
 
 ## Terms
 https://forums.xamarin.com/discussion/90563/how-to-add-a-terms-and-conditions-page

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Xamarin_Samples.Views" 
+             x:Class="Xamarin_Samples.Views.UI_ListViewDataTemplateSelectorView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="validTemplate">
+                <TextCell Text="{Binding Name}" Detail="{Binding Comment}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="invalidTemplate">
+                <TextCell Text="{Binding Name}" Detail="{Binding Comment}" TextColor="Red"/>
+            </DataTemplate>
+            <local:ItemInfoDataTemplateSelector x:Key="ItemInfoDataTemplateSelector" ValidTemplate="{StaticResource validTemplate}" InvalidTemplate="{StaticResource invalidTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="ListView - DataTemplateSelector" />
+            <ListView x:Name="listView" ItemsSource="{Binding ItemsSource}" ItemTemplate="{StaticResource ItemInfoDataTemplateSelector}"/>
+            <Button Text="Update" Command="{Binding UpdateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
