@@ -12,7 +12,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_ListViewDataTemplateSelectorView());
+            MainPage = new NavigationPage(new UI_ListViewContextActionsView());
         }
 
         protected override void OnStart()
