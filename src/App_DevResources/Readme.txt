@@ -6,6 +6,7 @@ review all xamarin-forms-samples
 read docker networking
 font awsome icons samples
 canon uwp
+see eshop cont data access exceptions
 
 read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
