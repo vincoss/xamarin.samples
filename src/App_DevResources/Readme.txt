@@ -1,14 +1,11 @@
 ﻿
 ## Tasks to learn
 
-glutre publish
-TableView
-logging
 clean all samples
 review all xamarin-forms-samples	
 read docker networking
 font awsome icons samples
-password store location
+canon uwp
 
 read about tags
 https://zapier.com/blog/how-to-use-tags-and-labels/
@@ -24,7 +21,7 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/markup-extensions/consuming
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/
 
 review
 https://github.com/bramborman/UWPHelper 
