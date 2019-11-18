@@ -6,7 +6,11 @@ TableView
 logging
 clean all samples
 review all xamarin-forms-samples	
-e shot cont review
+csv
+zip
+check box
+picker large search
+picker add new|edit|import
 read docker networking
 font awsome icons samples
 password store location
