@@ -22,17 +22,5 @@ namespace Xamarin_Samples.Converters
         {
             return ((T)value).Equals(TrueObject);
         }
-
-        public static string abbreviation(string input)
-        {
-            string abbreviation = new string(
-    input.Split()
-          .Where(s => s.Length > 0 && char.IsLetter(s[0]) && char.IsUpper(s[0]))
-          .Take(3)
-          .Select(s => s[0])
-          .ToArray());
-
-            return abbreviation;
-        }
     }
 }
