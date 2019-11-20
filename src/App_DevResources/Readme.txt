@@ -6,6 +6,7 @@ review all xamarin-forms-samples
 csv
 zip
 embed metatata into img
+light csv import
 allowed chars for names
 		Use Path. or URI allowed chars
 check box
