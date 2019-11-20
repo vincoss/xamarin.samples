@@ -5,6 +5,8 @@ review all xamarin-forms-samples
 allowed chars for names
 		Use Path. or URI allowed chars
 check box
+embed metatata into img
+light csv import
 picker large search
 picker add new|edit|import
 read docker networking
@@ -12,17 +14,6 @@ font awsome icons samples
 canon uwp
 see eshop cont data access exceptions
 name abbreviation, see JIRA and TeamCity
-  public static string abbreviation(string input)
-        {
-            string abbreviation = new string(
-    input.Split()
-          .Where(s => s.Length > 0 && char.IsLetter(s[0]) && char.IsUpper(s[0]))
-          .Take(3)
-          .Select(s => s[0])
-          .ToArray());
-
-            return abbreviation;
-        }
 
 read about tags
 https://stackoverflow.blog/2016/12/15/you-can-now-play-with-stack-overflow-data-on-googles-bigquery/
