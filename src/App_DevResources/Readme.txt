@@ -1,12 +1,15 @@
 ﻿
 ## Tasks to learn
 
+fluentvalidation call async validation methods
 review all xamarin-forms-samples	
 csv
 zip
+embed metatata into img
 allowed chars for names
 		Use Path. or URI allowed chars
 check box
+GPS|Glonass lat|log settings and grids
 picker large search
 picker add new|edit|import
 read docker networking
