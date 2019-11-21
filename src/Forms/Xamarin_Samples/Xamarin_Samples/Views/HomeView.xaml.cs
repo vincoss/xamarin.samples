@@ -58,6 +58,9 @@ namespace Xamarin_Samples.Views
             pages.Add(new UI_ToolbarItemView());
             pages.Add(new UI_UseFontAwesomeSampleView());
 
+            pages.Add(new FlexLayoutHolyGrailView());
+            pages.Add(new FlexLayoutView());
+
             ListOfPages.ItemsSource = pages;
         }
 

@@ -41,6 +41,7 @@ telemetry
 
 ## Next
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
 
 review
 https://github.com/bramborman/UWPHelper 
