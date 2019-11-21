@@ -1,18 +1,18 @@
 ﻿
 ## Tasks to learn
 
+see eshop cont data review code
 review all xamarin-forms-samples	
-allowed chars for names
-		Use Path. or URI allowed chars
-check box
-embed metatata into img
-light csv import
+
+listview check box
 picker large search
 picker add new|edit|import
+
+embed metatata into img
+light csv import
 read docker networking
 font awsome icons samples
 canon uwp
-see eshop cont data access exceptions
 name abbreviation, see JIRA and TeamCity
 
 read about tags
@@ -47,6 +47,14 @@ https://github.com/bramborman/UWPHelper
 
 ## Other
 
+ if (IsBusy)
+    return;
+
+IsBusy = true;
+
+start pae into Xamarin.Essentials.preferences
+Hanselman.Forms to review
+
 add global search
 will search tags and list items
 
@@ -55,3 +63,37 @@ tag each item with project, location, and other
 ## Stackoverflow technology
 https://meta.stackexchange.com/questions/10369/which-tools-and-technologies-are-used-to-build-the-stack-exchange-network?rq=1
 https://stackexchange.com/performance
+
+
+async Task ExecuteLoadCommand(bool forceRefresh)
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+            try
+            {
+#if DEBUG
+                await Task.Delay(1000);
+#endif
+                var items = await DataService.GetBlogItemsAsync(forceRefresh);
+                if(items == null)
+                {
+                    await DisplayAlert("Error", "Unable to load blog.", "OK");
+                }
+                else
+                {
+                    FeedItems.ReplaceRange(items);
+                }
+            }
+            catch(Exception ex)
+            {
+                await DisplayAlert("Error", "Unable to load blog.", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+            LoadCommand.ChangeCanExecute();
+        }
