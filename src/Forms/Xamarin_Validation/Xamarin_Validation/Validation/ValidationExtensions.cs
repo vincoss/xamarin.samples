@@ -86,6 +86,12 @@ namespace Xamarin_Validation.Validation
                     isPrintable = (invalid.Contains(c) == false);
                 }
 
+                // ASCII/Unicode characters 1 through 31
+                if (c < 32)
+                {
+                    isPrintable = false;
+                }
+
                 if (isPrintable)
                 {
                     sb.Append(c);
