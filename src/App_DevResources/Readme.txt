@@ -4,6 +4,7 @@
 see eshop cont data review code
 review all xamarin-forms-samples	
 
+see alternative to Newtonsoft.Json, thats is too big
 listview check box
 picker large search
 picker add new|edit|import
