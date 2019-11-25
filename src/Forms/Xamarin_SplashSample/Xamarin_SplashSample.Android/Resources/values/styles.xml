@@ -38,6 +38,7 @@
 
   <!--
   https://stackoverflow.com/questions/45379154/android-splash-screen-without-logo-distortion
+  https://medium.com/@pererikbergman/android-splash-screens-a1f44acb4fce
     values-v21/themes.xml:
     <item name="android:windowTranslucentStatus">true</item>
     <item name="android:windowTranslucentNavigation">true</item>
