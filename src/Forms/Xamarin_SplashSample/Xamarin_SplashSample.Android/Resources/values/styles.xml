@@ -36,4 +36,21 @@
     <item name="android:windowBackground">@mipmap/background</item>
   </style>
 
+  <!--
+  https://stackoverflow.com/questions/45379154/android-splash-screen-without-logo-distortion
+    values-v21/themes.xml:
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+
+    <style name="Theme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+      <item name="android:windowNoTitle">true</item>
+      <item name="android:windowFullscreen">true</item>
+      <item name="android:windowContentOverlay">@null</item>
+      <item name="android:windowActionBar">true</item>
+      <item name="android:windowBackground">@drawable/bitmap_splash</item>
+      <item name="android:colorBackground">@android:color/white</item>
+    </style>
+    
+    -->
+  
 </resources>

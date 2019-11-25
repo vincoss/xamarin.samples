@@ -3,8 +3,8 @@
 
 see eshop cont data review code
 review all xamarin-forms-samples	
+name abbreviation, see JIRA and TeamCity
 
-see alternative to Newtonsoft.Json, thats is too big
 listview check box
 picker large search
 picker add new|edit|import
@@ -14,7 +14,6 @@ light csv import
 read docker networking
 font awsome icons samples
 canon uwp
-name abbreviation, see JIRA and TeamCity
 
 read about tags
 https://stackoverflow.blog/2016/12/15/you-can-now-play-with-stack-overflow-data-on-googles-bigquery/
@@ -41,16 +40,17 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
 
 review
+https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
 
 ## Other
 
- if (IsBusy)
-    return;
+test black and white colors
+have base color in app resources to apply black and white only 
 
 IsBusy = true;
 
