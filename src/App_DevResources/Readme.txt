@@ -1,6 +1,7 @@
 ﻿
 ## Tasks to learn
 
+glut
 review all xamarin-forms-samples	
 name abbreviation, see JIRA and TeamCity
 
@@ -12,6 +13,7 @@ embed metatata into img
 light csv import
 read docker networking
 font awsome icons samples
+GPS UTM
 canon uwp
 
 read about tags
@@ -49,52 +51,7 @@ https://github.com/bramborman/UWPHelper
 
 ## Other
 
-TargetNullValue on Image instead of pass another URL
-zoom with TapGestureRecognizer see samples
-test black and white colors
-	have base color in app resources to apply black and white only 
-
-IsBusy = true;
-
-start pae into Xamarin.Essentials.preferences
-
-add global search (must be on home screen) Like search
-	will search tags and list items
-
-## Stackoverflow technology
-https://meta.stackexchange.com/questions/10369/which-tools-and-technologies-are-used-to-build-the-stack-exchange-network?rq=1
-https://stackexchange.com/performance
 
 
-async Task ExecuteLoadCommand(bool forceRefresh)
-        {
-            if (IsBusy)
-                return;
 
-            IsBusy = true;
-            try
-            {
-#if DEBUG
-                await Task.Delay(1000);
-#endif
-                var items = await DataService.GetBlogItemsAsync(forceRefresh);
-                if(items == null)
-                {
-                    await DisplayAlert("Error", "Unable to load blog.", "OK");
-                }
-                else
-                {
-                    FeedItems.ReplaceRange(items);
-                }
-            }
-            catch(Exception ex)
-            {
-                await DisplayAlert("Error", "Unable to load blog.", "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
 
-            LoadCommand.ChangeCanExecute();
-        }
