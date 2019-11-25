@@ -1,7 +1,6 @@
 ﻿
 ## Tasks to learn
 
-see eshop cont data review code
 review all xamarin-forms-samples	
 name abbreviation, see JIRA and TeamCity
 
@@ -40,7 +39,8 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/
+DatePicker
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
 
 review
@@ -49,18 +49,17 @@ https://github.com/bramborman/UWPHelper
 
 ## Other
 
+TargetNullValue on Image instead of pass another URL
+zoom with TapGestureRecognizer see samples
 test black and white colors
-have base color in app resources to apply black and white only 
+	have base color in app resources to apply black and white only 
 
 IsBusy = true;
 
 start pae into Xamarin.Essentials.preferences
-Hanselman.Forms to review
 
-add global search
-will search tags and list items
-
-tag each item with project, location, and other
+add global search (must be on home screen) Like search
+	will search tags and list items
 
 ## Stackoverflow technology
 https://meta.stackexchange.com/questions/10369/which-tools-and-technologies-are-used-to-build-the-stack-exchange-network?rq=1
