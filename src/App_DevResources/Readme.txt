@@ -11,10 +11,14 @@ picker add new|edit|import
 
 embed metatata into img
 light csv import
+	with validation
 read docker networking
 font awsome icons samples
 GPS UTM
+
 canon uwp
+camera
+	https://github.com/jamesmontemagno/MediaPlugin
 
 read about tags
 https://stackoverflow.blog/2016/12/15/you-can-now-play-with-stack-overflow-data-on-googles-bigquery/
@@ -41,7 +45,7 @@ telemetry
 	dbsite, navigation, last used,location,errors and many more
 
 ## Next
-DatePicker
+ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
 
