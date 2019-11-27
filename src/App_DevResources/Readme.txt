@@ -8,6 +8,7 @@ using(SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider())
     hash = Convert.ToBase64String(sha1.ComputeHash(byteArray));
 }
 
+abbreviation
 review all xamarin-forms-samples	
 name abbreviation, see JIRA and TeamCity
 
