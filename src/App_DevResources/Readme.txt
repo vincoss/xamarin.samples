@@ -1,6 +1,13 @@
 ﻿
 ## Tasks to learn
 
+hash int vs string (small text, large files or images)
+string hash;
+using(SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider())
+{
+    hash = Convert.ToBase64String(sha1.ComputeHash(byteArray));
+}
+
 review all xamarin-forms-samples	
 name abbreviation, see JIRA and TeamCity
 
@@ -50,11 +57,7 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-#modified by
-userId, Name, Email, Active
 
-#work
-work version
 
 
 
