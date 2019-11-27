@@ -45,6 +45,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new UI_ImageSamplesView());
             pages.Add(new UI_LabelSampleView());
             pages.Add(new UI_ListViewButtonBottomRightView());
+            pages.Add(new UI_ListViewCheckBoxView());
             pages.Add(new UI_ListViewContextActionsView());
             pages.Add(new UI_ListViewDataTemplateSelectorView());
             pages.Add(new UI_ListViewGroupingView());

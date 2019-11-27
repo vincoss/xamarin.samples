@@ -1,20 +1,15 @@
 ﻿
 ## Tasks to learn
 
-glut
 review all xamarin-forms-samples	
 name abbreviation, see JIRA and TeamCity
 
-listview check box
-picker large search
-picker add new|edit|import
-
-embed metatata into img
 light csv import
 	with validation
 read docker networking
 font awsome icons samples
 GPS UTM
+	https://en.wikipedia.org/wiki/Geocode
 
 canon uwp
 camera
@@ -53,9 +48,13 @@ review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
 
-## Other
+## Temp
 
+#modified by
+userId, Name, Email, Active
 
+#work
+work version
 
 
 
