@@ -1,13 +1,7 @@
 ﻿
 ## Tasks to learn
 
-hash int vs string (small text, large files or images)
-string hash;
-using(SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider())
-{
-    hash = Convert.ToBase64String(sha1.ComputeHash(byteArray));
-}
-abbreviation
+
 glutsvr dock create
 
 review all xamarin-forms-samples	
@@ -59,7 +53,7 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-
+checksumType="sha256" checksum="{here}"
 
 
 
