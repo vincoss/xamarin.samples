@@ -4,9 +4,6 @@
 
 glutsvr dock create
 
-review all xamarin-forms-samples	
-name abbreviation, see JIRA and TeamCity
-
 light csv import
 	with validation
 read docker networking
@@ -36,6 +33,8 @@ localization
 	see xamarin-fomms-samples TodoLocalizedRTL
 	see xamarin-fomms-samples UsingResxLocalization
 	see xamarin-fomms-samples UsingResxLocalization
+	C:\_Data\GitHub\Xamarin\docs-archive\Samples\TodoLocalized
+	C:\_Data\GitHub\Xamarin\docs-archive\Samples\UsingResxLocalization
 	https://www.romaniancoder.com/set-culture-for-all-threads-in-c-apps/
 
 telemetry
@@ -44,8 +43,8 @@ telemetry
 
 ## Next
 ListView
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/gestures/
 
 review
 https://github.com/Daddoon/BlazorMobile
@@ -54,6 +53,8 @@ https://github.com/bramborman/UWPHelper
 ## Temp
 
 checksumType="sha256" checksum="{here}"
-
-
+pick existing img
+	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
+	allow types .jpg, .jpeg, .png
+img picker sample Xamarin_Forms___Dependency_Service
 
