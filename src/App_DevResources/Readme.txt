@@ -59,3 +59,10 @@ pick existing img
 	allow types .jpg, .jpeg, .png
 img picker sample Xamarin_Forms___Dependency_Service
 
+Enable xaml compilation
+[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+namespace PhotoApp
+
+use compiled bindings
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+ <StackLayout x:DataType="local:HslColorViewModel">
