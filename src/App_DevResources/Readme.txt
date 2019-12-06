@@ -36,6 +36,7 @@ localization
 	C:\_Data\GitHub\Xamarin\docs-archive\Samples\TodoLocalized
 	C:\_Data\GitHub\Xamarin\docs-archive\Samples\UsingResxLocalization
 	https://www.romaniancoder.com/set-culture-for-all-threads-in-c-apps/
+	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/
 
 telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
@@ -44,8 +45,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/local-notifications
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/deploy-test/performance#optimize-image-resources
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/messaging-center
 
 review
 https://github.com/Daddoon/BlazorMobile
