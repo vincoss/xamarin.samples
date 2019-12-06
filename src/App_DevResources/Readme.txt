@@ -3,11 +3,11 @@
 
 
 glutsvr dock create
-
-light csv import
-	with validation
 read docker networking
 font awsome icons samples
+image zoon and pan, see gestures
+csv write
+zip folder
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
@@ -44,7 +44,8 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/gestures/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/local-notifications
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/deploy-test/performance#optimize-image-resources
 
 review
 https://github.com/Daddoon/BlazorMobile
