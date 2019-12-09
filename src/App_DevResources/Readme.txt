@@ -45,7 +45,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/checkbox
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/populate-data
 
 review
 https://github.com/Daddoon/BlazorMobile
@@ -66,3 +66,8 @@ namespace PhotoApp
 use compiled bindings
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
  <StackLayout x:DataType="local:HslColorViewModel">
+
+ review listView and Collection view PullTo refrehs all views
+ItemsUpdatingScrollMode="KeepLastItemInView"
+
+ScrollTo()
