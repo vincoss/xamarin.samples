@@ -53,21 +53,9 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-checksumType="sha256" checksum="{here}"
 pick existing img
 	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
 	allow types .jpg, .jpeg, .png
 img picker sample Xamarin_Forms___Dependency_Service
-
-Enable xaml compilation
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-namespace PhotoApp
-
-use compiled bindings
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
- <StackLayout x:DataType="local:HslColorViewModel">
-
- review listView and Collection view PullTo refrehs all views
-ItemsUpdatingScrollMode="KeepLastItemInView"
 
 ScrollTo()
