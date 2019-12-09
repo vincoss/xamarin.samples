@@ -62,6 +62,9 @@ namespace Xamarin_Samples.Views
             pages.Add(new FlexLayoutHolyGrailView());
             pages.Add(new FlexLayoutView());
 
+            pages.Add(new UI_TriggersView());
+            pages.Add(new UI_ControlTemplateView());
+
             ListOfPages.ItemsSource = pages;
         }
 

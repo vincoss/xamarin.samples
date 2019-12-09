@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:xa="clr-namespace:Xamarin_Samples.Xaml;assembly=Xamarin_Samples"
+             xmlns:co="clr-namespace:Xamarin_Samples.Converters;assembly=Xamarin_Samples"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.Views.UI_TriggersView"
+             Title="UI_TriggersView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers
+    -->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <co:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+            
+            <!--implicit style (ie. no Key is set) which means it will apply to all Entry controls on the page.-->
+            <!--<Style TargetType="Entry">
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                         Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="Yellow" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Property Triggers" />
+            <Entry Placeholder="enter name">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="Yellow" />
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Data Triggers" />
+            <!-- the x:Name is referenced below in DataTrigger-->
+            <!-- tip: make sure to set the Text="" (or some other default) -->
+            <Entry x:Name="entry" Text="" Placeholder="required field" />
+
+            <Button x:Name="button" Text="Save"
+                    FontSize="Large"
+                    HorizontalOptions="Center">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference entry}, Path=Text.Length}" Value="0">
+                        <Setter Property="IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Events Triggers" />
+            <Entry Placeholder="enter name">
+                <Entry.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <xa:NumericValidationTriggerAction />
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Multi Triggers" />
+            <Entry x:Name="email" Placeholder="enter email"/>
+            <Entry x:Name="phone" Placeholder="enter phone"/>
+            
+            <Button Text="Save"
+                    FontSize="Large"
+                    HorizontalOptions="Center">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
+                            <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
+                        </MultiTrigger.Conditions>
+
+                        <Setter Property="IsEnabled" Value="False" />
+                        <!-- multiple Setter elements are allowed -->
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Multi Triggers With converter" />
+            <Entry x:Name="user" Text="" Placeholder="user name" />
+            <Entry x:Name="pwd" Text="" Placeholder="password" />
+
+            <Button x:Name="loginButton" Text="Login"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    IsEnabled="false">      
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference user},
+                              Path=Text.Length, Converter={StaticResource dataHasBeenEntered}}" Value="true" />
+                            <BindingCondition Binding="{Binding Source={x:Reference pwd},
+                              Path=Text.Length, Converter={StaticResource dataHasBeenEntered}}" Value="true" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="EnterActions and ExitActions" />
+            <Entry Placeholder="enter job title">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="Entry.IsFocused" Value="True">
+                        <Trigger.EnterActions>
+                            <xa:FadeTriggerAction StartsFrom="0" />
+                        </Trigger.EnterActions>
+                        <Trigger.ExitActions>
+                            <xa:FadeTriggerAction StartsFrom="1" />
+                        </Trigger.ExitActions>
+                        <!-- You can use both Enter/Exit and Setter together if required -->
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

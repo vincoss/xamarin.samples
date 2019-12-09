@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:f="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
              x:Class="Xamarin_Samples.Views.UI_ListViewView"
+             xmlns:mo="clr-namespace:Xamarin_Samples.Models"
+             xmlns:vc="clr-namespace:Xamarin_Samples.ViewTemplates"
              Title="UI_ListViewView">
     
     <!--
@@ -10,7 +12,26 @@
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/customizing-cell-appearance
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/data-and-databinding
     -->
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="personTemplate">
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.2*" />
+                            <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                        <Label Grid.Column="1" Text="{Binding Age}" />
+                        <Label Grid.Column="2" Text="{Binding Location}" HorizontalTextAlignment="End" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -29,6 +50,86 @@
                             <x:String>monopoly</x:String>
                             <x:String>monomodal</x:String>
                             <x:String>mononucleosis</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+
+                <!--Object Values-->
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="ListView - ItemsSource - Object Values" />
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type mo:Person}">
+                            <mo:Person Name="Steve" Age="21" Location="USA" />
+                            <mo:Person Name="John" Age="37" Location="USA" />
+                            <mo:Person Name="Tom" Age="42" Location="UK" />
+                            <mo:Person Name="Lucas" Age="29" Location="Germany" />
+                            <mo:Person Name="Tariq" Age="39" Location="UK" />
+                            <mo:Person Name="Jane" Age="30" Location="USA" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+
+                <!--Object Values Data Template-->
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="ListView - ItemsSource - Object Values - Data Template" />
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type mo:Person}">
+                            <mo:Person Name="Steve" Age="21" Location="USA" />
+                            <mo:Person Name="John" Age="37" Location="USA" />
+                            <mo:Person Name="Tom" Age="42" Location="UK" />
+                            <mo:Person Name="Lucas" Age="29" Location="Germany" />
+                            <mo:Person Name="Tariq" Age="39" Location="UK" />
+                            <mo:Person Name="Jane" Age="30" Location="USA" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Age}" />
+                                    <Label Text="{Binding Location}" HorizontalTextAlignment="End" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!--Object Values Data Template With Type-->
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="ListView - ItemsSource - Object Values Data Template With Type" />
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type mo:Person}">
+                            <mo:Person Name="Steve" Age="21" Location="USA" />
+                            <mo:Person Name="John" Age="37" Location="USA" />
+                            <mo:Person Name="Tom" Age="42" Location="UK" />
+                            <mo:Person Name="Lucas" Age="29" Location="Germany" />
+                            <mo:Person Name="Tariq" Age="39" Location="UK" />
+                            <mo:Person Name="Jane" Age="30" Location="USA" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <vc:PersonViewCell />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!--Object Values Data Template As a Resource-->
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="ListView - ItemsSource - Object Values Data Template As a Resource" />
+                <ListView ItemTemplate="{StaticResource personTemplate}" >
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type mo:Person}">
+                            <mo:Person Name="Steve" Age="21" Location="USA" />
+                            <mo:Person Name="John" Age="37" Location="USA" />
+                            <mo:Person Name="Tom" Age="42" Location="UK" />
+                            <mo:Person Name="Lucas" Age="29" Location="Germany" />
+                            <mo:Person Name="Tariq" Age="39" Location="UK" />
+                            <mo:Person Name="Jane" Age="30" Location="USA" />
                         </x:Array>
                     </ListView.ItemsSource>
                 </ListView>

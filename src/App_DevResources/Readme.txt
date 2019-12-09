@@ -45,7 +45,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/flyout
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/animation/
 
 review
 https://github.com/Daddoon/BlazorMobile
