@@ -8,37 +8,41 @@ namespace Xamarin_Samples.Extensions
 {
     public class CollectionViewScrollToAttached
     {
-        public static BindableProperty LoadMoreCommandProperty = BindableProperty.CreateAttached("LoadMoreCommand", typeof(ICommand), typeof(Nullable), null, propertyChanged: HandleChanged);
+        public static BindableProperty ScrollToIndexProperty = BindableProperty.CreateAttached("ScrollToIndex", typeof(int), typeof(int), 0, propertyChanged: HandleChanged);
 
-        public static ICommand GetLoadMoreCommand(BindableObject view)
+        public static int GetScrollToIndex(BindableObject view)
         {
-            return (ICommand)view.GetValue(LoadMoreCommandProperty);
+            return (int)view.GetValue(ScrollToIndexProperty);
         }
 
-        public static void SetLoadMoreCommand(BindableObject view, ICommand cmd)
+        public static void SetScrollToIndex(BindableObject view, int value)
         {
-            view.SetValue(LoadMoreCommandProperty, cmd);
+            view.SetValue(ScrollToIndexProperty, value);
         }
 
         private static void HandleChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = bindable as ListView;
+            var control = bindable as CollectionView;
 
             if (control == null)
             {
                 return;
             }
 
-            control.ItemAppearing += (sender, e) =>
-            {
-                var listView = (ListView)sender;
-                var items = listView.ItemsSource as IList;
+            var nindex = 0;
+            var oindex = 0;
 
-                if (items != null && e.Item == items[items.Count - 1])
-                {
-                    listView.ScrollTo(e.Item, ScrollToPosition.MakeVisible, false);
-                }
-            };
+            if (newValue != null)
+            {
+                int.TryParse(newValue.ToString(), out nindex);
+            }
+            
+            if (oldValue != null)
+            {
+                int.TryParse(oldValue.ToString(), out oindex);
+            }
+
+            control.ScrollTo(nindex, -1, ScrollToPosition.Center);
         }
     }
 }

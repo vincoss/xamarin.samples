@@ -4,6 +4,7 @@
 
 glutsvr dock create
 read docker networking
+list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
 image zoon and pan, see gestures
 csv write
@@ -58,4 +59,17 @@ pick existing img
 	allow types .jpg, .jpeg, .png
 img picker sample Xamarin_Forms___Dependency_Service
 
+Enable xaml compilation
+[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+namespace PhotoApp
+
+use compiled bindings
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+ <StackLayout x:DataType="local:HslColorViewModel">
+
+ review listView and Collection view PullTo refrehs all views
+ItemsUpdatingScrollMode="KeepLastItemInView"
+
 ScrollTo()
+
+https://api.gov.au/standards/national_api_standards/
