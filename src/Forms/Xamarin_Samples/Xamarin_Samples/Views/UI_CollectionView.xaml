@@ -42,7 +42,7 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding}"/>
+                        <Label Text="{Binding}" Padding="10"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
