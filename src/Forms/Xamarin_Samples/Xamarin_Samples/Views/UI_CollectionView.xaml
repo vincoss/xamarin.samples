@@ -29,7 +29,12 @@
             <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
             <Label Text="CollectionView - ScrollTo" />
             <Button x:Name="addItem" Text="Add" Clicked="addItem_Clicked"/>
-            <CollectionView x:Name="scrolToItems" ItemsUpdatingScrollMode="KeepLastItemInView">
+            <Entry Placeholder="Scroll To" Text="{Binding SelectedValue}" Keyboard="Numeric" ClearButtonVisibility="WhileEditing"/>
+            <CollectionView x:Name="scrolToItems" 
+                            SelectionMode="Single"
+                            ItemsSource="{Binding Items}"
+                            SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                            ItemsUpdatingScrollMode="KeepLastItemInView">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"

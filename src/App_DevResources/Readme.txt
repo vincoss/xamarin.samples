@@ -4,6 +4,7 @@
 
 glutsvr dock create
 read docker networking
+list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
 image zoon and pan, see gestures
 csv write
@@ -53,7 +54,6 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-checksumType="sha256" checksum="{here}"
 pick existing img
 	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
 	allow types .jpg, .jpeg, .png
