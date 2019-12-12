@@ -1,14 +1,13 @@
 ﻿
 ## Tasks to learn
 
-
-glutsvr dock create
-read docker networking
+viss git logo
 list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
 image zoon and pan, see gestures
 csv write
 zip folder
+Master view
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
@@ -46,7 +45,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/populate-data
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/
 
 review
 https://github.com/Daddoon/BlazorMobile

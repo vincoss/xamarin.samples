@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Xamarin_Samples.Extensions;assembly=Xamarin_Samples"
              mc:Ignorable="d"
              x:Class="Xamarin_Samples.Views.UI_CollectionView"
              Title="UI_CollectionView">
@@ -34,7 +35,8 @@
                             SelectionMode="Single"
                             ItemsSource="{Binding Items}"
                             SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
-                            ItemsUpdatingScrollMode="KeepLastItemInView">
+                            ItemsUpdatingScrollMode="KeepLastItemInView"
+                            local:CollectionViewScrollToAttached.ScrollToIndex="{Binding SelectedItem}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
