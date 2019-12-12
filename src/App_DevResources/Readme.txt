@@ -12,8 +12,6 @@ GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
 canon uwp
-camera
-	https://github.com/jamesmontemagno/MediaPlugin
 
 read about tags
 https://stackoverflow.blog/2016/12/15/you-can-now-play-with-stack-overflow-data-on-googles-bigquery/
@@ -52,23 +50,3 @@ https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
 
 ## Temp
-
-pick existing img
-	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
-	allow types .jpg, .jpeg, .png
-img picker sample Xamarin_Forms___Dependency_Service
-
-Enable xaml compilation
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-namespace PhotoApp
-
-use compiled bindings
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
- <StackLayout x:DataType="local:HslColorViewModel">
-
- review listView and Collection view PullTo refrehs all views
-ItemsUpdatingScrollMode="KeepLastItemInView"
-
-ScrollTo()
-
-https://api.gov.au/standards/national_api_standards/
