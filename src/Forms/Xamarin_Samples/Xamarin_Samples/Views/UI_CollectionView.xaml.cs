@@ -33,6 +33,11 @@ namespace Xamarin_Samples.Views
             public UI_CollectionViewModel()
             {
                 Items = new ObservableCollection<int>();
+                TagColors = new List<string>
+                {
+                    "#ffe6e6", "#ffddcc", "#ccffcc", "#d6f5f5", "#ccddff", "#ffffcc",
+                    "#e6e6e6", "#b3ccff", "#b3ffb3", "#ffc6b3", "#ffb3d9", "#9999ff"
+                };
             }
 
             public void Add()
@@ -51,6 +56,8 @@ namespace Xamarin_Samples.Views
             }
 
             public ObservableCollection<int> Items { get; private set; }
+
+            public IEnumerable<string> TagColors { get; set; }
         }
     }
 }
