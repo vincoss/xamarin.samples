@@ -1,27 +1,17 @@
 ﻿
 ## Tasks to learn
 
-
-gsvr dock create
-g fix security issues
-read docker networking
-ScrollTo()
+viss git logo
 list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
-image zoon and pan, see gestures, needs to complete
+image zoon and pan, see gestures
 csv write
 zip folder
+Master view
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
-pick existing img
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
-allow types .jpg, .jpeg, .png
-img picker sample Xamarin_Forms___Dependency_Service
-
 canon uwp
-camera
-	https://github.com/jamesmontemagno/MediaPlugin
 
 read about tags
 https://stackoverflow.blog/2016/12/15/you-can-now-play-with-stack-overflow-data-on-googles-bigquery/
@@ -53,13 +43,10 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/populate-data
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/
 
 review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
 
 ## Temp
-
-
-
