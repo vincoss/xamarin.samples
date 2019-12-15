@@ -2,15 +2,22 @@
 ## Tasks to learn
 
 
-glutsvr dock create
+gsvr dock create
+g fix security issues
 read docker networking
+ScrollTo()
 list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
-image zoon and pan, see gestures
+image zoon and pan, see gestures, needs to complete
 csv write
 zip folder
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
+
+pick existing img
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
+allow types .jpg, .jpeg, .png
+img picker sample Xamarin_Forms___Dependency_Service
 
 canon uwp
 camera
@@ -54,22 +61,5 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-pick existing img
-	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker
-	allow types .jpg, .jpeg, .png
-img picker sample Xamarin_Forms___Dependency_Service
 
-Enable xaml compilation
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-namespace PhotoApp
 
-use compiled bindings
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
- <StackLayout x:DataType="local:HslColorViewModel">
-
- review listView and Collection view PullTo refrehs all views
-ItemsUpdatingScrollMode="KeepLastItemInView"
-
-ScrollTo()
-
-https://api.gov.au/standards/national_api_standards/
