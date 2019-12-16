@@ -12,7 +12,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_FlexLayoutView());
+            MainPage = new NavigationPage(new UI_DatePickerView());
         }
 
         protected override void OnStart()

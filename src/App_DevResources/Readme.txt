@@ -1,6 +1,7 @@
 ﻿
 ## Tasks to learn
 
+retview FlexLayoutView.xaml and clean
 viss git logo
 list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
@@ -43,7 +44,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/datepicker
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/tablet
 
 review
 https://github.com/Daddoon/BlazorMobile
@@ -67,3 +68,8 @@ IsEnabled
 IsFocused
 IsVisisble
 MinimumHeightRequest
+
+stackoverflow questions
+
+avoid of using RelativeLayout 
+see Device Orientation
