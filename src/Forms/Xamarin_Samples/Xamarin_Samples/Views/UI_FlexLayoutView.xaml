@@ -7,10 +7,11 @@
              x:Class="Xamarin_Samples.Views.UI_FlexLayoutView"
              Title="UI_FlexLayoutView">
     <ContentPage.Content>
-        <StackLayout>
-            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-            <Label Text="FlexLayout - WrapPanel" />
-            <FlexLayout Grid.Column="0"
+        <ScrollView>
+            <StackLayout>
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="FlexLayout - WrapPanel" />
+                <FlexLayout Grid.Column="0"
                         Grid.Row="0"
                         AutomationId="FlexLayoutCtrls"
                         HorizontalOptions="FillAndExpand"
@@ -18,19 +19,33 @@
                         Wrap="Wrap" 
                         BackgroundColor="LightGreen">
 
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-            </FlexLayout>
-        </StackLayout>
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                </FlexLayout>
+
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="FlexLayout - BindableLayout" />
+                <FlexLayout BindableLayout.ItemsSource="{Binding Colors}"
+                            Wrap="Wrap"
+                            Direction="Row"
+                            JustifyContent="Start">   
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" BackgroundColor="{Binding}" />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

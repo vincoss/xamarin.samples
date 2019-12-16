@@ -43,7 +43,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/datepicker
 
 review
 https://github.com/Daddoon/BlazorMobile
@@ -51,4 +51,19 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-linked in
+## File naming
+
+https://libguides.princeton.edu/c.php?g=102546&p=930626
+https://library.stanford.edu/research/data-management-services/data-best-practices/best-practices-file-naming
+
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/introduction
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/populate-data
+
+Add CHANGELOG.md file
+	see C:\_Data\GitHub\Xamarin\MediaPlugin\src
+
+IsTabStop
+IsEnabled
+IsFocused
+IsVisisble
+MinimumHeightRequest
