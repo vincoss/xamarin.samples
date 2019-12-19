@@ -73,3 +73,4 @@ stackoverflow questions
 
 avoid of using RelativeLayout 
 see Device Orientation
+tag delete might wreck items where applied in long past
