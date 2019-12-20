@@ -44,7 +44,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/slider
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/stepper
 
 review
 https://github.com/Daddoon/BlazorMobile
