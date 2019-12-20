@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{41BC80C1-7921-4298-970D-68F9EDC02FCA}</ProjectGuid>
+    <ProjectGuid>{DB007C15-BF2C-4E17-8500-94BD950B6C65}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Xamarin_TakeFoto.UWP</RootNamespace>
@@ -144,12 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin_TakeFoto\Xamarin_TakeFoto.csproj">
-      <Project>{FCF52DB6-420F-4C5B-9791-8A3A3C94FBAF}</Project>
+      <Project>{0AF225AB-6B3C-47AE-B447-039F7A106C5D}</Project>
       <Name>Xamarin_TakeFoto</Name>
     </ProjectReference>
   </ItemGroup>

@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="aabaa775-08ad-4747-8def-ccc065fb7b40"
-    Publisher="CN=1fae6f85-fabf-4991-8eda-7301a91c66a9"
+    Name="86cf0042-b837-4456-9737-56a02404beb6"
+    Publisher="CN=acdf318d-8fa9-464e-acbb-1e388c2a5265"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Xamarin_TakeFoto.UWP</DisplayName>
-    <PublisherDisplayName>1fae6f85-fabf-4991-8eda-7301a91c66a9</PublisherDisplayName>
+    <PublisherDisplayName>acdf318d-8fa9-464e-acbb-1e388c2a5265</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

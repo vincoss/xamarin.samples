@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4BA9F317-143A-432F-BE19-BE0C3A2A3577}</ProjectGuid>
+    <ProjectGuid>{DF328409-E995-470F-AF83-02BDD8A2BF52}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -126,7 +126,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Xamarin_TakeFoto\Xamarin_TakeFoto.csproj">
-      <Project>{FCF52DB6-420F-4C5B-9791-8A3A3C94FBAF}</Project>
+      <Project>{0AF225AB-6B3C-47AE-B447-039F7A106C5D}</Project>
       <Name>Xamarin_TakeFoto</Name>
     </ProjectReference>
   </ItemGroup>
