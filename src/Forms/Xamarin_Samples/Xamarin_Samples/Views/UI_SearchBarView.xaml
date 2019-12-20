@@ -14,6 +14,11 @@
                    HorizontalOptions="Fill"
                    VerticalOptions="CenterAndExpand"
                    Placeholder="Search"
+                   PlaceholderColor="#DCDCDC"
+                   CancelButtonColor="Orange"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   FontAttributes="Italic"
                    local:SearchBarAttached.TextChangedCommand="{Binding PerformSearchCommand}"/>
         <ListView x:Name="searchResults"
                   HorizontalOptions="Fill"

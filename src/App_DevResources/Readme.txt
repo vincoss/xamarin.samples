@@ -1,9 +1,9 @@
 ﻿
 ## Tasks to learn
 
-retview FlexLayoutView.xaml and clean
+
+MenuItem from class instead of xaml
 viss git logo
-list view " <ItemsStackPanel ItemsUpdatingScrollMode="KeepItemsInView" />"
 font awsome icons samples
 image zoon and pan, see gestures
 csv write
@@ -44,7 +44,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/tablet
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/slider
 
 review
 https://github.com/Daddoon/BlazorMobile
@@ -68,9 +68,24 @@ IsEnabled
 IsFocused
 IsVisisble
 MinimumHeightRequest
+SearchBar placeholder color
 
 stackoverflow questions
 
 avoid of using RelativeLayout 
 see Device Orientation
 tag delete might wreck items where applied in long past
+
+<Entry IsVisible="{Binding IsLoggedIn, Converter={StaticResource InvertedBoolConverter}}"/>
+ public class InvertedBoolConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return !(bool)value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return (bool)value;
+        }
+    }

@@ -9,6 +9,27 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                
+                <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+                <Label Text="FlexLayout - Basic" />
+                <FlexLayout Direction="Row"
+                    JustifyContent="SpaceAround"
+                    Wrap="Wrap">
+
+                    <Label Text="FlexLayout in Action >" />
+
+                    <Label Text="Grid >" />
+                    <Label Text="ListView >" />
+                    <Label Text="Picker >" />
+                    <Label Text="Navigation >" />
+
+                    <Button Text="Do-Nothing Button" />
+
+                    <Label Text="Another Label" />
+                    <ActivityIndicator  IsRunning="True" />
+
+                </FlexLayout>
+
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
                 <Label Text="FlexLayout - WrapPanel" />
                 <FlexLayout Grid.Column="0"

@@ -51,7 +51,7 @@
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
                 <Label Text="ImageButton - Basic" />
                 <ImageButton Source="temp.png"
-                             Aspect=""
+                             Aspect="Fill"
                              HorizontalOptions="Center"
                              VerticalOptions="CenterAndExpand" />
 
