@@ -39,5 +39,5 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
-## File naming
+get file encoding
 
