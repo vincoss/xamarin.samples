@@ -2,17 +2,15 @@
 ## Tasks to learn
 
 
-rhino licencing find source samples and update
 MenuItem from class instead of xaml
 viss git logo
 font awsome icons samples
 image zoon and pan, see gestures
-csv write
-zip folder
 Master view
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
+rhino licencing find source samples and update
 canon uwp
 
 localization
