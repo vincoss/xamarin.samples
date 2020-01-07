@@ -8,6 +8,11 @@
              x:Class="Xamarin_Samples.Views.UI_CollectionView"
              Title="UI_CollectionView">
     
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/
+    https://almirvuk.blogspot.com/2019/07/lets-play-with-collectionview-layouts.html
+    -->
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

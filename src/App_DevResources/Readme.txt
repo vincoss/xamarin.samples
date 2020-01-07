@@ -7,6 +7,7 @@ viss git logo
 font awsome icons samples
 image zoon and pan, see gestures
 Master view
+sync
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
