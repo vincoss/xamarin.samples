@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.Views.UI_SwichView"
+             Title="UI_SwichView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/switch
+    -->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Switch x:Name="switchBasic" IsToggled="True" ThumbColor="Orange" BackgroundColor="Pink" />
+
+            <!--Data bind a Switch-->
+            <Switch x:Name="styleSwitch" />
+            <Label Text="Test this one.">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}" Value="true">
+                        <Setter Property="FontAttributes" Value="Italic, Bold" />
+                        <Setter Property="FontSize" Value="Large" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.Views.UI_StepperView"
+             Title="UI_StepperView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/stepper
+    -->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="Stepper - Basic" />
+            <Stepper x:Name="stepperBasic" Maximum="360" Increment="30" HorizontalOptions="Center"  />
+            <Entry x:Name="entryBasic" IsReadOnly="True" Text="{Binding Value, Source={x:Reference stepperBasic}}"/>
+            <Label Text="{Binding Source={x:Reference stepperBasic}, Path=Value, StringFormat='The Stepper value is {0:F0}'}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
