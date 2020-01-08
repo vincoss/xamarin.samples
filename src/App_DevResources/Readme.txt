@@ -31,7 +31,7 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/
 
 review
 https://github.com/Daddoon/BlazorMobile
