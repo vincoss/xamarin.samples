@@ -42,11 +42,13 @@ https://github.com/bramborman/UWPHelper
 
 server API
 C:\_Data\GitHub\aspnet\AspNetCore.Docs\aspnetcore\mobile
+C:\_Data\GitHub\aspnet\AspNetCore.Docs\aspnetcore\mobile\native-mobile-backend\sample\ToDoApi
 https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend?view=aspnetcore-3.1
 https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/authentication-and-authorization
 
 compiler warning to errors settings
+camera & mic setup in small room, wire through the door on window side
 
 all database calls catch (Exception ex)
 {
