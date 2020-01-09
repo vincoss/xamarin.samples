@@ -31,13 +31,22 @@ telemetry
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
-https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/
+https://github.com/dotnet-architecture/News
+https://dotnet.microsoft.com/learn/dotnet/architecture-guides
 
 review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
 
 ## Temp
+
+server API
+C:\_Data\GitHub\aspnet\AspNetCore.Docs\aspnetcore\mobile
+https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend?view=aspnetcore-3.1
+https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-patterns/authentication-and-authorization
+
+compiler warning to errors settings
 
 all database calls catch (DocumentClientException ex)
 
@@ -47,6 +56,9 @@ all database calls catch (DocumentClientException ex)
  // database
  var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
  
+ // Rest service
+ https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/rest
+
  public class TodoItemDatabase
     {
         static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
