@@ -8,11 +8,11 @@ font awsome icons samples
 image zoon and pan, see gestures
 Master view
 sync
+dropbox
+rhiho lic, server, client, verify..., export lic, import lic
+canon uwp
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
-
-rhino licencing find source samples and update
-canon uwp
 
 localization
 	see xamarin-fomms-samples TodoLocalized
