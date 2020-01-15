@@ -25,10 +25,12 @@
                         MaximumDate="12/31/2018"
                         Date="06/21/2018" />
 
+            <!-- Format -->
             <DatePicker x:Name="startDatePicker"
                         Format="D"
-                        Margin="30, 0, 0, 30" />
-            
+                        Margin="30, 0, 0, 30" 
+                        HorizontalOptions="Fill"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

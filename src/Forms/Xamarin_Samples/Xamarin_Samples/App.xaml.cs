@@ -12,7 +12,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_CollectionView());
+            MainPage = new NavigationPage(new UI_BindableLayoutGridView());
         }
 
         protected override void OnStart()
