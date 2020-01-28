@@ -370,3 +370,12 @@ public static class TaskExtensions
         }
     }
 }
+
+errors
+	deleted
+	validation
+	unknown
+	
+https://github.com/i-e-b/DiskQueue/tree/master/src/DiskQueue/Implementation
+
+https://josefottosson.se/asp-net-core-protect-your-api-with-api-keys/
