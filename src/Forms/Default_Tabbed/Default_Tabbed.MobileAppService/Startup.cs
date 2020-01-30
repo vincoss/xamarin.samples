@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using Default_Tabbed.Models;
+using Microsoft.OpenApi.Models;
 
 namespace Default_Tabbed.MobileAppService
 {
@@ -28,7 +29,7 @@ namespace Default_Tabbed.MobileAppService
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
         }
 
