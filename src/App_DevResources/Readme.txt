@@ -7,14 +7,12 @@ viss git logo
 font awsome icons samples
 image zoon and pan, see gestures
 Master view
-<<<<<<< HEAD
+
 sync
 dropbox
 rhiho lic, server, client, verify..., export lic, import lic
 canon uwp
-=======
-sync (find all resources)
->>>>>>> 57629695fe7f588250eb8f49ee96502c152b49c1
+
 GPS UTM
 	https://en.wikipedia.org/wiki/Geocode
 
@@ -44,7 +42,22 @@ https://github.com/bramborman/UWPHelper
 
 ## Temp
 
+Status
+	name
+	weight
+	color
+	
+files store Git LFS
+server shall add comments and tags also into existing images
+server photo galery interval vertical thumpnail preview
+DbUp client database upgrade. if client has changes then those changes won't be migrated into new schema.
+	possible fail dbUp if client has unsinc changes
+	
+some apps will never need to sinc then no need to sync to server
+some apps will not sync initially but later might need to sync to server. is collect changes not enable then there is nothing to send to the server. ???
+
 server API
+https://medium.com/lightrail/getting-token-authentication-right-in-a-stateless-single-page-application-57d0c6474e3
 C:\_Data\GitHub\aspnet\AspNetCore.Docs\aspnetcore\mobile
 C:\_Data\GitHub\aspnet\AspNetCore.Docs\aspnetcore\mobile\native-mobile-backend\sample\ToDoApi
 https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend?view=aspnetcore-3.1
@@ -53,6 +66,7 @@ https://docs.microsoft.com/en-us/xamarin/xamarin-forms/enterprise-application-pa
 
 compiler warning to errors settings
 camera & mic setup in small room, wire through the door on window side
+wifi router for shed
 
 all database calls catch (Exception ex)
 {
@@ -128,207 +142,7 @@ all database calls catch (Exception ex)
         }
     }
 
-
-## Sync
-
-
-
- public enum ConflictResolution
-    {
-        /// <summary>
-        /// Indicates that the change on the server is the conflict winner
-        /// </summary>
-        ServerWins,
-
-        /// <summary>
-        /// Indicates that the change sent by the client is the conflict winner
-        /// </summary>
-        ClientWins,
-
-        /// <summary>
-        /// Indicates that you will manage the conflict by filling the final row and sent it to both client and server
-        /// </summary>
-        MergeRow
-    }
-	
-/// <summary>
-    /// Sync direction : Can be Bidirectional (default), DownloadOnly, UploadOnly
-    /// </summary>
-    public enum SyncDirection
-    {
-        /// <summary>
-        /// Table will be sync from server to client and from client to server
-        /// </summary>
-        Bidirectional = 1,
-
-        /// <summary>
-        /// Table will be sync from server to client only.
-        /// All changes occured client won't be uploaded to server
-        /// </summary>
-        DownloadOnly = 2,
-
-        /// <summary>
-        /// Table will be sync from client to server only
-        /// All changes from server won't be downloaded to client
-        /// </summary>
-        UploadOnly = 3
-    }
-
-    public enum SyncWay
-    {
-        /// <summary>
-        /// No sync engaged
-        /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// Sync is selecting then downloading changes from server
-        /// </summary>
-        Download = 1,
-
-        /// <summary>
-        /// Sync is selecting then uploading changes from client
-        /// </summary>
-        Upload = 2
-    }
-	
-	/// <summary>
-    /// Sync progress step. Used for the user feedback
-    /// </summary>
-    public enum SyncStage
-    {
-        None,
-        BeginSession,
-        ScopeLoading,
-        ScopeSaved,
-
-        SchemaReading,
-        SchemaRead,
-        SchemaApplying,
-        SchemaApplied,
-        TableSchemaApplying,
-        TableSchemaApplied,
-
-        TableChangesSelecting,
-        TableChangesSelected,
-
-        DatabaseChangesApplying,
-        DatabaseChangesApplied,
-        TableChangesApplying,
-        TableChangesApplied,
-
-        EndSession,
-        CleanupMetadata
-    }
-	
-	/// <summary>
-    /// This enum is containing the last sync result situation
-    /// TODO : Implentation needed ?
-    /// </summary>
-    public enum SyncState
-    {
-        Successful,
-        RollbackBeforeEnsuringScopes,
-        RollbackAfterEnsuringScopes,
-        RollbackBeforeEnsuringConfiguration,
-        RollbackAfterEnsuringConfiguration,
-        RollbackBeforeEnsuringDatabase,
-        RollbackAfterEnsuringDatabase,
-        RollbackBeforeSelectingChanges,
-        RollbackAfterSelectedChanges,
-        RollbackBeforeApplyingChanges,
-        RollbackAfterAppliedChanges,
-        UnknownError,
-    }
-	
-	 /// <summary>
-    /// Synchronization mode. Could be Normal, Reinitialize, ReinitializeWithUpload
-    /// </summary>
-    public enum SyncType
-    {
-        /// <summary>
-        /// Normal synchronization
-        /// </summary>
-        Normal,
-        /// <summary>
-        /// Reinitialize the whole sync database, applying all rows from the server to the client
-        /// </summary>
-        Reinitialize,
-        /// <summary>
-        /// Reinitialize the whole sync database, applying all rows from the server to the client, after trying a client upload
-        /// </summary>
-        ReinitializeWithUpload
-    }
-
 	## DataImport
-
-/// <summary>
-    /// Sync progress step. Used for the user feedback
-    /// </summary>
-    public enum SyncStage
-    {
-        None,
-        BeginSession,
-        ScopeLoading,
-        ScopeSaved,
-
-        SchemaReading,
-        SchemaRead,
-        SchemaApplying,
-        SchemaApplied,
-        TableSchemaApplying,
-        TableSchemaApplied,
-
-        TableChangesSelecting,
-        TableChangesSelected,
-
-        DatabaseChangesApplying,
-        DatabaseChangesApplied,
-        TableChangesApplying,
-        TableChangesApplied,
-
-        EndSession,
-        CleanupMetadata
-    }
-	
-	/// <summary>
-    /// This enum is containing the last sync result situation
-    /// TODO : Implentation needed ?
-    /// </summary>
-    public enum SyncState
-    {
-        Successful,
-        RollbackBeforeEnsuringScopes,
-        RollbackAfterEnsuringScopes,
-        RollbackBeforeEnsuringConfiguration,
-        RollbackAfterEnsuringConfiguration,
-        RollbackBeforeEnsuringDatabase,
-        RollbackAfterEnsuringDatabase,
-        RollbackBeforeSelectingChanges,
-        RollbackAfterSelectedChanges,
-        RollbackBeforeApplyingChanges,
-        RollbackAfterAppliedChanges,
-        UnknownError,
-    }
-	
-	 /// <summary>
-    /// Synchronization mode. Could be Normal, Reinitialize, ReinitializeWithUpload
-    /// </summary>
-    public enum SyncType
-    {
-        /// <summary>
-        /// Normal synchronization
-        /// </summary>
-        Normal,
-        /// <summary>
-        /// Reinitialize the whole sync database, applying all rows from the server to the client
-        /// </summary>
-        Reinitialize,
-        /// <summary>
-        /// Reinitialize the whole sync database, applying all rows from the server to the client, after trying a client upload
-        /// </summary>
-        ReinitializeWithUpload
-    }
 
 	
 ## Generics
@@ -377,5 +191,4 @@ errors
 	unknown
 	
 https://github.com/i-e-b/DiskQueue/tree/master/src/DiskQueue/Implementation
-
 https://josefottosson.se/asp-net-core-protect-your-api-with-api-keys/
