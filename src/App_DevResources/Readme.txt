@@ -7,14 +7,6 @@ font awsome icons samples
 image zoon and pan, see gestures
 Master view
 
-sync
-dropbox
-rhiho lic, server, client, verify..., export lic, import lic
-canon uwp
-
-GPS UTM
-	https://en.wikipedia.org/wiki/Geocode
-
 localization
 	see xamarin-fomms-samples TodoLocalized
 	see xamarin-fomms-samples TodoLocalizedRTL
@@ -38,5 +30,3 @@ https://dotnet.microsoft.com/learn/dotnet/architecture-guides
 review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/bramborman/UWPHelper 
-
-## Temp
