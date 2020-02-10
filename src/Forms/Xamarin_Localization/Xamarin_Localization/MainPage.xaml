@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ex="clr-namespace:Xamarin_Localization.Extensions;assembly=Xamarin_Localization"
+             xmlns:re="clr-namespace:Xamarin_Localization.Resources;assembly=Xamarin_Localization"
              x:Class="Xamarin_Localization.MainPage">
 
     <StackLayout x:Name="localizationSample">
@@ -14,9 +15,22 @@
         <Button Text="{ex:Translate WeekDayKey}" />
         <!--Localizing XAML more verbose-->
         <Button Text="{ex:TranslateExtension Text=TuesdayKey}" />
+        <!--Accessing these values as x:Static properties-->
+        <Label Text="{x:Static re:AppResources.MondayKey}" />
 
         <Label Text="Code behind"/>
         <!--Code behind-->
+
+        <!--Consume localized images-->
+        <Image>
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="iOS, Android" Value="flag.png" />
+                    <On Platform="UWP" Value="Assets/Images/flag.png" />
+                </OnPlatform>
+            </Image.Source>
+        </Image>
+        
     </StackLayout>
 
 </ContentPage>
