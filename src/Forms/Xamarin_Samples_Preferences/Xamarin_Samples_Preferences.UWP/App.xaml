@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Xamarin_Samples_OptionalStartPage.UWP.App"
+    x:Class="Xamarin_Samples_Preferences.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Xamarin_Samples_OptionalStartPage.UWP"
+    xmlns:local="using:Xamarin_Samples_Preferences.UWP"
     RequestedTheme="Light">
 
 </Application>

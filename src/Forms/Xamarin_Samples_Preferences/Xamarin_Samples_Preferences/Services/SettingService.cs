@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Xamarin_Samples_OptionalStartPage.Services
+namespace Xamarin_Samples_Preferences.Services
 {
     public class SettingService : ISettingsService
     {

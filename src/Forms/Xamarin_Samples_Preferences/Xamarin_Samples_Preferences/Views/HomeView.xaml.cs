@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin_Samples_OptionalStartPage.Services;
+using Xamarin_Samples_Preferences.Services;
 
-namespace Xamarin_Samples_OptionalStartPage.Views
+namespace Xamarin_Samples_Preferences.Views
 {
 
     [XamlCompilation(XamlCompilationOptions.Compile)]

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Xamarin_Samples_OptionalStartPage.UWP
+namespace Xamarin_Samples_Preferences.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

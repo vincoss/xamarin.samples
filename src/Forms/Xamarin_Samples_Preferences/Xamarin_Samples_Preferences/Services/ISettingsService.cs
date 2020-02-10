@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xamarin_Samples_OptionalStartPage.Services
+namespace Xamarin_Samples_Preferences.Services
 {
     public interface ISettingsService
     {

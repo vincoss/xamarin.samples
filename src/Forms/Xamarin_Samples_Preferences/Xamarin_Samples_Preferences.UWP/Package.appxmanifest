@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="dd940d23-3ce4-4dd9-bc30-9914f4769de4"
-    Publisher="CN=618cad1d-6779-4511-9543-ea6bd1ace17b"
+    Name="250f7246-6e2c-44ae-8667-81e781b67b9b"
+    Publisher="CN=56f23b8b-95f3-4a91-a29b-6373652feded"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Xamarin_Samples_OptionalStartPage.UWP</DisplayName>
-    <PublisherDisplayName>618cad1d-6779-4511-9543-ea6bd1ace17b</PublisherDisplayName>
+    <DisplayName>Xamarin_Samples_Preferences.UWP</DisplayName>
+    <PublisherDisplayName>56f23b8b-95f3-4a91-a29b-6373652feded</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Xamarin_Samples_OptionalStartPage.UWP.App">
+      EntryPoint="Xamarin_Samples_Preferences.UWP.App">
       <uap:VisualElements
-        DisplayName="Xamarin_Samples_OptionalStartPage.UWP"
+        DisplayName="Xamarin_Samples_Preferences.UWP"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Xamarin_Samples_OptionalStartPage.UWP"
+        Description="Xamarin_Samples_Preferences.UWP"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Xamarin_Samples_OptionalStartPage.UWP
+namespace Xamarin_Samples_Preferences.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace Xamarin_Samples_OptionalStartPage.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new Xamarin_Samples_OptionalStartPage.App());
+            LoadApplication(new Xamarin_Samples_Preferences.App());
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Xamarin_Samples_OptionalStartPage.iOS
+namespace Xamarin_Samples_Preferences.iOS
 {
     public class Application
     {

@@ -2,10 +2,10 @@
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin_Samples_OptionalStartPage.Services;
-using Xamarin_Samples_OptionalStartPage.Views;
+using Xamarin_Samples_Preferences.Services;
+using Xamarin_Samples_Preferences.Views;
 
-namespace Xamarin_Samples_OptionalStartPage
+namespace Xamarin_Samples_Preferences
 {
     public partial class App : Application
     {
