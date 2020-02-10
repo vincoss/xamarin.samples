@@ -7,6 +7,10 @@ namespace Xamarin_Samples.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public virtual void Initialize()
+        {
+        }
+
         bool isBusy = false;
         public bool IsBusy
         {
