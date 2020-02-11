@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Xamarin_Samples_Preferences.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OneView : ContentPage
     {
         public OneView()

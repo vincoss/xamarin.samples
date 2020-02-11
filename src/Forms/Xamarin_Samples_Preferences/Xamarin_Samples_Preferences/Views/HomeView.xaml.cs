@@ -12,7 +12,7 @@ using Xamarin_Samples_Preferences.Services;
 namespace Xamarin_Samples_Preferences.Views
 {
 
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomeView : ContentPage
     {
         public const string DefaultPage = "OneView";
