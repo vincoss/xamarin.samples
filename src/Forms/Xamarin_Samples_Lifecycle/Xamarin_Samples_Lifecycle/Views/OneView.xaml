@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Editor x:Name="editorTxt" Text="" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
-            <Button Text="-> Main" Clicked="Button_Clicked"/>
+            <Button Text="Main" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

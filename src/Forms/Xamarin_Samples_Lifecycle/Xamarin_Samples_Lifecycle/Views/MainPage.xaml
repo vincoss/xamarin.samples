@@ -13,7 +13,7 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
         <Editor x:Name="editorTxt" Text="" VerticalOptions="FillAndExpand" Keyboard="Chat"/>
-        <Button Text="-> One" Clicked="Button_Clicked"/>
+        <Button Text="One" Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>
