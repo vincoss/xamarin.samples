@@ -11,6 +11,7 @@ namespace Xamarin_Samples.Views
 {
     /*
         Image Zoom -  Pan, Pinch, Tap 
+        See PinchGesture project sample
 
         Resources
         https://stackoverflow.com/questions/49766941/how-to-do-zooming-and-panning-in-image-using-xamarin-cross-platform
@@ -61,32 +62,37 @@ namespace Xamarin_Samples.Views
 
         private void OnPanUpdated(object sender, PanUpdatedEventArgs e)
         {
-            if (Scale > MIN_SCALE)
-                switch (e.StatusType)
-                {
-                    case GestureStatus.Started:
-                        StartX = (1 - AnchorX) * Width;
-                        StartY = (1 - AnchorY) * Height;
-                        break;
-                    case GestureStatus.Running:
-                        TranslationX = Clamp(LastX + e.TotalX * Scale, -Width / 2, Width / 2);
-                        TranslationY = Clamp(LastY + e.TotalY * Scale, -Height / 2, Height / 2);
-                        break;
-                }
+            //if (Scale > MIN_SCALE)
+            //    switch (e.StatusType)
+            //    {
+            //        case GestureStatus.Started:
+            //            StartX = (1 - AnchorX) * Width;
+            //            StartY = (1 - AnchorY) * Height;
+            //            break;
+            //        case GestureStatus.Running:
+            //            TranslationX = Clamp(LastX + e.TotalX * Scale, -Width / 2, Width / 2);
+            //            TranslationY = Clamp(LastY + e.TotalY * Scale, -Height / 2, Height / 2);
+            //            break;
+            //    }
 
-            //switch (e.StatusType)
-            //{
-            //    case GestureStatus.Started:
-            //        StartX = (1 - AnchorX) * Width;
-            //        StartY = (1 - AnchorY) * Height;
-            //        break;
-            //    case GestureStatus.Running:
-            //        AnchorX = Clamp(1 - (StartX + e.TotalX) / Width, 0, 1);
-            //        AnchorY = Clamp(1 - (StartY + e.TotalY) / Height, 0, 1);
-            //        break;
-            //}
+            switch (e.StatusType)
+            {
+                case GestureStatus.Started:
+                    StartX = (1 - AnchorX) * Width;
+                    StartY = (1 - AnchorY) * Height;
+                    break;
+                case GestureStatus.Running:
+                    AnchorX = Clamp(1 - (StartX + e.TotalX) / Width, 0, 1);
+                    AnchorY = Clamp(1 - (StartY + e.TotalY) / Height, 0, 1);
+                    break;
+            }
 
         }
+
+        double currentScale = 1;
+        double startScale = 1;
+        double xOffset = 0;
+        double yOffset = 0;
 
         private void OnPinchUpdated(object sender, PinchGestureUpdatedEventArgs e)
         {
@@ -127,5 +133,13 @@ namespace Xamarin_Samples.Views
                 return value;
         }
 
+    }
+
+    public static class DoubleExtensions
+    {
+        public static double Clamp(this double self, double min, double max)
+        {
+            return Math.Min(max, Math.Max(self, min));
+        }
     }
 }
