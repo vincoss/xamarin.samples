@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_UX.Views.ValidationView"
+             Title="ValidationView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/text/fonts
+    -->
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="First Name" BackgroundColor="#ffcccc"/>
+            <Label Text="First Name is required" TextColor="#ff0000" FontSize="Caption"/>
+
+            <!-- This is valid need to see just space for the error message when not visisble -->
+            <Entry Placeholder="Last Name" />
+            <Label Text="Last Name is required" TextColor="#ff0000" IsVisible="False" FontSize="Caption" />
+
+            <!-- Example, validation label not hiden but text, is empty or null, see the size on UI. -->
+            <Entry Placeholder="Middle Name - optional" />
+            <Label Text="" TextColor="#ff0000" FontSize="Caption" />
+            
+            <Entry Placeholder="Age - optional" />
+            
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
