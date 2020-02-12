@@ -54,6 +54,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new UI_ListViewView());
             pages.Add(new UI_NavigationToolbarView());
             pages.Add(new UI_PickerView());
+            pages.Add(new UI_PickerKeepSelectionView());
             pages.Add(new UI_SearchBarView());
             pages.Add(new UI_TableViewView());
             pages.Add(new UI_ToolbarItemView());
