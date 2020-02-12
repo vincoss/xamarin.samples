@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Samples.Views.UI_TabStopIndexView"
+             Title="UI_TabStopIndexView">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--
+            IsTabStop
+            IsEnabled
+            IsFocused
+            IsVisisble
+            -->
+            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+            <Label Text="IsTabStop" />
+            <Entry IsTabStop="False" Text="IsTabStop"/>
+            <Label Text="TabIndex" />
+            <Entry TabIndex="2" Text="TabIndex - 2"/>
+            <Entry TabIndex="1" Text="TabIndex - 1"/>
+            <Label Text="IsFocused" />
+            <Entry x:Name="entryIsFocused" Text="IsFocused"/>
+            <Label Text="IsEnabled" />
+            <Entry IsEnabled="False" Text="IsEnabled"/>
+            <Label Text="IsVisible" />
+            <Entry IsVisible="False" Text="IsVisible"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
