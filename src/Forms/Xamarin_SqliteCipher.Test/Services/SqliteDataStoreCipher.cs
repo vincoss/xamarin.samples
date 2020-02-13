@@ -11,7 +11,7 @@ namespace Xamarin_SqliteCipher
     public class SqliteDataStoreCipher : IDataStore<Item>
     {
         private string _path;
-        private SQLiteAsyncConnection _connection;
+        public SQLiteAsyncConnection _connection;
 
         public SqliteDataStoreCipher(string path = null)
         {
@@ -35,19 +35,24 @@ namespace Xamarin_SqliteCipher
 
         public void CreateTables()
         {
-            var db = GetConnection(_path);
-
-             db.CreateTableAsync<Item>().Wait();
+            var db = Conn;
+            db.CreateTableAsync<Item>().Wait();
         }
 
-        public SQLiteAsyncConnection GetConnection(string path)
+        public string Password { get; set; } = "password123";
+
+        public SQLiteAsyncConnection Conn
         {
-            if (_connection == null)
+            get
             {
-                var options = new SQLiteConnectionString(path, true,  key: "password123");
-                _connection = new SQLiteAsyncConnection(options);
+                if (_connection == null)
+                {
+                    var options = new SQLiteConnectionString(_path, true, key: Password);
+                    _connection = new SQLiteAsyncConnection(options);
+                }
+                return _connection;
             }
-            return _connection;
+            set { _connection = value; }
         }
 
         public string GetDatabasePath()
@@ -60,7 +65,7 @@ namespace Xamarin_SqliteCipher
             // project site            
             Task.Run(async () =>
             {
-                var db = GetConnection(_path);
+                var db = Conn;
 
                 var item1 = new Item() { Id = "1", Text = "One", Description = "Number One" };
                 var item2 = new Item() { Id = "2", Text = "Two", Description = "Number Two" };
@@ -76,27 +81,27 @@ namespace Xamarin_SqliteCipher
 
         public async Task<bool> AddItemAsync(Item item)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
             var result = await db.InsertAsync(item);
             return result > 0;
         }
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
             var result = await db.DeleteAsync<Item>(id);
             return result > 0;
         }
 
         public async Task<Item> GetItemAsync(string id)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
             return await db.FindAsync<Item>(x => x.Id == id);
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
 
             var results = await db.Table<Item>().ToListAsync();
 
@@ -105,14 +110,14 @@ namespace Xamarin_SqliteCipher
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
             var result = await db.UpdateAsync(item);
             return result > 0;
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(string search)
         {
-            var db = GetConnection(_path);
+            var db = Conn;
 
             if(string.IsNullOrWhiteSpace(search))
             {
