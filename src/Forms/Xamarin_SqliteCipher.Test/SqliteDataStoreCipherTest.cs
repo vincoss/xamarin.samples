@@ -9,6 +9,10 @@ using System.IO;
 
 namespace Xamarin_Sqlite.Services
 {
+    /// <summary>
+    /// https://stackoverflow.com/questions/12887551/sqlcipher-loadlibs-and-db-password-change/12915091
+    /// https://www.zetetic.net/sqlcipher/sqlcipher-api/#rekey
+    /// </summary>
     public class SqliteDataStoreCipherTest
     {
         [Fact]

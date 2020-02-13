@@ -6,6 +6,7 @@
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/essentials/secure-storage?context=xamarin%2Fxamarin-forms&tabs=ios
+    https://stackoverflow.com/questions/46578584/how-to-securely-store-encryption-keys-in-android
     -->
     
     <ContentPage.Content>
