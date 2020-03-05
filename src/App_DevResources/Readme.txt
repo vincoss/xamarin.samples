@@ -1,6 +1,9 @@
 ﻿
 ## Tasks to learn
 
+sample with table view
+	keydata, name, path, createdDate, modifiedDate, activityDate, dataSize, otherSize, version
+	actions, backup, update, share, clear
 MenuItem from class instead of xaml
 viss git logo
 font awsome icons samples
