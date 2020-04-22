@@ -33,10 +33,14 @@ namespace Xamarin_SplashSample.Droid.Activities
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
-            Window window = this.Window;
-            window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            window.SetStatusBarColor(Android.Graphics.Color.Rgb(0, 166, 156));
+            // Was added in API level 21
+            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop)
+            {
+                Window window = this.Window;
+                window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+                window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+                window.SetStatusBarColor(Android.Graphics.Color.Rgb(0, 166, 156));
+            }
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
