@@ -112,6 +112,7 @@
     <Content Include="Assets\FontAwesome5Brands.otf" />
     <Content Include="Assets\FontAwesome5Regular.otf" />
     <Content Include="Assets\Fonts\fontelloicons.ttf" />
+    <Content Include="waterfront.jpg" />
     <None Include="Assets\Fonts\OFL.txt" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

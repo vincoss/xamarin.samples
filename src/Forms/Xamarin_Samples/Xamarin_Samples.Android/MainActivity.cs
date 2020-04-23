@@ -21,6 +21,9 @@ namespace Xamarin_Samples.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            EnsureAppScreenSize();
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -28,6 +31,16 @@ namespace Xamarin_Samples.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private void EnsureAppScreenSize()
+        {
+            var width = Resources.DisplayMetrics.WidthPixels;
+            var height = Resources.DisplayMetrics.HeightPixels;
+            var density = Resources.DisplayMetrics.Density;
+
+            App.ScreenWidth = (width - 0.5f) / density;
+            App.ScreenHeight = (height - 0.5f) / density;
         }
     }
 }

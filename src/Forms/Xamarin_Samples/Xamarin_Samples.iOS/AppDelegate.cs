@@ -23,9 +23,18 @@ namespace Xamarin_Samples.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            EnsureAppScreenSize();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void EnsureAppScreenSize()
+        {
+            App.ScreenWidth = UIScreen.MainScreen.Bounds.Width;
+            App.ScreenHeight = UIScreen.MainScreen.Bounds.Height;
         }
     }
 }

@@ -7,12 +7,15 @@ namespace Xamarin_Samples
 {
     public partial class App : Application
     {
+        public static double ScreenWidth;
+        public static double ScreenHeight;
+
         public App()
         {
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new HomeView());
+            MainPage = new NavigationPage(new UI_ImageZoomView());
         }
 
         protected override void OnStart()
