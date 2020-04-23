@@ -14,9 +14,26 @@ namespace Xamarin_Samples.Views
         See PinchGesture project sample
 
         Resources
+        https://github.com/AlexPshul/SvgXFInteractive
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/
+        https://stackoverflow.com/questions/55493569/how-to-achieve-pinch-zoom-swipe-on-skcanvasview
+        https://www.pshul.com/2018/02/01/xamarin-forms-interactive-svg-image-using-skiasharp-with-pan-and-zoom/
         https://stackoverflow.com/questions/49766941/how-to-do-zooming-and-panning-in-image-using-xamarin-cross-platform
         https://forums.xamarin.com/discussion/74168/full-screen-image-viewer-with-pinch-to-zoom-pan-to-move-tap-to-show-captions-for-xamarin-forms
         https://www.c-sharpcorner.com/article/zoom-in/
+        https://www.c-sharpcorner.com/article/how-to-load-large-images-in-xamarin-android-app-using-visual-studio-2015/
+        https://stackoverflow.com/questions/40159715/xamarin-display-image-at-real-size
+        https://docs.microsoft.com/en-us/samples/xamarin/monodroid-samples/loadinglargebitmaps/
+        https://stackoverflow.com/questions/52225049/get-original-height-and-width-of-a-cached-images-source-in-xamarin-forms
+        https://stackoverflow.com/questions/59541004/how-to-animate-scaling-a-view-to-fit-the-screen-size'
+        https://medium.com/a-developer-in-making/how-to-work-with-images-in-xamarin-forms-4d2e8b3bd1c9
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying
+        https://forums.xamarin.com/discussion/101371/skiasharp-zoom
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch
+        https://stackoverflow.com/questions/37679872/how-to-determine-location-of-a-tap-in-xamarin-forms
+        https://forums.xamarin.com/discussion/74168/full-screen-image-viewer-with-pinch-to-zoom-pan-to-move-tap-to-show-captions-for-xamarin-forms
+
     */
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
