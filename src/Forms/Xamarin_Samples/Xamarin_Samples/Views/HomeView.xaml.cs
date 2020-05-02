@@ -43,7 +43,6 @@ namespace Xamarin_Samples.Views
             pages.Add(new UI_HyperlinkLabelSampleView());
             pages.Add(new UI_ImageButtonSampleView());
             pages.Add(new UI_ImageSamplesView());
-            pages.Add(new UI_ImageZoomView());
             pages.Add(new UI_LabelSampleView());
             pages.Add(new UI_ListViewButtonBottomRightView());
             pages.Add(new UI_ListViewCheckBoxView());
