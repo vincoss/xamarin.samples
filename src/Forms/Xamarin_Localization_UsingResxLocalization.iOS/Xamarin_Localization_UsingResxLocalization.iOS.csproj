@@ -124,12 +124,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\UsingResxLocalization\Xamarin_Localization_UsingResxLocalization.csproj">
-      <Project>{CB3C76BB-1F98-4A9A-971B-E766962DF77C}</Project>
-      <Name>Xamarin_Localization_UsingResxLocalization</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\de-CH.lproj\flag.png" />
   </ItemGroup>
   <ItemGroup>
@@ -167,5 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\zh-Hant.lproj\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin_Localization_UsingResxLocalization\Xamarin_Localization_UsingResxLocalization.csproj">
+      <Project>{ff1d8d61-aa93-49ce-8b8f-0f25f541d055}</Project>
+      <Name>Xamarin_Localization_UsingResxLocalization</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

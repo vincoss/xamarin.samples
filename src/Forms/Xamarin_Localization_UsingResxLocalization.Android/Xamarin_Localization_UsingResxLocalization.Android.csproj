@@ -83,10 +83,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\UsingResxLocalization\Xamarin_Localization_UsingResxLocalization.csproj">
-      <Project>{CB3C76BB-1F98-4A9A-971B-E766962DF77C}</Project>
+    <ProjectReference Include="..\Xamarin_Localization_UsingResxLocalization\Xamarin_Localization_UsingResxLocalization.csproj">
+      <Project>{ff1d8d61-aa93-49ce-8b8f-0f25f541d055}</Project>
       <Name>Xamarin_Localization_UsingResxLocalization</Name>
     </ProjectReference>
   </ItemGroup>
