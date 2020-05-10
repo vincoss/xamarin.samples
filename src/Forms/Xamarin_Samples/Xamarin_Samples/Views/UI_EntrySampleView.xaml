@@ -68,21 +68,23 @@
                 <Entry BackgroundColor="#2c3e50" />
                 <!--Events and Interactivity-->
                 <Label Text="Events and Interactivity - EditorCompleted"/>
-                <Entry Completed="EntryCompleted" />
+                <Entry Placeholder="Completed" Completed="EntryCompleted" ReturnType="Default" />
                 <Label Text="Interactivity - TextChanged"/>
-                <Entry TextChanged="EntryTextChanged" />
-
+                <Entry Placeholder="TextChanged" TextChanged="EntryTextChanged" />
+                <Entry Placeholder="PropertyChanged" PropertyChanged="Entry_PropertyChanged" />
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
                 <Label Text="Numbers Only"/>
                 <Entry x:Name="AgeEntry"
                    VerticalOptions="FillAndExpand"
                    HorizontalOptions="FillAndExpand"
-                   Keyboard="Numeric">
+                   Keyboard="Numeric"
+                   TextChanged="EntryTextChanged">
                     <Entry.Behaviors>
                         <xa:NumericValidationBehavior />
                     </Entry.Behaviors>
                 </Entry>
-
+                <Entry Placeholder="Focused-Unfocused" Focused="Entry_FocusedAndUnFocused" Unfocused="Entry_FocusedAndUnFocused"/>
+                <Label x:Name="labelInteractivity"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
