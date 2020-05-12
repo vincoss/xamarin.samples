@@ -36,6 +36,8 @@ namespace Xamarin_Samples.Views
 
             pages.Add(new PageInfo{ Type = typeof(UI_BuiltInStylesSampleView)});
             pages.Add(new PageInfo{ Type = typeof(UI_ButtonBottomRightView)});
+            pages.Add(new PageInfo { Type = typeof(BindableLayoutSampleView) });
+
             pages.Add(new PageInfo{ Type = typeof(UI_CheckBoxSampleView)});
             pages.Add(new PageInfo { Type = typeof(UI_CollectionView) });
             pages.Add(new PageInfo{ Type = typeof(UI_CustomStylesSampleView)});
