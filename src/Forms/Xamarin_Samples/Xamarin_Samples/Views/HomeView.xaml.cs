@@ -71,6 +71,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo{ Type = typeof(UI_TriggersView)});
             pages.Add(new PageInfo{ Type = typeof(UI_ControlTemplateView)});
             pages.Add(new PageInfo{ Type = typeof(UI_ApplicationDataView)});
+            pages.Add(new PageInfo { Type = typeof(RefreshViewSampleView) });
 
             ListOfPages.ItemsSource = pages;
         }
