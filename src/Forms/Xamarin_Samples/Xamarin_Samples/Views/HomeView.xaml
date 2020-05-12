@@ -9,7 +9,7 @@
             <ListView x:Name="ListOfPages" ItemSelected="itemSelected" SeparatorColor="Red" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Title}" TextColor="#696969" />
+                        <TextCell Text="{Binding}" TextColor="#696969" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -77,6 +77,7 @@
                 <Entry x:Name="doubleEntry" Placeholder="Enter double value" Keyboard="Numeric" />
                 <CollectionView 
                     BackgroundColor="Pink"
+                    ItemSizingStrategy="MeasureAllItems"
                     SelectionMode="Single"
                     ItemsSource="{Binding Numbers}" 
                     HeightRequest="80"

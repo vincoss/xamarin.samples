@@ -101,6 +101,14 @@ namespace Xamarin_Samples.Views
                 }
             }
 
+            public override string ToString()
+            {
+                if (string.IsNullOrWhiteSpace(Name))
+                {
+                    return base.ToString();
+                }
+                return Name;
+            }
         }
     }
 }
