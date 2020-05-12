@@ -28,11 +28,22 @@ namespace Xamarin_Samples.Views
             _viewModel.Add();
         }
 
+        private void btnAddValue_Clicked(object sender, EventArgs e)
+        {
+            double value;
+            if (double.TryParse(doubleEntry.Text, out value))
+            {
+                _viewModel.Numbers.Add(value);
+            }
+        }
+
         public class UI_CollectionViewModel : BaseViewModel
         {
             public UI_CollectionViewModel()
             {
                 Items = new ObservableCollection<int>();
+                Numbers = new ObservableCollection<double>();
+
                 TagColors = new List<string>
                 {
                     "#ffe6e6", "#ffddcc", "#ccffcc", "#d6f5f5", "#ccddff", "#ffffcc",
@@ -56,6 +67,7 @@ namespace Xamarin_Samples.Views
             }
 
             public ObservableCollection<int> Items { get; private set; }
+            public ObservableCollection<double> Numbers { get; private set; }
 
             public IEnumerable<string> TagColors { get; set; }
         }

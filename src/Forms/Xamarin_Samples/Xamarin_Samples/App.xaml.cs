@@ -15,7 +15,7 @@ namespace Xamarin_Samples
             InitializeComponent();
 
             VersionTracking.Track();
-            MainPage = new NavigationPage(new UI_EntrySampleView());
+            MainPage = new NavigationPage(new UI_CollectionView());
         }
 
         protected override void OnStart()

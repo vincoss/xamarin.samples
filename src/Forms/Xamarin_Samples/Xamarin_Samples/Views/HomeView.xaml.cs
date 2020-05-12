@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,61 +13,61 @@ namespace Xamarin_Samples.Views
         {
             InitializeComponent();
 
-            List<Page> pages = new List<Page>();
-            pages.Add(new Essentials_AppInformationView());
-            pages.Add(new Essentials_BrowserView());
-            pages.Add(new Essentials_DeviceDisplayInformationView());
-            pages.Add(new Essentials_DeviceInfoView());
-            pages.Add(new Essentials_EmailView());
-            pages.Add(new EssentialsShareView());
-            pages.Add(new EssentialsSmsView());
-            pages.Add(new EssentialsTextToSpeechView());
-            pages.Add(new EssentialsVersionTrackingView());
-            pages.Add(new ExitAppView());
-            pages.Add(new Essentials_FileSystemView());
-            pages.Add(new Essentials_GeocodingView());
-            pages.Add(new Essentials_GeolocationView());
-            pages.Add(new Essentials_LauncherView());
-            pages.Add(new Essentials_MapView());
-            pages.Add(new Essentials_PhoneDialerView());
-            pages.Add(new Essentials_PreferencesView());
-            pages.Add(new Essentials_SecureStorageView());
-            pages.Add(new Essentials_SendEmailSampleView());
+            List<PageInfo> pages = new List<PageInfo>();
+            pages.Add(new PageInfo{ Type = typeof(Essentials_AppInformationView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_BrowserView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_DeviceDisplayInformationView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_DeviceInfoView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_EmailView)});
+            pages.Add(new PageInfo{ Type = typeof(EssentialsShareView)});
+            pages.Add(new PageInfo{ Type = typeof(EssentialsSmsView)});
+            pages.Add(new PageInfo{ Type = typeof(EssentialsTextToSpeechView)});
+            pages.Add(new PageInfo{ Type = typeof(EssentialsVersionTrackingView)});
+            pages.Add(new PageInfo{ Type = typeof(ExitAppView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_FileSystemView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_GeocodingView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_GeolocationView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_LauncherView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_MapView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_PhoneDialerView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_PreferencesView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_SecureStorageView)});
+            pages.Add(new PageInfo{ Type = typeof(Essentials_SendEmailSampleView)});
 
-            pages.Add(new UI_BuiltInStylesSampleView());
-            pages.Add(new UI_ButtonBottomRightView());
-            pages.Add(new UI_CheckBoxSampleView());
-            pages.Add(new UI_CustomStylesSampleView());
-            pages.Add(new UI_EditorSampleView());
-            pages.Add(new UI_EntrySampleView());
-            pages.Add(new UI_FontsSampleView());
-            pages.Add(new UI_HyperlinkLabelSampleView());
-            pages.Add(new UI_ImageButtonSampleView());
-            pages.Add(new UI_ImageSamplesView());
-            pages.Add(new UI_LabelSampleView());
-            pages.Add(new UI_ListViewButtonBottomRightView());
-            pages.Add(new UI_ListViewCheckBoxView());
-            pages.Add(new UI_ListViewContextActionsView());
-            pages.Add(new UI_ListViewDataTemplateSelectorView());
-            pages.Add(new UI_ListViewGroupingView());
-            pages.Add(new UI_ListViewInfiniteScrollView());
-            pages.Add(new UI_ListViewInteractivityView());
-            pages.Add(new UI_ListViewView());
-            pages.Add(new UI_NavigationToolbarView());
-            pages.Add(new UI_PickerView());
-            pages.Add(new UI_PickerKeepSelectionView());
-            pages.Add(new UI_SearchBarView());
-            pages.Add(new UI_TableViewView());
-            pages.Add(new UI_ToolbarItemView());
-            pages.Add(new UI_UseFontAwesomeSampleView());
+            pages.Add(new PageInfo{ Type = typeof(UI_BuiltInStylesSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ButtonBottomRightView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_CheckBoxSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_CustomStylesSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_EditorSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_EntrySampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_FontsSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_HyperlinkLabelSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ImageButtonSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ImageSamplesView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_LabelSampleView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewButtonBottomRightView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewCheckBoxView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewContextActionsView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewDataTemplateSelectorView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewGroupingView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewInfiniteScrollView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewInteractivityView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ListViewView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_NavigationToolbarView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_PickerView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_PickerKeepSelectionView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_SearchBarView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_TableViewView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ToolbarItemView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_UseFontAwesomeSampleView)});
 
-            pages.Add(new FlexLayoutHolyGrailView());
-            pages.Add(new UI_FlexLayoutView());
+            pages.Add(new PageInfo{ Type = typeof(FlexLayoutHolyGrailView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_FlexLayoutView)});
 
-            pages.Add(new EN_EnvironmentView());
-            pages.Add(new UI_TriggersView());
-            pages.Add(new UI_ControlTemplateView());
-            pages.Add(new UI_ApplicationDataView());
+            pages.Add(new PageInfo{ Type = typeof(EN_EnvironmentView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_TriggersView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ControlTemplateView)});
+            pages.Add(new PageInfo{ Type = typeof(UI_ApplicationDataView)});
 
             ListOfPages.ItemsSource = pages;
         }
@@ -75,11 +76,30 @@ namespace Xamarin_Samples.Views
         {
             if (e.SelectedItem != null)
             {
-                var page = (Page)e.SelectedItem;
+                var info = (PageInfo)e.SelectedItem;
+                var page = (Page)Activator.CreateInstance(info.Type);
 
-                await this.Navigation.PushAsync((Page)e.SelectedItem);
+                await this.Navigation.PushAsync(page);
             }
             ListOfPages.SelectedItem = null;
+        }
+
+        public class PageInfo
+        {
+            public Type Type { get; set; }
+            public string Name
+            {
+
+                get
+                {
+                    if (Type != null)
+                    {
+                        return Type.Name;
+                    }
+                    return base.GetType().ToString();
+                }
+            }
+
         }
     }
 }
