@@ -80,25 +80,16 @@
                     SelectionMode="Single"
                     ItemsSource="{Binding Numbers}" 
                     HeightRequest="80"
-                    Margin="0"
-                     HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+                    Margin="0">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5" />
-                        <!--<GridItemsLayout Orientation="Horizontal"/>-->
+                        <LinearItemsLayout Orientation="Horizontal" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <ContentView BackgroundColor="Pink" HorizontalOptions="Center">
-
-                                <Grid 
-                                Margin="0" Padding="0" BackgroundColor="Green" >
-                                    <Label Text="{Binding}" BackgroundColor="Red"
+                            <Label Text="{Binding}" BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" LineBreakMode="NoWrap"
                                    Margin="0" Padding="0"
                                    FontSize="Medium"/>
-                                </Grid>
-                            </ContentView>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
