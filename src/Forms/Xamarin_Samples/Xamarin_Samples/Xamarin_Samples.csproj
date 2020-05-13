@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\UI_RefreshViewSampleView.xaml.cs">
+      <DependentUpon>UI_RefreshViewSampleView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\UI_BuiltInStylesSampleView.xaml.cs">
       <DependentUpon>UI_BuiltInStylesSampleView.xaml</DependentUpon>
     </Compile>
@@ -118,7 +121,7 @@
     <EmbeddedResource Update="Views\FlexLayoutHolyGrailView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RefreshViewSampleView.xaml">
+    <EmbeddedResource Update="Views\UI_RefreshViewSampleView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\UI_ActivityIndicatorSampleView.xaml">

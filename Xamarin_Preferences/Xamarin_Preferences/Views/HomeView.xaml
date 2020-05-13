@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Preferences.Views.HomeView"
+             Title="HomeView">
+
+    <StackLayout>
+        <Label Text="HomeView" />
+        <Button Text="Preferences One - Set as start page" Clicked="Button_Clicked"/>
+        <Button Text="Preferences- Reset" Clicked="Button_Clicked_1"/>
+
+
+        <Button x:Name="settingSet" Text="Setting - One - Set as start page" Clicked="settingSet_Clicked"/>
+        <Button x:Name="settingReset" Text="Setting - Reset" Clicked="settingReset_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
