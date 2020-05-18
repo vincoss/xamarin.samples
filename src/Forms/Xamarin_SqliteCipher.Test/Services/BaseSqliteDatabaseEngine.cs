@@ -9,34 +9,11 @@ namespace Xamarin_SqliteCipher.Test.Services
     public abstract class BaseSqliteDatabaseEngine : IDisposable
     {
         private bool _disposed;
-        public const string DefaultKey = "password";
         private Lazy<SQLiteAsyncConnection> lazyInitializer;
 
         protected BaseSqliteDatabaseEngine()
         {
             lazyInitializer = new Lazy<SQLiteAsyncConnection>(() => { return Create(); });
-        }
-
-        private SQLiteAsyncConnection Create()
-        {
-            var path = GetDatabasePath();
-            var key = GetDatabaseKey();
-            var flags = GetFlags();
-            Validate(path, key);
-            var options = new SQLiteConnectionString(path, flags, true, key: key);
-            return new SQLiteAsyncConnection(options);
-        }
-
-        private void Validate(string path, string key)
-        {
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                throw new ArgumentNullException(nameof(path));
-            }
-            if (string.IsNullOrWhiteSpace(key))
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
         }
 
         #region Public methods
@@ -67,6 +44,28 @@ namespace Xamarin_SqliteCipher.Test.Services
         #endregion
 
         #region Private nethods
+
+        private SQLiteAsyncConnection Create()
+        {
+            var path = GetDatabasePath();
+            var key = GetDatabaseKey();
+            var flags = GetFlags();
+            Validate(path, key);
+            var options = new SQLiteConnectionString(path, flags, true, key: key);
+            return new SQLiteAsyncConnection(options);
+        }
+
+        private void Validate(string path, string key)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentNullException(nameof(path));
+            }
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+        }
 
         private static bool FileDelete(string filePath)
         {

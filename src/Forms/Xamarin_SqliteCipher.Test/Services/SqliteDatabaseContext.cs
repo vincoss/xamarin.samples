@@ -1,10 +1,7 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin_SqliteCipher.Models;
-using System.Linq;
 
 
 namespace Xamarin_SqliteCipher.Test.Services
@@ -12,7 +9,7 @@ namespace Xamarin_SqliteCipher.Test.Services
     public class DatabaseConfiguration
     {
         public string DatabasePath { get; set; }
-        public string DatabaseKey { get; set; } = BaseSqliteDatabaseEngine.DefaultKey;
+        public string DatabaseKey { get; set; } = "password";
     }
 
     public class SqliteDatabaseContext : BaseSqliteDatabaseEngine
@@ -36,10 +33,7 @@ namespace Xamarin_SqliteCipher.Test.Services
 
         public async override Task CreateDatabaseAsync()
         {
-            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Item).Name))
-            {
-                await Database.CreateTableAsync<Item>();
-            }
+            await Database.CreateTableAsync<Item>();
         }
 
         public override string GetDatabaseKey()
