@@ -18,7 +18,7 @@ namespace Xamarin_Sqlite.Services
         [Fact]
         public async void CipherTest()
         {
-            var path = $@"C:\Temp\Sqlite\{nameof(CipherTest)}.db3";
+            var path = Path.Combine(AppContext.BaseDirectory, $"{nameof(CipherTest)}.db3");
             var service = new SqliteDataStoreCipher(path);
             SQLiteAsyncConnection connection = service.Conn;
 
