@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin_Forms_Gestures_Samples.MainPage">
+
+    <StackLayout Padding="30">
+        <!-- Place new controls here -->
+        <Label x:Name="lblTap" Text="Tap here" FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label x:Name="lblSwipe" Text="Swipe here right"  FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped"/>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label x:Name="lblListView" Text="Select item" FontSize="Large"/>
+        <ListView
+            ItemSelected="ListView_ItemSelected">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                    Clicked="MenuItem_Clicked"
+                                    CommandParameter="{Binding .}"
+                                    IsDestructive="true"
+                                    Text="Delete" />
+                        </ViewCell.ContextActions>
+                        <StackLayout
+                                Margin="0"
+                                Padding="5,5,5,0"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="5"
+                                VerticalOptions="Center">
+                            <Label
+                                    Margin="0"
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    HorizontalOptions="StartAndExpand"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding .}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
