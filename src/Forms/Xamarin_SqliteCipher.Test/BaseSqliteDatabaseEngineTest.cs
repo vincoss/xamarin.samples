@@ -98,7 +98,7 @@ namespace Xamarin_SqliteCipher.Test
 
                 // Create and change the key
                 var updateKey = Guid.NewGuid().ToString();
-                await context.ChangeDbKey(config.DatabaseKey, updateKey);
+                await context.ChangeDbKeyAsync(config.DatabaseKey, updateKey);
 
                 // close
                 await context.CloseConnectionAsync();

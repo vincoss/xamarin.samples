@@ -31,7 +31,7 @@ namespace Xamarin_SqliteCipher.Data
     public interface ISqliteDatabaseContext
     {
         bool DatabaseExists();
-        Task ChangeDbKey(string key, string rekey);
+        Task ChangeDbKeyAsync(string key, string rekey);
         Task CreateDatabaseAsync();
         Task CloseConnectionAsync();
         Task DeleteDatabaseAsync();
@@ -91,7 +91,7 @@ namespace Xamarin_SqliteCipher.Data
             }
         }
 
-        public async Task ChangeDbKey(string key, string rekey)
+        public async Task ChangeDbKeyAsync(string key, string rekey)
         {
             if (string.IsNullOrWhiteSpace(key))
             {
