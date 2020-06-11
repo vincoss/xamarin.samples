@@ -30,6 +30,7 @@ namespace Xamarin_SqliteCipher.Data
 
     public interface ISqliteDatabaseContext
     {
+        bool DatabaseExists();
         Task ChangeDbKey(string key, string rekey);
         Task CreateDatabaseAsync();
         Task CloseConnectionAsync();
