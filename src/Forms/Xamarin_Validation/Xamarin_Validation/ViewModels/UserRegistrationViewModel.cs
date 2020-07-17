@@ -33,8 +33,8 @@ namespace Xamarin_Validation.ViewModels
                 Password = Password,
                 ConfirmPassword = ConfirmPassword,
             };
-
-            var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(userObj);
+            var context = new ValidationContext<UserInfo>(userObj);
+            var validationResults = _validatorFactory.GetValidator<UserValidator>().Validate(context);
 
             if (validationResults.IsValid)
             {
