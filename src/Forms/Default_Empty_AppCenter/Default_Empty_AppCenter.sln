@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Empty_AppCenter.iOS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Default_Empty_AppCenter", "Default_Empty_AppCenter\Default_Empty_AppCenter.csproj", "{981BC9EB-13B2-44B7-85D1-4CC3956B6691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Empty_AppCenter.Android.UITests", "Default_Empty_AppCenter.Android.UITests\Default_Empty_AppCenter.Android.UITests.csproj", "{2D38625F-9553-4378-A064-50F417B035E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Default_Empty_AppCenter.UITests", "Default_Empty_AppCenter.UITests\Default_Empty_AppCenter.UITests.csproj", "{2D38625F-9553-4378-A064-50F417B035E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

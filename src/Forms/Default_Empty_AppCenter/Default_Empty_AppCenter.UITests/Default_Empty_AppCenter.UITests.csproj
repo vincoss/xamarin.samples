@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2D38625F-9553-4378-A064-50F417B035E8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Default_Empty_AppCenter.Android.UITests</RootNamespace>
-    <AssemblyName>Default_Empty_AppCenter.Android.UITests</AssemblyName>
+    <RootNamespace>Default_Empty_AppCenter.UITests</RootNamespace>
+    <AssemblyName>Default_Empty_AppCenter.UITests</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -44,6 +44,10 @@
     <ProjectReference Include="..\Default_Empty_AppCenter.Android\Default_Empty_AppCenter.Android.csproj">
       <Project>{31cbba1a-bd1a-4cee-894b-630b332fea9f}</Project>
       <Name>Default_Empty_AppCenter.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Default_Empty_AppCenter.iOS\Default_Empty_AppCenter.iOS.csproj">
+      <Project>{8311f3ea-e568-408a-a7f0-f22d9c14cf53}</Project>
+      <Name>Default_Empty_AppCenter.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
