@@ -7,9 +7,10 @@
              x:Class="Default_Empty_AppCenter.MainPage">
 
     <StackLayout>
-        <Button x:Name="btnTestCrash" Text="Generate a test crash" Clicked="btnTestCrash_Clicked"/>
-        <Button x:Name="btnExceptionBasic" Text="Basic Exeption" Clicked="btnExceptionBasic_Clicked"/>
-        <Button x:Name="btnExceptionWithData" Text="Data Exeption" Clicked="btnExceptionWithData_Clicked"/>
+        <Button AutomationId="btnTestCrash" x:Name="btnTestCrash" Text="Generate a test crash" Clicked="btnTestCrash_Clicked"/>
+        <Button AutomationId="btnExceptionBasic" x:Name="btnExceptionBasic" Text="Basic Exeption" Clicked="btnExceptionBasic_Clicked"/>
+        <Button AutomationId="btnExceptionWithData" x:Name="btnExceptionWithData" Text="Data Exeption" Clicked="btnExceptionWithData_Clicked"/>
+        <Button AutomationId="btnNavigateViewOne" x:Name="btnNavigateViewOne" Text="One-View" Clicked="btnNavigateViewOne_Clicked"/>
     </StackLayout>
 
 </ContentPage>

@@ -15,8 +15,7 @@ namespace Default_Empty_AppCenter
 
             AppCenterRegister();
 
-            MainPage = new MainPage();
-
+            MainPage = new NavigationPage(new MainPage());
         }
 
         private void AppCenterRegister()

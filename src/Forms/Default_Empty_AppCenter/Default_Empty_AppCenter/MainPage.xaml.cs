@@ -1,4 +1,5 @@
-﻿using Microsoft.AppCenter.Crashes;
+﻿using Default_Empty_AppCenter.Views;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +54,11 @@ namespace Default_Empty_AppCenter
   };
                 Crashes.TrackError(exception, properties);
             }
+        }
+
+        private void btnNavigateViewOne_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new OneView());
         }
     }
 }
