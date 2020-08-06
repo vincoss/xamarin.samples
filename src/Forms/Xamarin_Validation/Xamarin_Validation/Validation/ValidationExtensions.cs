@@ -22,7 +22,9 @@ namespace Xamarin_Validation.Validation
                 throw new ArgumentNullException(nameof(model));
             }
             model.Clear();
-            var result = validator.Validate(value);
+
+            var context = new ValidationContext<object>(value);
+            var result = validator.Validate(context);
             foreach (var error in result.Errors)
             {
                 model.AddError(error.PropertyName, error.ErrorMessage);

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{B3FCA2FB-508E-4E97-9871-C9DA8860284D}</ProjectGuid>
+    <ProjectGuid>{FBEC7344-8EF1-405E-B58B-59551B88184D}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Default_Blank.UWP</RootNamespace>
@@ -143,13 +143,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1260" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Default_Blank\Default_Blank.csproj">
-      <Project>{009A9FC2-23DB-451A-A48F-1F9A442A0576}</Project>
+      <Project>{C0245262-F17A-42FE-8169-3B1C898FF6B1}</Project>
       <Name>Default_Blank</Name>
     </ProjectReference>
   </ItemGroup>
