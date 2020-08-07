@@ -63,7 +63,7 @@ namespace Xamarin_Samples.Droid.Extensions
                 double height = (double)element.GetValue(VisualElement.HeightProperty) * scale;
                 float minDimension = (float)Math.Min(height, width);
                 float radius = minDimension / 2f;
-                Rect rect = new Rect(0, 0, (int)width, (int)height);
+                var rect = new Android.Graphics.Rect(0, 0, (int)width, (int)height);
                 outline.SetRoundRect(rect, radius);
             }
         }

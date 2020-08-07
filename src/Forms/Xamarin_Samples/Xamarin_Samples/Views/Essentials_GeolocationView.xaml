@@ -7,11 +7,15 @@
     <!--
     https://docs.microsoft.com/en-us/xamarin/essentials/geolocation?context=xamarin%2Fxamarin-forms&tabs=uwp
     -->
-    
-    <ContentPage.Content>
+
+    <ScrollView>
         <StackLayout>
-            <Label Text="Geolocation - LastLocation and Location Information"/>
+            <Label Text="Geolocation - LastLocation"/>
             <ListView x:Name="lstLocation"/>
+            <Label Text="Location Information - Best"/>
+            <ListView x:Name="lstLocationBest"/>
+            <Label x:Name="lblInfo"/>
+            <Label x:Name="lblInfo2"/>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
