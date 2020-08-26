@@ -9,7 +9,8 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Xamarin.Essentials: Web Authenticator" FontSize="Title"/>
-        <Button x:Name="LoginButton" Text="Connect to Dropbox" Clicked="LoginButton_Clicked"/>
+        <Button x:Name="ButtonLogin" Text="Dropbox" Clicked="ButtonLogin_Clicked"  />
+        <Button x:Name="ButtonLoginApple" Text="Connect to Apple" Clicked="ButtonLoginApple_Clicked"  />
         <Label x:Name="lblInfo"/>
     </StackLayout>
 

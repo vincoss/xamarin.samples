@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -19,34 +21,65 @@ namespace WebAuthenticatorSamples
             InitializeComponent();
         }
 
-        private async void LoginButton_Clicked(object sender, EventArgs e)
-        {
-          await  OnAuthenticate("");
-        }
-
-        const string authenticationUrl = "https://www.dropbox.com/oauth2/authorize?client_id=lofbktt2ah7hu89&response_type=token&redirect_uri=WebAuthenticatorSamples";
-
-        async Task OnAuthenticate(string scheme)
+        private async void ButtonLoginApple_Clicked(object sender, EventArgs e)
         {
             try
             {
-                WebAuthenticatorResult r = null;
-
-                if (scheme.Equals("Apple")
-                    && DeviceInfo.Platform == DevicePlatform.iOS
-                    && DeviceInfo.Version.Major >= 13)
+                if (DeviceInfo.Platform == DevicePlatform.iOS && DeviceInfo.Version.Major >= 13)
                 {
-                    r = await AppleSignInAuthenticator.AuthenticateAsync();
-                }
-                else
-                {
-                    var authUrl = new Uri(authenticationUrl);
-                    var callbackUrl = new Uri("WebAuthenticatorSamples://");
+                    // Use Native Apple Sign In API's
+                    var authResult = await AppleSignInAuthenticator.AuthenticateAsync();
 
-                    r = await WebAuthenticator.AuthenticateAsync(authUrl, callbackUrl);
+                    var accessToken = authResult?.AccessToken;
+                    lblInfo.Text = accessToken;
                 }
+            }
+            catch (Exception ex)
+            {
+                lblInfo.Text = ex.ToString();
+            }
+        }
 
-                lblInfo.Text = r?.AccessToken ?? r?.IdToken;
+        private void ButtonLogin_Clicked(object sender, EventArgs e)
+        {
+            var type = ((Button)sender).Text;
+
+            switch (type)
+            {
+                case "Dropbox":
+                    {
+                        Dropbox();
+                        break;
+                    }
+                default:
+                    throw new InvalidOperationException($"Invalid provider: {type}");
+            }
+        }
+
+        private void Dropbox()
+        {
+            var u = DropboxConfiguration.Url;
+            var c = DropboxConfiguration.ClientId;
+            var r = DropboxConfiguration.ResponseType;
+            var b = DropboxConfiguration.Callback;
+
+            Login(u, c, r, b);
+        }
+
+        private async void Login(string url, string clientId, string responseType, string callback)
+        {
+            try
+            {
+
+                var loginService = new LoginService();
+                var fullUrl = loginService.BuildAuthenticationUrl(url, clientId, responseType, callback);
+
+                var authenticationResult = await WebAuthenticator.AuthenticateAsync(
+                         new Uri(fullUrl),
+                         new Uri(callback));
+
+                var accessToken = authenticationResult?.AccessToken;
+                lblInfo.Text = accessToken;
             }
             catch (Exception ex)
             {
@@ -55,55 +88,71 @@ namespace WebAuthenticatorSamples
         }
     }
 
+    /// <summary>
+    /// https://www.dropbox.com/developers/documentation/http/documentation
+    /// </summary>
+    public class DropboxConfiguration
+    {
+        public const string ClientId = "App key"; //App key
+        public const string Url = "https://www.dropbox.com/oauth2/authorize";
+        public const string Callback = "callback:/";
+        public const string ResponseType = "token";
+    }
+
     public class LoginService
     {
         private string codeVerifier;
-        private const string IDToken = "id_token";
         private const string CodeChallengeMethod = "S256";
 
-        public string BuildAuthenticationUrl(string authorizeUrl, string clientId)
+        public string BuildAuthenticationUrl(string authorizeUrl, string clientId, string responseType, string callback)
         {
-            //var state = CreateCryptoGuid();
-            //var nonce = CreateCryptoGuid();
-            //var codeChallenge = CreateCodeChallenge();
+            var state = CreateCryptoGuid();
+            var codeChallenge = CreateCodeChallenge();
+            var sb = new StringBuilder();
 
-            return $"{authorizeUrl}?client_id&{clientId}7response_type=token&redirect_uri=WebAuthenticatorSamples:/";
+            // Build URL
+            sb.Append(authorizeUrl);
+            sb.Append($"?client_id={clientId}");
+            sb.Append($"&response_type={responseType}");
+            sb.Append($"&redirect_uri={callback}");
 
-            //return $"{Configuration.OrganizationUrl}/oauth2/default/v1/authorizeresponse_type={IDToken}ope=openid%20profile" +
-            //    $"&redirect_uri={ConfigurationCallback}" +
-            //    $"&client_id={Configuration.ClientId}state=tate}" +
-            //    $"&code_challenge{codeChallenge}" +
-            //    $"&code_challenge_method={CodeChallengeMethod}" +
-            //    $"&nonce={nonce}";
+            // TODO:
+            //sb.Append($"&state={state}");
+            //sb.Append($"&code_challenge={codeChallenge}");
+            // sb.Append($"&code_challenge_method={CodeChallengeMethod}");
+
+            var url = sb.ToString();
+            return url;
         }
 
-        //private string CreateCryptoGuid()
-        //{
-        //    using (var generator = System.Security.Cryptography.RandomNumberGenerator.Create())
-        //    {
-        //        var bytes = new byte[16];
-        //        generator.GetBytes(bytes);
-        //        return new Guid(bytes).ToString("N");
-        //    }
-        //}
+        private string CreateCryptoGuid()
+        {
+            using (var generator = RandomNumberGenerator.Create())
+            {
+                var bytes = new byte[16];
+                generator.GetBytes(bytes);
+                return new Guid(bytes).ToString("N");
+            }
+        }
 
-        //private string CreateCodeChallenge()
-        //{
-        //    codeVerifier = CreateCryptoGuid();
-        //    using (var sha256 = System.Security.Cryptography.SHA256.Create())
-        //    {
-        //        var codeChallengeBytes = sha256.ComputeHash(Encoding.UTF8.GetByte(codeVerifier));
-        //        return Convert.ToBase64String(codeChallengeBytes);
-        //    }
-        //}
+        private string CreateCodeChallenge()
+        {
+            codeVerifier = CreateCryptoGuid();
+            using (var sha256 = SHA256.Create())
+            {
+                var codeChallengeBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(codeVerifier));
+                return Convert.ToBase64String(codeChallengeBytes);
+            }
+        }
 
-        //public JwtSecurityToken ParseAuthenticationResult(WebAuthenticatorResultauthenticationResult)
-        //{
-        //    var handler = new JwtSecurityTokenHandler();
-        //    var token = handler.ReadJwtToken(authenticationResult.IdToken);
-        //    return token;
-        //}
+        public JwtSecurityToken ParseAuthenticationResult(WebAuthenticatorResult authenticationResult)
+        {
+            if (authenticationResult == null) throw new ArgumentNullException(nameof(authenticationResult));
+
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.ReadJwtToken(authenticationResult.IdToken);
+            return token;
+        }
     }
 
-    
 }
