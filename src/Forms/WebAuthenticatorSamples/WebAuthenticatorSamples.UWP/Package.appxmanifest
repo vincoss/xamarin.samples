@@ -49,7 +49,7 @@
 
       <Extensions>
         <uap:Extension Category="windows.protocol">
-          <uap:Protocol Name="callback">
+          <uap:Protocol Name="com.googleusercontent.apps">
             <uap:DisplayName>WebAuthenticatorSamples</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>

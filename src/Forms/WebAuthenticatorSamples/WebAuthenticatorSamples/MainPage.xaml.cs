@@ -51,6 +51,11 @@ namespace WebAuthenticatorSamples
                         Dropbox();
                         break;
                     }
+                case "Google":
+                    {
+                        Google();
+                        break;
+                    }
                 default:
                     throw new InvalidOperationException($"Invalid provider: {type}");
             }
@@ -58,21 +63,32 @@ namespace WebAuthenticatorSamples
 
         private void Dropbox()
         {
-            var u = DropboxConfiguration.Url;
+            var u = DropboxConfiguration.AuthorityUrl;
             var c = DropboxConfiguration.ClientId;
             var r = DropboxConfiguration.ResponseType;
-            var b = DropboxConfiguration.Callback;
+            var b = DropboxConfiguration.RedirectUri;
+            var s = DropboxConfiguration.Scope;
 
-            Login(u, c, r, b);
+            Login(u, c, r, b, s);
         }
 
-        private async void Login(string url, string clientId, string responseType, string callback)
+        private void Google()
+        {
+            var u = GoogleConfiguration.AuthorityUrl;
+            var c = GoogleConfiguration.ClientId;
+            var r = GoogleConfiguration.ResponseType;
+            var b = GoogleConfiguration.RedirectUri;
+            var s = GoogleConfiguration.Scope;
+
+            Login(u, c, r, b, s);
+        }
+
+        private async void Login(string url, string clientId, string responseType, string callback, string scope)
         {
             try
             {
-
                 var loginService = new LoginService();
-                var fullUrl = loginService.BuildAuthenticationUrl(url, clientId, responseType, callback);
+                var fullUrl = loginService.BuildAuthenticationUrl(url, clientId, responseType, callback, scope);
 
                 var authenticationResult = await WebAuthenticator.AuthenticateAsync(
                          new Uri(fullUrl),
@@ -89,14 +105,33 @@ namespace WebAuthenticatorSamples
     }
 
     /// <summary>
+    /// https://www.dropbox.com/developers/apps
     /// https://www.dropbox.com/developers/documentation/http/documentation
     /// </summary>
     public class DropboxConfiguration
     {
-        public const string ClientId = "App key"; //App key
-        public const string Url = "https://www.dropbox.com/oauth2/authorize";
-        public const string Callback = "callback:/";
+        public const string ClientId = ""; //App key
+        public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
+        public const string RedirectUri = "io.webauthenticator.native://callback";
         public const string ResponseType = "token";
+        public const string Scope = "account_info.read";
+    }
+
+    /// <summary>
+    /// https://console.developers.google.com/
+    /// https://github.com/googlesamples/oauth-apps-for-windows
+    /// https://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/
+    /// https://developers.google.com/identity/protocols/oauth2/native-app#uwp
+    /// https://www.syncfusion.com/blogs/post/google-login-integration-in-xamarin-forms-a-complete-guide.aspx
+    /// https://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/
+    /// </summary>
+    public class GoogleConfiguration
+    {
+        public const string ClientId = ""; //App key
+        public const string AuthorityUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+        public const string RedirectUri = "com.googleusercontent.apps:/oauth2redirect";
+        public const string ResponseType = "code";
+        public const string Scope = "openid";
     }
 
     public class LoginService
@@ -104,7 +139,7 @@ namespace WebAuthenticatorSamples
         private string codeVerifier;
         private const string CodeChallengeMethod = "S256";
 
-        public string BuildAuthenticationUrl(string authorizeUrl, string clientId, string responseType, string callback)
+        public string BuildAuthenticationUrl(string authorizeUrl, string clientId, string responseType, string callback, string scope)
         {
             var state = CreateCryptoGuid();
             var codeChallenge = CreateCodeChallenge();
@@ -115,7 +150,7 @@ namespace WebAuthenticatorSamples
             sb.Append($"?client_id={clientId}");
             sb.Append($"&response_type={responseType}");
             sb.Append($"&redirect_uri={callback}");
-
+            sb.Append($"&scope={scope}");        
             // TODO:
             //sb.Append($"&state={state}");
             //sb.Append($"&code_challenge={codeChallenge}");
