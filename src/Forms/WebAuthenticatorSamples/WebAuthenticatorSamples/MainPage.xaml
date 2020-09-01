@@ -11,6 +11,7 @@
         <Label Text="Xamarin.Essentials: Web Authenticator" FontSize="Title"/>
         <Button Text="Dropbox" Clicked="ButtonLogin_Clicked"  />
         <Button Text="Google" Clicked="ButtonLogin_Clicked"  />
+        <Button Text="Microsoft" Clicked="ButtonLogin_Clicked"  />
         <Button x:Name="ButtonLoginApple" Text="Connect to Apple" Clicked="ButtonLoginApple_Clicked"  />
         <Label x:Name="lblInfo"/>
     </StackLayout>

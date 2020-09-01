@@ -53,9 +53,9 @@ namespace WebAuthenticatorSamples.Droid
 
     [Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
     [IntentFilter(new[] { Intent.ActionView }, 
-        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable }, 
-        DataScheme = "io.webauthenticator.native",
-        DataHost = "callback")]
+        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+        DataScheme = "com.companyname.webauthenticatorsamples",
+        DataPath = "/oauth2redirect")]
     public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
     {
     }

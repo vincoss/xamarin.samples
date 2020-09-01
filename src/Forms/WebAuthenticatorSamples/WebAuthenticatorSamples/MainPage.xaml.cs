@@ -56,6 +56,11 @@ namespace WebAuthenticatorSamples
                         Google();
                         break;
                     }
+                case "Microsoft":
+                    {
+                        Microsoft();
+                        break;
+                    }
                 default:
                     throw new InvalidOperationException($"Invalid provider: {type}");
             }
@@ -83,6 +88,17 @@ namespace WebAuthenticatorSamples
             Login(u, c, r, b, s);
         }
 
+        private void Microsoft()
+        {
+            var u = MicrosoftConfiguration.AuthorityUrl;
+            var c = MicrosoftConfiguration.ClientId;
+            var r = MicrosoftConfiguration.ResponseType;
+            var b = MicrosoftConfiguration.RedirectUri;
+            var s = MicrosoftConfiguration.Scope;
+
+            Login(u, c, r, b, s);
+        }
+
         private async void Login(string url, string clientId, string responseType, string callback, string scope)
         {
             try
@@ -95,6 +111,12 @@ namespace WebAuthenticatorSamples
                          new Uri(callback));
 
                 var accessToken = authenticationResult?.AccessToken;
+
+                if(accessToken == null && authenticationResult.Properties != null && authenticationResult.Properties.ContainsKey("code"))
+                {
+                    accessToken = authenticationResult.Properties["code"];
+                }
+
                 lblInfo.Text = accessToken;
             }
             catch (Exception ex)
@@ -112,24 +134,45 @@ namespace WebAuthenticatorSamples
     {
         public const string ClientId = ""; //App key
         public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
-        public const string RedirectUri = "io.webauthenticator.native://callback";
+        public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
         public const string ResponseType = "token";
         public const string Scope = "account_info.read";
     }
 
     /// <summary>
     /// https://console.developers.google.com/
+    /// https://support.google.com/cloud/answer/6158849?hl=en
     /// https://github.com/googlesamples/oauth-apps-for-windows
     /// https://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/
     /// https://developers.google.com/identity/protocols/oauth2/native-app#uwp
     /// https://www.syncfusion.com/blogs/post/google-login-integration-in-xamarin-forms-a-complete-guide.aspx
     /// https://timothelariviere.com/2017/09/01/authenticate-users-through-google-with-xamarin-auth/
+    /// https://github.com/xamarin/Xamarin.Auth/blob/master/docs/readme.md
+    /// https://developers.google.com/identity/protocols/oauth2/native-app
+    /// https://stackoverflow.com/questions/tagged/google-oauth
+    /// https://github.com/xamarin/Xamarin.Auth/blob/master/docs/readme.md
+    /// https://dev.to/theonlybeardedbeast/using-google-drive-in-a-c-application-38ag
+    /// https://afterlogic.com/mailbee-net/docs/OAuth2UWP.html
     /// </summary>
     public class GoogleConfiguration
     {
         public const string ClientId = ""; //App key
         public const string AuthorityUrl = "https://accounts.google.com/o/oauth2/v2/auth";
-        public const string RedirectUri = "com.googleusercontent.apps:/oauth2redirect";
+        public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
+        public const string ResponseType = "code";
+        public const string Scope = "openid";
+    }
+
+    /// <summary>
+    /// https://devblogs.microsoft.com/xamarin/enterprise-apps-made-easy-updated-libraries-apis/
+    /// https://login.microsoftonline.com/{tenantID}/.well-known/openid-configuration
+    /// https://forums.xamarin.com/discussion/176473/login-with-xamarin-auth-using-microsoft-account-does-not-redirect
+    /// </summary>
+    public class MicrosoftConfiguration
+    {
+        public const string ClientId = "APPID"; //App key
+        public const string AuthorityUrl = "https://login.microsoftonline.com/{tennant}/oauth2/authorize";
+        public const string RedirectUri = "com.companyname.webauthenticatorsamples://oauth2redirect";
         public const string ResponseType = "code";
         public const string Scope = "openid";
     }

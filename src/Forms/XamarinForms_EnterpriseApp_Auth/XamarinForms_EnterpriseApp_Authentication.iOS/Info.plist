@@ -23,19 +23,19 @@
     <key>MinimumOSVersion</key>
     <string>8.0</string>
     <key>CFBundleDisplayName</key>
-    <string>WebAuthenticatorSamples</string>
+    <string>XamarinForms_EnterpriseApp_Authentication</string>
     <key>CFBundleIdentifier</key>
-    <string>com.companyname.WebAuthenticatorSamples</string>
+    <string>com.companyname.XamarinForms_EnterpriseApp_Authentication</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>UILaunchStoryboardName</key>
     <string>LaunchScreen</string>
     <key>CFBundleName</key>
-    <string>WebAuthenticatorSamples</string>
+    <string>XamarinForms_EnterpriseApp_Authentication</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
     <array>
-      <string>com.companyname.webauthenticatorsamples</string>
+      <string>msalc584d2da-de99-482d-a129-1ac6323da4a0</string>
     </array>
 </dict>
 </plist>
