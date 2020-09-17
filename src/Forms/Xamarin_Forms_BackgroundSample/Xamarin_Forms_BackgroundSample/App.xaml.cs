@@ -16,11 +16,7 @@ namespace Xamarin_Forms_BackgroundSample
 
         protected override void OnStart()
         {
-            // Register Periodic Tasks
-            BackgroundAggregatorService.Add(() => new PeriodicService());
-
-            // Start the background service
-            BackgroundAggregatorService.StartBackgroundService();
+            StartBackgroundService();
         }
 
         protected override void OnSleep()
@@ -31,6 +27,17 @@ namespace Xamarin_Forms_BackgroundSample
 
         protected override void OnResume()
         {
+            if (Device.RuntimePlatform == Device.iOS) StartBackgroundService();
+        }
+
+        private static void StartBackgroundService()
+        {
+            // Register Periodic Tasks
+            BackgroundAggregatorService.Add(() => new PeriodicService());
+
+            // Start the background service
+            BackgroundAggregatorService.StopBackgroundService(); // Fix for error if already running. UWP Cannot create a file when that file already exists.
+            BackgroundAggregatorService.StartBackgroundService();
         }
     }
 }
