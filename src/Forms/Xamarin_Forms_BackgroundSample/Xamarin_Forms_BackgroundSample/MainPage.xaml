@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Forms_BackgroundSample.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Matcha Background Service" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Periodic task every 5 seconds." FontSize="Title" Padding="30,10,30,10"/>
+        <Label x:Name="lblInfo" />
+        <Button x:Name="btnGetInfo" Text="Get Last Run" Clicked="btnGetInfo_Clicked"/>
+
+    </StackLayout>
+
+</ContentPage>
