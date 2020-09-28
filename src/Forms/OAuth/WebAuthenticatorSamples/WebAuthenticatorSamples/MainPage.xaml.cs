@@ -132,7 +132,7 @@ namespace WebAuthenticatorSamples
     /// </summary>
     public class DropboxConfiguration
     {
-        public const string ClientId = ""; //App key
+        public const string ClientId = "TODO: appI"; //App key
         public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
         public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
         public const string ResponseType = "token";
@@ -156,7 +156,7 @@ namespace WebAuthenticatorSamples
     /// </summary>
     public class GoogleConfiguration
     {
-        public const string ClientId = ""; //App key
+        public const string ClientId = "TODO: appId"; //App key
         public const string AuthorityUrl = "https://accounts.google.com/o/oauth2/v2/auth";
         public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
         public const string ResponseType = "code";

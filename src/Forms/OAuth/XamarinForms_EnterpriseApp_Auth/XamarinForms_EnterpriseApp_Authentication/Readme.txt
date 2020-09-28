@@ -1,11 +1,8 @@
-﻿
-## Resources
-https://docs.microsoft.com/en-us/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users
-https://devblogs.microsoft.com/xamarin/enterprise-apps-made-easy-updated-libraries-apis/
-https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows
-https://damienaicheh.github.io/azure/xamarin/xamarin.forms/2019/07/01/sign-in-with-microsoft-account-with-xamarin-en.html
-https://devblogs.microsoft.com/xamarin/enterprise-apps-made-easy-updated-libraries-apis/
-https://github.com/damienaicheh/MicrosoftAuthenticationProject
-
-## Android
-https://developer.android.com/training/app-links/deep-linking
+﻿## Resources
+https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-mobile-app-configuration
+https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-net-initializing-client-applications
+https://docs.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=http
+https://github.com/AzureAD/microsoft-authentication-library-for-dotnet
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-android
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+https://github.com/Azure-Samples/active-directory-xamarin-native-v2

@@ -23,12 +23,12 @@ namespace XamarinForms_EnterpriseApp_Authentication.Services
     /// </summary>
     public class MicrosoftAuthService : IMicrosoftAuthService
     {
-        private static readonly string ClientID = "c584d2da-de99-482d-a129-1ac6323da4a0";
+        private static readonly string ClientID = "TODO: appId";
         private static readonly string[] Scopes = { "User.Read" };
         private static readonly string GraphUrl = "https://graph.microsoft.com/v1.0/me";
 
-        // private readonly string RedirectUrl = $"msal{ClientID}://auth"; // TODO: does not work
-        private readonly string RedirectUrl = "com.companyname.webauthenticatorsamples://oauth2redirect";
+        private readonly string RedirectUrl = $"msal{ClientID}://auth";
+        //private readonly string RedirectUrl = "com.companyname.webauthenticatorsamples://oauth2redirect";
 
         private IPublicClientApplication _publicClientApplication;
 

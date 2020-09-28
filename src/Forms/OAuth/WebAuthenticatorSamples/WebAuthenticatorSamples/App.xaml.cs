@@ -1,4 +1,5 @@
 ﻿using System;
+using WebAuthenticatorSamples.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace WebAuthenticatorSamples
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SampleOneView();
         }
 
         protected override void OnStart()
