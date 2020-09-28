@@ -4,9 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Default_Empty_AppCenter.Views.OneView">
+             x:Class="Default_Empty_AppCenter.Views.OneView"
+             Title="OneView">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="AppCenter - Sample"/>
             <Label AutomationId="lblInfo" x:Name="lblInfo" Text="One-View" />
         </StackLayout>
     </ContentPage.Content>
