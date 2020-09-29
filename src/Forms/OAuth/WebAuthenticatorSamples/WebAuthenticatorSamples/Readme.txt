@@ -17,4 +17,7 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-f
 https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
 https://developer.android.com/training/app-links
 
+## OAuth
+https://slacker.ro/2019/08/22/implement-the-oauth-2-0-authorization-code-with-pkce-flow/
+
 Obsolete https://github.com/xamarin/Xamarin.Auth
