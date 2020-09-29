@@ -9,6 +9,7 @@
             <Label Text="Xamarin.Essentials: Web Authenticator" FontSize="Title"/>
             <Button Text="Dropbox" Clicked="ButtonLogin_Clicked"  />
             <Label x:Name="lblInfo"/>
+            <Entry x:Name="entryUrl" IsReadOnly="True"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

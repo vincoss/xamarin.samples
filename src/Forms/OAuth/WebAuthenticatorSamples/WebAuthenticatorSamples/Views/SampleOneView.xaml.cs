@@ -8,7 +8,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Text.Encodings.Web;
-
+using System.Text.Json;
+using System.Net.Http;
 
 namespace WebAuthenticatorSamples.Views
 {
@@ -20,18 +21,19 @@ namespace WebAuthenticatorSamples.Views
             InitializeComponent();
         }
 
-        public const string ClientId = "todo"; //App key
+        public const string ClientId = "TODO"; //App key
         public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
         public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
-        public const string ResponseType = "token code";
+        public const string ResponseType = "code";
         public const string Scope = "account_info.read";
 
         private async void ButtonLogin_Clicked(object sender, EventArgs e)
         {
-            var url = DropboxAuthService.CreateAuthorizationRequest(AuthorityUrl);
-
             try
             {
+                var url = DropboxAuthService.CreateAuthorizationRequest(AuthorityUrl);
+                entryUrl.Text = url;
+
                 var authenticationResult = await WebAuthenticator.AuthenticateAsync(
                          new Uri(url),
                          new Uri(RedirectUri));
@@ -43,14 +45,26 @@ namespace WebAuthenticatorSamples.Views
                     accessToken = authenticationResult.Properties["code"];
                 }
 
-                lblInfo.Text = accessToken;
+                if(authenticationResult != null)
+                {
+                    var code = authenticationResult.Properties["code"]; ;
+
+                    var result = await DropboxAuthService.RefreshDataAsync(code);
+
+                    lblInfo.Text = result.access_token;
+                }
+
+                //if(accessToken != null)
+                //{
+                //    lblInfo.Text = accessToken;
+                //}
+
             }
             catch (Exception ex)
             {
                 lblInfo.Text = ex.ToString();
             }
         }
-
 
         public interface IAuthService
         {
@@ -60,6 +74,9 @@ namespace WebAuthenticatorSamples.Views
 
         public class DropboxAuthService : IAuthService
         {
+            private static string _codeVerifier;
+            public static int PKCEVerifierLength = 128;
+
             public Task OnSignInAsync()
             {
                 var url = CreateAuthorizationRequest(AuthorityUrl);
@@ -79,10 +96,11 @@ namespace WebAuthenticatorSamples.Views
                 // Dictionary with values for the authorize request
                 var dic = new Dictionary<string, string>();
                 dic.Add("client_id", ClientId);
+                dic.Add("token_access_type", "offline");
                 dic.Add("response_type", ResponseType);
                 dic.Add("scope", Scope);
                 dic.Add("redirect_uri", RedirectUri);
-                dic.Add("nonce", Guid.NewGuid().ToString("N"));
+
                 dic.Add("code_challenge", CreateCodeChallenge());
                 dic.Add("code_challenge_method", "S256");
 
@@ -94,30 +112,69 @@ namespace WebAuthenticatorSamples.Views
                 return authorizeUri;
             }
 
-           static string codeVerifier;
-            static string CreateCodeChallenge()
+            private static string CreateCodeChallenge()
             {
-                string codeChallenge;
-
-                codeVerifier = CreateCryptoGuid();
-                using (var sha256 = SHA256.Create())
-                {
-                    var challengeBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(codeVerifier));
-                    codeChallenge = Convert.ToBase64String(challengeBytes);
-                }
+                _codeVerifier = GeneratePKCECodeVerifier();
+                var codeChallenge = GeneratePKCECodeChallenge(_codeVerifier);
                 return codeChallenge;
             }
 
-            private static string CreateCryptoGuid()
+            private static string GeneratePKCECodeVerifier()
             {
-                using (var generator = RandomNumberGenerator.Create())
+                var bytes = new byte[PKCEVerifierLength];
+                RandomNumberGenerator.Create().GetBytes(bytes);
+                return Convert.ToBase64String(bytes)
+                    .TrimEnd('=')
+                    .Replace('+', '-')
+                    .Replace('/', '_')
+                    .Substring(0, 128);
+            }
+
+            public static string GeneratePKCECodeChallenge(string codeVerifier)
+            {
+                using (var sha256 = SHA256.Create())
                 {
-                    var bytes = new byte[16];
-                    generator.GetBytes(bytes);
-                    return new Guid(bytes).ToString("N");
+                    var challengeBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(codeVerifier));
+                    return Convert.ToBase64String(challengeBytes)
+                        .TrimEnd('=')
+                        .Replace('+', '-')
+                        .Replace('/', '_');
                 }
             }
 
+            public static async Task<ResposeInfo> RefreshDataAsync(string code)
+            {
+                var url = "https://api.dropboxapi.com/oauth2/token";
+
+                var parameters = new Dictionary<string, string>
+                {
+                    { "code", code },
+                    { "grant_type", "authorization_code" },
+                    { "client_id", SampleOneView.ClientId },
+                    { "redirect_uri", SampleOneView.RedirectUri },
+                    { "code_verifier", _codeVerifier },
+                };
+
+                var httpClient = new HttpClient();
+                var content = new FormUrlEncodedContent(parameters);
+                var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
+
+                dynamic value = null;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    value = JsonSerializer.Deserialize<ResposeInfo>(json);
+                }
+
+                return value;
+            }
+        }
+
+        public class ResposeInfo
+        {
+            public string uid { get; set; }
+            public string access_token { get; set; }
         }
 
         internal static class QueryHelpers
@@ -171,9 +228,7 @@ namespace WebAuthenticatorSamples.Views
                 return AddQueryString(uri, (IEnumerable<KeyValuePair<string, string>>)queryString);
             }
 
-            private static string AddQueryString(
-                string uri,
-                IEnumerable<KeyValuePair<string, string>> queryString)
+            private static string AddQueryString(string uri, IEnumerable<KeyValuePair<string, string>> queryString)
             {
                 if (uri == null)
                 {
@@ -188,6 +243,7 @@ namespace WebAuthenticatorSamples.Views
                 var anchorIndex = uri.IndexOf('#');
                 var uriToBeAppended = uri;
                 var anchorText = "";
+
                 // If there is an anchor, then the query string must be inserted before its first occurance.
                 if (anchorIndex != -1)
                 {

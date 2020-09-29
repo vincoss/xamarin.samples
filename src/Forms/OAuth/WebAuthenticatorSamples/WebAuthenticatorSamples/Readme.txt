@@ -2,8 +2,12 @@
 https://docs.microsoft.com/en-us/xamarin/essentials/web-authenticator?tabs=ios#ios
 https://docs.microsoft.com/en-us/xamarin/essentials/web-authenticator?context=xamarin%2Fandroid&tabs=ios
 https://devblogs.microsoft.com/xamarin/authentication-xamarin-essentials-aspnet/
-https://www.dropbox.com/developers/documentation/http/documentation
+
+## Dropbox
+https://www.dropbox.com/developers/apps
 https://www.dropbox.com/lp/developers/reference/oauth-guide
+https://www.dropbox.com/developers/documentation/http/documentation
+https://aem.dropbox.com/en-us/lp/developers/reference/oauth-guide
 
 https://developer.okta.com/blog/2020/07/31/xamarin-essentials-webauthenticator
 
