@@ -219,4 +219,46 @@ namespace WebAuthenticatorSamples.Views
             }
         }
     }
+
+    /*
+        Refresh token example Identity Server 4
+    
+    public async Task<string> GetAccessToken()
+    {
+        if ((_authService.AuthAccessTokenExpireIn - DateTime.Now).TotalMinutes < 10) {
+            var authResponse = await GetRefreshTokenAsync(_authService.AuthRefreshToken);
+
+            _authService.AuthAccessToken = authResponse.AccessToken;
+            _authService.AuthRefreshToken = authResponse.RefreshToken;
+            _authService.AuthAccessTokenExpireIn = authResponse.ExpiresIn;
+        }
+
+        return _authService.AuthAccessToken;
+    }
+
+    public async Task<UserToken> GetRefreshTokenAsync(string currentRefreshToken)
+    {
+        string data = string.Format("grant_type=refresh_token&client_id={0}&client_secret={1}&refresh_token={2}", GlobalSetting.Instance.ClientId, GlobalSetting.Instance.ClientSecret, refreshToken);
+        var token = await PostAsync<UserToken>(_httpClient,
+         GlobalSetting.Instance.TokenEndpoint, 
+         data);
+        return token;
+    }
+
+    public async Task<UserToken> PostAsync<UserToken>(HttpClient httpClient, string uri, object data)
+    {
+
+        var content = new StringContent(JsonConvert.SerializeObject(data));
+        content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+        HttpResponseMessage response = await httpClient.PostAsync(uri, content);
+
+        await HandleResponse(response);
+        string serialized = await response.Content.ReadAsStringAsync();
+
+        UserToken result = await Task.Run(() => JsonConvert.DeserializeObject<UserToken>(serialized, _serializerSettings));
+
+        return result;
+    }
+
+    */
 }
