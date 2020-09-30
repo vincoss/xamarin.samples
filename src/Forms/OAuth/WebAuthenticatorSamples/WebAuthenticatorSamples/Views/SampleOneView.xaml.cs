@@ -41,6 +41,10 @@ namespace WebAuthenticatorSamples.Views
 
                 var result = await service.GetTokenAsync(code);
                 editorTokenResponse.Text = JsonSerializer.Serialize(result);
+
+                var refresh = await service.GetRefreshTokenAsync(result.RefreshToken);
+
+                editorRefreshTokenResponse.Text = JsonSerializer.Serialize(refresh);
             }
             catch (Exception ex)
             {
@@ -143,6 +147,31 @@ namespace WebAuthenticatorSamples.Views
                     { "client_id", DropboxConfiguration.ClientId },
                     { "redirect_uri", DropboxConfiguration.RedirectUri },
                     { "code_verifier", _codeVerifier },
+                };
+
+                var httpClient = new HttpClient();
+                var content = new FormUrlEncodedContent(parameters);
+                var response = await httpClient.PostAsync(DropboxConfiguration.TokenApiUri, content).ConfigureAwait(false);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    var result = JsonSerializer.Deserialize<DropboxAuthResponseModel>(json);
+                    return result;
+                }
+
+                return null;
+            }
+
+            public async Task<DropboxAuthResponseModel> GetRefreshTokenAsync(string currentRefreshToken)
+            {
+                if (string.IsNullOrWhiteSpace(currentRefreshToken)) throw new ArgumentNullException(nameof(currentRefreshToken));
+
+                var parameters = new Dictionary<string, string>
+                {
+                    { "refresh_token", currentRefreshToken },
+                    { "grant_type", "refresh_token" },
+                    { "client_id", DropboxConfiguration.ClientId }
                 };
 
                 var httpClient = new HttpClient();

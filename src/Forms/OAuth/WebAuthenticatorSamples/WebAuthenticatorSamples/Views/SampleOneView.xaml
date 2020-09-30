@@ -18,6 +18,9 @@
             
             <Label Text="Token - Response"/>
             <Editor x:Name="editorTokenResponse" IsReadOnly="True" HeightRequest="50"  />
+
+            <Label Text="Token - Refresh - Response"/>
+            <Editor x:Name="editorRefreshTokenResponse" IsReadOnly="True" HeightRequest="50"  />
         </StackLayout>
     </ScrollView>
 </ContentPage>

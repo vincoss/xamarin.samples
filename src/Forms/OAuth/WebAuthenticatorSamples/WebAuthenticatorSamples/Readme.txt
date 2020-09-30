@@ -7,7 +7,6 @@ https://devblogs.microsoft.com/xamarin/authentication-xamarin-essentials-aspnet/
 https://www.dropbox.com/developers/apps
 https://www.dropbox.com/lp/developers/reference/oauth-guide
 https://www.dropbox.com/developers/documentation/http/documentation
-https://aem.dropbox.com/en-us/lp/developers/reference/oauth-guide
 
 https://developer.okta.com/blog/2020/07/31/xamarin-essentials-webauthenticator
 
@@ -21,3 +20,6 @@ https://developer.android.com/training/app-links
 https://slacker.ro/2019/08/22/implement-the-oauth-2-0-authorization-code-with-pkce-flow/
 
 Obsolete https://github.com/xamarin/Xamarin.Auth
+
+## Tasks
+Add extensions for each provide
