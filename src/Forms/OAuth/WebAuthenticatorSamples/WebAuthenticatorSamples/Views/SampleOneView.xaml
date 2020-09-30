@@ -3,13 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WebAuthenticatorSamples.Views.SampleOneView"
              Title="SampleOneView">
-    
-    <ContentPage.Content>
+
+    <ScrollView>
         <StackLayout>
             <Label Text="Xamarin.Essentials: Web Authenticator" FontSize="Title"/>
             <Button Text="Dropbox" Clicked="ButtonLogin_Clicked"  />
-            <Label x:Name="lblInfo"/>
-            <Entry x:Name="entryUrl" IsReadOnly="True"/>
+            <Label x:Name="lblInfo" TextColor="Red"/>
+            
+            <Label Text="AuthorizeUrl"/>
+            <Entry x:Name="authorizeUrl" IsReadOnly="True"/>
+            
+            <Label Text="Auth - Response"/>
+            <Editor x:Name="editorAuthResponse" IsReadOnly="True" HeightRequest="50"  />
+            
+            <Label Text="Token - Response"/>
+            <Editor x:Name="editorTokenResponse" IsReadOnly="True" HeightRequest="50"  />
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

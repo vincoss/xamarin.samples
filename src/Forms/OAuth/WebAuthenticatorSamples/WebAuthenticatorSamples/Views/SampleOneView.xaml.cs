@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Net.Http;
+using System.Text.Json.Serialization;
+using WebAuthenticatorSamples.Services;
 
 namespace WebAuthenticatorSamples.Views
 {
@@ -21,49 +23,67 @@ namespace WebAuthenticatorSamples.Views
             InitializeComponent();
         }
 
-        public const string ClientId = "TODO"; //App key
-        public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
-        public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
-        public const string ResponseType = "code";
-        public const string Scope = "account_info.read";
-
         private async void ButtonLogin_Clicked(object sender, EventArgs e)
         {
             try
             {
-                var url = DropboxAuthService.CreateAuthorizationRequest(AuthorityUrl);
-                entryUrl.Text = url;
+                var service = new DropboxAuthService();
+                var url = service.CreateAuthorizationRequest(DropboxConfiguration.AuthorityUrl);
+                authorizeUrl.Text = url;
 
                 var authenticationResult = await WebAuthenticator.AuthenticateAsync(
                          new Uri(url),
-                         new Uri(RedirectUri));
+                         new Uri(DropboxConfiguration.RedirectUri));
 
-                var accessToken = authenticationResult?.AccessToken;
+                editorAuthResponse.Text = JsonSerializer.Serialize(authenticationResult);
 
-                if (accessToken == null && authenticationResult.Properties != null && authenticationResult.Properties.ContainsKey("code"))
-                {
-                    accessToken = authenticationResult.Properties["code"];
-                }
+                var code = authenticationResult.Properties["code"];
 
-                if(authenticationResult != null)
-                {
-                    var code = authenticationResult.Properties["code"]; ;
-
-                    var result = await DropboxAuthService.RefreshDataAsync(code);
-
-                    lblInfo.Text = result.access_token;
-                }
-
-                //if(accessToken != null)
-                //{
-                //    lblInfo.Text = accessToken;
-                //}
-
+                var result = await service.GetTokenAsync(code);
+                editorTokenResponse.Text = JsonSerializer.Serialize(result);
             }
             catch (Exception ex)
             {
                 lblInfo.Text = ex.ToString();
             }
+        }
+
+        public class DropboxConfiguration
+        {
+            // Auth
+            public const string ClientId = "lofbktt2ah7hu89"; //App key
+            public const string AuthorityUrl = "https://www.dropbox.com/oauth2/authorize";
+            public const string RedirectUri = "com.companyname.webauthenticatorsamples:/oauth2redirect";
+            public const string ResponseType = "code";
+            public const string Scope = "account_info.read";
+
+            // Token
+            public const string TokenApiUri = "https://api.dropboxapi.com/oauth2/token";
+            public const string GrantType = "authorization_code";
+        }
+
+        public class DropboxAuthResponseModel
+        {
+            [JsonPropertyName("uid")]
+            public string UId { get; set; }
+
+            [JsonPropertyName("access_token")]
+            public string AccessToken { get; set; }
+
+            [JsonPropertyName("expires_in")]
+            public int ExpiresIn { get; set; }
+
+            [JsonPropertyName("token_type")]
+            public string TokenType { get; set; }
+
+            [JsonPropertyName("scope")]
+            public string Scope { get; set; }
+
+            [JsonPropertyName("refresh_token")]
+            public string RefreshToken { get; set; }
+
+            [JsonPropertyName("account_id")]
+            public string AccountId { get; set; }
         }
 
         public interface IAuthService
@@ -74,12 +94,12 @@ namespace WebAuthenticatorSamples.Views
 
         public class DropboxAuthService : IAuthService
         {
-            private static string _codeVerifier;
+            private string _codeVerifier;
             public static int PKCEVerifierLength = 128;
 
             public Task OnSignInAsync()
             {
-                var url = CreateAuthorizationRequest(AuthorityUrl);
+                var url = CreateAuthorizationRequest(DropboxConfiguration.AuthorityUrl);
 
                 throw new NotImplementedException();
             }
@@ -89,17 +109,17 @@ namespace WebAuthenticatorSamples.Views
                 throw new NotImplementedException();
             }
 
-            public static string CreateAuthorizationRequest(string baseUrl)
+            public string CreateAuthorizationRequest(string baseUrl)
             {
                 if (string.IsNullOrWhiteSpace(baseUrl)) throw new ArgumentNullException(nameof(baseUrl));
 
                 // Dictionary with values for the authorize request
                 var dic = new Dictionary<string, string>();
-                dic.Add("client_id", ClientId);
+                dic.Add("client_id", DropboxConfiguration.ClientId);
                 dic.Add("token_access_type", "offline");
-                dic.Add("response_type", ResponseType);
-                dic.Add("scope", Scope);
-                dic.Add("redirect_uri", RedirectUri);
+                dic.Add("response_type", DropboxConfiguration.ResponseType);
+                dic.Add("scope", DropboxConfiguration.Scope);
+                dic.Add("redirect_uri", DropboxConfiguration.RedirectUri);
 
                 dic.Add("code_challenge", CreateCodeChallenge());
                 dic.Add("code_challenge_method", "S256");
@@ -112,14 +132,41 @@ namespace WebAuthenticatorSamples.Views
                 return authorizeUri;
             }
 
-            private static string CreateCodeChallenge()
+            public async Task<DropboxAuthResponseModel> GetTokenAsync(string code)
+            {
+                if (string.IsNullOrWhiteSpace(code)) throw new ArgumentNullException(nameof(code));
+
+                var parameters = new Dictionary<string, string>
+                {
+                    { "code", code },
+                    { "grant_type", DropboxConfiguration.GrantType },
+                    { "client_id", DropboxConfiguration.ClientId },
+                    { "redirect_uri", DropboxConfiguration.RedirectUri },
+                    { "code_verifier", _codeVerifier },
+                };
+
+                var httpClient = new HttpClient();
+                var content = new FormUrlEncodedContent(parameters);
+                var response = await httpClient.PostAsync(DropboxConfiguration.TokenApiUri, content).ConfigureAwait(false);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    var result = JsonSerializer.Deserialize<DropboxAuthResponseModel>(json);
+                    return result;
+                }
+
+                return null;
+            }
+
+            private string CreateCodeChallenge()
             {
                 _codeVerifier = GeneratePKCECodeVerifier();
                 var codeChallenge = GeneratePKCECodeChallenge(_codeVerifier);
                 return codeChallenge;
             }
 
-            private static string GeneratePKCECodeVerifier()
+            private string GeneratePKCECodeVerifier()
             {
                 var bytes = new byte[PKCEVerifierLength];
                 RandomNumberGenerator.Create().GetBytes(bytes);
@@ -140,135 +187,6 @@ namespace WebAuthenticatorSamples.Views
                         .Replace('+', '-')
                         .Replace('/', '_');
                 }
-            }
-
-            public static async Task<ResposeInfo> RefreshDataAsync(string code)
-            {
-                var url = "https://api.dropboxapi.com/oauth2/token";
-
-                var parameters = new Dictionary<string, string>
-                {
-                    { "code", code },
-                    { "grant_type", "authorization_code" },
-                    { "client_id", SampleOneView.ClientId },
-                    { "redirect_uri", SampleOneView.RedirectUri },
-                    { "code_verifier", _codeVerifier },
-                };
-
-                var httpClient = new HttpClient();
-                var content = new FormUrlEncodedContent(parameters);
-                var response = await httpClient.PostAsync(url, content).ConfigureAwait(false);
-
-                dynamic value = null;
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    value = JsonSerializer.Deserialize<ResposeInfo>(json);
-                }
-
-                return value;
-            }
-        }
-
-        public class ResposeInfo
-        {
-            public string uid { get; set; }
-            public string access_token { get; set; }
-        }
-
-        internal static class QueryHelpers
-        {
-            /// <summary>
-            /// Append the given query key and value to the URI.
-            /// </summary>
-            /// <param name="uri">The base URI.</param>
-            /// <param name="name">The name of the query key.</param>
-            /// <param name="value">The query value.</param>
-            /// <returns>The combined result.</returns>
-            public static string AddQueryString(string uri, string name, string value)
-            {
-                if (uri == null)
-                {
-                    throw new ArgumentNullException(nameof(uri));
-                }
-
-                if (name == null)
-                {
-                    throw new ArgumentNullException(nameof(name));
-                }
-
-                if (value == null)
-                {
-                    throw new ArgumentNullException(nameof(value));
-                }
-
-                return AddQueryString(
-                    uri, new[] { new KeyValuePair<string, string>(name, value) });
-            }
-
-            /// <summary>
-            /// Append the given query keys and values to the uri.
-            /// </summary>
-            /// <param name="uri">The base uri.</param>
-            /// <param name="queryString">A collection of name value query pairs to append.</param>
-            /// <returns>The combined result.</returns>
-            public static string AddQueryString(string uri, IDictionary<string, string> queryString)
-            {
-                if (uri == null)
-                {
-                    throw new ArgumentNullException(nameof(uri));
-                }
-
-                if (queryString == null)
-                {
-                    throw new ArgumentNullException(nameof(queryString));
-                }
-
-                return AddQueryString(uri, (IEnumerable<KeyValuePair<string, string>>)queryString);
-            }
-
-            private static string AddQueryString(string uri, IEnumerable<KeyValuePair<string, string>> queryString)
-            {
-                if (uri == null)
-                {
-                    throw new ArgumentNullException(nameof(uri));
-                }
-
-                if (queryString == null)
-                {
-                    throw new ArgumentNullException(nameof(queryString));
-                }
-
-                var anchorIndex = uri.IndexOf('#');
-                var uriToBeAppended = uri;
-                var anchorText = "";
-
-                // If there is an anchor, then the query string must be inserted before its first occurance.
-                if (anchorIndex != -1)
-                {
-                    anchorText = uri.Substring(anchorIndex);
-                    uriToBeAppended = uri.Substring(0, anchorIndex);
-                }
-
-                var queryIndex = uriToBeAppended.IndexOf('?');
-                var hasQuery = queryIndex != -1;
-
-                var sb = new StringBuilder();
-                sb.Append(uriToBeAppended);
-                foreach (var parameter in queryString)
-                {
-                    if (parameter.Value == null) continue;
-
-                    sb.Append(hasQuery ? '&' : '?');
-                    sb.Append(UrlEncoder.Default.Encode(parameter.Key));
-                    sb.Append('=');
-                    sb.Append(UrlEncoder.Default.Encode(parameter.Value));
-                    hasQuery = true;
-                }
-
-                sb.Append(anchorText);
-                return sb.ToString();
             }
         }
     }
