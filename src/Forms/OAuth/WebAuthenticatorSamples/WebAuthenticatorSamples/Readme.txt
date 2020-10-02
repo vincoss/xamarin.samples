@@ -2,11 +2,16 @@
 https://docs.microsoft.com/en-us/xamarin/essentials/web-authenticator?tabs=ios#ios
 https://docs.microsoft.com/en-us/xamarin/essentials/web-authenticator?context=xamarin%2Fandroid&tabs=ios
 https://devblogs.microsoft.com/xamarin/authentication-xamarin-essentials-aspnet/
+https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-default-app#call-launchuriasync-to-launch-a-uri
+https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
 
 ## Dropbox
 https://www.dropbox.com/developers/apps
 https://www.dropbox.com/lp/developers/reference/oauth-guide
 https://www.dropbox.com/developers/documentation/http/documentation
+
+## Google
+https://console.developers.google.com/
 
 https://developer.okta.com/blog/2020/07/31/xamarin-essentials-webauthenticator
 
