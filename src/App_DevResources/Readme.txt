@@ -27,6 +27,13 @@ telemetry
 	See https://docs.microsoft.com/en-us/appcenter/
 	dbsite, navigation, last used,location,errors and many more
 
+
+## Android keytool
+
++Create Android Sign Key
++	C:\Program Files (x86)\Java\jre1.8.0_261\bin
++	keytool -genkey -keyalg RSA -keysize 4096 -validity 36000 -storepass Pass@word1 -v -keystore dev-key.jks -alias dev-key
+
 ## Next
 ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
