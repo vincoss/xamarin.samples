@@ -1,6 +1,56 @@
 ﻿
 ## Tasks to learn
 
+
+## UWP sign package example
+https://docs.microsoft.com/en-us/windows-hardware/drivers/dashboard/get-a-code-signing-certificate
+https://stackoverflow.com/questions/329396/what-happens-when-a-code-signing-certificate-expires
+http://www.cacert.org/
+https://comodosslstore.com/code-signing
+https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
+
+## Xamarin to read, samples to read & research
+skia sharp touch not working on iOS
+items list-item design template create
+	put those into DesignUi item not runnable
+	one design must be self contained all colors and layout items
+	see outlook item or hotmail item for ideas
+
+## Xamarin Commands permission (Role-Profile-Readme.txt) samples to read & research
+At first list functionality
+	pages, buttons and other
+commands|Menu items hide if no rights
+	project hide create, edit, delete actions (with edit rule),import,export
+		ItemAddUpdateDelete
+		ItemActivateDeactivate
+	Enable|Disable
+	ADD|Edit
+	each action
+	Delete (need soft delete)
+	all project or site (read only)
+	possible disable whole pages
+		Import
+		Export
+show|hide buttons
+show|hide menu items
+show|hide grid actions
+show|hide create button
+Read only
+ can't edit Items, site, tags, jobs
+ can't data import
+ cant share (what?)
+ Server
+	can read  Items, site, tags, jobs
+	can create workspace items
+enable edit|delete|deactivate and other action
+	have profiles for that, controlled from server side
+	this might not be visisble for the user if server integration
+control app from serverside what is available for the UI
+	actions
+	pages
+	navigation
+server side settings (key-value) JSON
+
 sample with table view
 	keydata, name, path, createdDate, modifiedDate, activityDate, dataSize, otherSize, version
 	actions, backup, update, share, clear
@@ -13,7 +63,7 @@ SwipeView
 RefreshView 
 Image - IsAnimationPlaying
 
-localization
+##localization
 	see xamarin-fomms-samples TodoLocalized
 	see xamarin-fomms-samples TodoLocalizedRTL
 	see xamarin-fomms-samples UsingResxLocalization
