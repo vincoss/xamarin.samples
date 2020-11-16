@@ -18,7 +18,8 @@ namespace Xamarin_Samples.Views
                 $"BuildString:   {AppInfo.BuildString}",
                 $"PackageName:   {AppInfo.PackageName}",
                 $"Version:       {AppInfo.Version}",
-                $"VersionString: {AppInfo.VersionString}"
+                $"VersionString: {AppInfo.VersionString}",
+                $"NetworkAccess: {Connectivity.NetworkAccess}",
             };
 
             lstInfo.ItemsSource = items;

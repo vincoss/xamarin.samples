@@ -1,0 +1,2 @@
+MainPackage=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\AppCenter\AppCenter_ConfigurationSample\AppCenter_ConfigurationSample\AppCenter_ConfigurationSample.UWP\bin\x86\Debug\AppCenter_ConfigurationSample.UWP_1.0.0.0_x86_Debug.appx
+SymbolPackage=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\AppCenter\AppCenter_ConfigurationSample\AppCenter_ConfigurationSample\AppCenter_ConfigurationSample.UWP\obj\x86\Debug\Symbols\AppCenter_ConfigurationSample.UWP_1.0.0.0_x86_Debug.appxsym
