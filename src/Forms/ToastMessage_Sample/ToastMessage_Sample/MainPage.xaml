@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sh="clr-namespace:ToastMessage_Sample.Views;assembly=ToastMessage_Sample"
              x:Class="ToastMessage_Sample.MainPage">
 
     <StackLayout>
         <Label Text="Show toast message" />
+        <sh:ToastView ToastMessage="{Binding ToastMessage}" />
         <Button Text="Show Short" Clicked="Button_ClickedShort"/>
         <Button Text="Show Long" Clicked="Button_ClickedLong"/>
+        <Button Text="Custom Show" Clicked="Button_ClickedCustom"/>
     </StackLayout>
 
 </ContentPage>
