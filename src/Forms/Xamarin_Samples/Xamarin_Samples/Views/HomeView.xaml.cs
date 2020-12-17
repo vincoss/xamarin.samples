@@ -63,6 +63,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo{ Type = typeof(UI_TableViewView)});
             pages.Add(new PageInfo{ Type = typeof(UI_ToolbarItemView)});
             pages.Add(new PageInfo{ Type = typeof(UI_UseFontAwesomeSampleView)});
+            pages.Add(new PageInfo { Type = typeof(UI_PopupView) });
 
             pages.Add(new PageInfo{ Type = typeof(FlexLayoutHolyGrailView)});
             pages.Add(new PageInfo{ Type = typeof(UI_FlexLayoutView)});
