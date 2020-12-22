@@ -13,6 +13,8 @@
             <Label Text="Pop-up"/>
             <Button x:Name="DisplayAlert" Text="Show -DisplayAlert" Clicked="DisplayAlert_Clicked"/>
             <Button x:Name="DisplayPromptAsync" Text="Show -DisplayPromptAsync" Clicked="DisplayPromptAsync_Clicked"/>
+            <Button x:Name="DisplayActionSheet" Text="Show -DisplayActionSheet" Clicked="DisplayActionSheet_Clicked"/>
+            <Label x:Name="lblAction" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

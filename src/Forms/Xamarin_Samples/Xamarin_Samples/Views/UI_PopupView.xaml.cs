@@ -26,5 +26,11 @@ namespace Xamarin_Samples.Views
         {
             await DisplayPromptAsync("Create Tag Group", null, placeholder: "Tag group name");
         }
+
+        private async void DisplayActionSheet_Clicked(object sender, EventArgs e)
+        {
+            var result = await DisplayActionSheet("Actions", "Cancel", "Destruction", "Edit", "Delete", "Report", "Copy", "Share");
+            lblAction.Text = result;
+        }
     }
 }
