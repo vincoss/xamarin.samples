@@ -6,6 +6,7 @@
     
     <!--
         https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/pop-ups
+        https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.page.displayactionsheet?view=xamarin-forms
     -->
     
     <ContentPage.Content>
