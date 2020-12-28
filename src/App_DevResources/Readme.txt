@@ -59,7 +59,6 @@ viss git logo
 font awsome icons samples
 image zoon and pan, see gestures
 Master view
-SwipeView
 RefreshView 
 Image - IsAnimationPlaying
 

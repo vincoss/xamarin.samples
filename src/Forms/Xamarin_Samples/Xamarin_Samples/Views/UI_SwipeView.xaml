@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_SwipeView"
+             Title="UI_SwipeView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/swipeview
+    -->
+
+    <StackLayout>
+        <Label Text="Basic sample" />
+
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem Text="Favorite" BackgroundColor="LightGreen" Invoked="FavoriteSwipeItem_Invoked" />
+                    <SwipeItem Text="Delete" BackgroundColor="LightPink" Invoked="DeleteSwipeItem_Invoked" />
+                </SwipeItems>
+            </SwipeView.LeftItems>
+             <!--Content--> 
+            <Grid HeightRequest="60" WidthRequest="300" BackgroundColor="LightGray">
+                <Label Text="Swipe right" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Grid>
+        </SwipeView>
+    </StackLayout>
+</ContentPage>

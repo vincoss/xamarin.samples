@@ -51,6 +51,7 @@ namespace Xamarin_Samples.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+                Xamarin.Forms.Forms.SetFlags("SwipeView_Experimental");
 
                 Xamarin.Forms.Forms.Init(e);
 
