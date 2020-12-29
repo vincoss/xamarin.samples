@@ -8,6 +8,7 @@ https://stackoverflow.com/questions/329396/what-happens-when-a-code-signing-cert
 http://www.cacert.org/
 https://comodosslstore.com/code-signing
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
+https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 skia sharp touch not working on iOS
@@ -59,7 +60,6 @@ viss git logo
 font awsome icons samples
 image zoon and pan, see gestures
 Master view
-RefreshView 
 Image - IsAnimationPlaying
 
 ##localization
