@@ -74,6 +74,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo{ Type = typeof(UI_ApplicationDataView)});
             pages.Add(new PageInfo { Type = typeof(UI_RefreshViewSampleView) });
             pages.Add(new PageInfo { Type = typeof(UI_SwipeView) });
+            pages.Add(new PageInfo { Type = typeof(UI_NavigationTitleView) });
 
             ListOfPages.ItemsSource = pages;
         }

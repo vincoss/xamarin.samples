@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_NavigationTitleView"
+             Title="UI_NavigationTitleView">
+
+    <!--
+    https://www.andrewhoefling.com/Blog/Post/xamarin-forms-title-view-a-powerful-navigation-view
+    -->
+    
+    <NavigationPage.TitleView>
+        <Label Text="Hello World" />
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
