@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_TableViewHideCell"
+             xmlns:xa="clr-namespace:Xamarin_Samples.Xaml;assembly=Xamarin_Samples"
+             Title="UI_TableViewHideCell">
+
+    <StackLayout>
+        <Button Text="Show | Hide" Clicked="Button_Clicked"/>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Group 1">
+                    <ViewCell xa:CellAttached.IsVisible="{Binding IsCellVisisble}">
+                        <Label Text="Hi there..."/>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Group 2">
+                    <EntryCell Placeholder="Entery cell"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>
