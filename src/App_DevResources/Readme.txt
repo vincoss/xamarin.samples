@@ -11,6 +11,11 @@ https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
+
+Focus & Keyboard On new item set focus and show keyboard, see android contacts
+	On edit item set cursorPosition but not show keyboard
+	https://dgatto.com/posts/2020/01/hiding-soft-keyboard/
+
 skia sharp touch not working on iOS
 items list-item design template create
 	put those into DesignUi item not runnable
