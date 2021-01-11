@@ -6,17 +6,10 @@
              Title="UI_NavigationToolbarView">
 
     <NavigationPage.TitleView>
-        <StackLayout BackgroundColor="Transparent">
-            <Grid Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0" 
-              VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            
-            <Button Grid.Column="0" Text="Close" VerticalOptions="CenterAndExpand" />
-            <Button Grid.Column="1" Text="Save" VerticalOptions="CenterAndExpand" />
-            </Grid>
+        <StackLayout BackgroundColor="Transparent" Orientation="Horizontal" Padding="0" Margin="0">
+            <Label Grid.Column="0" Text="Create Group" FontSize="Large" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" LineBreakMode="NoWrap"/>
+            <Button Grid.Column="1" Text="CLOSE" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+            <Button Grid.Column="2" Text="SAVE" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </NavigationPage.TitleView>
     
