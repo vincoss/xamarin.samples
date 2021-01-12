@@ -62,7 +62,6 @@ sample with table view
 	actions, backup, update, share, clear
 MenuItem from class instead of xaml
 viss git logo
-font awsome icons samples
 image zoon and pan, see gestures
 Master view
 Image - IsAnimationPlaying
