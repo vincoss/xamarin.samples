@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Xamarin_Forms_WebView.Views.SourceHtmlStringView"
-             Title="SourceHtmlStringView">
+             x:Class="Xamarin_Forms_WebView.Views.EmbeddedResourceView"
+             Title="EmbeddedResourceView">
 
     <StackLayout>
         <Label Text="Html string"/>
         <WebView x:Name="webViewHtmlString" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
     </StackLayout>
+    
 </ContentPage>

@@ -20,6 +20,8 @@ namespace Xamarin_Forms_WebView.Views
             pages.Add(new PageInfo { Type = typeof(SourceUrlVIew) });
             pages.Add(new PageInfo { Type = typeof(SourceHtmlStringView) });
             pages.Add(new PageInfo { Type = typeof(SourceLocalFileView) });
+            pages.Add(new PageInfo { Type = typeof(NavigationView) });
+            pages.Add(new PageInfo { Type = typeof(EmbeddedResourceView) });
 
             ListOfPages.ItemsSource = pages;
         }

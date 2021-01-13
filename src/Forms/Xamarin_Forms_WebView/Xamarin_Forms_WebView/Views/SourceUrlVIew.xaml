@@ -6,6 +6,9 @@
 
     <StackLayout>
         <Label Text="Websites by URL"/>
-        <WebView Source="http://xamarin.com"/>
+        <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
+        <Button Text="Reload" Clicked="Button_Clicked"/>
+        <WebView x:Name="webView" Source="http://xamarin.com" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                 Navigating="webviewNavigating"/>
     </StackLayout>
 </ContentPage>
