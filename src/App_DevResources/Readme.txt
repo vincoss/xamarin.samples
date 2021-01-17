@@ -16,8 +16,10 @@ Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard
 	https://dgatto.com/posts/2020/01/hiding-soft-keyboard/
 
+speach to text sample
+
 skia sharp touch not working on iOS
-items list-item design template create
+CollectionView list-item design template create
 	put those into DesignUi item not runnable
 	one design must be self contained all colors and layout items
 	see outlook item or hotmail item for ideas
@@ -61,7 +63,6 @@ sample with table view
 	keydata, name, path, createdDate, modifiedDate, activityDate, dataSize, otherSize, version
 	actions, backup, update, share, clear
 MenuItem from class instead of xaml
-viss git logo
 image zoon and pan, see gestures
 Master view
 Image - IsAnimationPlaying
