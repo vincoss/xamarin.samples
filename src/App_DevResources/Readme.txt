@@ -10,11 +10,37 @@ https://comodosslstore.com/code-signing
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
+
 ## Xamarin to read, samples to read & research
 
 Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard
 	https://dgatto.com/posts/2020/01/hiding-soft-keyboard/
+
+
+default sample review
+	Flyout template
+	Tabbed
+
+Images and Icons
+Sample for all platforms, iOS, android, uwp, have all icons required for the app
+	create sample images
+	read documentation
+CollectionView
+	Grouping
+	Multi delete, use can select delete action from top menu
+		that shall show delete column for each list item
+		new menu shall show only delete button,
+		back button reset the view back
+	See Phone Contacts
+
+Signature
+https://github.com/xamarin/SignaturePad
+
+Save photo to camera roll (default false)
+	Internal storage (photos)
+	Images will be stored internaly to the app if we keep this option ON, else it would go to photo library.
+	what if changes later? galery and other create a nice sample
 
 speach to text sample
 
