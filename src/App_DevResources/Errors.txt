@@ -10,3 +10,17 @@ Error		Failed to create JavaTypeInfo for class: Android.Support.V4.View.AsyncLay
    at Xamarin.Android.Tasks.Generator.CreateJavaSources(TaskLoggingHelper log, IEnumerable`1 javaTypes, String outputPath, String applicationJavaClass, String androidSdkPlatform, Boolean useSharedRuntime, Boolean generateOnCreateOverrides, Boolean hasExportReference)	Default_XamarinForms_MasterDetail.Android			
 
 # To fix this need to reduce project path length since JAVA paths are too long. https://developercommunity.visualstudio.com/content/problem/521034/failed-to-create-javatypeinfo.html
+
+## Build error
+
+1>App.xaml : error : Value cannot be null.
+1>App.xaml : error : Parameter name: method
+1>Screens\About.xaml : error : Value cannot be null.
+
+# To fix remove project section
+
+<ItemGroup>
+    <Compile Update="Views\UI_RefreshViewSampleView.xaml.cs">
+      <DependentUpon>UI_RefreshViewSampleView.xaml</DependentUpon>
+    </Compile>
+    .....
