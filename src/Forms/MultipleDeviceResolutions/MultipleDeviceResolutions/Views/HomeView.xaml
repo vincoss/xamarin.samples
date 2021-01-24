@@ -4,55 +4,57 @@
              x:Class="MultipleDeviceResolutions.Views.HomeView"
             Title="Multiple Resolutions">
 
-    <StackLayout Margin="5">
-        <!--<Label Text="Multiple Resolutions" FontSize="Header"/>
-        <Label Text="Mobile Lipo is for fitness and wellness, not medical purposes."/>
-        <Label>
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ClickCommand}"
+    <ScrollView>
+        <StackLayout Margin="5">
+
+            <Label Text="Multiple Resolutions" FontSize="Title"/>
+            <Label Text="Mobile Lipo is for fitness and wellness, not medical purposes."/>
+            <Label>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickCommand}"
                                       CommandParameter="https://docs.microsoft.com/xamarin/" />
-            </Label.GestureRecognizers>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Terms and Conditions"
+                </Label.GestureRecognizers>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Terms and Conditions"
                           TextColor="Blue"
                           TextDecorations="Underline">
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Label Text="I agree"/>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <RadioButton Content="I agree"/>
 
-        <Label Text="To provide mobile liposuction functions, the app may collect data about the following:"/>
-        <Label Text="*Profile"/>
-        <Label Text="*Sensors and usage"/>
-        <Label Text="*Location"/>
-        <Label>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Privacy Policy"
+            <Label Text="To provide mobile liposuction functions, the app may collect data about the following:"/>
+            <Label Text="*Profile"/>
+            <Label Text="*Sensors and usage"/>
+            <Label Text="*Location"/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Privacy Policy"
                           TextColor="Blue"
                           TextDecorations="Underline">
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Label Text="I agree"/>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <RadioButton Content="I agree"/>
 
-        <Label Text="Mobile Lipo may support LBS (Location-Based Service) according to the laws on protecting user information and location."/>
-        <Label>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="Location Terms and conditions"
+            <Label Text="Mobile Lipo may support LBS (Location-Based Service) according to the laws on protecting user information and location."/>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Location Terms and conditions"
                           TextColor="Blue"
                           TextDecorations="Underline">
-                    </Span>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        <Label Text="I agree"/>-->
-
-    </StackLayout>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <RadioButton Content="I agree"/>
+        </StackLayout>
+    </ScrollView>
     
 </ContentPage>
 
