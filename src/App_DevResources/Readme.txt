@@ -13,6 +13,10 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+
+Signature
+https://github.com/xamarin/SignaturePad
+
 Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard
 	https://dgatto.com/posts/2020/01/hiding-soft-keyboard/
@@ -34,8 +38,6 @@ CollectionView
 		back button reset the view back
 	See Phone Contacts
 
-Signature
-https://github.com/xamarin/SignaturePad
 
 Save photo to camera roll (default false)
 	Internal storage (photos)
