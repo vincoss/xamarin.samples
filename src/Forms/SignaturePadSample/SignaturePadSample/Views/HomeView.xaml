@@ -10,6 +10,11 @@
     -->
 
     <StackLayout>
+        <Label Text="App root path"/>
+        <Entry x:Name="entryAppPath"/>
+        <Label Text="Signature strokes"/>
+        <Entry x:Name="entryStrokes"/>
+        
         <Label Text="Sign Here!" />
 
         <controls:SignaturePadView
@@ -17,6 +22,11 @@
 	                    StrokeWidth="3"
 	                    StrokeColor="Orange"
 	                    BackgroundColor="Black" />
+
+        <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
+        <Button x:Name="btnGetPoints" Text="Get Points" Clicked="btnGetPoints_Clicked"/>
+        <Button x:Name="btnRestore" Text="Restore" Clicked="btnRestore_Clicked"/>
+        
     </StackLayout>
     
 </ContentPage>
