@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SignaturePadSample.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace SignaturePadSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new HomeView();
         }
 
         protected override void OnStart()
