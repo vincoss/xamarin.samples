@@ -4,6 +4,12 @@
              x:Class="MultipleDeviceResolutions.Views.HomeView"
             Title="Multiple Resolutions">
 
+    <!--
+    
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/radiobutton
+    https://devblogs.microsoft.com/xamarin/styling-for-multiple-device-resolutions/
+    -->
+    
     <ScrollView>
         <StackLayout Margin="5">
 
@@ -23,7 +29,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <RadioButton Content="I agree"/>
+            <RadioButton GroupName="Terms"  Content="I agree"/>
 
             <Label Text="To provide mobile liposuction functions, the app may collect data about the following:"/>
             <Label Text="*Profile"/>
@@ -39,7 +45,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <RadioButton Content="I agree"/>
+            <RadioButton GroupName="Privacy" Content="I agree"/>
 
             <Label Text="Mobile Lipo may support LBS (Location-Based Service) according to the laws on protecting user information and location."/>
             <Label>
@@ -52,7 +58,9 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <RadioButton Content="I agree"/>
+            <RadioButton GroupName="Location" Content="I agree"/>
+
+            <Button Text="Next"/>
         </StackLayout>
     </ScrollView>
     
