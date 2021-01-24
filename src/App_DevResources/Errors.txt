@@ -13,9 +13,9 @@ Error		Failed to create JavaTypeInfo for class: Android.Support.V4.View.AsyncLay
 
 ## Build error
 
-1>App.xaml : error : Value cannot be null.
-1>App.xaml : error : Parameter name: method
-1>Screens\About.xaml : error : Value cannot be null.
+Severity	Code	Description	Project	File	Line	Suppression State
+Error		Value cannot be null.
+Parameter name: method	MultipleDeviceResolutions	C:\_Dev\GitHub\FL\Xamarin\Xamarin.Samples\src\Forms\MultipleDeviceResolutions\MultipleDeviceResolutions\App.xaml	1	
 
 # To fix remove project section
 
