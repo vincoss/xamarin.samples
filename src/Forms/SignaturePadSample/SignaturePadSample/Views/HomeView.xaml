@@ -9,19 +9,19 @@
         https://github.com/xamarin/SignaturePad
     -->
 
-    <StackLayout>
-        <Label Text="App root path"/>
+    <StackLayout Margin="5">
+        <Label Text="App root path" FontSize="Title"/>
         <Entry x:Name="entryAppPath"/>
-        <Label Text="Signature strokes"/>
+        <Label Text="Signature strokes" FontSize="Title"/>
         <Entry x:Name="entryStrokes"/>
-        
-        <Label Text="Sign Here!" />
+
+        <Label Text="Sign Here!" FontSize="Title"/>
 
         <controls:SignaturePadView
 	                    x:Name="signatureView"
 	                    StrokeWidth="3"
 	                    StrokeColor="Orange"
-	                    BackgroundColor="Black" />
+	                    BackgroundColor="White" />
 
         <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
         <Button x:Name="btnGetPoints" Text="Get Points" Clicked="btnGetPoints_Clicked"/>
