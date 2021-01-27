@@ -54,6 +54,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Matcha.BackgroundService">
+      <Version>1.0.5478</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -89,8 +92,8 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xamarin_Forms_BackgroundSample\Xamarin_Forms_BackgroundSample.csproj">
-      <Project>{8816ACDC-94C7-4FBA-8E0E-BAC5DDB0A544}</Project>
+    <ProjectReference Include="..\BackgroundSample\Xamarin_Forms_BackgroundSample.csproj">
+      <Project>{e912f77d-a27f-40ad-9391-7ec122a10ed6}</Project>
       <Name>Xamarin_Forms_BackgroundSample</Name>
     </ProjectReference>
   </ItemGroup>
