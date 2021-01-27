@@ -21,7 +21,8 @@
 	                    x:Name="signatureView"
 	                    StrokeWidth="3"
 	                    StrokeColor="Orange"
-	                    BackgroundColor="White" />
+	                    BackgroundColor="White" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
         <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
         <Button x:Name="btnGetPoints" Text="Get Points" Clicked="btnGetPoints_Clicked"/>
