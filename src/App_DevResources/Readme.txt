@@ -13,6 +13,15 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+ImageSource from FromStream
+Signature read only strokes
+validation sample
+	phone
+	mobile
+	email
+	postcode
+	URL
+	
 
 Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard

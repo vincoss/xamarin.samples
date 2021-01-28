@@ -32,8 +32,8 @@ namespace SignaturePadSample.Views
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
             var stream = await signatureView.GetImageStreamAsync(SignatureImageFormat.Png);
-
-            if(stream == null) // Might be null if not signed
+            
+            if (stream == null) // Might be null if not signed
             {
                 return;
             }
