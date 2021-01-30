@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleUIDesign.Views.CompayAddEditDesign">
+
+    <ScrollView>
+        <StackLayout>
+
+            <Image Margin="10" HeightRequest="100" WidthRequest="100"
+                   Source="camera512.png" d:Source="camera512.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PhotoCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Entry x:Name="editorName"
+                Placeholder="Company Name" 
+                Text="{Binding Company.Name}" 
+                HorizontalOptions="FillAndExpand"
+                CursorPosition="0"
+                ReturnType="Next"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [Name]}" TextColor="{StaticResource validationRed}" d:Text="Name is invalid."/>
+
+            <Entry Placeholder="Contact Name" 
+               Text="{Binding Company.ContactName}" 
+               HorizontalOptions="FillAndExpand"
+               ReturnType="Next"
+               Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [ContactName]}" TextColor="{StaticResource validationRed}" d:Text="Contact name is invalid."/>
+
+            <Entry Placeholder="Company Title" 
+               Text="{Binding Company.ContactTitle}" 
+               HorizontalOptions="FillAndExpand"
+               ReturnType="Next"
+               Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [ContactTitle]}" TextColor="{StaticResource validationRed}" d:Text="Contact title is invalid."/>
+
+            <Entry Placeholder="Phone" 
+                Text="{Binding Company.Phone}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [Phone], Mode=OneWay}" TextColor="{StaticResource validationRed}"  d:Text="Phone is invalid."/>
+
+            <Entry Placeholder="Mobile" 
+                Text="{Binding Company.Mobile}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [Mobile], Mode=OneWay}" TextColor="{StaticResource validationRed}"  d:Text="Mobile is invalid."/>
+
+            <Entry Placeholder="Email" 
+                Text="{Binding Company.Email}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [Email], Mode=OneWay}" TextColor="{StaticResource validationRed}"  d:Text="Email is invalid."/>
+
+            <Entry Placeholder="Address Line 1" 
+                Text="{Binding Company.AddressLine1}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [AddressLine1], Mode=OneWay}" TextColor="{StaticResource validationRed}"  d:Text="Address is invalid."/>
+
+            <Entry Placeholder="Address Line 2" 
+                Text="{Binding Company.AddressLine2}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [AddressLine2], Mode=OneWay}" TextColor="{StaticResource validationRed}"  d:Text="Address is invalid."/>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Entry Placeholder="City" 
+                        Text="{Binding Company.City}" 
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="{StaticResource placeholderGray}" 
+                        TextColor="Gray"
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Text="{Binding [City], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="City is invalid."/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Entry Placeholder="Post Code" 
+                        Text="{Binding Company.Postcode}" 
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="{StaticResource placeholderGray}" 
+                        TextColor="Gray"
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Text="{Binding [Postcode], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="Postcode is invalid."/>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Entry Placeholder="State" 
+                       Text="{Binding Company.State}" 
+                       HorizontalOptions="FillAndExpand"
+                       PlaceholderColor="{StaticResource placeholderGray}" 
+                       TextColor="Gray"
+                       Style="{StaticResource EntryStyle}"/>
+
+                    <Label Text="{Binding [State], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="State is invalid."/>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Entry Placeholder="Country" 
+                       Text="{Binding Company.Country}" 
+                       HorizontalOptions="FillAndExpand"
+                       PlaceholderColor="{StaticResource placeholderGray}" 
+                       TextColor="Gray"
+                       Style="{StaticResource EntryStyle}"/>
+
+                    <Label Text="{Binding [Country], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="Country is invalid."/>
+                </StackLayout>
+
+            </StackLayout>
+
+            <Entry Placeholder="Website URL" 
+                Text="{Binding Company.WebsiteUrl}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [WebsiteUrl], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="Website URL is invalid."/>
+
+            <Editor Placeholder="Comments" 
+                Text="{Binding Company.Comments}" 
+                HorizontalOptions="FillAndExpand"
+                PlaceholderColor="{StaticResource placeholderGray}" 
+                TextColor="Gray"
+                AutoSize="TextChanges"
+                Style="{StaticResource EntryStyle}"/>
+
+            <Label Text="{Binding [Comments], Mode=OneWay}" TextColor="{StaticResource validationRed}" d:Text="Comments is invalid."/>
+
+            <Image Margin="10" HeightRequest="100" WidthRequest="100"
+                   Source="camera512.png" d:Source="camera512.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SignatureCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

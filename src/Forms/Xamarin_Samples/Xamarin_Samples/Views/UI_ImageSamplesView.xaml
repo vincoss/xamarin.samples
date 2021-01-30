@@ -13,11 +13,11 @@
         https://forums.xamarin.com/discussion/17729/image-placeholder
         https://docs.microsoft.com/en-us/windows/uwp/design/style/app-icons-and-logos
         https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/images-icons/displaying-an-image?tabs=windows
+        https://montemagno.com/using-font-icons-in-xamarin-forms-goodbye-images-hello-fonts/
     
         #Page, ToolbarItem, ImageCell contains property
              BackgroundImageSource="{StaticResource TempImage}"
              IconImageSource="{StaticResource TempImage}"
-    
     -->
     
     <ContentPage.Content>
@@ -54,6 +54,20 @@
                              Aspect="Fill"
                              HorizontalOptions="Center"
                              VerticalOptions="CenterAndExpand" />
+
+                <Image Grid.Column="2"
+                       HeightRequest="44"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       WidthRequest="44">
+                                    <Image.Source>
+                        <FontImageSource
+                                FontFamily="{DynamicResource CustomFontFontello}"
+                                Glyph="&#xe803;"
+                                Size="44"
+                                Color="{StaticResource PrimaryColor}" />
+                    </Image.Source>
+                                </Image>        
 
             </StackLayout>
         </ScrollView>
