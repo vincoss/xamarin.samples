@@ -15,10 +15,11 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ImageSource from FromStream
 Signature read only strokes
-validation sample
+validation sample (see phone contact)
 	phone
 	mobile
 	email
+	address
 	postcode
 	URL
 	
