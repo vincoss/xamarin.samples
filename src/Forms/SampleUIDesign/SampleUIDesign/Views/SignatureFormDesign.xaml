@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleUIDesign.Views.SignatureFormDesign">
+
+    <StackLayout>
+
+        <Label Text="# No signature template"/>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="AliceBlue">
+            <Label Text="Edit"  FontSize="Large" HorizontalOptions="Start" Margin="5" VerticalOptions="CenterAndExpand" />
+            <Label Text="Signature" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+
+        <Label Text="# Has as signature template"/>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="AliceBlue">
+            <Label Text="Edit"  FontSize="Large" HorizontalOptions="Start" Margin="5" VerticalOptions="CenterAndExpand" />
+            <BoxView HeightRequest="60" BackgroundColor="Orange" HorizontalOptions="FillAndExpand"/>
+            <Button Text="X" FontSize="Large" BorderColor="Gainsboro" BorderWidth=".5"
+                    HorizontalOptions="End" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="5"/>
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
