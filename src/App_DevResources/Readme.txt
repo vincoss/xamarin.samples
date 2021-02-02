@@ -13,7 +13,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-+xamarin forms entry floating label https://github.com/vecalion/FloatingLabels
++xamarin forms entry floating label 
+	https://github.com/vecalion/FloatingLabels
+	https://material.io/
 	
 validation sample
 	phone, mobile (use Telephone keyboard)
@@ -21,10 +23,9 @@ validation sample
 		RuleFor(customer => customer.Surname).Matches("^\+[1-9]{1}[0-9]{3,14}$");
 	email (Email keyboard)
 		RuleFor(customer => customer.Email).EmailAddress();
-	postcode
 	URL (Url keyboard)
 		RuleFor(x => x.SomeUri).Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _)).When(x => !string.IsNullOrEmpty(x.SomeUri));
-https://material.io/
+
 
 Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard
