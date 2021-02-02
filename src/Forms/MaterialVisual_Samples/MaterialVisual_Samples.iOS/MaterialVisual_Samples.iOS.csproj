@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{938E3403-ACDC-4475-95D2-1481250BAA2E}</ProjectGuid>
+    <ProjectGuid>{9DD896F1-401F-49DE-871A-A3C73697CEB3}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SampleUIDesign.iOS</RootNamespace>
+    <RootNamespace>MaterialVisual_Samples.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>SampleUIDesign.iOS</AssemblyName>
+    <AssemblyName>MaterialVisual_Samples.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -125,15 +125,15 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>5.0.0.1931</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\SampleUIDesign\SampleUIDesign.csproj">
-      <Project>{A2279335-CBAA-40E6-B23E-6BB0F1818186}</Project>
-      <Name>SampleUIDesign</Name>
+    <ProjectReference Include="..\MaterialVisual_Samples\MaterialVisual_Samples.csproj">
+      <Project>{BD375213-0C22-466D-BFA8-AC45FC858728}</Project>
+      <Name>MaterialVisual_Samples</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\camera512.png" />
   </ItemGroup>
 </Project>
