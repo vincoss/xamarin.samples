@@ -13,15 +13,18 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-ImageSource from FromStream
-Signature read only strokes
-validation sample
-	phone
-	mobile
-	email
-	postcode
-	URL
++xamarin forms entry floating label https://github.com/vecalion/FloatingLabels
 	
+validation sample
+	phone, mobile (use Telephone keyboard)
+	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number
+		RuleFor(customer => customer.Surname).Matches("^\+[1-9]{1}[0-9]{3,14}$");
+	email (Email keyboard)
+		RuleFor(customer => customer.Email).EmailAddress();
+	postcode
+	URL (Url keyboard)
+		RuleFor(x => x.SomeUri).Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _)).When(x => !string.IsNullOrEmpty(x.SomeUri));
+https://material.io/
 
 Focus & Keyboard On new item set focus and show keyboard, see android contacts
 	On edit item set cursorPosition but not show keyboard
