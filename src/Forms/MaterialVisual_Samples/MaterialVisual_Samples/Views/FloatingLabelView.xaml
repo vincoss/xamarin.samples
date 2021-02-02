@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaterialVisual_Samples.Views.FloatingLabelView"
+             Visual="Material">
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Entry Placeholder="A" FontSize="Large"/>
+            <Entry Placeholder="B" FontSize="Large"/>
+            <Entry Placeholder="C" FontSize="Large"/>
+            <Entry Placeholder="D" FontSize="Large"/>
+            <Entry Placeholder="E" FontSize="Large"/>
+            <Entry Placeholder="F" FontSize="Large"/>
+            <Entry Placeholder="G" FontSize="Large"/>
+            <Entry Placeholder="H" FontSize="Large"/>
+            <Entry Placeholder="I" FontSize="Large"/>
+            <Entry Placeholder="J" FontSize="Large"/>
+            <Entry Placeholder="K" FontSize="Large"/>
+            <Entry Placeholder="L" FontSize="Large"/>
+            <Entry Placeholder="M" FontSize="Large"/>
+            <Entry Placeholder="N" FontSize="Large"/>
+            <Entry Placeholder="O" FontSize="Large"/>
+            <Entry Placeholder="P" FontSize="Large"/>
+            <Entry Placeholder="Q" FontSize="Large"/>
+            <Entry Placeholder="R" FontSize="Large"/>
+            <Entry Placeholder="S" FontSize="Large"/>
+            <Entry Placeholder="T" FontSize="Large"/>
+            <Entry Placeholder="U" FontSize="Large"/>
+            <Entry Placeholder="V" FontSize="Large"/>
+            <Entry Placeholder="W" FontSize="Large"/>
+            <Entry Placeholder="X" FontSize="Large"/>
+            <Entry Placeholder="Y" FontSize="Large"/>
+            <Editor Placeholder="Z" FontSize="Large"/>
+            <Button Grid.Column="1" Text="Save"/>
+        </StackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>

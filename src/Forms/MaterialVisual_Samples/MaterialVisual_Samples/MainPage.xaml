@@ -24,7 +24,7 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Button Text="Nothing"/>
+        <Button Text="Next" Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

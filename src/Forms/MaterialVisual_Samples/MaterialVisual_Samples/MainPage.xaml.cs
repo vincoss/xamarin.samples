@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialVisual_Samples.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace MaterialVisual_Samples
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new FloatingLabelView());
         }
     }
 }

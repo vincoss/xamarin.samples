@@ -1,16 +1,21 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+
 
 namespace MaterialVisual_Samples
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //To avoid soft keyboard statusbar overlap
+            Xamarin.Forms.Application.Current.On<Xamarin.Forms.PlatformConfiguration.Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
+
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
