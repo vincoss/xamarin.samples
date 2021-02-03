@@ -15,6 +15,11 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 +xamarin forms entry floating label https://github.com/vecalion/FloatingLabels
 	
+URL find samples
+url entry form example
+https://dotnetfiddle.net/XduN3A
+https://stackoverflow.com/questions/7578857/how-to-check-whether-a-string-is-a-valid-http-url
+
 validation sample
 	phone, mobile (use Telephone keyboard)
 	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number
