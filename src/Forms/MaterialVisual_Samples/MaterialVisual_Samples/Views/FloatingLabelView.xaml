@@ -6,7 +6,7 @@
 
     <ScrollView>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <Entry Placeholder="A" FontSize="Large"/>
+            <Entry x:Name="entryA" Placeholder="A" FontSize="Large" CursorPosition="20" Text="aaaa"/>
             <Entry Placeholder="B" FontSize="Large"/>
             <Entry Placeholder="C" FontSize="Large"/>
             <Entry Placeholder="D" FontSize="Large"/>
