@@ -4,8 +4,8 @@
              x:Class="Entry_Focus.MainPage">
 
     <StackLayout>
-        <Button x:Name="buttonNew" Clicked="buttonNew_Clicked"/>
-        <Button x:Name="buttonEdit" Clicked="buttonEdit_Clicked" />
+        <Button x:Name="buttonNew" Text="New" Clicked="buttonNew_Clicked"/>
+        <Button x:Name="buttonEdit" Text="Edit" Clicked="buttonEdit_Clicked" />
     </StackLayout>
 
 </ContentPage>
