@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entry_Focus.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,24 @@ namespace Entry_Focus
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void buttonNew_Clicked(object sender, EventArgs e)
+        {
+            var view = new EditorView();
+            var model = new EditorViewModel();
+            view.BindingContext = model;
+            this.Navigation.PushAsync(view);
+        }
+
+        private void buttonEdit_Clicked(object sender, EventArgs e)
+        {
+            var view = new EditorView();
+            var model = new EditorViewModel();
+            model.A = "A";
+            view.BindingContext = model;
+
+            this.Navigation.PushAsync(view);
         }
     }
 }
