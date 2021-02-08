@@ -20,6 +20,7 @@ namespace Entry_Focus
         {
             var view = new EditorView();
             var model = new EditorViewModel();
+            model.IsNew = true;
             view.BindingContext = model;
             this.Navigation.PushAsync(view);
         }
