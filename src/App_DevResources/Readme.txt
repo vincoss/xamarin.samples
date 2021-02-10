@@ -13,7 +13,14 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-+xamarin forms entry floating label 
+url add http prefix and sample
+Entry show clear button
+Make button square, without require Height|Width
+swipe action to remove items right or left is default?
+home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
+
+material design apply globally
+xamarin forms entry floating label (create sample within material design)
 	https://github.com/vecalion/FloatingLabels
 	https://material.io/
 	
