@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_UrlEntryView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="URL" FontSize="Title"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="http://" FontSize="Large" VerticalOptions="CenterAndExpand"/>
+                <Entry Placeholder="example.com" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

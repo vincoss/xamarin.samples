@@ -13,7 +13,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-url add http prefix and sample
 Entry show clear button
 Make button square, without require Height|Width
 swipe action to remove items right or left is default?

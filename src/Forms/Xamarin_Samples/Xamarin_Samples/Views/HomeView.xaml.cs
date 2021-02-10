@@ -77,6 +77,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo { Type = typeof(UI_NavigationTitleView) });
             pages.Add(new PageInfo { Type = typeof(UI_TableViewHideCell) });
             pages.Add(new PageInfo { Type = typeof(UI_ActivityIndicatorSampleView) });
+            pages.Add(new PageInfo { Type = typeof(UI_UrlEntryView) });
 
             ListOfPages.ItemsSource = pages;
         }
