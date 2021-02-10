@@ -13,14 +13,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
++swipe action to remove items right or left is default? Left
++home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
-swipe action to remove items right or left is default?
-home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
-
-material design apply globally
-xamarin forms entry floating label (create sample within material design)
-	https://github.com/vecalion/FloatingLabels
-	https://material.io/
 	
 URL find samples
 url entry form example
