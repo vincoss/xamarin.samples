@@ -13,8 +13,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-Entry show clear button
-Make button square, without require Height|Width
+
 swipe action to remove items right or left is default?
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
 
