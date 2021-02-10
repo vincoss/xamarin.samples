@@ -2,6 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Samples.Views.UI_UrlEntryView">
+    
+    <!--
+        Validation
+        https://dotnetfiddle.net/XduN3A
+        https://stackoverflow.com/questions/7578857/how-to-check-whether-a-string-is-a-valid-http-url
+    -->
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="URL" FontSize="Title"/>

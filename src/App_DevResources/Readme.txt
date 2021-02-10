@@ -17,24 +17,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 +home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
 	
-URL find samples
-url entry form example
-https://dotnetfiddle.net/XduN3A
-https://stackoverflow.com/questions/7578857/how-to-check-whether-a-string-is-a-valid-http-url
 
-validation sample
-	phone, mobile (use Telephone keyboard)
-	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number
-		RuleFor(customer => customer.Surname).Matches("^\+[1-9]{1}[0-9]{3,14}$");
-	email (Email keyboard)
-		RuleFor(customer => customer.Email).EmailAddress();
-	URL (Url keyboard)
-		RuleFor(x => x.SomeUri).Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _)).When(x => !string.IsNullOrEmpty(x.SomeUri));
-
-
-Focus & Keyboard On new item set focus and show keyboard, see android contacts
-	On edit item set cursorPosition but not show keyboard
-	https://dgatto.com/posts/2020/01/hiding-soft-keyboard/
 
 
 default sample review

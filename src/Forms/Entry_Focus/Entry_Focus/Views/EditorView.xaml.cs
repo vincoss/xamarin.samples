@@ -34,7 +34,7 @@ namespace Entry_Focus.Views
             }
             else
             {
-                entryA.CursorPosition = 11111;
+                entryA.CursorPosition = int.MaxValue;
             }
         }
     }
