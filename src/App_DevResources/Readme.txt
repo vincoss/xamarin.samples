@@ -13,6 +13,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+collapsible label sample add
 url add http prefix and sample
 Entry show clear button
 Make button square, without require Height|Width
