@@ -7,7 +7,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7c02f277-442f-4c7a-94e1-ebe8474b2ebf"
+    Name="com.sample.completeappwithicons"
     Publisher="CN=5c872c8f-d1cf-4db1-8dc2-93a5b00378c1"
     Version="1.0.0.0" />
 
@@ -45,11 +45,17 @@
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="landscapeFlipped"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
 
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="location"/>
   </Capabilities>
 </Package>
