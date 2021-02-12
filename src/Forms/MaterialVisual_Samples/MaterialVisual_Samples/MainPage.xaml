@@ -24,7 +24,8 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Button Text="Next" Clicked="Button_Clicked"/>
+        <Button Text="Next - Material Design" Clicked="Button_Clicked"/>
+        <Button Text="Next - Custom" Clicked="Button_Clicked_1"/>
     </StackLayout>
 
 </ContentPage>

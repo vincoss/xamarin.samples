@@ -20,5 +20,10 @@ namespace MaterialVisual_Samples
         {
             this.Navigation.PushAsync(new FloatingLabelView());
         }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new FloatingLabelSampleView());
+        }
     }
 }

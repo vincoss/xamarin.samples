@@ -40,18 +40,18 @@
                         Wrap="Wrap" 
                         BackgroundColor="LightGreen">
 
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
-                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+                    <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
                 </FlexLayout>
 
                 <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
@@ -62,7 +62,8 @@
                             JustifyContent="Start">   
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <Button Text="a" Margin="10" WidthRequest="40" HeightRequest="40" BackgroundColor="{Binding}" />
+                            <Button Text="a" Margin="10" WidthRequest="40" 
+                                    HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" BackgroundColor="{Binding}" />
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
