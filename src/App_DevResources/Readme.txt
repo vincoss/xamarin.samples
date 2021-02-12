@@ -20,6 +20,7 @@ Images and Icons
 Sample for all platforms, iOS, android, uwp, have all icons required for the app
 	create sample images
 	read documentation
+
 CollectionView
 	Grouping
 	Multi delete, use can select delete action from top menu
@@ -28,19 +29,8 @@ CollectionView
 		back button reset the view back
 	See Phone Contacts
 
-
-Save photo to camera roll (default false)
-	Internal storage (photos)
-	Images will be stored internaly to the app if we keep this option ON, else it would go to photo library.
-	what if changes later? galery and other create a nice sample
-
-speach to text sample
-
 skia sharp touch not working on iOS
-CollectionView list-item design template create
-	put those into DesignUi item not runnable
-	one design must be self contained all colors and layout items
-	see outlook item or hotmail item for ideas
+
 
 ## Xamarin Commands permission (Role-Profile-Readme.txt) samples to read & research
 At first list functionality
@@ -76,14 +66,10 @@ control app from serverside what is available for the UI
 	pages
 	navigation
 server side settings (key-value) JSON
-
-sample with table view
-	keydata, name, path, createdDate, modifiedDate, activityDate, dataSize, otherSize, version
-	actions, backup, update, share, clear
 MenuItem from class instead of xaml
-image zoon and pan, see gestures
-Master view
-Image - IsAnimationPlaying
+
+## Speech
+speach to text sample (offline) there are not much at a moment
 
 ##localization
 	see xamarin-fomms-samples TodoLocalized
@@ -106,13 +92,19 @@ telemetry
 +	C:\Program Files (x86)\Java\jre1.8.0_261\bin
 +	keytool -genkey -keyalg RSA -keysize 4096 -validity 36000 -storepass Pass@word1 -v -keystore dev-key.jks -alias dev-key
 
+## Performance
+review all layout use just grids and stacklayout
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/deploy-test/performance
+
+## Android defaults
+prefere external
+
+
 ## Next
-ListView
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/
 https://github.com/dotnet-architecture/News
 https://dotnet.microsoft.com/learn/dotnet/architecture-guides
 
 review
 https://github.com/Daddoon/BlazorMobile
-https://github.com/bramborman/UWPHelper 
 https://github.com/XLabs/Xamarin-Forms-Labs
