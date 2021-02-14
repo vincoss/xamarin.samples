@@ -147,3 +147,55 @@ https://dotnet.microsoft.com/learn/dotnet/architecture-guides
 review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/XLabs/Xamarin-Forms-Labs
+
+
+  public static class DynamicSqlExtensions
+    {
+        private const string OrderBySq = "ORDER BY";
+        private const string Desc = "DESC";
+        private const string Asc = "ASC";
+
+        //Expression<Func<T, U>> orderExpr
+
+        public static string OrderBy(this string sql, string propertyName)
+        {
+            if (sql.IndexOf(OrderBySq, StringComparison.OrdinalIgnoreCase) < 0)
+            {
+                sql = $"{sql} {OrderBySq}";
+            }
+
+            return $"{sql} {propertyName} {Asc}";
+        }
+
+        public static string OrderByDescending(this string sql, string propertyName)
+        {
+            if(sql.IndexOf(OrderBySq, StringComparison.OrdinalIgnoreCase) < 0)
+            {
+                sql = $"{sql} {OrderBySq}";
+            }
+
+            return $"{sql} {propertyName} {Desc}";
+        }
+
+        public static string ThenByDescending(this string sql, string propertyName)
+        {
+            return $"{sql}, {propertyName} {Desc}";
+        }
+
+        public static string ThenBy(this string sql, string propertyName)
+        {
+            return $"{sql}, {propertyName} {Asc}";
+        }
+
+        public static string Skip(this string sql, int n)
+        {
+            return $"{sql} offset {n}";
+
+            //limit 2, 1;
+        }
+
+        public static string Take(this string sql, int n)
+        {
+            return $"{sql} limit {n}";
+        }
+    }
