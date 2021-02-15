@@ -16,11 +16,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 +swipe action to remove items right or left is default? Left
 +home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
-Images and Icons
-Sample for all platforms, iOS, android, uwp, have all icons required for the app
-	create sample images
-	read documentation
-
 CollectionView
 	Grouping
 	Multi delete, use can select delete action from top menu
