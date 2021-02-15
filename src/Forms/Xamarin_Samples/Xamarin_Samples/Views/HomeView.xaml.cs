@@ -79,6 +79,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo { Type = typeof(UI_ActivityIndicatorSampleView) });
             pages.Add(new PageInfo { Type = typeof(UI_UrlEntryView) });
             pages.Add(new PageInfo { Type = typeof(UI_CollectionViewGrouping) });
+            pages.Add(new PageInfo { Type = typeof(UI_CollectionViewMultipleSelection) });
 
             ListOfPages.ItemsSource = pages;
         }

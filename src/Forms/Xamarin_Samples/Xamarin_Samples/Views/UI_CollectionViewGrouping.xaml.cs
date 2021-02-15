@@ -47,7 +47,6 @@ namespace Xamarin_Samples.Views
         }
     }
 
-
     public class UI_CollectionViewGroupingModel : INotifyPropertyChanged
     {
         public ObservableCollection<ProjectGroup> Projects { get; private set; } = new ObservableCollection<ProjectGroup>();
