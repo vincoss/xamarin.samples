@@ -16,10 +16,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 +swipe action to remove items right or left is default? Left
 +home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
-
-skia sharp touch not working on iOS
-
-
 ## Xamarin Commands permission (Role-Profile-Readme.txt) samples to read & research
 At first list functionality
 	pages, buttons and other
@@ -56,23 +52,11 @@ control app from serverside what is available for the UI
 server side settings (key-value) JSON
 MenuItem from class instead of xaml
 
+## Android defaults
+prefere external
+
 ## Speech
-speach to text sample (offline) there are not much at a moment
-
-##localization
-	see xamarin-fomms-samples TodoLocalized
-	see xamarin-fomms-samples TodoLocalizedRTL
-	see xamarin-fomms-samples UsingResxLocalization
-	see xamarin-fomms-samples UsingResxLocalization
-	C:\_Data\GitHub\Xamarin\docs-archive\Samples\TodoLocalized
-	C:\_Data\GitHub\Xamarin\docs-archive\Samples\UsingResxLocalization
-	https://www.romaniancoder.com/set-culture-for-all-threads-in-c-apps/
-	https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/localization/
-
-telemetry
-	See https://docs.microsoft.com/en-us/appcenter/
-	dbsite, navigation, last used,location,errors and many more
-
++speach to text sample (offline) there are not much at a moment
 
 ## Android keytool
 
@@ -83,9 +67,6 @@ telemetry
 ## Performance
 review all layout use just grids and stacklayout
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/deploy-test/performance
-
-## Android defaults
-prefere external
 
 
 ## Next
