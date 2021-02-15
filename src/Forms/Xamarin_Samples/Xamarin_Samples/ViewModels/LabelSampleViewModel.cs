@@ -10,5 +10,10 @@ namespace Xamarin_Samples.ViewModels
         {
             Launcher.OpenAsync(new System.Uri(url));
         });
+
+        public string FormatedLabelString
+        {
+            get { return "Jobs"; }
+        }
     }
 }

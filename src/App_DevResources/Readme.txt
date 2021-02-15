@@ -17,7 +17,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 +home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
 CollectionView
-	Grouping
 	Multi delete, use can select delete action from top menu
 		that shall show delete column for each list item
 		new menu shall show only delete button,

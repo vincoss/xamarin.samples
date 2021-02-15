@@ -101,6 +101,8 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                <!-- Creating a reusable hyperlink class -->
+                <Label Text="{Binding FormatedLabelString, StringFormat='{0}:'}"/>
 
             </StackLayout>
         </ScrollView>
