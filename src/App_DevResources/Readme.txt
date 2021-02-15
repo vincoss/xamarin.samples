@@ -16,12 +16,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 +swipe action to remove items right or left is default? Left
 +home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
-CollectionView
-	Multi delete, use can select delete action from top menu
-		that shall show delete column for each list item
-		new menu shall show only delete button,
-		back button reset the view back
-	See Phone Contacts
 
 skia sharp touch not working on iOS
 
