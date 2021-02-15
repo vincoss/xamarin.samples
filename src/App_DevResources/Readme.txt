@@ -13,7 +13,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-
+string format string
 collapsible label sample add
 url add http prefix and sample
 Entry show clear button
@@ -148,8 +148,8 @@ review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/XLabs/Xamarin-Forms-Labs
 
-
-  public static class DynamicSqlExtensions
+ // TODO:
+    public static class DynamicSqlExtensions
     {
         private const string OrderBySq = "ORDER BY";
         private const string Desc = "DESC";
