@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqliteDapperSample.Views.ProductListView"
+             Title="Products">
+
+    <StackLayout>
+        <Button Text="Refresh" Command="{Binding RefreshCommand}"/>
+        <Button Text="Add" Command="{Binding AddCommand}"/>
+
+        <Entry Text="{Binding DatabasePath}" Placeholder="Database Path" IsReadOnly="True"/>
+        <Entry Text="{Binding ProductName}" Placeholder="Product Name"/>
+
+        <CollectionView x:Name="scrolToItems" 
+                    SelectionMode="Single"
+                    ItemsSource="{Binding ItemsSource}"
+                    ItemsUpdatingScrollMode="KeepLastItemInView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" Padding="10"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
