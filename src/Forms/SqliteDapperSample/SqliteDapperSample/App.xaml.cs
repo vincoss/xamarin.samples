@@ -13,6 +13,8 @@ namespace SqliteDapperSample
             InitializeComponent();
 
             MainPage = new NavigationPage(new ProductListView());
+
+            SQLitePCL.Batteries_V2.Init(); // iOS system-provided SQLite is used.
         }
 
         protected override void OnStart()

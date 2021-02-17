@@ -14,7 +14,7 @@ namespace SqliteDapperSample.Database
         {
             Name = "sqlitedb.db3";
             DatabasePath = DbPath;
-            ConnectionString = $"Data Source={Path.Combine(DatabasePath, Name)};";
+            ConnectionString = $"Data Source={Path.Combine(DatabasePath, Name)};Password=Pass@word1;";
         }
 
         public string Name { get; private set; }

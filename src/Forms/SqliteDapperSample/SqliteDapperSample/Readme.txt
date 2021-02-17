@@ -4,6 +4,7 @@ Microsoft.Data.Sqlite
 Dapper
 
 ## Sqlite
+https://github.com/ericsink/SQLitePCL.raw
 https://www.connectionstrings.com/sqlite/
 
 ## Fluent migrator
