@@ -117,25 +117,33 @@ namespace SqliteDapperSample.Database
             if (string.IsNullOrWhiteSpace(_orderBy) == false || string.IsNullOrWhiteSpace(_orderByDescending) == false)
             {
                 sb.AppendLine(OrderBySq);
-                sb.AppendLine(_orderBy);
+
+                if (string.IsNullOrWhiteSpace(_orderBy) == false)
+                {
+                    sb.AppendLine(_orderBy);
+                    sb.Append(",");
+                }
 
                 if (string.IsNullOrWhiteSpace(_orderByDescending) == false)
                 {
-                    sb.Append(",");
                     sb.AppendLine(_orderByDescending);
+                    sb.Append(",");
                 }
 
                 if (string.IsNullOrWhiteSpace(_thenByDescending) == false)
                 {
-                    sb.Append(",");
                     sb.AppendLine(_thenByDescending);
+                    sb.Append(",");
                 }
 
                 if (string.IsNullOrWhiteSpace(_thenBy) == false)
                 {
-                    sb.Append(",");
                     sb.AppendLine(_thenBy);
+                    sb.Append(",");
                 }
+
+                // Remove last comma
+                sb.Remove(sb.Length - 1, 1);
             }
 
             // Pagging
