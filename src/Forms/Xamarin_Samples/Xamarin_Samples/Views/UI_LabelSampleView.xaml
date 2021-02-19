@@ -8,7 +8,7 @@
     <!-- 
     ## Resources
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/text/label
-    
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/string-formatting
     -->
 
     <ContentPage.Content>
@@ -34,6 +34,7 @@
                    LineBreakMode="WordWrap"
                    MaxLines="2" />
                 <!-- Formatted text -->
+                <Label Text= "{Binding FirstName, StringFormat='Hello my name is {0} nice to meet you!!!'}" />
                 <Label LineBreakMode="WordWrap">
                     <Label.FormattedText>
                         <FormattedString>
@@ -103,6 +104,9 @@
                 </Label>
                 <!-- Creating a reusable hyperlink class -->
                 <Label Text="{Binding FormatedLabelString, StringFormat='{0}:'}"/>
+
+                <!-- ? Adding special characters to the texts  -->
+                <Label Text= "&lt;Hello people!!!&gt;" />
 
             </StackLayout>
         </ScrollView>

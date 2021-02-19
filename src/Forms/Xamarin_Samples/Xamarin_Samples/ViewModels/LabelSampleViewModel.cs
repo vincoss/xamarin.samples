@@ -15,5 +15,10 @@ namespace Xamarin_Samples.ViewModels
         {
             get { return "Jobs"; }
         }
+
+        public string FirstName
+        {
+            get { return "Ferdinand"; }
+        }
     }
 }
