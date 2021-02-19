@@ -1,45 +1,43 @@
-﻿using System;
+﻿using Plugin.FilePicker;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Xamarin_FilePicker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FilePickerView : ContentPage
+    public partial class CrossFilePickerView : ContentPage
     {
-        public FilePickerView()
+        public CrossFilePickerView()
         {
             InitializeComponent();
         }
 
         private async void btnSelectFile_Clicked(object sender, EventArgs e)
         {
-            var fileTypes = new string[] { "JPEG files (*.jpg)|*.jpg", "PNG files (*.png)|*.png" };
+           await  PickAndShowFile(new string[0]);
 
-            await PickAndShowFile(new string[0]);
-
+           // var fileTypes = new string[] { "JPEG files (*.jpg)|*.jpg", "PNG files (*.png)|*.png" };
         }
+
 
         private async Task PickAndShowFile(string[] fileTypes)
         {
             try
             {
-                // Opening the File Picker - Filter with Jpeg image
-                var result = await FilePicker.PickAsync(new PickOptions
-                {
-                    PickerTitle = "Select your picture",
-                    FileTypes = FilePickerFileType.Jpeg
-                });
+                var pickedFile = await CrossFilePicker.Current.PickFile();
 
-                if (result != null)
+                if (pickedFile != null)
                 {
-                    lFileName.Text = result.FileName;
-                    lFilePath.Text = result.FullPath;
+                    lFileName.Text = pickedFile.FileName;
+                    lFilePath.Text = pickedFile.FilePath;
+
+                   
                 }
             }
             catch (Exception ex)

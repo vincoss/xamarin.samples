@@ -1,20 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Xamarin_FilePicker.Views.FilePickerView">
-    
+             x:Class="Xamarin_FilePicker.Views.FilePickerView"
+             Title="FilePickerView">
+
     <!--
-    https://github.com/jfversluis/FilePicker-Plugin-for-Xamarin-and-Windows
+        https://docs.microsoft.com/en-us/xamarin/essentials/file-picker?tabs=android
+        https://askxammy.com/knowing-the-file-picker-in-xamarin-forms/
     -->
     
-    <ContentPage.Content>
-        <StackLayout>
-            <Button x:Name="btnSelectFile" Text="Select File" Clicked="btnSelectFile_Clicked"/>
-            <Label x:Name="lFileName" Text="" />
-            <Label x:Name="lFilePath" Text="" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Button x:Name="btnSelectFile" Text="Select File" Clicked="btnSelectFile_Clicked"/>
+        <Label x:Name="lFileName" Text="" />
+        <Label x:Name="lFilePath" Text="" />
+    </StackLayout>
+    
 </ContentPage>
