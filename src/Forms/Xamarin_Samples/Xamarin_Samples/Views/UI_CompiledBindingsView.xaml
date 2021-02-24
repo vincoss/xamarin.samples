@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_CompiledBindingsView"
+             xmlns:local="clr-namespace:Xamarin_Samples.Views"
+             Title="UI_CompiledBindingsView">
+    
+    <!--
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+
+    <StackLayout x:DataType="local:IData">
+        <Label Text="{Binding Key}"/>
+        <Label Text="{Binding Value}"/>
+    </StackLayout>
+    
+</ContentPage>
