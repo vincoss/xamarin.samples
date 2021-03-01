@@ -107,8 +107,10 @@
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\page001\alertpage.html" />
     <Content Include="Assets\page001\index.html" />
     <Content Include="Assets\page001\site.css" />
+    <Content Include="Assets\page001\site.js" />
     <Content Include="Assets\page001\XamarinLogo.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />

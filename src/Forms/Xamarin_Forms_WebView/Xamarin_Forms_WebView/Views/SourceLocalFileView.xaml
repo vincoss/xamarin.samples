@@ -6,7 +6,7 @@
 
     <StackLayout>
         <Label Text="Html local file string"/>
-        <WebView x:Name="webViewHtmlString" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        <WebView x:Name="webViewHtmlString" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
     </StackLayout>
     
 </ContentPage>

@@ -146,4 +146,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\page001\XamarinLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\page001\alertpage.html" />
+  </ItemGroup>
 </Project>

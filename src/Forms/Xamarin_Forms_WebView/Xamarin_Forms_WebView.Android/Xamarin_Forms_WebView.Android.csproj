@@ -100,5 +100,8 @@
     <AndroidAsset Include="Assets\page001\site.css" />
     <AndroidAsset Include="Assets\page001\XamarinLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\page001\alertpage.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
