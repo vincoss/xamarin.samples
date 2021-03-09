@@ -14,5 +14,11 @@ namespace WebView_EvaluateJavaScriptAsync
         {
             InitializeComponent();
         }
+
+        private async void btnRun_Clicked(object sender, EventArgs e)
+        {
+            var result = await hybridWebView.EvaluateJavaScriptAsync("var runMe = function(){ return 'minjin';}; runMe();");
+            lblError.Text = string.IsNullOrWhiteSpace(result) ? "Empty" : result;
+        }
     }
 }
