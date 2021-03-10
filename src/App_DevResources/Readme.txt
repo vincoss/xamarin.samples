@@ -14,10 +14,8 @@ https://github.com/xamarin/XamarinCommunityToolkit
 ## Xamarin to read, samples to read & research
 
 font iconst sample for each platoform iOS not working
-collapsible label sample add
+collapsible|floating label sample add
 url add http prefix and sample
-Entry show clear button
-Make button square, without require Height|Width
 swipe action to remove items right or left is default?
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
 
