@@ -13,7 +13,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-DatePicker nullable try to create a sample with textbot and tap
 string format string
 collapsible label sample add
 url add http prefix and sample

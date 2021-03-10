@@ -34,6 +34,12 @@
                 <On Platform="UWP" Value="/Assets/Fonts/fontelloicons.ttf#fontello" />
             </OnPlatform>
 
+            <OnPlatform x:Key="FileFontFontello" x:TypeArguments="x:String">
+                <On Platform="Android" Value="filesfontello.ttf#fontello" />
+                <On Platform="iOS" Value="filesfontello" />
+                <On Platform="UWP" Value="/Assets/Fonts/filesfontello.ttf#fontello" />
+            </OnPlatform>
+
             <!--NavigationPage.TitleView backcolour-->
             <!--<Color x:Key="Primary">#484559</Color>
             <Style TargetType="NavigationPage">

@@ -40,6 +40,7 @@
       <string>FontAwesome5Regular.otf</string>
       <string>FontAwesome5Solid.otf</string>
       <string>fontelloicons.ttf</string>
+      <string>files-fontello.ttf</string>
     </array>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Fill in a reason why your app needs access to location.</string>
