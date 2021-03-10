@@ -102,8 +102,9 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                
                 <!-- Creating a reusable hyperlink class -->
-                <Label Text="{Binding FormatedLabelString, StringFormat='{0}:'}"/>
+                <Label Text="{Binding FormatedLabelString, StringFormat='{0}: here is the text'}"/>
 
                 <!-- ? Adding special characters to the texts  -->
                 <Label Text= "&lt;Hello people!!!&gt;" />

@@ -13,7 +13,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-string format string
+font iconst sample for each platoform iOS not working
 collapsible label sample add
 url add http prefix and sample
 Entry show clear button
