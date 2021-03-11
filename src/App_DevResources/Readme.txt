@@ -13,6 +13,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+Finish the Dapper Sqlite provider samples
 DatePicker nullable try to create a sample with textbot and tap
 string format string
 collapsible label sample add
