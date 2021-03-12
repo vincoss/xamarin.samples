@@ -143,7 +143,12 @@
     <BundleResource Include="Resources\FontAwesome5Brands.otf" />
     <BundleResource Include="Resources\FontAwesome5Regular.otf" />
     <BundleResource Include="Resources\angry.png" />
+    <BundleResource Include="Resources\filesfontello.svg" />
     <Content Include="Resources\fontelloicons.ttf" />
+    <BundleResource Include="Resources\filesfontello.woff2" />
+    <BundleResource Include="Resources\filesfontello.eot" />
+    <BundleResource Include="Resources\filesfontello.ttf" />
+    <BundleResource Include="Resources\filesfontello.woff" />
     <None Include="Resources\OFL.txt" />
     <BundleResource Include="Resources\save.png" />
     <Content Include="Resources\temp.png" />

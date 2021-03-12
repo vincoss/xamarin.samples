@@ -2,12 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin_Samples.Views.UI_FontsSampleView"
+             xmlns:fa="clr-namespace:FontAwesome;assembly=Xamarin_Samples"
+             xmlns:mo="clr-namespace:MaterialDesign;assembly=Xamarin_Samples"
              Title="UI_FontsSampleView">
     
     <!-- 
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/text/fonts
     
     https://ionicons.com/v2/
+    https://andreinitescu.github.io/IconFont2Code/
+    https://montemagno.com/using-font-icons-in-xamarin-forms-goodbye-images-hello-fonts/
+    https://montemagno.com/xamarin-forms-custom-fonts-everywhere/
+    https://github.com/matthewrdev/fa2cs?WT.mc_id=friends-0000-jamont
+    https://github.com/matthewrdev/md2cs
     -->
 
     <ContentPage.Resources>
@@ -65,6 +72,15 @@
                          Size="44" />
                     </Image.Source>
                 </Image>
+                
+                <!-- Fontawesome -->
+                <Label Text="Font awesome"/>
+                <Label Text="{x:Static fa:FontAwesomeIcons.Alicorn}" FontSize="Header" TextColor="Red"/>
+
+                <!-- Material Design -->
+                <Label Text="Material Design"/>
+                <Label Text="{x:Static mo:MaterialDesignIcons.VideoLabel}" FontSize="Header" TextColor="Red"/>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

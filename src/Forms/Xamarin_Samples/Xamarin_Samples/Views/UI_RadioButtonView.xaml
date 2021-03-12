@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_RadioButtonView"
+             Title="UI_RadioButtonView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/radiobutton
+    -->
+
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="RadioButtonTemplate">
+            <Frame BorderColor="#F3F2F1"
+                   BackgroundColor="#F3F2F1"
+                   HasShadow="False"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"
+                   Padding="0">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CheckedStates">
+                            <VisualState x:Name="Checked">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor"
+                                            Value="#FF3300" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Unchecked">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                            Value="#F3F2F1" />
+                                    <Setter Property="BorderColor"
+                                            Value="#F3F2F1" />
+                                    <Setter TargetName="check"
+                                            Property="Opacity"
+                                            Value="0" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+                <Grid Margin="4"
+                      WidthRequest="100">
+                    <Grid WidthRequest="18"
+                          HeightRequest="18"
+                          HorizontalOptions="End"
+                          VerticalOptions="Start">
+                        <Ellipse Stroke="Blue"
+                                 Fill="White"
+                                 WidthRequest="16"
+                                 HeightRequest="16"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                        <Ellipse x:Name="check"
+                                 Fill="Blue"
+                                 WidthRequest="8"
+                                 HeightRequest="8"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center" />
+                    </Grid>
+                    <ContentPresenter />
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="ControlTemplate"
+                    Value="{StaticResource RadioButtonTemplate}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <RadioButton>
+            <RadioButton.Content>
+                <Label x:Name="Pdf" Text="&#xF1C1;" FontFamily="{StaticResource FileFontFontello}" TextColor="Gold" FontSize="Header" />
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton>
+            <RadioButton.Content>
+                <Label x:Name="Word" Text="&#xF1C2;" FontFamily="{StaticResource FileFontFontello}" TextColor="Red" FontSize="Title" />
+            </RadioButton.Content>
+        </RadioButton>
+        <RadioButton>
+            <RadioButton.Content>
+                <Label x:Name="Excel" Text="&#xF1C3;" FontFamily="{StaticResource FileFontFontello}" TextColor="Blue" FontSize="Large" />
+            </RadioButton.Content>
+        </RadioButton>
+
+        <RadioButton Value="File">
+            <RadioButton.Content>
+                <StackLayout>
+                    <Label Text="&#xF1C1;" FontFamily="{StaticResource FileFontFontello}" TextColor="Gold" FontSize="Header" />
+                    <Label Text="&#xF1C2;" FontFamily="{StaticResource FileFontFontello}" TextColor="Red" FontSize="Caption" />
+                    <Label Text="&#xF1C3;" FontFamily="{StaticResource FileFontFontello}" TextColor="Blue" FontSize="Subtitle" />
+                </StackLayout>
+            </RadioButton.Content>
+        </RadioButton>
+    </StackLayout>
+    
+</ContentPage>

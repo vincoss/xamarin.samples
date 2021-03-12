@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:co="clr-namespace:Xamarin_Samples.Controls;assembly=Xamarin_Samples"
              mc:Ignorable="d"
              x:Class="Xamarin_Samples.Views.UI_DatePickerView"
              Title="UI_DatePickerView">
     
     <!--
     https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/datepicker
+    https://forums.xamarin.com/discussion/20028/datepicker-possible-to-bind-to-nullable-date-value
     -->
 
     <ContentPage.Padding>
@@ -17,20 +19,55 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.Content>
-        <StackLayout>
-            <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
-            <Label Text="DatePicker - Basic" />
-            <DatePicker MinimumDate="01/01/2018"
+    <StackLayout>
+        <BoxView BackgroundColor="#696969" HeightRequest="1" HorizontalOptions="FillAndExpand"/>
+        <Label Text="DatePicker - Basic" />
+        <DatePicker MinimumDate="01/01/2018"
                         MaximumDate="12/31/2018"
                         Date="06/21/2018" />
 
-            <!-- Format -->
-            <DatePicker x:Name="startDatePicker"
+        <!-- Format -->
+        <DatePicker x:Name="startDatePicker"
                         Format="D"
                         Margin="30, 0, 0, 30" 
                         HorizontalOptions="Fill"/>
 
+        <!-- Data picker custom to support nullable date -->
+        <Label Text="Birthday"/>
+        <StackLayout Orientation="Horizontal">
+            <BoxView HeightRequest="30" WidthRequest="30" BackgroundColor="Orange"/>
+            <Grid HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryDateTime" IsReadOnly="True" Text="{Binding Birthday, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+            <Button Text="X" x:Name="btnClear" Clicked="btnClear_Clicked"/>
         </StackLayout>
-    </ContentPage.Content>
+
+        <Label Text="Modified Date"/>
+        <StackLayout Orientation="Horizontal">
+            <BoxView HeightRequest="30" WidthRequest="30" BackgroundColor="Orange"/>
+            <Grid HorizontalOptions="FillAndExpand">
+                <Entry x:Name="entryModifiedDate" IsReadOnly="True" Text="{Binding ModifiedDate, StringFormat='{0:D}'}"/>
+                <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="tapModifiedDate" Tapped="tapModifiedDate_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+            <Button Text="X" x:Name="btnClearModifiedDate" Clicked="btnClearModifiedDate_Clicked"/>
+        </StackLayout>
+
+        <!-- Custom DatePicker nullable -->
+        <co:MyDatePicker x:Name="dpCustom" />
+
+        <!-- NOTE: Hidden so can be used with any other editor. 
+            Must be visible since UWP does not raise date changed event otherwise.  
+            Must use 'Unfocused' event instead of 'DateSelected' event since date selected event is raised only on change.
+        -->
+        <DatePicker x:Name="datePickerStealth" HeightRequest="0" HorizontalOptions="FillAndExpand" Unfocused="datePickerStealth_Unfocused"/>
+    </StackLayout>
 </ContentPage>

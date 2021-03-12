@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Samples.Views.UI_ButtonView">
+    
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/button
+    -->
+
+    <StackLayout>
+        <!-- Square button-->
+        <StackLayout Orientation="Horizontal">
+            <Button Text="CA"
+        x:Name="btn1" FontSize="Title"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center"
+        HeightRequest="{Binding Width, Source={x:Reference btn1}}"/>
+            <Button Text="SA"
+        x:Name="btn2" FontSize="Title"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="Center"
+        HeightRequest="{Binding Width, Source={x:Reference btn2}}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
