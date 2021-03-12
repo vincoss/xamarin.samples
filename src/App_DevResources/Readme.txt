@@ -14,7 +14,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 ## Xamarin to read, samples to read & research
 
 font iconst sample for each platoform iOS not working
-review Entry_Focus each platform
+
 
 
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
@@ -37,6 +37,7 @@ default sample review
 	Flyout template
 	Tabbed
 
++review Entry_Focus each platform
 +Focus & Keyboard On new item set focus and show keyboard, see android contacts
 +swipe action to remove items right or left is default? (Left to delete)
 +floating label entry

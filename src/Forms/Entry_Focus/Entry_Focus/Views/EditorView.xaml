@@ -5,7 +5,7 @@
 
     <StackLayout>
         <Label Text="New shall focus top entry and have cursor last index while keyboard is not collapsed" />
-        <Entry x:Name="entryA" Placeholder="A" Text="{Binding A}" />
+        <Entry x:Name="entryA" Placeholder="A" Text="{Binding A}"  ReturnType="Next" />
         <Entry Placeholder="B" />
     </StackLayout>
 
