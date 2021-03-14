@@ -13,6 +13,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+
+
+Finish the Dapper Sqlite provider samples
 font iconst sample for each platoform iOS not working
 
 
