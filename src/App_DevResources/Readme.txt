@@ -15,7 +15,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 
-Finish the Dapper Sqlite provider samples
+Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
 font iconst sample for each platoform iOS not working
 
 
