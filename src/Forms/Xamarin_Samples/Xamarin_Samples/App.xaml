@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <x:String x:Key="TempImage">temp.png</x:String>
             <x:String x:Key="TempImageUWP">resources/temp.png</x:String>
+            <x:String x:Key="IconCoffee">&#xf0f4;</x:String>
 
             <!--UseFontAwesomeSampleView-->
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">

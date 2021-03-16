@@ -52,6 +52,7 @@
                 <Label Text="Title" FontSize="Title" />
                 <Label Text="Subtitle" FontSize="Subtitle" />
                 <Label Text="Caption" FontSize="Caption" />
+                
                 <!--Use a custom font-->
                 <Label Text="Use a custom font"/>
                 <Label Text="Hello Forms with XAML">
@@ -63,6 +64,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
+                
                 <!--Display font icons-->
                 <Label Text="Display font icons"/>
                 <Image BackgroundColor="Orange">
@@ -75,11 +77,13 @@
                 
                 <!-- Fontawesome -->
                 <Label Text="Font awesome"/>
-                <Label Text="{x:Static fa:FontAwesomeIcons.Alicorn}" FontSize="Header" TextColor="Red"/>
+                <Label Text="&#xf0f4;" FontSize="Header" TextColor="Red" FontFamily="FA-S"/>
+                <Label Text="{StaticResource IconCoffee}" FontSize="Header" TextColor="Green" FontFamily="FA-S"/>
+                <Label Text="{x:Static fa:FontAwesomeIcons.Coffee}" FontSize="Header" TextColor="Blue" FontFamily="FA-S"/>
 
                 <!-- Material Design -->
                 <Label Text="Material Design"/>
-                <Label Text="{x:Static mo:MaterialDesignIcons.VideoLabel}" FontSize="Header" TextColor="Red"/>
+                <Label Text="{x:Static mo:MaterialDesignIcons.AccessAlarm}" FontSize="Header" TextColor="Red" FontFamily="MI-R"/>
 
             </StackLayout>
         </ScrollView>
