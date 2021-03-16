@@ -13,6 +13,8 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+
+Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
 signature update full screen
 Finish the Dapper Sqlite provider samples
 
