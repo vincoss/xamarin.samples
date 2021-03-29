@@ -18,6 +18,10 @@ Error		Value cannot be null.
 Parameter name: method	MultipleDeviceResolutions	C:\_Dev\GitHub\FL\Xamarin\Xamarin.Samples\src\Forms\MultipleDeviceResolutions\MultipleDeviceResolutions\App.xaml	1	
 
 # To fix remove project section
+reference upgrade
+clear project
+delete bin and obj folder
+build project not rebuild
 
 <ItemGroup>
     <Compile Update="Views\UI_RefreshViewSampleView.xaml.cs">
