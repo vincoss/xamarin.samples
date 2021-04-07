@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SignaturePadSample.Views.SampleOne"
+             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             Title="SampleOne">
+
+    <!--
+        https://github.com/xamarin/SignaturePad
+    -->
+
+    <StackLayout Margin="5">
+        <Label Text="App root path" FontSize="Title"/>
+        <Entry x:Name="entryAppPath"/>
+        <Label Text="Signature strokes" FontSize="Title"/>
+        <Entry x:Name="entryStrokes"/>
+
+        <Label Text="Sign Here!" FontSize="Title"/>
+
+        <controls:SignaturePadView
+	                    x:Name="signatureView"
+	                    StrokeWidth="3"
+	                    StrokeColor="Orange"
+	                    BackgroundColor="White" 
+            CaptionText="Caption Text"
+            ClearText="Clear Text"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
+        <Button x:Name="btnGetPoints" Text="Get Points" Clicked="btnGetPoints_Clicked"/>
+        <Button x:Name="btnRestore" Text="Restore" Clicked="btnRestore_Clicked"/>
+
+    </StackLayout>
+</ContentPage>

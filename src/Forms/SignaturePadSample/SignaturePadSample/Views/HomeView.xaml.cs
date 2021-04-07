@@ -16,54 +16,24 @@ namespace SignaturePadSample.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomeView : ContentPage
     {
-        private IEnumerable<IEnumerable<Point>> _signatureStrokes;
-
         public HomeView()
         {
             InitializeComponent();
-            Init();
         }
 
-        private void Init()
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            entryAppPath.Text = GetAppRootPath();
-        }
-
-        private async void btnSave_Clicked(object sender, EventArgs e)
-        {
-            var stream = await signatureView.GetImageStreamAsync(SignatureImageFormat.Png);
+            var btn = sender as Button;
             
-            if (stream == null) // Might be null if not signed
+            if(btn.Text == "Sample One")
             {
-                return;
+                Navigation.PushAsync(new SampleOne());
             }
 
-            var filePath = Path.Combine(GetAppRootPath(), $"Signature.png");
-            using (var fw = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write))
+            if (btn.Text == "Sample Two")
             {
-                stream.CopyTo(fw);
+                Navigation.PushAsync(new SampleTwo());
             }
         }
-
-        private void btnGetPoints_Clicked(object sender, EventArgs e)
-        {
-            _signatureStrokes = signatureView.Strokes;
-            entryStrokes.Text = JsonSerializer.Serialize(_signatureStrokes);
-        }
-
-        private void btnRestore_Clicked(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(entryStrokes.Text))
-            {
-                return;
-            }
-            signatureView.Strokes = JsonSerializer.Deserialize<IEnumerable<IEnumerable<Point>>>(entryStrokes.Text);
-        }
-
-        public static string GetAppRootPath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        }
-
     }
 }
