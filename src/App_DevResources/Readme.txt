@@ -18,7 +18,7 @@ see TinyIoC
 Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
 signature update full screen
 Finish the Dapper Sqlite provider samples
-
+create address entry form, try to use also GPS picker to get location
 
 
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
