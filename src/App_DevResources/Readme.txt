@@ -111,3 +111,91 @@ https://dotnet.microsoft.com/learn/dotnet/architecture-guides
 review
 https://github.com/Daddoon/BlazorMobile
 https://github.com/XLabs/Xamarin-Forms-Labs
+
+
+             xmlns:cu="clr-namespace:SignaturePadSample.Views"
+    <cu:CustomSignaturePadView
+	                    x:Name="signatureViewCustom"
+	                    StrokeWidth="3"
+	                    StrokeColor="Orange"
+	                    BackgroundColor="White" 
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+  public class CustomSignaturePadView : SignaturePadView
+    {
+        public static readonly BindableProperty StrokesJsonProperty;
+        public static readonly BindableProperty SignatureCommandProperty;
+
+        static CustomSignaturePadView()
+        {
+            StrokesJsonProperty = BindableProperty.Create(
+                   nameof(StrokesJson),
+                   typeof(string),
+                   typeof(CustomSignaturePadView),
+                   null,
+                   propertyChanged: (bindable, oldValue, newValue) => ((CustomSignaturePadView)bindable).SignaturePadCanvas.Strokes = ParseStrokes((string)newValue));
+
+            SignatureCommandProperty = BindableProperty.Create(
+            nameof(StrokeCompletedCommand),
+            typeof(ICommand),
+            typeof(CustomSignaturePadView),
+            default(ICommand));
+        }
+
+        public CustomSignaturePadView()
+        {
+            SignaturePadCanvas.StrokeCompleted += delegate
+            {
+                OnStrokeCompleted();
+            };
+
+            SignaturePadCanvas.Cleared += delegate
+            {
+                OnCleared();
+            };
+        }
+
+        private async void OnStrokeCompleted()
+        {
+            if (SignatureCommand != null && SignatureCommand.CanExecute(null))
+            {
+                string strokes = null;
+                if (Strokes != null && Strokes.Any())
+                {
+                    StrokesJson = JsonSerializer.Serialize(this.Strokes);
+                }
+                var stream = await this.GetImageStreamAsync(SignatureImageFormat.Png);
+                SignatureCommand.Execute(new Tuple<string, Stream>(strokes, stream));
+            }
+        }
+
+        private void OnCleared()
+        {
+            StrokesJson = null;
+            if (SignatureCommand != null && SignatureCommand.CanExecute(null))
+            {
+                SignatureCommand.Execute(null);
+            }
+        }
+
+        private static IEnumerable<IEnumerable<Point>> ParseStrokes(string value)
+        {
+            if(string.IsNullOrWhiteSpace(value))
+            {
+                return Enumerable.Empty<IEnumerable<Point>>();
+            }
+            return JsonSerializer.Deserialize<IEnumerable<IEnumerable<Point>>>(value);
+        }
+
+        public string StrokesJson
+        {
+            get => (string)GetValue(StrokesJsonProperty);
+            set => SetValue(StrokesJsonProperty, value);
+        }
+
+        public ICommand SignatureCommand
+        {
+            get => (ICommand)GetValue(SignatureCommandProperty);
+            set => SetValue(SignatureCommandProperty, value);
+        }
+    }
