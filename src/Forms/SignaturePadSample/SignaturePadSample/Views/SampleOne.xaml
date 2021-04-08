@@ -5,10 +5,6 @@
              xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
              Title="SampleOne">
 
-    <!--
-        https://github.com/xamarin/SignaturePad
-    -->
-
     <StackLayout Margin="5">
         <Label Text="App root path" FontSize="Title"/>
         <Entry x:Name="entryAppPath"/>

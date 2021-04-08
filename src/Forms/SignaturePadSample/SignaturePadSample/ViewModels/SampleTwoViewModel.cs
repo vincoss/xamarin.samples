@@ -10,8 +10,6 @@ namespace SignaturePadSample.ViewModels
 {
     public class SampleTwoViewModel : BaseViewModel
     {
-        private static string _tempStrokes;
-
         public SampleTwoViewModel()
         {
             SignatureCommand = new Command(OnSignatureCommand);
@@ -25,26 +23,13 @@ namespace SignaturePadSample.ViewModels
             var view = new SignatureView();
             var model = new SignatureViewModel();
             view.BindingContext = model;
-            model.GetSelection = SignatureGet;
             model.SetSelection = SignatureSet;
 
             await App.Current.MainPage.Navigation.PushModalAsync(view);
         }
 
-        public string SignatureGet()
-        {
-            var signatureStrokesFilePath = GetSignatureStrokesPath();
-            if(File.Exists(signatureStrokesFilePath))
-            {
-                return File.ReadAllText(signatureStrokesFilePath);
-            }
-            return null;
-        }
-
         public void SignatureSet(Tuple<string, Stream> signature)
         {
-            //_tempStrokes = strokes;
-
             // Just save for the sample
             var signatureFilePath = GetSignatureImgPath();
             var signatureStrokesFilePath = GetSignatureStrokesPath();
@@ -83,10 +68,7 @@ namespace SignaturePadSample.ViewModels
             return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         }
 
-
-
         public ICommand SignatureCommand { get; private set; }
-
 
         private string _signatureUrl;
 

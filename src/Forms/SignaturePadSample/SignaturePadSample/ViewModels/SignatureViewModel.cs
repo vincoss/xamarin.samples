@@ -21,7 +21,6 @@ namespace SignaturePadSample.ViewModels
 
         public override void Initialize()
         {
-            StrokesJson = GetSelection(); // Stored strokes
         }
 
         private void OnCancelCommand()
@@ -44,15 +43,6 @@ namespace SignaturePadSample.ViewModels
         public ICommand SaveCommand { get; private set; }
         public ICommand SignatureCommand { get; private set; }
 
-        private string _strokeJson;
-
-        public string StrokesJson
-        {
-            get { return _strokeJson; }
-            set { SetProperty(ref _strokeJson, value); }
-        }
-
-        public Func<string> GetSelection { get; set; }
         public Action<Tuple<string, Stream>> SetSelection { get; set; }
     }
 }

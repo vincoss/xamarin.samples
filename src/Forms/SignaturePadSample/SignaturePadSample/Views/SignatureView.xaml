@@ -17,7 +17,6 @@
 	                    StrokeColor="Black"
 	                    BackgroundColor="White" 
                         SignatureCommand="{Binding SignatureCommand}"
-                        StrokesJson="{Binding StrokesJson}"
                         ClearText=""
                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 

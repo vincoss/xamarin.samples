@@ -12,18 +12,10 @@ namespace SignaturePadSample.Xaml
 {
     public class CustomSignaturePadView : SignaturePadView
     {
-        public static readonly BindableProperty StrokesJsonProperty;
         public static readonly BindableProperty SignatureCommandProperty;
 
         static CustomSignaturePadView()
         {
-            StrokesJsonProperty = BindableProperty.Create(
-                   nameof(StrokesJson),
-                   typeof(string),
-                   typeof(CustomSignaturePadView),
-                   null,
-                   propertyChanged: (bindable, oldValue, newValue) => ((CustomSignaturePadView)bindable).SignaturePadCanvas.Strokes = ParseStrokes((string)newValue));
-
             SignatureCommandProperty = BindableProperty.Create(
             nameof(StrokeCompletedCommand),
             typeof(ICommand),
@@ -60,26 +52,10 @@ namespace SignaturePadSample.Xaml
 
         private void OnCleared()
         {
-            StrokesJson = null;
             if (SignatureCommand != null && SignatureCommand.CanExecute(null))
             {
                 SignatureCommand.Execute(null);
             }
-        }
-
-        private static IEnumerable<IEnumerable<Point>> ParseStrokes(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                return Enumerable.Empty<IEnumerable<Point>>();
-            }
-            return JsonSerializer.Deserialize<IEnumerable<IEnumerable<Point>>>(value);
-        }
-
-        public string StrokesJson
-        {
-            get => (string)GetValue(StrokesJsonProperty);
-            set => SetValue(StrokesJsonProperty, value);
         }
 
         public ICommand SignatureCommand
