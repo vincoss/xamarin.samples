@@ -9,37 +9,27 @@ namespace SignaturePadSample.ViewModels
 {
     public class SignatureViewModel : BaseViewModel
     {
+        private Tuple<string, Stream> _actualSignature;
+
         public SignatureViewModel()
         {
-            SaveCommand = new Command<SignatureArg>(OnSaveCommand);
+            SaveCommand = new Command(OnSaveCommand);
+            SignatureCommand = new Command<Tuple<string, Stream>>(OnSignatureCommand);
         }
 
-        private void OnSaveCommand(SignatureArg args)
+        public override void Initialize()
         {
-            //if(args == null)
-            //{
-            //    throw new ArgumentNullException(nameof(args));
-            //}
+            StrokesJson = GetSelection();
+        }
 
+        private void OnSaveCommand()
+        {
+            SetSelection(_actualSignature);
+        }
 
-
-            //var filePath = Path.Combine(GetAppRootPath(), $"Signature.png");
-
-            //if(File.Exists(filePath))
-            //{
-            //    File.Delete(filePath);
-            //}
-
-            //if (args.Image != null)
-            //{
-            //    using (var fw = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write))
-            //    {
-            //        args.Image.CopyTo(fw);
-            //    }
-            //}
-
-            //ShowSignature = File.Exists(filePath);
-            //SignatureUrl = filePath;
+        private void OnSignatureCommand(Tuple<string, Stream> arg)
+        {
+            _actualSignature = arg;
         }
 
         public static string GetAppRootPath()
@@ -48,22 +38,17 @@ namespace SignaturePadSample.ViewModels
         }
 
         public ICommand SaveCommand { get; private set; }
+        public ICommand SignatureCommand { get; private set; }
 
-        private string _storkes;
+        private string _strokeJson;
 
-        public string Strokes
+        public string StrokesJson
         {
-            get { return _storkes; }
-            set { SetProperty(ref _storkes, value); }
+            get { return _strokeJson; }
+            set { SetProperty(ref _strokeJson, value); }
         }
 
         public Func<string> GetSelection { get; set; }
-        public Action<Tuple<Stream, string>> SetSelection { get; set; }
-    }
-
-    public class SignatureArg
-    {
-        public string Strokes { get; set; }
-        public Stream Image { get; set; }
+        public Action<Tuple<string, Stream>> SetSelection { get; set; }
     }
 }

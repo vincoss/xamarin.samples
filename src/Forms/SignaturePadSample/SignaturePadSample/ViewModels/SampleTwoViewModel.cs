@@ -20,6 +20,8 @@ namespace SignaturePadSample.ViewModels
 
         private async void OnSignatureCommand()
         {
+            // Sample only; Use IOC to resolve view and models
+
             var view = new SignatureView();
             var model = new SignatureViewModel();
             view.BindingContext = model;
@@ -27,36 +29,53 @@ namespace SignaturePadSample.ViewModels
             model.SetSelection = SignatureSet;
 
             await App.Current.MainPage.Navigation.PushModalAsync(view);
-
         }
 
         public string SignatureGet()
         {
-            return _tempStrokes;
+            var signatureStrokesFilePath = GetSignatureStrokesPath();
+            if(File.Exists(signatureStrokesFilePath))
+            {
+                return File.ReadAllText(signatureStrokesFilePath);
+            }
+            return null;
         }
 
-        public void SignatureSet(Tuple<Stream, string> signature)
+        public void SignatureSet(Tuple<string, Stream> signature)
         {
             //_tempStrokes = strokes;
 
-            //// Just save for the sample
-            //var filePath = Path.Combine(GetAppRootPath(), $"Signature.png");
+            // Just save for the sample
+            var signatureFilePath = GetSignatureImgPath();
+            var signatureStrokesFilePath = GetSignatureStrokesPath();
 
-            //if (File.Exists(filePath))
-            //{
-            //    File.Delete(filePath);
-            //}
+            if (File.Exists(signatureFilePath))
+            {
+                File.Delete(signatureFilePath);
+            }
 
-            //if (stream != null)
-            //{
-            //    using (var fw = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write))
-            //    {
-            //        stream.CopyTo(fw);
-            //    }
-            //}
+            if (signature != null)
+            {
+                using (var fw = new FileStream(signatureFilePath, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    signature.Item2.CopyTo(fw);
+                }
 
-            //ShowSignature = File.Exists(filePath);
-            //SignatureUrl = filePath;
+                File.WriteAllText(signatureStrokesFilePath, signature.Item1);
+            }
+
+            ShowSignature = File.Exists(signatureFilePath);
+            SignatureUrl = signatureFilePath;
+        }
+
+        private static string GetSignatureImgPath()
+        {
+            return Path.Combine(GetAppRootPath(), $"Signature.png");
+        }
+
+        private static string GetSignatureStrokesPath()
+        {
+            return Path.Combine(GetAppRootPath(), $"Signature.json");
         }
 
         public static string GetAppRootPath()

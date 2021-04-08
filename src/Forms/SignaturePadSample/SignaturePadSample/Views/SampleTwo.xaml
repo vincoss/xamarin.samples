@@ -7,7 +7,7 @@
     <StackLayout Margin="5">
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                <TapGestureRecognizer Command="{Binding SignatureCommand}"/>
             </StackLayout.GestureRecognizers>
             <Label Text="Signature" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
             <Image HeightRequest="24" Source="{Binding SignatureUrl}" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowSignature}"/>

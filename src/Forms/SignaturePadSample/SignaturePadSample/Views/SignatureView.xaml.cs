@@ -29,29 +29,7 @@ namespace SignaturePadSample.Views
 
         private void btnClear_Clicked(object sender, EventArgs e)
         {
-            signaturePadView.Clear();
+            signatureViews.Clear();
         }
-
-        private async void btnSave_Clicked(object sender, EventArgs e)
-        {
-            var strokes = signaturePadView.Strokes;
-            var stream = await signaturePadView.GetImageStreamAsync(SignatureImageFormat.Png);
-
-            var model = BindingContext as SignatureViewModel;
-            if (model == null)
-            {
-                return;
-            }
-
-            var arg = new SignatureArg
-            {
-                Strokes = JsonSerializer.Serialize(strokes),
-                Image = stream
-            };
-
-            model.SaveCommand.Execute(arg);
-            await Navigation.PopModalAsync();
-        }
-
     }
 }
