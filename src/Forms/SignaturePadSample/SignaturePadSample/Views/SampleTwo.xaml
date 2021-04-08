@@ -11,6 +11,7 @@
             </StackLayout.GestureRecognizers>
             <Label Text="Signature" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
             <Image HeightRequest="24" Source="{Binding SignatureUrl}" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowSignature}"/>
+            <Label Text=">" FontSize="Large" HorizontalOptions="End" Margin="5,0,0,0"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

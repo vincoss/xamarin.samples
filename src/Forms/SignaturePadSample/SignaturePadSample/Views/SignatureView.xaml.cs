@@ -19,12 +19,16 @@ namespace SignaturePadSample.Views
         {
             InitializeComponent();
 
-            BindingContext = new SignatureViewModel();
+            this.Appearing += SignatureView_Appearing;
         }
 
-        private async void btnCancel_Clicked(object sender, EventArgs e)
+        private void SignatureView_Appearing(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            var model = BindingContext as SignatureViewModel;
+            if(model != null)
+            {
+                model.Initialize();
+            }
         }
 
         private void btnClear_Clicked(object sender, EventArgs e)

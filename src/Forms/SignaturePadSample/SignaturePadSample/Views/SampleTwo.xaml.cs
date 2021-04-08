@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SignaturePadSample.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace SignaturePadSample.Views
         public SampleTwo()
         {
             InitializeComponent();
+
+            var model = new SampleTwoViewModel();
+            model.Initialize();
+
+            BindingContext = model;
         }
     }
 }

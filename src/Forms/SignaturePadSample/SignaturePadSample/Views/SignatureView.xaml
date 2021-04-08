@@ -6,17 +6,19 @@
 
     <StackLayout Margin="5">
         <StackLayout Orientation="Horizontal">
-            <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked" />
-            <Label Text="Signature" Margin="10" FontSize="Title" HorizontalOptions="Center"/>
-            <Button x:Name="btnSave" Text="Save" Command="{Binding SaveCommand}"/>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="Start" />
+            <Label Text="Signature" Margin="10" FontSize="Title" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="End"/>
         </StackLayout>
 
         <cu:CustomSignaturePadView
 	                    x:Name="signatureViews"
 	                    StrokeWidth="3"
-	                    StrokeColor="Orange"
+	                    StrokeColor="Black"
 	                    BackgroundColor="White" 
                         SignatureCommand="{Binding SignatureCommand}"
+                        StrokesJson="{Binding StrokesJson}"
+                        ClearText=""
                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
         <Button x:Name="btnClear" Text="Clear"

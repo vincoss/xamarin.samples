@@ -51,7 +51,7 @@ namespace SignaturePadSample.Xaml
                 string strokes = null;
                 if (Strokes != null && Strokes.Any())
                 {
-                    StrokesJson = JsonSerializer.Serialize(this.Strokes);
+                    strokes = JsonSerializer.Serialize(this.Strokes);
                 }
                 var stream = await this.GetImageStreamAsync(SignatureImageFormat.Png);
                 SignatureCommand.Execute(new Tuple<string, Stream>(strokes, stream));
