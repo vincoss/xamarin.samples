@@ -15,6 +15,12 @@ namespace SignaturePadSample.ViewModels
             SignatureCommand = new Command(OnSignatureCommand);
         }
 
+        public override void Initialize()
+        {
+            var signatureFilePath = GetSignatureImgPath();
+            ShowSignature = File.Exists(signatureFilePath);
+            SignatureUrl = signatureFilePath;
+        }
 
         private async void OnSignatureCommand()
         {
@@ -23,12 +29,23 @@ namespace SignaturePadSample.ViewModels
             var view = new SignatureView();
             var model = new SignatureViewModel();
             view.BindingContext = model;
+            model.GetSelection = SignatureGet;
             model.SetSelection = SignatureSet;
 
             await App.Current.MainPage.Navigation.PushModalAsync(view);
         }
 
-        public void SignatureSet(Tuple<string, Stream> signature)
+        public string SignatureGet()
+        {
+            var signatureStrokesFilePath = GetSignatureStrokesPath();
+            if (File.Exists(signatureStrokesFilePath))
+            {
+                return File.ReadAllText(signatureStrokesFilePath);
+            }
+            return null;
+        }
+
+        public void SignatureSet(Tuple<string, Stream> arg)
         {
             // Just save for the sample
             var signatureFilePath = GetSignatureImgPath();
@@ -38,17 +55,23 @@ namespace SignaturePadSample.ViewModels
             {
                 File.Delete(signatureFilePath);
             }
+            if (File.Exists(signatureStrokesFilePath))
+            {
+                File.Delete(signatureStrokesFilePath);
+            }
 
-            if (signature != null)
+            if (arg != null)
             {
                 using (var fw = new FileStream(signatureFilePath, FileMode.OpenOrCreate, FileAccess.Write))
                 {
-                    signature.Item2.CopyTo(fw);
+                    arg.Item2.CopyTo(fw);
                 }
 
-                File.WriteAllText(signatureStrokesFilePath, signature.Item1);
+                File.WriteAllText(signatureStrokesFilePath, arg.Item1);
             }
 
+            ShowSignature = false;
+            SignatureUrl = null;
             ShowSignature = File.Exists(signatureFilePath);
             SignatureUrl = signatureFilePath;
         }

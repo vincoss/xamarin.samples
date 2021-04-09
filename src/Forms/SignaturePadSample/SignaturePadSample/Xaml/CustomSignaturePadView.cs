@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -12,10 +13,18 @@ namespace SignaturePadSample.Xaml
 {
     public class CustomSignaturePadView : SignaturePadView
     {
+        public static readonly BindableProperty StrokesJsonProperty;
         public static readonly BindableProperty SignatureCommandProperty;
 
         static CustomSignaturePadView()
         {
+            StrokesJsonProperty = BindableProperty.Create(
+                   nameof(StrokesJson),
+                   typeof(string),
+                   typeof(CustomSignaturePadView),
+                   null,
+                   propertyChanged: (bindable, oldValue, newValue) => ((CustomSignaturePadView)bindable).SignaturePadCanvas.Strokes = ParseStrokes((string)newValue));
+
             SignatureCommandProperty = BindableProperty.Create(
             nameof(StrokeCompletedCommand),
             typeof(ICommand),
@@ -40,11 +49,8 @@ namespace SignaturePadSample.Xaml
         {
             if (SignatureCommand != null && SignatureCommand.CanExecute(null))
             {
-                string strokes = null;
-                if (Strokes != null && Strokes.Any())
-                {
-                    strokes = JsonSerializer.Serialize(this.Strokes);
-                }
+                await Task.Delay(300);
+                var strokes = JsonSerializer.Serialize(this.Strokes);
                 var stream = await this.GetImageStreamAsync(SignatureImageFormat.Png);
                 SignatureCommand.Execute(new Tuple<string, Stream>(strokes, stream));
             }
@@ -56,6 +62,21 @@ namespace SignaturePadSample.Xaml
             {
                 SignatureCommand.Execute(null);
             }
+        }
+
+        private static IEnumerable<IEnumerable<Point>> ParseStrokes(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return Enumerable.Empty<IEnumerable<Point>>();
+            }
+            return JsonSerializer.Deserialize<IEnumerable<IEnumerable<Point>>>(value);
+        }
+
+        public string StrokesJson
+        {
+            get => (string)GetValue(StrokesJsonProperty);
+            set => SetValue(StrokesJsonProperty, value);
         }
 
         public ICommand SignatureCommand

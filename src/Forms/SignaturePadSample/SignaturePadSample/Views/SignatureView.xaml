@@ -16,9 +16,10 @@
 	                    StrokeWidth="3"
 	                    StrokeColor="Black"
 	                    BackgroundColor="White" 
-                        SignatureCommand="{Binding SignatureCommand}"
                         ClearText=""
-                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        StrokesJson="{Binding StrokesJson}"
+                        SignatureCommand="{Binding SignatureCommand}"/>
 
         <Button x:Name="btnClear" Text="Clear"
                 Padding="20" BackgroundColor="#DCDCDC" 
