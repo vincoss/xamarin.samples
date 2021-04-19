@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -55,6 +56,11 @@ namespace Xamarin_Samples.Views
             try { Add(_environment, nameof(Environment.WorkingSet), Environment.WorkingSet); } catch (Exception e) { Add(_environment, nameof(Environment.WorkingSet), e.Message); }
             Add(_environment, nameof(Environment.SystemDirectory), Environment.SystemDirectory);
             Add(_environment, nameof(Environment.Is64BitProcess), Environment.Is64BitProcess);
+
+
+            Add(_environment, nameof(FileSystem.AppDataDirectory), FileSystem.AppDataDirectory);
+            Add(_environment, nameof(FileSystem.CacheDirectory), FileSystem.CacheDirectory);
+            Add(_environment, nameof(Directory.GetCurrentDirectory), Directory.GetCurrentDirectory());
         }
 
         public void GetLogicalDrives()
