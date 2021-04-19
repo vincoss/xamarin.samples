@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NetGenericHost.Interfaces;
+using NetGenericHost.Services;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,8 +15,9 @@ namespace NetGenericHost
             MainPage = new MainPage();
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
+            await BootstrapExtensions.Run(new string[0]);
         }
 
         protected override void OnSleep()
