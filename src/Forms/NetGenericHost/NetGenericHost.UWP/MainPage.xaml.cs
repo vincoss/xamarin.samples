@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace NetGenericHost.UWP
 {
@@ -21,7 +24,13 @@ namespace NetGenericHost.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new NetGenericHost.App());
+            BootstrapExtensions.Run(new string[0], ConfigureServices);
+            LoadApplication(NetGenericHost.App.ServiceProvider.GetService<NetGenericHost.App>());
+        }
+
+        private void ConfigureServices(HostBuilderContext ctx, IServiceCollection services)
+        {
+            // Register here navive calls
         }
     }
 }

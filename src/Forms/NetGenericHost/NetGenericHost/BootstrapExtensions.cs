@@ -17,7 +17,7 @@ namespace NetGenericHost
         public static readonly string Namespace = typeof(BootstrapExtensions).Namespace;
         public static readonly string AppName = Namespace;
 
-        public static Task<int> Run(string[] args)
+        public static int Run(string[] args, Action<HostBuilderContext, IServiceCollection> nativeConfigureServices = null)
         {
             //  Log.Logger = CreateSerilogLogger(configuration); // TODO: logging
 
@@ -25,14 +25,15 @@ namespace NetGenericHost
             {
                 // Log.Information("Configuring host ({ApplicationContext})...", AppName);
 
-                var host = CreateHostBuilder(args).Build();
+                var host = CreateHostBuilder(args, nativeConfigureServices).Build();
+                App.ServiceProvider = host.Services;
 
-                return Task.FromResult(0);
+                return 0;
             }
             catch (Exception ex)
             {
                 // Log.Fatal(ex, "Program terminated unexpectedly ({ApplicationContext})!", AppName);
-                return Task.FromResult(1);
+                return 1;
             }
             finally
             {
@@ -40,7 +41,7 @@ namespace NetGenericHost
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args)
+        public static IHostBuilder CreateHostBuilder(string[] args, Action<HostBuilderContext, IServiceCollection> nativeConfigureServices)
         {
             var configuration = GetConfiguration(args);
             var builder = new HostBuilder()
@@ -55,6 +56,7 @@ namespace NetGenericHost
                 .ConfigureServices((hostContext, services) =>
                 {
                     ConfigureServices(hostContext, services);
+                    nativeConfigureServices(hostContext, services);
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {
@@ -83,6 +85,7 @@ namespace NetGenericHost
 
             services.AddSingleton<IBootstrap, Bootstrap>();
             services.AddSingleton<IHttpService, HttpService>();
+            services.AddSingleton<App>();
         }
     }
 }

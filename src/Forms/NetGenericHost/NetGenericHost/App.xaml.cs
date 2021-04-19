@@ -8,16 +8,19 @@ namespace NetGenericHost
 {
     public partial class App : Application
     {
+        public static IServiceProvider ServiceProvider { get; set; }
+
         public App()
         {
             InitializeComponent();
 
+
             MainPage = new MainPage();
         }
 
-        protected async override void OnStart()
+        protected override void OnStart()
         {
-            await BootstrapExtensions.Run(new string[0]);
+            
         }
 
         protected override void OnSleep()

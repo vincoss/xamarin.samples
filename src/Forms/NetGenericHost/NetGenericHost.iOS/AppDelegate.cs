@@ -4,6 +4,9 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace NetGenericHost.iOS
 {
@@ -23,9 +26,16 @@ namespace NetGenericHost.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            BootstrapExtensions.Run(new string[0], ConfigureServices);
+            LoadApplication(App.ServiceProvider.GetService<App>());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void ConfigureServices(HostBuilderContext ctx, IServiceCollection services)
+        {
+            // Register here navive calls
         }
     }
 }
