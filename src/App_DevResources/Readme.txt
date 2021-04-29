@@ -19,7 +19,7 @@ Finish the Dapper Sqlite sample provider samples, see fluentmigration with dappe
 signature update full screen
 Finish the Dapper Sqlite provider samples
 create address entry form, try to use also GPS picker to get location
-
+TableView for forms, create sample, review and update existing
 
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
 
