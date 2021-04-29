@@ -15,8 +15,6 @@ namespace SignaturePadSample.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SampleOne : ContentPage
     {
-        private IEnumerable<IEnumerable<Point>> _signatureStrokes;
-
         public SampleOne()
         {
             InitializeComponent();
@@ -46,8 +44,7 @@ namespace SignaturePadSample.Views
 
         private void btnGetPoints_Clicked(object sender, EventArgs e)
         {
-            _signatureStrokes = signatureView.Strokes;
-            entryStrokes.Text = JsonSerializer.Serialize(_signatureStrokes);
+            entryStrokes.Text = JsonSerializer.Serialize(signatureView.Strokes);
         }
 
         private void btnRestore_Clicked(object sender, EventArgs e)

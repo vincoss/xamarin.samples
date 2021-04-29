@@ -13,14 +13,20 @@ namespace SignaturePadSample.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SampleTwo : ContentPage
     {
+        private SampleTwoViewModel _model = new SampleTwoViewModel();
+
         public SampleTwo()
         {
             InitializeComponent();
 
-            var model = new SampleTwoViewModel();
-            model.Initialize();
+            BindingContext = _model;
 
-            BindingContext = model;
+            this.Appearing += SampleTwo_Appearing;
+        }
+
+        private void SampleTwo_Appearing(object sender, EventArgs e)
+        {
+            _model.Initialize();
         }
     }
 }

@@ -5,16 +5,22 @@
              Title="SampleTwo">
 
     <StackLayout Margin="5">
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <StackLayout.GestureRecognizers>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding SignatureCommand}"/>
-            </StackLayout.GestureRecognizers>
-            <Label x:Name="lblTitle"  Text="Signature" FontSize="Large" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" LineBreakMode="NoWrap"/>
-            <Image Source="{Binding SignatureUrl}" 
-                   HeightRequest="{Binding Height, Source={x:Reference lblTitle}}"
+            </Grid.GestureRecognizers>
+
+            <Label Grid.Column="0" x:Name="lblTitle"  Text="Signature" FontSize="Large" 
+               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" LineBreakMode="NoWrap"/>
+            <Image Grid.Column="1" Source="{Binding SignatureUrl}" 
+                   HeightRequest="{Binding Height, Source={x:Reference lblTitle}}" Aspect="AspectFit"
                    HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowSignature}"/>
-            <Label Text=">" FontSize="Large" HorizontalOptions="End" Margin="5,0,0,0"/>
-        </StackLayout>
-        
+            <Label Grid.Column="2" Text=">" FontSize="Large" HorizontalOptions="End" Margin="5,0,0,0"/>
+        </Grid>
     </StackLayout>
 </ContentPage>
