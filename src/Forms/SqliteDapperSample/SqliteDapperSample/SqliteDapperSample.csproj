@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.78" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.4" />
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.6" />
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlcipher" Version="2.0.4" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
