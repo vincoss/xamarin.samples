@@ -11,7 +11,89 @@ https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
 
+## geolocation
+create a looper service that will always try to get best location, then we use that one get get from
+
+ public class GeolocationDto
+    {
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double? Altitude { get; set; }
+        public double? Accuracy { get; set; }
+        public double? VerticalAccuracy { get; set; }
+        public double? Speed { get; set; }
+        public double? Course { get; set; }
+        public DateTimeOffset Timestamp { get; set; }
+        public string AcquireDuration { get; set; }
+        public bool IsMock { get; set; }
+        public string Error { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.Append($"{nameof(Latitude)}: {Latitude}, ");
+            sb.Append($"{nameof(Longitude)}: {Longitude}, ");
+            sb.Append($"{nameof(Altitude)}: {Altitude ?? 0}, ");
+            sb.Append($"{nameof(Accuracy)}: {Accuracy ?? 0}, ");
+            sb.Append($"{nameof(VerticalAccuracy)}: {VerticalAccuracy ?? 0}, ");
+            sb.Append($"{nameof(Speed)}: {Speed ?? 0}, ");
+            sb.Append($"{nameof(Course)}: {Course ?? 0}, ");
+            sb.Append($"{nameof(Timestamp)}: {Timestamp}, ");
+            sb.Append($"{nameof(IsMock)}: {IsMock}");
+
+            return sb.ToString();
+        }
+    }
+
+public async Task<GeolocationDto> GetLocationMethodAsync()
+        {
+            var start = DateTime.UtcNow;
+            var result = new GeolocationDto();
+            try
+            {
+                var loc = await Geolocation.GetLastKnownLocationAsync();
+                if (loc == null)
+                {
+                    // potential long running method
+                    var request = new GeolocationRequest(GeolocationAccuracy.Best)
+                    {
+                        Timeout = TimeSpan.FromSeconds(10)
+                    };
+                    loc = await Geolocation.GetLocationAsync(request);
+                }
+
+                if (loc != null)
+                {
+                    result.Latitude = loc.Latitude;
+                    result.Longitude = loc.Longitude;
+                    result.Altitude = loc.Altitude;
+                    result.Accuracy = loc.Accuracy;
+                    result.VerticalAccuracy = loc.VerticalAccuracy;
+                    result.Speed = loc.Speed;
+                    result.Course = loc.Course;
+                    result.Timestamp = loc.Timestamp;
+                    //https://stackoverflow.com/questions/42569245/detect-or-prevent-if-user-uses-fake-location
+                    result.IsMock = loc.IsFromMockProvider;
+                }
+            }
+            catch (Exception ex)
+            {
+                /*
+                    NOTE: ID_CAP_LOCATION access denied, if location is disabled on tthe device.
+                */
+
+                Logger.Error(ex, nameof(GetLocationMethodAsync));
+                result.Error = ex.Message;
+            }
+            result.AcquireDuration = (DateTime.UtcNow - start).ToString();
+            return result;
+        }
+
 ## Xamarin to read, samples to read & research
+
+
+
 
 see TinyIoC
 	https://github.com/grumpydev/TinyIoC
