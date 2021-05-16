@@ -94,7 +94,7 @@ public async Task<GeolocationDto> GetLocationMethodAsync()
 
 
 
-
+see JIRA itemId and the move to another project
 see TinyIoC
 	https://github.com/grumpydev/TinyIoC
 Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
