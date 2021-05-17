@@ -1,4 +1,0 @@
-MainPackage=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\Default_Empty_AppCenter\Default_Empty_AppCenter.UWP\bin\ARM\Debug\Default_Empty_AppCenter.UWP_1.0.1.0_ARM_Debug.appx
-SymbolPackage=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\Default_Empty_AppCenter\Default_Empty_AppCenter.UWP\obj\ARM\Debug\Symbols\Default_Empty_AppCenter.UWP_1.0.1.0_ARM_Debug.appxsym
-ResourcePack=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\Default_Empty_AppCenter\Default_Empty_AppCenter.UWP\bin\ARM\Debug\Default_Empty_AppCenter.UWP_1.0.1.0_scale-100.appx
-ResourcePack=C:\_Data\GitHub\Xamarin\xamarin.samples\src\Forms\Default_Empty_AppCenter\Default_Empty_AppCenter.UWP\bin\ARM\Debug\Default_Empty_AppCenter.UWP_1.0.1.0_scale-400.appx
