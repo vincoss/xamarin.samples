@@ -24,7 +24,7 @@ namespace SqliteDapperSample.Database
 
         public void Run()
         {
-            using(var connection = new SqliteConnection(databaseConfig.ConnectionString))
+            using (var connection = new SqliteConnection(databaseConfig.ConnectionString))
             {
                 var table = connection.Query<string>("SELECT name FROM sqlite_master WHERE type='table' AND name = 'Product';");
                 var tableName = table.FirstOrDefault();
