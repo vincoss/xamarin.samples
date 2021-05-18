@@ -15,15 +15,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+complete TinyIoC sample
 
-
-
-
-see TinyIoC
-	https://github.com/grumpydev/TinyIoC
-Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
-signature update full screen
-Finish the Dapper Sqlite provider samples
+signature update full screen, review other drawing
 create address entry form, try to use also GPS picker to get location
 TableView for forms, create sample, review and update existing
 
@@ -47,6 +41,7 @@ default sample review
 	Flyout template
 	Tabbed
 
++Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
 +see JIRA itemId and the move to another project (Move change the ID based on targed project count)
 +	ProjectA-3657
 +	ProjectB-796
