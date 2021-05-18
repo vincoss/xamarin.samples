@@ -16,43 +16,20 @@ https://github.com/xamarin/XamarinCommunityToolkit
 ## Xamarin to read, samples to read & research
 
 complete TinyIoC sample
-
 signature update full screen, review other drawing
-create address entry form, try to use also GPS picker to get location
+
+create address entry form, try to use also GPS picker to get location, this might require WIFI
 TableView for forms, create sample, review and update existing
 
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
-
-
-
-validation sample
-	phone, mobile (use Telephone keyboard)
-	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number
-		RuleFor(customer => customer.Surname).Matches("^\+[1-9]{1}[0-9]{3,14}$");
-	email (Email keyboard)
-		RuleFor(customer => customer.Email).EmailAddress();
-	URL (Url keyboard)
-		RuleFor(x => x.SomeUri).Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _)).When(x => !string.IsNullOrEmpty(x.SomeUri));
-
-
-
 
 default sample review
 	Flyout template
 	Tabbed
 
-+Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
-+see JIRA itemId and the move to another project (Move change the ID based on targed project count)
-+	ProjectA-3657
-+	ProjectB-796
-+review Entry_Focus each platform
-+Focus & Keyboard On new item set focus and show keyboard, see android contacts
-+swipe action to remove items right or left is default? (Left to delete)
-+floating label entry
-+square button
-+url add http prefix and sample
-+swipe action to remove items right or left is default? Left
-+home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
+
+
+
 
 ## Xamarin Commands permission (Role-Profile-Readme.txt) samples to read & research
 At first list functionality
@@ -90,14 +67,33 @@ control app from serverside what is available for the UI
 server side settings (key-value) JSON
 MenuItem from class instead of xaml
 
-## Android defaults
-prefere external
+
+
++validation sample
++	phone, mobile (use Telephone keyboard)
+++	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number
++		RuleFor(customer => customer.Surname).Matches("^\+[1-9]{1}[0-9]{3,14}$");
++	email (Email keyboard)
++		RuleFor(customer => customer.Email).EmailAddress();
++	URL (Url keyboard)
++		RuleFor(x => x.SomeUri).Must(uri => Uri.TryCreate(uri, UriKind.Absolute, out _)).When(x => !string.IsNullOrEmpty(x.SomeUri));
++Finish the Dapper Sqlite sample provider samples, see fluentmigration with dapper
++see JIRA itemId and the move to another project (Move change the ID based on targed project count)
++	ProjectA-3657
++	ProjectB-796
++review Entry_Focus each platform
++Focus & Keyboard On new item set focus and show keyboard, see android contacts
++swipe action to remove items right or left is default? (Left to delete)
++floating label entry
++square button
++url add http prefix and sample
++swipe action to remove items right or left is default? Left
++home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that. Works well on splash sample
 
 ## Speech
 +speach to text sample (offline) there are not much at a moment
 
 ## Android keytool
-
 +Create Android Sign Key
 +	C:\Program Files (x86)\Java\jre1.8.0_261\bin
 +	keytool -genkey -keyalg RSA -keysize 4096 -validity 36000 -storepass Pass@word1 -v -keystore dev-key.jks -alias dev-key
