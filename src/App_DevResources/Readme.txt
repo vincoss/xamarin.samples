@@ -15,6 +15,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+review Dapper samples IOS, looks that dll are missing
 complete TinyIoC sample
 signature update full screen, review other drawing
 

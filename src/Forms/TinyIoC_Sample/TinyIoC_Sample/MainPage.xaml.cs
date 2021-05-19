@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TinyIoC_Sample.Views;
 using Xamarin.Forms;
 
 namespace TinyIoC_Sample
@@ -13,6 +14,11 @@ namespace TinyIoC_Sample
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SampleView());
         }
     }
 }
