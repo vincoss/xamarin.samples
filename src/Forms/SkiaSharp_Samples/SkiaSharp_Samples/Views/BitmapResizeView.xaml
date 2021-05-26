@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharp_Samples.Views.BitmapResizeView">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Bitmap Resize" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+            <Button x:Name="btnDone" Text="Done" HorizontalOptions="End" Clicked="btnDone_Clicked"
+                    WidthRequest="{Binding Height, Source={x:Reference btnDone}}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="canvasViewHost"
+              Grid.Row="0"
+              BackgroundColor="Gray"
+              Padding="5" />
+    </Grid>
+
+</ContentPage>

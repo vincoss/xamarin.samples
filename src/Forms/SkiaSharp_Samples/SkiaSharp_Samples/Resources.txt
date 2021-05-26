@@ -1,0 +1,9 @@
+﻿
+
+## Resources
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/
+https://www.andrewhoefling.com/Blog/Post/xamarin-forms-title-view-a-powerful-navigation-view
+https://www.davidbritch.com/2019/07/cross-platform-imaging-with.html
+
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/basics/circle
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/creating-mobile-apps-xamarin-forms/

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharp_Samples.Views.BitmapAnnotateView" 
+             xmlns:tt="clr-namespace:SkiaSharp_Samples.Xaml;assembly=SkiaSharp_Samples"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnDone" Text="Done" HorizontalOptions="End" Clicked="btnDone_Clicked"
+                    WidthRequest="{Binding Height, Source={x:Reference btnDone}}"/>
+
+            <Button x:Name="btnUndo" Text="Undo" HorizontalOptions="End" Clicked="btnUndo_Clicked"
+                    WidthRequest="{Binding Height, Source={x:Reference btnUndo}}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <skia:SKCanvasView Grid.Row="0" x:Name="canvasView" PaintSurface="OnCanvasViewPaintSurface" BackgroundColor="White">
+            <skia:SKCanvasView.Effects>
+                <tt:TouchEffect Capture="True" TouchAction="OnTouchEffectAction" />
+            </skia:SKCanvasView.Effects>
+        </skia:SKCanvasView>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="btnPencil" Text="P" WidthRequest="{Binding Height, Source={x:Reference btnPencil}}" Clicked="btnPencil_Clicked"/>
+            <Button x:Name="btnLine" Text="L" WidthRequest="{Binding Height, Source={x:Reference btnLine}}" Clicked="btnLine_Clicked"/>
+            <Button x:Name="btnSquare" Text="S" WidthRequest="{Binding Height, Source={x:Reference btnSquare}}" Clicked="btnSquare_Clicked" />
+            <Button x:Name="btnCircle" Text="C" WidthRequest="{Binding Height, Source={x:Reference btnCircle}}" Clicked="btnCircle_Clicked"/>
+            <Button x:Name="btnArrow" Text="A" WidthRequest="{Binding Height, Source={x:Reference btnArrow}}" Clicked="btnArrow_Clicked"/>
+            <Button x:Name="btnPicker" Text="CO" WidthRequest="{Binding Height, Source={x:Reference btnPicker}}" Clicked="btnPicker_Clicked"/>
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>

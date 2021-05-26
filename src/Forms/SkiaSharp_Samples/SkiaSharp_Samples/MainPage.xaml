@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharp_Samples.MainPage">
+
+    <StackLayout>
+        <Button x:Name="btnRotate" Text="Rotate" Clicked="btnRotate_Clicked"/>
+        <Button x:Name="btnResize" Text="Resize" Clicked="btnResize_Clicked"/>
+        <Button x:Name="btnAnnotate" Text="Annotate" Clicked="btnAnnotate_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
