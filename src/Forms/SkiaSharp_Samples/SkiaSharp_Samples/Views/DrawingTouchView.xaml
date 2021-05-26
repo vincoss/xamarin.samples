@@ -9,6 +9,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <skia:SKCanvasView x:Name="canvasView" Grid.Row="0"
@@ -21,8 +22,20 @@
             
         </skia:SKCanvasView>
 
-        <StackLayout Grid.Row="1">
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="btnPath" Text="PA" WidthRequest="{Binding Height, Source={x:Reference btnPath}}" Clicked="btnPath_Clicked"/>
+            <Button x:Name="btnLine" Text="LI" WidthRequest="{Binding Height, Source={x:Reference btnLine}}" Clicked="btnLine_Clicked"/>
+            <Button x:Name="btnPologon" Text="PO" WidthRequest="{Binding Height, Source={x:Reference btnPologon}}" Clicked="btnPologon_Clicked"/>
+            <Button x:Name="btnRectangle" Text="RE" WidthRequest="{Binding Height, Source={x:Reference btnRectangle}}" Clicked="btnRectangle_Clicked" />
+            <Button x:Name="btnCircle" Text="C" WidthRequest="{Binding Height, Source={x:Reference btnCircle}}" Clicked="btnCircle_Clicked"/>
+            <Button x:Name="btnArrow" Text="A" WidthRequest="{Binding Height, Source={x:Reference btnArrow}}" Clicked="btnArrow_Clicked"/>
+            <Button x:Name="btnPicker" Text="CO" WidthRequest="{Binding Height, Source={x:Reference btnPicker}}" Clicked="btnPicker_Clicked"/>
+        </StackLayout>
+        
+        <StackLayout Grid.Row="2">
+
             <Label x:Name="lblTouchId"/>
+            <Label x:Name="lblType"/>
         </StackLayout>
         
     </Grid>

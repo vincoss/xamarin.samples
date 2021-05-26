@@ -14,8 +14,11 @@ namespace SkiaSharp_Samples.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DrawingTouchView : ContentPage
     {
-       private readonly  Dictionary<long, SKPath> inProgressPaths = new Dictionary<long, SKPath>();
-       private readonly  List<SKPath> completedPaths = new List<SKPath>();
+       private readonly  Dictionary<long, DrawInfo> _inProgressPaths = new Dictionary<long, DrawInfo>();
+       private readonly  List<DrawInfo> _completedPaths = new List<DrawInfo>();
+
+
+
 
       private readonly SKPaint _paint = new SKPaint
       {
@@ -65,42 +68,48 @@ namespace SkiaSharp_Samples.Views
             canvas.DrawBitmap(saveBitmap, 0, 0);
         }
 
+        private DrawingType _drawingType = DrawingType.Line;
+
         private void SkCanvasView_Touch(object sender, SKTouchEventArgs args)
         {
             switch (args.ActionType)
             {
                 case SKTouchAction.Pressed:
-                    if (!inProgressPaths.ContainsKey(args.Id))
+                    if (!_inProgressPaths.ContainsKey(args.Id))
                     {
+                        DrawInfo info = new DrawInfo();
                         SKPath path = new SKPath();
+                        info.Path = path;
+                        info.Type = _drawingType;
                         path.MoveTo(ConvertToPixel(args.Location));
-                        inProgressPaths.Add(args.Id, path);
+                        _inProgressPaths.Add(args.Id, info);
                         UpdateBitmap();
                     }
                     break;
 
                 case SKTouchAction.Moved:
-                    if (inProgressPaths.ContainsKey(args.Id))
+                    if (_inProgressPaths.ContainsKey(args.Id))
                     {
-                        SKPath path = inProgressPaths[args.Id];
+                        var info = _inProgressPaths[args.Id];
+                        SKPath path = info.Path;
                         path.LineTo(ConvertToPixel(args.Location));
                         UpdateBitmap();
                     }
                     break;
 
                 case SKTouchAction.Released:
-                    if (inProgressPaths.ContainsKey(args.Id))
+                    if (_inProgressPaths.ContainsKey(args.Id))
                     {
-                        completedPaths.Add(inProgressPaths[args.Id]);
-                        inProgressPaths.Remove(args.Id);
+                        _completedPaths.Add(_inProgressPaths[args.Id]);
+                        _inProgressPaths.Remove(args.Id);
                         UpdateBitmap();
                     }
                     break;
 
                 case SKTouchAction.Cancelled:
-                    if (inProgressPaths.ContainsKey(args.Id))
+                    if (_inProgressPaths.ContainsKey(args.Id))
                     {
-                        inProgressPaths.Remove(args.Id);
+                        _inProgressPaths.Remove(args.Id);
                         UpdateBitmap();
                     }
                     break;
@@ -119,33 +128,195 @@ namespace SkiaSharp_Samples.Views
             {
                 saveBitmapCanvas.Clear();
 
-                foreach (SKPath path in completedPaths)
+                foreach (DrawInfo info in _completedPaths)
                 {
-                    saveBitmapCanvas.DrawPath(path, _paint);
+                    switch (info.Type)
+                    {
+                        case DrawingType.Line:
+                            {
+                                DrawLine(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Path:
+                            {
+                                DrawPath(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Polygon:
+                            {
+                                DrawPolygon(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Rectangle:
+                            {
+                                DrawRectangle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Circle:
+                            {
+                                DrawCircle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                    }
                 }
 
-                foreach (SKPath path in inProgressPaths.Values)
+                foreach (DrawInfo info in _inProgressPaths.Values)
                 {
-                    saveBitmapCanvas.DrawPath(path, _paint);
+                    switch (info.Type)
+                    {
+                        case DrawingType.Line:
+                            {
+                                DrawLine(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Path:
+                            {
+                                DrawPath(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Polygon:
+                            {
+                                DrawPolygon(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Rectangle:
+                            {
+                                DrawRectangle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Circle:
+                            {
+                                DrawCircle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                    }
                 }
             }
 
             canvasView.InvalidateSurface();
+            lblType.Text = _drawingType.ToString();
         }
 
-        public static void DrawLine(SKCanvas canvas, SKPoint p0, SKPoint p1)
+        private void DrawLine(SKPath path, SKCanvas canvas)
         {
-            using (var skPaint = new SKPaint())
-            {
-                skPaint.Style = SKPaintStyle.Stroke;
-                skPaint.IsAntialias = true;
-                skPaint.Color = SKColors.Red;
-                skPaint.StrokeWidth = 10;
-                skPaint.StrokeCap = SKStrokeCap.Round;
+            var start = path.Points.First();
+            SKPoint end = path.LastPoint;
 
-                canvas.DrawLine(p0, p1, skPaint);
+            if (start != end)
+            {
+                canvas.DrawLine(start, end, _paint);
             }
         }
+
+        private void DrawPath(SKPath path, SKCanvas canvas)
+        {
+            canvas.DrawPath(path, _paint);
+        }
+
+        private void DrawPolygon(SKPath path, SKCanvas canvas)
+        {
+            path.Close();
+            canvas.DrawPath(path, _paint);
+        }
+
+        private void DrawRectangle(SKPath path, SKCanvas canvas)
+        {
+            var start = path.Points.First();
+            SKPoint end = path.LastPoint;
+
+            var horizontalChange = start.X - end.X;
+            var verticalChange = start.Y - end.Y;
+
+            if(end.X < start.X)
+            {
+                start.X = end.X;
+            }
+
+            if(end.Y < start.Y)
+            {
+                start.Y = end.Y;
+            }
+
+            var w = Math.Abs(horizontalChange);
+            var h = Math.Abs(verticalChange);
+
+            SKRect skRectangle = new SKRect();
+            skRectangle.Size = new SKSize(w, h);
+            skRectangle.Location = start;
+
+            canvas.DrawRect(skRectangle, _paint);
+        }
+
+        private void DrawCircle(SKPath path, SKCanvas canvas)
+        {
+            var start = path.Points.First();
+            SKPoint end = path.LastPoint;
+
+            var d = SKPoint.Distance(start, end);
+
+
+
+            if (d == 0)
+            {
+                return;
+            }
+
+            var r =  Math.Abs(d / 2);
+
+            if (end.X < start.X)
+            {
+                start.X = end.X;
+            }
+
+            if (end.Y < start.Y)
+            {
+                start.Y = end.Y;
+            }
+
+            start.X = start.X + r;
+            start.Y = start.Y + r;
+
+            canvas.DrawCircle(start, r, _paint);
+        }
+
+        #region Buttons
+
+        private void btnPath_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Path;
+        }
+
+        private void btnLine_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Line;
+        }
+
+        private void btnPologon_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Polygon;
+        }
+
+        private void btnRectangle_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Rectangle;
+        }
+
+        private void btnCircle_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Circle;
+        }
+
+        private void btnArrow_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPicker_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
 
         //private SKPoint? _startTouchPoint = new SKPoint();
         //private SKPoint? _lastTouchPoint = new SKPoint();
@@ -249,16 +420,21 @@ namespace SkiaSharp_Samples.Views
 
         // DrawPoints (SKPointMode mode, points, paint)
 
-        public enum DrawingType : byte
+        public class DrawInfo
         {
-            Path,
-            Line,
-            Lines,
-            Square,
-            Circle,
-            Arrow,
-            Triangle
+            public DrawingType Type { get; set; }
+            public SKPath Path { get; set; }
         }
 
+        public enum DrawingType : byte
+        {
+            Line,
+            Path,
+            Polygon,
+            Rectangle,
+            Circle,
+            Triangle,
+            Arrow
+        }
     }
 }
