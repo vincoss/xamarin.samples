@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkiaSharp_Samples.Views.BitmapRotateView"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Bitmap Rotate" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+            <Button x:Name="btnRotate" Text="90" HorizontalOptions="End" Clicked="btnRotate_Clicked"
+                    WidthRequest="{Binding Height, Source={x:Reference btnRotate}}"/>
+            <Button x:Name="btnDone" Text="Done" HorizontalOptions="End" Clicked="btnDone_Clicked"
+                    WidthRequest="{Binding Height, Source={x:Reference btnDone}}"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <StackLayout>
+        <Entry Text="{Binding AppRootPath}" Placeholder="App Path" IsReadOnly="True"/>
+        <skia:SKCanvasView x:Name="canvasView"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           PaintSurface="OnCanvasViewPaintSurface" />
+
+    </StackLayout>
+</ContentPage>
