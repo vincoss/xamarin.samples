@@ -295,12 +295,12 @@ namespace SkiaSharp_Samples.Views
 
         SKPath calcArrow(SKPoint px0, SKPoint py0, SKPoint px, SKPoint py)
         {
-            //var l = Math.Sqrt(Math.Pow((px - px0).X, 2) + Math.Pow((py - py0).Y, 2));
-            //points[0] = (px - ((px - px0).X * Math.Cos(0.5) - (py - py0).Y * Math.Sin(0.5)) * 10 / l);
-            //points[1] = (py - ((py - py0).Y * Math.Cos(0.5) + (px - px0).X * Math.Sin(0.5)) * 10 / l);
-            //points[2] = (px - ((px - px0).X * Math.Cos(0.5) + (py - py0).Y * Math.Sin(0.5)) * 10 / l);
-            //points[3] = (py - ((py - py0).Y * Math.Cos(0.5) - (px - px0).X * Math.Sin(0.5)) * 10 / l);
-            //return points;
+            var l = Math.Sqrt(Math.Pow((px - px0).X, 2) + Math.Pow((py - py0).Y, 2));
+            var a = (px - ((px - px0).X * Math.Cos(0.5) - (py - py0).Y * Math.Sin(0.5)) * 10 / l);
+            var b = (py - ((py - py0).Y * Math.Cos(0.5) + (px - px0).X * Math.Sin(0.5)) * 10 / l);
+            var c = (px - ((px - px0).X * Math.Cos(0.5) + (py - py0).Y * Math.Sin(0.5)) * 10 / l);
+            var d = (py - ((py - py0).Y * Math.Cos(0.5) - (px - px0).X * Math.Sin(0.5)) * 10 / l);
+            return points;
         }
 
         #region Buttons
