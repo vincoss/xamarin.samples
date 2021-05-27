@@ -23,7 +23,7 @@ namespace SkiaSharp_Samples.Views
       private readonly SKPaint _paint = new SKPaint
       {
           Style = SKPaintStyle.Stroke,
-          IsAntialias = true,
+        //  IsAntialias = true,
           Color = SKColors.Blue,
           StrokeWidth = 10,
           StrokeCap = SKStrokeCap.Round,
@@ -157,6 +157,11 @@ namespace SkiaSharp_Samples.Views
                                 DrawCircle(info.Path, saveBitmapCanvas);
                                 break;
                             }
+                        case DrawingType.Triangle:
+                            {
+                                DrawTriangle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
                     }
                 }
 
@@ -187,6 +192,11 @@ namespace SkiaSharp_Samples.Views
                         case DrawingType.Circle:
                             {
                                 DrawCircle(info.Path, saveBitmapCanvas);
+                                break;
+                            }
+                        case DrawingType.Triangle:
+                            {
+                                DrawTriangle(info.Path, saveBitmapCanvas);
                                 break;
                             }
                     }
@@ -252,31 +262,45 @@ namespace SkiaSharp_Samples.Views
             var start = path.Points.First();
             SKPoint end = path.LastPoint;
 
-            var d = SKPoint.Distance(start, end);
-
-
-
-            if (d == 0)
+            var distance = SKPoint.Distance(start, end);
+            if (distance == 0)
             {
                 return;
             }
 
-            var r =  Math.Abs(d / 2);
+            var radius = Math.Abs(distance / 2);
 
-            if (end.X < start.X)
-            {
-                start.X = end.X;
-            }
+            canvas.DrawCircle(start, radius, _paint);
+        }
 
-            if (end.Y < start.Y)
-            {
-                start.Y = end.Y;
-            }
+        private void DrawTriangle(SKPath path, SKCanvas canvas)
+        {
+            var start = path.Points.First();
+            SKPoint end = path.LastPoint;
 
-            start.X = start.X + r;
-            start.Y = start.Y + r;
+          
+            // Create the path
+            //  SKPath tr = new SKPath();
+            // Define the first contour
+            //    tr.MoveTo(start.X, start.Y);
+            //path.LineTo(start.X - 50, start.Y + 50);
+            //path.LineTo(start.X + 50, start.Y + 50);
+            //path.LineTo(0.8f * start.X, 0.4f * start.Y);
+            //path.LineTo(0.5f * start.X, 0.1f * start.Y);
+            //path.Close();
 
-            canvas.DrawCircle(start, r, _paint);
+
+            canvas.DrawPath(path, _paint);
+        }
+
+        SKPath calcArrow(SKPoint px0, SKPoint py0, SKPoint px, SKPoint py)
+        {
+            //var l = Math.Sqrt(Math.Pow((px - px0).X, 2) + Math.Pow((py - py0).Y, 2));
+            //points[0] = (px - ((px - px0).X * Math.Cos(0.5) - (py - py0).Y * Math.Sin(0.5)) * 10 / l);
+            //points[1] = (py - ((py - py0).Y * Math.Cos(0.5) + (px - px0).X * Math.Sin(0.5)) * 10 / l);
+            //points[2] = (px - ((px - px0).X * Math.Cos(0.5) + (py - py0).Y * Math.Sin(0.5)) * 10 / l);
+            //points[3] = (py - ((py - py0).Y * Math.Cos(0.5) - (px - px0).X * Math.Sin(0.5)) * 10 / l);
+            //return points;
         }
 
         #region Buttons
@@ -304,6 +328,11 @@ namespace SkiaSharp_Samples.Views
         private void btnCircle_Clicked(object sender, EventArgs e)
         {
             _drawingType = DrawingType.Circle;
+        }
+
+        private void btnTriangle_Clicked(object sender, EventArgs e)
+        {
+            _drawingType = DrawingType.Triangle;
         }
 
         private void btnArrow_Clicked(object sender, EventArgs e)
@@ -436,5 +465,6 @@ namespace SkiaSharp_Samples.Views
             Triangle,
             Arrow
         }
+
     }
 }

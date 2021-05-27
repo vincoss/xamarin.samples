@@ -27,7 +27,8 @@
             <Button x:Name="btnLine" Text="LI" WidthRequest="{Binding Height, Source={x:Reference btnLine}}" Clicked="btnLine_Clicked"/>
             <Button x:Name="btnPologon" Text="PO" WidthRequest="{Binding Height, Source={x:Reference btnPologon}}" Clicked="btnPologon_Clicked"/>
             <Button x:Name="btnRectangle" Text="RE" WidthRequest="{Binding Height, Source={x:Reference btnRectangle}}" Clicked="btnRectangle_Clicked" />
-            <Button x:Name="btnCircle" Text="C" WidthRequest="{Binding Height, Source={x:Reference btnCircle}}" Clicked="btnCircle_Clicked"/>
+            <Button x:Name="btnCircle" Text="CI" WidthRequest="{Binding Height, Source={x:Reference btnCircle}}" Clicked="btnCircle_Clicked"/>
+            <Button x:Name="btnTriangle" Text="TR" WidthRequest="{Binding Height, Source={x:Reference btnTriangle}}" Clicked="btnTriangle_Clicked"/>
             <Button x:Name="btnArrow" Text="A" WidthRequest="{Binding Height, Source={x:Reference btnArrow}}" Clicked="btnArrow_Clicked"/>
             <Button x:Name="btnPicker" Text="CO" WidthRequest="{Binding Height, Source={x:Reference btnPicker}}" Clicked="btnPicker_Clicked"/>
         </StackLayout>
