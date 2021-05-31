@@ -151,5 +151,47 @@ namespace SkiaSharp_Samples
 
         }
 
+        SKPoint vectorStart;
+        SKPoint vectorPrevious;
+        SKPoint vector;
+
+
+        [Fact]
+        public void DrawArrowLine()
+        {
+            
+        }
+
+        private void onMouseDown(SKPoint point)
+        {
+            var end = vectorStart + vector;
+            vectorStart = point;
+        }
+
+        private void onMouseDrag(SKPoint point)
+        {
+            vectorStart = point;
+        }
+
+        private void processVector(SKPoint point)
+        {
+            vector = point - vectorStart;
+	        if (vectorPrevious) {
+		        if (values.fixLength && values.fixAngle) {
+			        vector = vectorPrevious;
+		        } else if (values.fixLength) {
+			        vector.length = vectorPrevious.length;
+		        } else if (values.fixAngle)
+            {
+            vector = vector.project(vectorPrevious);
+            }
+	        }
+        }
+
+        /*
+         * 
+         * 
+        */
+
     }
 }
