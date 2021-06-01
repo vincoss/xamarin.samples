@@ -15,6 +15,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+update filePicker sample Task PickAndShowFile(string[] fileTypes)
+	pass file types for each platform ".db3", ".DB3"
+
 signature update full screen, review other drawing
 
 create address entry form, try to use also GPS picker to get location, this might require WIFI
