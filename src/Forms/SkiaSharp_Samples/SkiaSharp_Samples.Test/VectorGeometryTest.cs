@@ -151,6 +151,18 @@ namespace SkiaSharp_Samples
 
         }
 
+        public class Values
+        {
+            public bool fixLength { get; set; } = false;
+            public bool fixAngle { get; set; } = false;
+            public bool showCircle { get; set; } = false;
+            public bool showAngleLength { get; set; } = false;
+            public bool showCoordinates { get; set; } = false;
+        }
+
+        private Values values = new Values();
+
+
         SKPoint vectorStart;
         SKPoint vectorPrevious;
         SKPoint vector;
@@ -176,15 +188,20 @@ namespace SkiaSharp_Samples
         private void processVector(SKPoint point)
         {
             vector = point - vectorStart;
-	        if (vectorPrevious) {
-		        if (values.fixLength && values.fixAngle) {
-			        vector = vectorPrevious;
-		        } else if (values.fixLength) {
-			        vector.length = vectorPrevious.length;
-		        } else if (values.fixAngle)
+
+	        if (vectorPrevious) 
             {
-            vector = vector.project(vectorPrevious);
-            }
+		        if (values.fixLength && values.fixAngle) 
+                {
+			        vector = vectorPrevious;
+		        } else if (values.fixLength) 
+                {
+			        vector.Length = vectorPrevious.Length;
+		        } 
+                else if (values.fixAngle)
+                {
+                    vector = vector.project(vectorPrevious);
+                }
 	        }
         }
 
