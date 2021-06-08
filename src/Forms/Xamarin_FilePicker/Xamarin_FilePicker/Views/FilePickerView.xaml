@@ -11,6 +11,7 @@
     
     <StackLayout>
         <Button x:Name="btnSelectFile" Text="Select File" Clicked="btnSelectFile_Clicked"/>
+        <Button x:Name="btnCustomFileTypes" Text="Select Custom File" Clicked="btnCustomFileTypes_Clicked"/>
         <Label x:Name="lFileName" Text="" />
         <Label x:Name="lFilePath" Text="" />
     </StackLayout>
