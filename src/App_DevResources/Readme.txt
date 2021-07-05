@@ -14,7 +14,9 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 ## Xamarin to read, samples to read & research
-
+CollectionView items reorder, drag & drop
+tabbedpage like an kanban board
+TableView for forms? see xamarin samples, create sample imput form
 update filePicker sample Task PickAndShowFile(string[] fileTypes)
 	pass file types for each platform ".db3", ".DB3"
 
