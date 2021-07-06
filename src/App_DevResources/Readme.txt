@@ -14,6 +14,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 ## Xamarin to read, samples to read & research
+create console host sample
 CollectionView items reorder, drag & drop
 tabbedpage like an kanban board
 TableView for forms? see xamarin samples, create sample imput form
