@@ -28,6 +28,7 @@ namespace Xamarin_Navigation.Views
             pages.Add(new ModalPageParentView());
 
             pages.Add(new MasterDetailPageView());
+            pages.Add(new MasterDetailPageViewMaster());
 
             pages.Add(new ContentPageOneView());
 

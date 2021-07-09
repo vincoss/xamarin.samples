@@ -15,7 +15,8 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-
+create drawer actions view
+	see swipeview and others
 CollectionView items reorder, drag & drop
 TableView for forms? see xamarin samples, create sample imput form
 	TableView for forms, create sample, review and update existing
