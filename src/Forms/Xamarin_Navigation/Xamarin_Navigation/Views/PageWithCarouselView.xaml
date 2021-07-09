@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Navigation.Views.PageWithCarouselView"
+             x:Name="cpPageWithCarouselView"
+             Title="PageWithCarouselView">
+
+    <!--
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/carouselview/
+    https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/indicatorview
+    -->
+
+    <NavigationPage.TitleView>
+        <Label Text="{Binding BoardTitle}" FontSize="Title"/>
+    </NavigationPage.TitleView>
+
+    <StackLayout>
+        <RefreshView IsRefreshing="{Binding IsBusy}"
+                     Command="{Binding RefreshCommand}">
+            <CarouselView ItemsSource="{Binding Items}"
+                          IndicatorView="indicatorView"
+                          Position="{Binding Position}"
+                          CurrentItem="{Binding SelectedItem, Mode=TwoWay}"
+                          IsBounceEnabled="True"
+                          Loop="False"
+                          EmptyView="No items to display.">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20" 
+                                       SnapPointsType="MandatorySingle"
+                                       SnapPointsAlignment="Start"/>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="#dcdcdc">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" BackgroundColor="#DCDCDC" Orientation="Horizontal" >
+                                <Frame HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="0" Padding="0" 
+                       BackgroundColor="DarkGray">
+                                    <Label Text="{Binding Count}" FontSize="Medium"  Margin="0,0,5,0" 
+                                       HorizontalOptions="Center" VerticalOptions="Center" 
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                </Frame>
+
+                                <Label Text="{Binding Title}" FontSize="Medium" HorizontalOptions="Start" />
+                            </StackLayout>
+                            <StackLayout Grid.Row="1">
+                                <Label Text="Body..."/>
+                                <Label Text="{Binding BindingContext.Position , Source={x:Reference cpPageWithCarouselView} }" />
+                                <Label Text="{Binding BindingContext.SelectedItem.Title , Source={x:Reference cpPageWithCarouselView} }" />
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </RefreshView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Add a task" TextColor="SteelBlue"/>
+            <IndicatorView Grid.Column="1" x:Name="indicatorView"
+                       IndicatorsShape="Circle"
+                       IndicatorColor="LightGray"
+                       IndicatorSize="18" MaximumVisible="6"
+                       SelectedIndicatorColor="DarkGray"
+                       Margin="0,0,0,10">
+
+            </IndicatorView>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

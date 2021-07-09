@@ -7,6 +7,8 @@ namespace Xamarin_Navigation.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public virtual void Initialize() { }
+
         bool isBusy = false;
         public bool IsBusy
         {
