@@ -15,8 +15,11 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
-create drawer actions view
-	see swipeview and others
+create a sample
+	Carousel
+		swipeview
+		List view actions
+
 CollectionView items reorder, drag & drop
 TableView for forms? see xamarin samples, create sample imput form
 	TableView for forms, create sample, review and update existing
@@ -68,6 +71,8 @@ control app from serverside what is available for the UI
 server side settings (key-value) JSON
 MenuItem from class instead of xaml
 
++create drawer actions view
++	see swipeview and others
 +tabbedpage like an kanban board
 +	default sample review
 +		Flyout template
