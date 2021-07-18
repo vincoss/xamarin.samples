@@ -14,7 +14,19 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 ## Xamarin to read, samples to read & research
-create console host sample
+create console host sample with startup
+maui and concole
+        private static InbuiltLogger CreateLogger(IConfiguration configuration)
+        {
+            var fileLogger = new InbuiltFileLogger(path);
+            var multi = new InbuiltMultipleLogger(fileLogger);
+            var factory = new InbuiltMultipleLoggerFactory(multi);
+
+            InbuiltLog.SetFactory(factory);
+
+            return multi;
+        }
+
 CollectionView items reorder, drag & drop
 tabbedpage like an kanban board
 TableView for forms? see xamarin samples, create sample imput form
