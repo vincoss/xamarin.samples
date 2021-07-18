@@ -27,6 +27,13 @@ maui and concole
             return multi;
         }
 
+		
+        public class AppOptions
+        {
+            public string LogsPath { get; set; }
+            public string LogsFilePath { get; set; }
+        }
+
 CollectionView items reorder, drag & drop
 tabbedpage like an kanban board
 TableView for forms? see xamarin samples, create sample imput form
