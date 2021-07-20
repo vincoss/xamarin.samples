@@ -15,6 +15,27 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 ## Xamarin to read, samples to read & research
 
+create console host sample with startup
+maui and concole
+        private static InbuiltLogger CreateLogger(IConfiguration configuration)
+        {
+            var fileLogger = new InbuiltFileLogger(path);
+            var multi = new InbuiltMultipleLogger(fileLogger);
+            var factory = new InbuiltMultipleLoggerFactory(multi);
+
+            InbuiltLog.SetFactory(factory);
+
+            return multi;
+        }
+
+		
+        public class AppOptions
+        {
+            public string LogsPath { get; set; }
+            public string LogsFilePath { get; set; }
+        }
+
+
 create a sample
 	Carousel
 		swipeview
