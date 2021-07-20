@@ -14,42 +14,22 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 ## Xamarin to read, samples to read & research
-create console host sample with startup
-maui and concole
-        private static InbuiltLogger CreateLogger(IConfiguration configuration)
-        {
-            var fileLogger = new InbuiltFileLogger(path);
-            var multi = new InbuiltMultipleLogger(fileLogger);
-            var factory = new InbuiltMultipleLoggerFactory(multi);
 
-            InbuiltLog.SetFactory(factory);
-
-            return multi;
-        }
-
-		
-        public class AppOptions
-        {
-            public string LogsPath { get; set; }
-            public string LogsFilePath { get; set; }
-        }
+create a sample
+	Carousel
+		swipeview
+		List view actions
 
 CollectionView items reorder, drag & drop
-tabbedpage like an kanban board
 TableView for forms? see xamarin samples, create sample imput form
+	TableView for forms, create sample, review and update existing
 update filePicker sample Task PickAndShowFile(string[] fileTypes)
 	pass file types for each platform ".db3", ".DB3"
-
 signature update full screen, review other drawing
-
 create address entry form, try to use also GPS picker to get location, this might require WIFI
-TableView for forms, create sample, review and update existing
-
 home screen (splash fickers android emulator) possible shown multiple times. check on default project or google that
 
-default sample review
-	Flyout template
-	Tabbed
+
 
 
 
@@ -91,8 +71,18 @@ control app from serverside what is available for the UI
 server side settings (key-value) JSON
 MenuItem from class instead of xaml
 
-
-
++create drawer actions view
++	see swipeview and others
++tabbedpage like an kanban board
++	default sample review
++		Flyout template
++		Tabbed
++		Carousel view
++			columns (Tile, Colour, Icon)
++			https://www.ithinkdiff.com/the-tasks-app-app-store-available/
++			https://apps.apple.com/au/app/tasks-to-do-lists-reminders/id1502903102#?platform=ipad
++			https://www.workast.com/help/articles/61000165208/
++create console host sample
 +validation sample
 +	phone, mobile (use Telephone keyboard)
 ++	    // https://stackoverflow.com/questions/5066329/regex-for-valid-international-mobile-phone-number

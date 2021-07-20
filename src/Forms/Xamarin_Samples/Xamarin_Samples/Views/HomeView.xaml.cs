@@ -84,6 +84,7 @@ namespace Xamarin_Samples.Views
             pages.Add(new PageInfo { Type = typeof(UI_DatePickerView) });
             pages.Add(new PageInfo { Type = typeof(UI_RadioButtonView) });
             pages.Add(new PageInfo { Type = typeof(UI_ButtonView) });
+            pages.Add(new PageInfo { Type = typeof(UI_SwipeViewMenuView) });
 
             ListOfPages.ItemsSource = pages;
         }

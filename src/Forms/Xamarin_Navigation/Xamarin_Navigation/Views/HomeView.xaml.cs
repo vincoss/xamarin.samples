@@ -28,11 +28,13 @@ namespace Xamarin_Navigation.Views
             pages.Add(new ModalPageParentView());
 
             pages.Add(new MasterDetailPageView());
+            pages.Add(new MasterDetailPageViewMaster());
 
             pages.Add(new ContentPageOneView());
 
             pages.Add(new CarouselPageView());
             pages.Add(new CarouselPageTemplateView());
+            pages.Add(new PageWithCarouselView());
 
             ListOfPages.ItemsSource = pages;
         }
