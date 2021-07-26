@@ -41,6 +41,9 @@ create a sample
 		swipeview
 		List view actions
 
+.dotnet core see custom IOC, TinyIoCContainer wheter is worth
+review and create maui sample, GeolocationService
+
 CollectionView items reorder, drag & drop
 TableView for forms? see xamarin samples, create sample imput form
 	TableView for forms, create sample, review and update existing

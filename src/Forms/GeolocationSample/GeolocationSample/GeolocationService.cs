@@ -107,6 +107,8 @@ namespace GeolocationSample
         /// </summary>
         public  void Run()
         {
+            SetupCompass();
+
             // NOTE: timer is used since on UWP task throws.
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
@@ -114,8 +116,6 @@ namespace GeolocationSample
 
                 return true; // Repeat
             });
-
-            SetupCompass();
         }
 
         public async Task<GeolocationDto> Get()
