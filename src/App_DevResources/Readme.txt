@@ -11,6 +11,20 @@ https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
 
+maui TableView create a sample
+	 <TableView  Intent="Data" HasUnevenRows="true" Margin="5">
+                <TableRoot>
+                    <TableSection Title="Group 1">
+                        <ViewCell xa:CellAttached.IsVisible="{Binding IsCellVisisble}">
+                            <Label Text="Hi there..."/>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Group 2">
+                        <EntryCell Placeholder="Entery cell"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
 update, configure looger
 maui Carousel page sample
 maui create update  services.AddHttpClient();  is not working, complete the sample
