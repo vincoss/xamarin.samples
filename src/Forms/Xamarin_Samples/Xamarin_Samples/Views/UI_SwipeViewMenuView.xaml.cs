@@ -19,7 +19,7 @@ namespace Xamarin_Samples.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            swipeView.Open(OpenSwipeItem.LeftItems);
+            swipeView.Open(OpenSwipeItem.RightItems);
         }
     }
 }
