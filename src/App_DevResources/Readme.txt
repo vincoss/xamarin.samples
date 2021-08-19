@@ -10,7 +10,7 @@ https://comodosslstore.com/code-signing
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
-
+entity framework create datamigration sample
 maui TableView create a sample
 	 <TableView  Intent="Data" HasUnevenRows="true" Margin="5">
                 <TableRoot>
