@@ -10,33 +10,12 @@ https://comodosslstore.com/code-signing
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
+
+
 maui Carousel page sample
 maui create update  services.AddHttpClient();  is not working, complete the sample
-maui GPS location pooler, must alwasy run and get GPS location, then we query just that one, must run on UI, thats UWP
 complete image drawing sample
 	image drawing render gird over, have option to show on ride, grid with proper scale
-
-## Xamarin to read, samples to read & research
-
-create console host sample with startup
-maui and concole
-        private static InbuiltLogger CreateLogger(IConfiguration configuration)
-        {
-            var fileLogger = new InbuiltFileLogger(path);
-            var multi = new InbuiltMultipleLogger(fileLogger);
-            var factory = new InbuiltMultipleLoggerFactory(multi);
-
-            InbuiltLog.SetFactory(factory);
-
-            return multi;
-        }
-
-		
-        public class AppOptions
-        {
-            public string LogsPath { get; set; }
-            public string LogsFilePath { get; set; }
-        }
 
 
 create a sample
@@ -45,7 +24,7 @@ create a sample
 		List view actions
 
 .dotnet core see custom IOC, TinyIoCContainer wheter is worth
-review and create maui sample, GeolocationService
+
 
 CollectionView items reorder, drag & drop
 TableView for forms? see xamarin samples, create sample imput form
@@ -98,6 +77,10 @@ control app from serverside what is available for the UI
 server side settings (key-value) JSON
 MenuItem from class instead of xaml
 
+## Done
+
+
+review and create maui sample, GeolocationService
 +create drawer actions view
 +	see swipeview and others
 +tabbedpage like an kanban board
