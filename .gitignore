@@ -194,3 +194,5 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vscode/settings.json
+
+MSBuild_Logs/
