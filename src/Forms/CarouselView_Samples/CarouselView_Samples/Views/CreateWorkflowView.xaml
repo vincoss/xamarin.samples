@@ -5,6 +5,10 @@
              xmlns:local="clr-namespace:CarouselView_Samples.Views;assembly=CarouselView_Samples"
              Title="CreateWorkflowView">
 
+    <!--
+        https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/data-templates/selector
+    -->
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="A">
