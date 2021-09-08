@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarouselView_Samples.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace CarouselView_Samples
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new CreateWorkflowView();
         }
 
         protected override void OnStart()
