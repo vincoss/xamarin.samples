@@ -139,4 +139,268 @@ https://github.com/XLabs/Xamarin-Forms-Labs
 
       
 
-  
+  public class ProjectListViewModel : BaseViewModel
+    {
+        private readonly IProjectDataStore _projectStore;
+        private readonly INavigator _navigator;
+        private readonly IApplicationContext _actx;
+        private readonly IViewModelFactory _viewModelFactory;
+        private string _search;
+        private SortType _sortColumn = SortType.Popular;
+        private readonly static InbuiltLogger Logger = InbuiltLog.For(typeof(ProjectListViewModel));
+
+        public ProjectListViewModel(IApplicationContext actx, IProjectDataStore database, INavigator navigator, IViewModelFactory viewModelFactory)
+        {
+            _actx = actx ?? throw new ArgumentNullException(nameof(actx));
+            _projectStore = database ?? throw new ArgumentNullException(nameof(database));
+            _navigator = navigator ?? throw new ArgumentNullException(nameof(navigator));
+            _viewModelFactory = viewModelFactory ?? throw new ArgumentNullException(nameof(viewModelFactory));
+
+            AddCommand = new Command(OnAddCommand);
+            EditCommand = new Command<ProjectListItemDto>(OnEditCommand);
+            DeleteCommand = new Command<ProjectListItemDto>(OnDeleteCommand);
+
+            SearchCommand = new Command<string>(OnSearchCommand);
+            LoadMoreCommand = new Command(OnLoadMoreCommand, OnCanLoadMoreCommand);
+            RefreshCommand = new Command(OnRefreshCommand);
+            SortCommand = new Command<string>(OnSortCommand);
+
+            ItemsSource = new ObservableRangeCollection<ProjectListItemDto>();
+            _actx.TrackEvent(nameof(ProjectListViewModel));
+        }
+
+        public override void Initialize()
+        {
+            ItemsSource.Clear();
+            OnSearchDataAsync();
+        }
+
+        #region Private methods
+
+        private async void OnSearchDataAsync()
+        {
+            if (IsBusy)
+            {
+                return;
+            }
+
+            try
+            {
+                IsBusy = true;
+
+                var args = new SearchDataParameterDto
+                {
+                    Search = _search,
+                    SortColumn = _sortColumn
+                };
+                args.Skip = (int)((ItemsSource.Count / (double)args.Take) * args.Take);
+
+                var items = await _projectStore.ProjectListGetAsync(args);
+
+                // TODO: temp only remove
+                var query = ItemsSource.GroupBy(x => x.ProjectId)
+                          .Where(g => g.Count() > 1)
+                          .Select(y => y.Key)
+                          .ToList();
+
+                ItemsSource.AddRange(items);
+
+                if (query.Any())
+                {
+                    throw new InvalidOperationException("There are duplicates");
+                }
+            }
+            finally
+            {
+                IsBusy = false;
+                IsRefreshing = false;
+            }
+        }
+
+        #endregion
+
+        #region Command methods
+
+        private async void OnAddCommand()
+        {
+            await _navigator.PushAsync(typeof(ProjectAddUpdateView));
+        }
+
+        private async void OnEditCommand(ProjectListItemDto args)
+        {
+            if (args == null || IsBusy)
+            {
+                return;
+            }
+
+            var viewModel = _viewModelFactory.Get<ProjectAddUpdateViewModel>();
+            viewModel.ProjectId = args.ProjectId;
+
+            await _navigator.PushAsync(typeof(ProjectAddUpdateView), viewModel);
+        }
+
+        private async void OnDeleteCommand(ProjectListItemDto args)
+        {
+            if (args == null || IsBusy)
+            {
+                return;
+            }
+
+            try
+            {
+                if (await _actx.DisplayAlertAsync(AppResources.Delete, AppResources.DeleteConfirmMessage, AppResources.Ok, AppResources.Cancel) == false)
+                {
+                    return;
+                }
+
+                IsBusy = true;
+                var result = await _projectStore.ProjectDeleteAsync(new[] { args.ProjectId }); // TODO: multi delete
+                if (result)
+                {
+                    ItemsSource.Remove(args);
+                }
+            }
+            finally
+            {
+                IsBusy = false;
+                IsRefreshing = false;
+            }
+        }
+
+        private void OnSearchCommand(string search)
+        {
+            _search = search;
+            Initialize();
+        }
+
+        private void OnLoadMoreCommand()
+        {
+            OnSearchDataAsync();
+        }
+
+        private bool OnCanLoadMoreCommand()
+        {
+            return IsBusy == false;
+        }
+
+        private void OnRefreshCommand()
+        {
+            Initialize();
+        }
+
+        private void OnSortCommand(string arg)
+        {
+            _sortColumn = (SortType)Enum.Parse(typeof(SortType), arg);
+            Initialize();
+        }
+
+        #endregion
+
+        #region Commands
+
+        public ICommand AddCommand { get; private set; }
+        public ICommand EditCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
+
+        public ICommand SearchCommand { get; private set; }
+        public ICommand LoadMoreCommand { get; private set; }
+        public ICommand RefreshCommand { get; private set; }
+        public ICommand SortCommand { get; private set; }
+
+        #endregion
+
+        private ProjectListItemDto _selectedItem;
+
+        public ProjectListItemDto SelectedItem
+        {
+            get { return _selectedItem; }
+            set { SetProperty(ref _selectedItem, value); }
+        }
+
+        public ObservableRangeCollection<ProjectListItemDto> ItemsSource { get; private set; }
+    }
+    
+
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Udar.Views.ProjectListView"
+             xmlns:xa="clr-namespace:Udar.Xaml;assembly=Udar"
+             xmlns:vm="clr-namespace:Udar.ViewModels;assembly=Udar"
+             xmlns:sh="clr-namespace:Udar.Views.Shared;assembly=Udar"
+             xmlns:do="clr-namespace:Udar.Interface.Dto;assembly=Udar.Interface"
+             xmlns:fl="clr-namespace:Udar;assembly=Udar"
+             xmlns:co="clr-namespace:Udar.Interface;assembly=Udar.Interface"
+             fl:ViewModelLocator.AutoWireViewModel="true"
+             BackgroundColor="White"
+             x:Name="this"
+             Title="{xa:Translate Projects}"
+             x:DataType="vm:ProjectListViewModel">
+
+    <StackLayout Margin="5">
+
+        <sh:SeachBarView/>
+                
+                <RefreshView IsRefreshing="{Binding IsRefreshing}" 
+                             Command="{Binding RefreshCommand}"
+                             RefreshColor="{StaticResource refreshColor}">
+
+                    <CollectionView x:Name="collectionViewItems"
+                            HorizontalOptions="FillAndExpand"
+                            EmptyView="{xa:Translate NoItems}"
+                            RemainingItemsThreshold="5"
+                            RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}"
+                            Scrolled="collectionViewItems_Scrolled"
+                            ItemsSource="{Binding ItemsSource}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="do:ProjectListItemDto">
+                                <SwipeView>
+                                    <SwipeView.LeftItems>
+                                        <SwipeItem Text="{xa:Translate Edit}" BackgroundColor="LightGreen"  
+                                           CommandParameter="{Binding .}"
+                                           Command="{Binding Path=BindingContext.EditCommand, Source={x:Reference this}}"/>
+                                        <SwipeItem Text="{xa:Translate Delete}" IsDestructive="true" BackgroundColor="LightPink" 
+                                           CommandParameter="{Binding .}" 
+                                           Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference this}}"/>
+                                    </SwipeView.LeftItems>
+
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="Title"/>
+                                        <xa:VisibilityLabel Text="{Binding Description}" FontSize="Body" MaxLines="2" LineBreakMode="TailTruncation"/>
+                                        <xa:VisibilityLabel Text="{Binding CompanyName}" FontSize="Body"/>
+                                        <StackLayout Orientation="Horizontal" IsVisible="{Binding ShowCounts}">
+                                            <Label Text="{xa:Translate Jobs}"/>
+                                            <Label Text="{Binding JobCount}"/>
+                                            <Label Text="{xa:Translate Items}"/>
+                                            <Label Text="{Binding ItemCount}"/>
+                                        </StackLayout>
+                                        <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" Color="Black"/>
+                                    </StackLayout>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+
+        <Button Text="+"
+                FontSize="60"
+                FontAttributes="None"
+                BackgroundColor="#FBBC05"
+                TextColor="White" 
+                Padding="0,-15,0,0"
+                Margin="5"
+                BorderWidth="1"
+                BorderColor="Black"
+                CornerRadius="30"
+                WidthRequest="60"
+                HeightRequest="60"
+                HorizontalOptions="End" VerticalOptions="End"
+                Command="{Binding AddCommand}"/>
+                
+    </StackLayout>
+      
+</ContentPage>
