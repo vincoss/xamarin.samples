@@ -42,13 +42,25 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackLayout Grid.Row="0" BackgroundColor="Orange" Orientation="Horizontal">
-                                <Label Text="{Binding Title}" FontSize="Medium" HorizontalOptions="StartAndExpand" />
+                                <Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="StartAndExpand" />
                                 <Label Text="{Binding Count}" FontSize="Medium" HorizontalOptions="End"/>
                             </StackLayout>
                             <StackLayout Grid.Row="1" BackgroundColor="LightPink">
-                                <Label Text="Body..."/>
+                                <!--<Label Text="Body..."/>
                                 <Label Text="{Binding BindingContext.Position , Source={x:Reference cpPageWithCarouselView} }" />
-                                <Label Text="{Binding BindingContext.SelectedItem.Title , Source={x:Reference cpPageWithCarouselView} }" />
+                                <Label Text="{Binding BindingContext.SelectedItem.Name , Source={x:Reference cpPageWithCarouselView} }" />-->
+                                <CollectionView x:Name="ItemsListView"
+                                                ItemsSource="{Binding BindingContext.SelectedItem.Cards , Source={x:Reference cpPageWithCarouselView} }"
+                                                EmptyView="No cards to display">
+                                    <CollectionView.ItemsLayout>
+                                        <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
                             </StackLayout>
                         </Grid>
                     </DataTemplate>
@@ -72,5 +84,5 @@
             </IndicatorView>
         </Grid>
     </StackLayout>
-    
+
 </ContentPage>

@@ -24,11 +24,11 @@ namespace CarouselView_Samples.Views
     }
 
     public class PageWithCarouselViewModel : BaseViewModel
-    { 
+    {
         public PageWithCarouselViewModel()
         {
             RefreshCommand = new Command(Initialize);
-            Items = new ObservableCollection<ItemInfo>();
+            Items = new ObservableCollection<ColumnDto>();
             BoardTitle = "Welcome Board!!!";
         }
 
@@ -37,17 +37,27 @@ namespace CarouselView_Samples.Views
             try
             {
                 IsBusy = true;
-                var bag = new ItemInfo[]
+                var bag = new ColumnDto[]
                 {
-                    new ItemInfo { Title = "Backlog", Count = 2, },
-                    new ItemInfo {   Title = "To Do", Count = 0, },
-                    new ItemInfo {  Title = "Blocked", Count = 3, },
-                    new ItemInfo {  Title = "In Progress", Count = 0, },
-                    new ItemInfo {  Title = "Review", Count = 50 },
-                    new ItemInfo {  Title = "Done", Count = 1000 },
+                    new ColumnDto
+                    {
+                        Name = "Backlog"
+                    },
+                    new ColumnDto {  Name = "To Do" },
+                    new ColumnDto {  Name = "Blocked" },
+                    new ColumnDto {  Name = "In Progress" },
+                    new ColumnDto {  Name = "Review" },
+                    new ColumnDto {  Name = "Done" },
                 };
+
+                bag[0].Cards.Add(new CardListItemDto { Name = "A" });
+                bag[0].Cards.Add(new CardListItemDto { Name = "B" });
+                bag[0].Cards.Add(new CardListItemDto { Name = "C" });
+
+                bag[2].Cards.Add(new CardListItemDto { Name = "A1" });
+
                 Items.Clear();
-                foreach(var item in bag)
+                foreach (var item in bag)
                 {
                     Items.Add(item);
                 }
@@ -64,11 +74,11 @@ namespace CarouselView_Samples.Views
 
         public string BoardTitle { get; private set; }
 
-        public ObservableCollection<ItemInfo> Items { get; private set; }
+        public ObservableCollection<ColumnDto> Items { get; private set; }
 
-        private ItemInfo _selectedItem;
+        private ColumnDto _selectedItem;
 
-        public ItemInfo SelectedItem
+        public ColumnDto SelectedItem
         {
             get { return _selectedItem; }
             set { SetProperty(ref _selectedItem, value); }
@@ -82,17 +92,35 @@ namespace CarouselView_Samples.Views
             set { SetProperty(ref _position, value); }
         }
 
-        public class ItemInfo
+        public class ColumnDto
         {
-            public string Title { get; set; }
-            public int Count { get; set; }
-        }
+            public ColumnDto()
+            {
+                Cards = new ObservableCollection<CardListItemDto>();
+            }
 
-        public class CardDto
-        { 
             public string Name { get; set; }
+
+            public int Count
+            {
+                get { return Cards.Count; }
+            }
+
+            public ObservableCollection<CardListItemDto> Cards { get; private set; }
         }
 
-    }
+        public class CardListItemDto
+        {
+            public string Name { get; set; }
 
+            public override string ToString()
+            {
+                if (string.IsNullOrWhiteSpace(Name))
+                {
+                    return base.ToString();
+                }
+                return Name;
+            }
+        }
+    }
 }
