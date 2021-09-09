@@ -11,7 +11,7 @@ namespace CarouselView_Samples
         {
             InitializeComponent();
 
-            MainPage = new CreateWorkflowView();
+            MainPage = new NavigationPage(new PageWithCarouselView());
         }
 
         protected override void OnStart()

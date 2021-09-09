@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin_Navigation.ViewModels;
+using CarouselView_Samples.ViewModels;
 
-namespace Xamarin_Navigation.Views
+namespace CarouselView_Samples.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageWithCarouselView : ContentPage
@@ -87,6 +87,12 @@ namespace Xamarin_Navigation.Views
             public string Title { get; set; }
             public int Count { get; set; }
         }
+
+        public class CardDto
+        { 
+            public string Name { get; set; }
+        }
+
     }
 
 }
