@@ -30,7 +30,7 @@
                           Loop="False"
                           EmptyView="No items to display.">
                 <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20" 
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5" 
                                        SnapPointsType="MandatorySingle"
                                        SnapPointsAlignment="Start"/>
                 </CarouselView.ItemsLayout>
