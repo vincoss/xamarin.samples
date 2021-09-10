@@ -11,6 +11,12 @@ using XamarinSharedLibrary.ViewModels;
 
 namespace CarouselView_Samples.Views
 {
+    /*
+        pull down refresh all columns cards
+        auto refrehs board including, columns and cards
+    */
+
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageWithCarouselView : ContentPage
     {
@@ -70,6 +76,7 @@ namespace CarouselView_Samples.Views
             }
         }
 
+        public ICommand LoadMoreCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
 
         public string BoardTitle { get; private set; }

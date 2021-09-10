@@ -49,9 +49,13 @@
                                 <!--<Label Text="Body..."/>
                                 <Label Text="{Binding BindingContext.Position , Source={x:Reference cpPageWithCarouselView} }" />
                                 <Label Text="{Binding BindingContext.SelectedItem.Name , Source={x:Reference cpPageWithCarouselView} }" />-->
+
                                 <CollectionView x:Name="ItemsListView"
-                                                ItemsSource="{Binding BindingContext.SelectedItem.Cards , Source={x:Reference cpPageWithCarouselView} }"
-                                                EmptyView="No cards to display">
+                                                HorizontalOptions="FillAndExpand"
+                                                EmptyView="No cards to display"
+                                                RemainingItemsThreshold="5"
+                                                RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}"
+                                                ItemsSource="{Binding BindingContext.SelectedItem.Cards , Source={x:Reference cpPageWithCarouselView} }">
                                     <CollectionView.ItemsLayout>
                                         <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
                                     </CollectionView.ItemsLayout>
