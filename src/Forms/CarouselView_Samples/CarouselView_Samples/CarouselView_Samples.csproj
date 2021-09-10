@@ -26,4 +26,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XamarinSharedLibrary\XamarinSharedLibrary.csproj" />
+  </ItemGroup>
 </Project>

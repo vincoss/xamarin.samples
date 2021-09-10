@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CarouselView_Samples.ViewModels;
+using XamarinSharedLibrary.ViewModels;
 
 namespace CarouselView_Samples.Views
 {

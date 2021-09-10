@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text;
 
-namespace CarouselView_Samples.ViewModels
+namespace XamarinSharedLibrary.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
@@ -24,7 +25,7 @@ namespace CarouselView_Samples.ViewModels
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName]string propertyName = "",
+            [CallerMemberName] string propertyName = "",
             Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
