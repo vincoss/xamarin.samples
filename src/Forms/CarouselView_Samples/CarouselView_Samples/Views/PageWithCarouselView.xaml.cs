@@ -34,8 +34,7 @@ namespace CarouselView_Samples.Views
         public PageWithCarouselViewModel()
         {
             RefreshCommand = new Command(Initialize);
-            Items = new ObservableCollection<ColumnDto>();
-            BoardTitle = "Welcome Board!!!";
+            Columns = new ObservableCollection<ColumnDto>();
         }
 
         public override void Initialize()
@@ -43,6 +42,9 @@ namespace CarouselView_Samples.Views
             try
             {
                 IsBusy = true;
+
+                BoardTitle = "Welcome Board!!!";
+
                 var bag = new ColumnDto[]
                 {
                     new ColumnDto
@@ -62,10 +64,10 @@ namespace CarouselView_Samples.Views
 
                 bag[2].Cards.Add(new CardListItemDto { Name = "A1" });
 
-                Items.Clear();
+                Columns.Clear();
                 foreach (var item in bag)
                 {
-                    Items.Add(item);
+                    Columns.Add(item);
                 }
 
                 Position = 2;
@@ -79,9 +81,15 @@ namespace CarouselView_Samples.Views
         public ICommand LoadMoreCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
 
-        public string BoardTitle { get; private set; }
+        private string _boardTitle;
 
-        public ObservableCollection<ColumnDto> Items { get; private set; }
+        public string BoardTitle
+        {
+            get { return _boardTitle; }
+            set { SetProperty(ref _boardTitle, value); }
+        }
+
+        public ObservableCollection<ColumnDto> Columns { get; private set; }
 
         private ColumnDto _selectedItem;
 

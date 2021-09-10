@@ -22,7 +22,7 @@
     <StackLayout>
         <RefreshView IsRefreshing="{Binding IsBusy}"
                      Command="{Binding RefreshCommand}">
-            <CarouselView ItemsSource="{Binding Items}"
+            <CarouselView ItemsSource="{Binding Columns}"
                           IndicatorView="indicatorView"
                           Position="{Binding Position}"
                           CurrentItem="{Binding SelectedItem, Mode=TwoWay}"
@@ -81,7 +81,7 @@
             <IndicatorView Grid.Column="1" x:Name="indicatorView"
                        IndicatorsShape="Circle"
                        IndicatorColor="LightGray"
-                       IndicatorSize="18" MaximumVisible="6"
+                       IndicatorSize="10" MaximumVisible="6"
                        SelectedIndicatorColor="DarkGray"
                        Margin="0,0,0,10">
 
