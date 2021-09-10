@@ -12,8 +12,6 @@ https://github.com/xamarin/XamarinCommunityToolkit
 
 
 
-maui Carousel page sample
-maui create update  services.AddHttpClient();  is not working, complete the sample
 complete image drawing sample
 	image drawing render gird over, have option to show on ride, grid with proper scale
 
