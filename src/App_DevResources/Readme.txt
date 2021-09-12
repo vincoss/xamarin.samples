@@ -11,6 +11,10 @@ https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
 
+collection view sample
+    create new project
+    create a collection view with add funtionality, on same page, must modify the title also
+
 
 complete image drawing sample
 	image drawing render gird over, have option to show on ride, grid with proper scale
