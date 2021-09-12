@@ -15,6 +15,16 @@ collection view sample
     create new project
     create a collection view with add funtionality, on same page, must modify the title also
 
+scrollView horizontal sample
+    collection view multiple
+    auto fit screen
+    auto width, see other layouts
+
+Page title sample
+    back arrow
+    editable
+    done button if has changes
+    autosave on lost focus or done key
 
 complete image drawing sample
 	image drawing render gird over, have option to show on ride, grid with proper scale
