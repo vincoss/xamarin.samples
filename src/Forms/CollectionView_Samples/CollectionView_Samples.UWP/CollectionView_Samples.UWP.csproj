@@ -145,10 +145,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XamarinSharedLibrary\XamarinSharedLibrary.csproj">
+      <Project>{c7bf3804-f12b-46ad-b2c7-4b3a3317837e}</Project>
+      <Name>XamarinSharedLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CollectionView_Samples\CollectionView_Samples.csproj">
       <Project>{9F81DC4F-9CA2-4349-AF75-EEC17F993C27}</Project>
       <Name>CollectionView_Samples</Name>

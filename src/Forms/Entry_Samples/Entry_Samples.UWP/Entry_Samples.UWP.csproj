@@ -149,6 +149,10 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\XamarinSharedLibrary\XamarinSharedLibrary.csproj">
+      <Project>{c7bf3804-f12b-46ad-b2c7-4b3a3317837e}</Project>
+      <Name>XamarinSharedLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entry_Samples\Entry_Samples.csproj">
       <Project>{4A04C4DE-B264-4D9E-A865-6B4A8B719109}</Project>
       <Name>Entry_Samples</Name>
