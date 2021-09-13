@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinSharedLibrary.ViewModels;
 
 namespace Entry_Samples.Views
 {

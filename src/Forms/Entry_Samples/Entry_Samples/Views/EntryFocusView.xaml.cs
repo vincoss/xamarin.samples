@@ -1,4 +1,4 @@
-﻿using Entry_Focus_CursorPosition.ViewModels;
+﻿using Entry_Samples.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinSharedLibrary.ViewModels;
 
-namespace Entry_Focus.Views
+
+namespace Entry_Samples.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditorView : ContentPage
+    public partial class EntryFocusView : ContentPage
     {
-        public EditorView()
+        public EntryFocusView()
         {
             InitializeComponent();
 
@@ -27,8 +29,8 @@ namespace Entry_Focus.Views
             Edit focus no keyboard
              */
 
-            var model = this.BindingContext as EditorViewModel;
-            if(model != null && model.IsNew)
+            var model = this.BindingContext as EntryFocusViewModel;
+            if (model != null && model.IsNew)
             {
                 entryA.Focus();
             }
@@ -39,7 +41,7 @@ namespace Entry_Focus.Views
         }
     }
 
-    public class EditorViewModel : BaseViewModel
+    public class EntryFocusViewModel : BaseViewModel
     {
         private bool _isNew;
         public bool IsNew
@@ -55,5 +57,4 @@ namespace Entry_Focus.Views
             set { SetProperty(ref _a, value); }
         }
     }
-
 }
