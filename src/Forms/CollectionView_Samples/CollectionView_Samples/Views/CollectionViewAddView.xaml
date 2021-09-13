@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionView_Samples.Views.CollectionViewAddView"
+             xmlns:behaviors="clr-namespace:CollectionView_Samples.Views;assembly=CollectionView_Samples"
+             x:Name="cpCollectionViewAddView">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CollectionView Grid.Row="0" x:Name="ItemsListView"
+                            HorizontalOptions="FillAndExpand"
+                            EmptyView="No cards to display"
+                            RemainingItemsThreshold="5"
+                            RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}"
+                            ItemsSource="{Binding ItemsSource}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Name}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Frame Grid.Row="1" BackgroundColor="#DCDCDC">
+            <Entry IsTextPredictionEnabled="True" IsSpellCheckEnabled="True"
+                    ReturnType="Next"
+                    x:Name="eNewItem" Completed="eNewItem_Completed"
+                    Placeholder="Add new item...">
+                <Entry.Behaviors>
+                    <behaviors:NextEntryBehavior NextEntry="{x:Reference eNewItem}" />
+                </Entry.Behaviors>
+            </Entry>
+        </Frame>
+
+    </Grid>
+</ContentPage>
