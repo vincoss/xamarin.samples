@@ -5,6 +5,10 @@
              xmlns:behaviors="clr-namespace:CollectionView_Samples.Views;assembly=CollectionView_Samples"
              x:Name="cpCollectionViewAddView">
 
+    <NavigationPage.TitleView>
+        <Label Text="Items"/>
+    </NavigationPage.TitleView>
+    
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,16 +31,23 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Frame Grid.Row="1" BackgroundColor="#DCDCDC">
-            <Entry IsTextPredictionEnabled="True" IsSpellCheckEnabled="True"
-                    ReturnType="Next"
-                    x:Name="eNewItem" Completed="eNewItem_Completed"
-                    Placeholder="Add new item...">
+        <StackLayout Grid.Row="1" BackgroundColor="#DCDCDC" Padding="5">
+            <Button Text="+ ADD CARD" Command="{Binding AddCardCommand}">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsEditing}" Value="True">
+                        <Setter Property="IsVisible" Value="False" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+            <Entry IsTextPredictionEnabled="True" IsSpellCheckEnabled="True" IsVisible="{Binding IsEditing}"
+                   ReturnType="Next"
+                   x:Name="eNewItem" Completed="eNewItem_Completed"
+                   Placeholder="Add new item...">
                 <Entry.Behaviors>
                     <behaviors:NextEntryBehavior NextEntry="{x:Reference eNewItem}" />
                 </Entry.Behaviors>
             </Entry>
-        </Frame>
+        </StackLayout>
 
     </Grid>
 </ContentPage>

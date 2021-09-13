@@ -41,6 +41,7 @@ namespace CollectionView_Samples.Views
         public CollectionViewAddViewModel()
         {
             RefreshCommand = new Command(Initialize);
+            AddCardCommand = new Command(OnAddCardCommand);
             ItemsSource = new ObservableCollection<ItemDto>();
             this.PropertyChanged += CollectionViewAddViewModel_PropertyChanged;
         }
@@ -73,8 +74,19 @@ namespace CollectionView_Samples.Views
             }
         }
 
+        #region Command methods
+
+        public void OnAddCardCommand()
+        {
+            IsEditing = !IsEditing;
+        }
+
+        #endregion
+
         public ICommand LoadMoreCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
+
+        public ICommand AddCardCommand { get; private set; }
 
         public ObservableCollection<ItemDto> ItemsSource { get; private set; }
 
@@ -84,6 +96,14 @@ namespace CollectionView_Samples.Views
         {
             get { return _newItem; }
             set { SetProperty(ref _newItem, value); }
+        }
+
+        private bool _isEditing;
+
+        public bool IsEditing
+        {
+            get { return _isEditing; }
+            set { SetProperty(ref _isEditing, value); }
         }
 
         public class ItemDto
