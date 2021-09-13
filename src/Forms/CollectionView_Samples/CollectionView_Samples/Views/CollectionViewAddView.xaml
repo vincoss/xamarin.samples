@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollectionView_Samples.Views.CollectionViewAddView"
              xmlns:behaviors="clr-namespace:CollectionView_Samples.Views;assembly=CollectionView_Samples"
-             x:Name="cpCollectionViewAddView">
+             x:Name="cpCollectionViewAddView"
+             Title="CollectionView with Add form">
 
     <NavigationPage.TitleView>
         <Label Text="Items"/>

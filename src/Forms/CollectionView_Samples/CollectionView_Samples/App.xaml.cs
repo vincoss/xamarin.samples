@@ -11,7 +11,7 @@ namespace CollectionView_Samples
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CollectionViewAddView());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
