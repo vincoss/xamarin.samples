@@ -14,6 +14,7 @@ https://github.com/xamarin/XamarinCommunityToolkit
 collection view sample
     create new project
     create a collection view with add funtionality, on same page, must modify the title also
+    move that into maui to test
 
 scrollView horizontal sample
     collection view multiple
