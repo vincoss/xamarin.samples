@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{B5DA387C-D451-4D8E-AA68-0A1C58A61ECB}</ProjectGuid>
+    <ProjectGuid>{52C59B37-2AC5-410A-8D63-BACED152E714}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entry_Samples.UWP</RootNamespace>
-    <AssemblyName>Entry_Samples.UWP</AssemblyName>
+    <RootNamespace>CollectionView_Samples.UWP</RootNamespace>
+    <AssemblyName>CollectionView_Samples.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.20348.0</TargetPlatformVersion>
@@ -144,18 +144,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\XamarinSharedLibrary\XamarinSharedLibrary.csproj">
       <Project>{c7bf3804-f12b-46ad-b2c7-4b3a3317837e}</Project>
       <Name>XamarinSharedLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entry_Samples\Entry_Samples.csproj">
-      <Project>{4A04C4DE-B264-4D9E-A865-6B4A8B719109}</Project>
-      <Name>Entry_Samples</Name>
+    <ProjectReference Include="..\CollectionView_Samples\CollectionView_Samples.csproj">
+      <Project>{9F81DC4F-9CA2-4349-AF75-EEC17F993C27}</Project>
+      <Name>CollectionView_Samples</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
