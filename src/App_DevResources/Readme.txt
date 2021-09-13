@@ -417,3 +417,156 @@ https://github.com/XLabs/Xamarin-Forms-Labs
     </StackLayout>
       
 </ContentPage>
+
+
+## Template sample
+
+
+    /* 
+        board to store original template (this has a version)
+        board to store modified template
+        TODO: here must define all template,
+        each time we modify the default template we increment the version 
+        declare in code and then serialize into the board
+        store as json
+        
+        types
+        text
+        number
+        datetime
+
+        attributes
+            name
+            order
+
+        ##
+        Description enabled
+        Attachments enabled
+        External Link
+        Card Type   enabled
+        Priority    enabled
+        Due Date    enabled
+        Assignment  enabled
+        External ID this can be Card GUID
+        Estimated time
+        Task Difficulty int
+        Tags    string comma separated
+        
+        Custom Fields (there are 15)
+            label:  (ID) string
+        Types: text Field
+                    placeholder
+                    format
+                    allow multiline (can have separated custom type)
+                Weblink (just entry control)
+                number
+                    placeholder
+                dropdwon with options
+                    options semicolumn separated values
+                    allow multi selection
+                multiple choice grid
+                    options semicolumn separated values
+                    allow multi selection
+                date this is basic date picker
+                User List
+                    allow multiple selection
+                email address basic entry control 
+            
+                
+                
+        
+
+    */
+
+    public class BoardTemplateDto
+    {
+        public ushort Version
+        {
+            get { return 1; }
+        }
+
+
+        public string Description { get; set; }
+    }
+
+    public class BoardDefaultTemplateDto
+    {
+        public ushort Version
+        {
+            get { return 1; }
+        }
+
+
+    }
+
+    public interface IBoardCardTemplate
+    {
+        string Name { get; set; }
+        string UITemplateKey { get; }
+        string UITemplateConfigurationKey { get; }
+    }
+
+    public class DescriptionTemplate : IBoardCardTemplate
+    {
+        public string Value { get; set; }
+        public string Placeholder { get; set; }
+        public string Name { get; set; }
+
+        public string UITemplateKey { get; } = "BoardCardDescriptionKey";
+
+        public string UITemplateConfigurationKey { get; } = "BoardCardConfigurationDescriptionKey";
+    }
+
+    public class AttachmentsTemplate
+    {
+
+    }
+
+    public class ExternalLink
+    {
+        public string Value { get; set; }
+        public string Placeholder { get; set; }
+    }
+
+    public class Sample
+    {
+        private ISet<IBoardCardTemplate> _availableTemplates = new HashSet<IBoardCardTemplate>();
+        private IDictionary<string, ISet<IBoardCardTemplate>> _cardTypeTemplates = new Dictionary<string, HashSet<IBoardCardTemplate>();
+
+        public Sample()
+        {
+            var description = new DescriptionTemplate
+            {
+                Name = "Description",
+                Placeholder = "Optional"
+            };
+
+            _availableTemplates.Add(description);
+
+
+            _cardTypeTemplates.Add("Notes", description);
+
+        }
+
+
+
+        /*
+            
+            #Default tempalte 
+            TemplateName
+            Order
+            
+            #Example
+            Description 0
+            Assigned    1
+            Due Date     2
+
+               NOTE:
+               decription
+               assigned
+               due date
+
+               _cardTypes.Add("Note", defaultTemplate);
+
+           */
+    }
