@@ -10,6 +10,10 @@ https://comodosslstore.com/code-signing
 https://docs.microsoft.com/en-us/windows-hardware/drivers/install/authenticode
 https://github.com/xamarin/XamarinCommunityToolkit
 
+## Merkle tree
+https://en.bitcoin.it/wiki/Getblocktemplate
+https://en.wikipedia.org/wiki/Bloom_filter
+
 
 collection view sample
     create new project
