@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellFlyoutPage_Samples.Views.HomeView">
+
+    <Shell.TitleView>
+        <Grid BackgroundColor="Orange" HorizontalOptions="StartAndExpand" Padding="0,0,0,0"  Margin="0">
+            <Label Text="Home Title" FontSize="Title"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Home Body"/>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
