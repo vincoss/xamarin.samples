@@ -74,6 +74,14 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <Shell.FlyoutHeader>
+        <StackLayout>
+            <BoxView BackgroundColor="Orange" HorizontalOptions="FillAndExpand"
+                     HeightRequest="60"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
         FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
