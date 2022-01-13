@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xamarin_Samples_Lifecycle\Xamarin_Samples_Lifecycle.csproj">
-      <Project>{58E75675-0DB2-4CEE-902D-36787BF66A73}</Project>
+      <Project>{683297e4-58da-4729-900a-9acef5d72e1f}</Project>
       <Name>Xamarin_Samples_Lifecycle</Name>
     </ProjectReference>
   </ItemGroup>
