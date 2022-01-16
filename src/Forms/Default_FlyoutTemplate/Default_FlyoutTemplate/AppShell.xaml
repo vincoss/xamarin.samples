@@ -3,7 +3,10 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:Default_FlyoutTemplate.Views"
        Title="Default_FlyoutTemplate"
-       x:Class="Default_FlyoutTemplate.AppShell">
+       x:Class="Default_FlyoutTemplate.AppShell"
+       BackgroundColor="#696969"
+             TitleColor="Orange"
+             UnselectedColor="Pink">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -78,6 +81,7 @@
         <StackLayout>
             <BoxView BackgroundColor="Orange" HorizontalOptions="FillAndExpand"
                      HeightRequest="60"/>
+            <Label Text="Title" FontSize="Title"/>
         </StackLayout>
     </Shell.FlyoutHeader>
 
