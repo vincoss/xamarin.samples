@@ -61,6 +61,11 @@ namespace WebAuthenticatorSamples
                         Microsoft();
                         break;
                     }
+                case "oidcsamples":
+                    {
+                        oidcsamples();
+                        break;
+                    }
                 default:
                     throw new InvalidOperationException($"Invalid provider: {type}");
             }
@@ -95,6 +100,17 @@ namespace WebAuthenticatorSamples
             var r = MicrosoftConfiguration.ResponseType;
             var b = MicrosoftConfiguration.RedirectUri;
             var s = MicrosoftConfiguration.Scope;
+
+            Login(u, c, r, b, s);
+        }
+
+        private void oidcsamples()
+        {
+            var u = "https://localhost:5010";
+            var c = "plexer-api";
+            var r = MicrosoftConfiguration.ResponseType;
+            var b = "oidcsamples://authenticated";
+            var s = "plexerapi";
 
             Login(u, c, r, b, s);
         }

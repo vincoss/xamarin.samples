@@ -13,6 +13,7 @@
         <Button Text="Google" Clicked="ButtonLogin_Clicked"  />
         <Button Text="Microsoft" Clicked="ButtonLogin_Clicked"  />
         <Button x:Name="ButtonLoginApple" Text="Connect to Apple" Clicked="ButtonLoginApple_Clicked"  />
+        <Button Text="oidcsamples" Clicked="ButtonLogin_Clicked"  />
         <Label x:Name="lblInfo"/>
     </StackLayout>
 

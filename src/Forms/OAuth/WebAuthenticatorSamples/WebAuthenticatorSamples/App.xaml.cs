@@ -11,7 +11,7 @@ namespace WebAuthenticatorSamples
         {
             InitializeComponent();
 
-            MainPage = new SampleOneView();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

@@ -49,7 +49,7 @@
 
       <Extensions>
         <uap:Extension Category="windows.protocol">
-          <uap:Protocol Name="com.companyname.webauthenticatorsamples">
+          <uap:Protocol Name="oidcsamples">
             <uap:DisplayName>WebAuthenticatorSamples</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
