@@ -43,8 +43,28 @@ namespace CanonCameraExternal_Sample.ViewModels
 
         private void ActivityAction(CameraArg info)
         {
-            //UpdateLiveView(info);
+            UpdateLiveView(info);
             //UpdateHeading(info);
+        }
+
+        private void UpdateLiveView(CameraArg info)
+        {
+            if (info.IsLiveViewOn)
+            {
+
+            }
+            else // Take photo completed, (download)
+            {
+                if (_isPhoto && info.Photo != null)
+                {
+                    _isDownloaded = true;
+                    _stream = info.Photo;
+                }
+            }
+        }
+
+        private void UpdateHeading(CameraArg info)
+        {
         }
 
         #region Command methods
