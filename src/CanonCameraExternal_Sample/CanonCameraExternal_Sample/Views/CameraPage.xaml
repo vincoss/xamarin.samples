@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CanonCameraExternal_Sample.Views.CameraPage"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             Title="Camera">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="Heading" Text="{Binding Heading}" Grid.Row="0" TextColor="White" FontSize="24" HorizontalTextAlignment="Center" Opacity="0.7" FontAttributes="Bold" Margin="10"/>
+        <skia:SKCanvasView  Grid.Row="1" x:Name="LiveViewCanvas" 
+                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+
+        <!--<Canvas x:Name="LiveViewCanvas" Background="{Binding LiveViewCanvasBackground}" Grid.Row="1"/>
+
+       
+    
+    
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" Margin="10">
+        <Button x:Name="TakePhoto" Margin="10" Padding="10" Content="TAKE PHOTO" Background="{x:Null}" 
+            Foreground="White" FontSize="24" HorizontalAlignment="Center" 
+            Visibility="{Binding PhotoState, Converter={StaticResource LiveViewStateToVisibilityConverter}}" 
+            Command="{Binding TakePhotoCommand}" />
+        <Button x:Name="UsePhoto" Margin="10" Padding="10" Content="USE PHOTO" Background="{x:Null}" 
+            Foreground="White" FontSize="24" HorizontalAlignment="Center" 
+            Visibility="{Binding PhotoState, Converter={StaticResource PreviewStateToVisibilityConverter}}" 
+            Command="{Binding UsePhotoCommand}" CommandParameter="{Binding ElementName=wthis}"/>
+        <Button x:Name="RetakePhoto" Margin="10" Padding="10" Content="RETAKE" Background="{x:Null}" 
+            Foreground="White" FontSize="24" HorizontalAlignment="Center" 
+            Visibility="{Binding PhotoState, Converter={StaticResource PreviewStateToVisibilityConverter}}" 
+            Command="{Binding RetakePhotoCommand}" />
+        <Button x:Name="Cancel" Margin="10" Padding="10" Content="CANCEL" Background="{x:Null}" 
+            Foreground="White" FontSize="24" HorizontalAlignment="Center" 
+            Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=wthis}" />
+    </StackPanel>-->
+    </Grid>
+    
+</ContentPage>
