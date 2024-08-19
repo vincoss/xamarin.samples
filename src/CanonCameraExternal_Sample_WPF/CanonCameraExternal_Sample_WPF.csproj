@@ -8,4 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CanonCameraExternal_EDSDKLibStandard\CanonCameraExternal_EDSDKLibStandard.csproj" />
+    <ProjectReference Include="..\EDSDK.NET\EDSDK.NET.csproj" />
+  </ItemGroup>
+
 </Project>
