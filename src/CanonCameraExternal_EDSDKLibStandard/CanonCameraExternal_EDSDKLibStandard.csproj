@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <RootNamespace>EDSDKLib</RootNamespace>
   </PropertyGroup>
 
@@ -14,16 +15,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
+    <None Remove="EDSDK.dll" />
+    <None Remove="EdsImage.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="EDSDK.dll">
+    <Content Include="EDSDK.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="EdsImage.dll">
+    </Content>
+    <Content Include="EdsImage.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
   </ItemGroup>
 
 </Project>
