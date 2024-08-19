@@ -69,6 +69,8 @@ namespace EOSDigital.SDK
         /// <returns>The SDK version or null if not found</returns>
         private static Version GetSDKVersion()
         {
+          //  return new Version(13, 12, 31, 6400);
+
             var modules = Process.GetCurrentProcess().Modules;
             foreach (var module in modules)
             {

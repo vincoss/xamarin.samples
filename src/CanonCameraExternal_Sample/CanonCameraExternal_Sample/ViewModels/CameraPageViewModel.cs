@@ -10,11 +10,6 @@ using Xamarin.Forms;
 
 namespace CanonCameraExternal_Sample.ViewModels
 {
-    public interface ICloseable
-    {
-        void Close();
-    }
-
     public class CameraPageViewModel : BaseViewModel
     {
         private ICanonEosCameraService _cameraService;
@@ -24,6 +19,7 @@ namespace CanonCameraExternal_Sample.ViewModels
         private bool _disposed = false;
         private readonly CancellationTokenSource _cts;
         private SKBitmap _liveViewCanvasBackground = new SKBitmap();
+        private State _photoState = State.Loading;
 
         public CameraPageViewModel(ICanonEosCameraService cameraService, CancellationTokenSource cst)
         {
@@ -31,9 +27,22 @@ namespace CanonCameraExternal_Sample.ViewModels
             _cts = cst;
 
             TakePhotoCommand = new Command(OnTakePhotoCommand, OnCanTakePhotoCommand);
-            UsePhotoCommand = new Command<ICloseable>(OnUsePhotoCommand, OnCanUsePhotoCommand);
+            UsePhotoCommand = new Command(OnUsePhotoCommand, OnCanUsePhotoCommand);
             RetakePhotoCommand = new Command(OnRetakePhotoCommand, OnCanRetakePhotoCommand);
-            CancelCommand = new Command<ICloseable>(OnCancelCommand, OnCanCancelCommand);
+            CancelCommand = new Command(OnCancelCommand, OnCanCancelCommand);
+
+            this.PropertyChanged += CameraPageViewModel_PropertyChanged;
+        }
+
+        private void CameraPageViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            PhotoStateLive = true;//_photoState == State.Live || _photoState == State.Stop;
+           // PhotoStatePreview = false;//_photoState == State.Photo;
+
+            ((Command)this.TakePhotoCommand).ChangeCanExecute();
+            ((Command)this.UsePhotoCommand).ChangeCanExecute();
+            ((Command)this.RetakePhotoCommand).ChangeCanExecute();
+            ((Command)this.CancelCommand).ChangeCanExecute();
         }
 
         public override void Initialize()
@@ -91,14 +100,14 @@ namespace CanonCameraExternal_Sample.ViewModels
 
         private bool OnCanTakePhotoCommand()
         {
-            return IsBusy == false && PhotoState == State.Live && _isPhoto == false;
+            return IsBusy == false && _photoState == State.Live && _isPhoto == false;
         }
 
-        private void OnUsePhotoCommand(ICloseable window)
+        private async void OnUsePhotoCommand()
         {
             try
             {
-                if (OnCanUsePhotoCommand(window) == false)
+                if (OnCanUsePhotoCommand() == false)
                 {
                     throw new InvalidOperationException(nameof(OnCanUsePhotoCommand));
                 }
@@ -114,14 +123,14 @@ namespace CanonCameraExternal_Sample.ViewModels
             }
             finally
             {
-                window.Close();
+                await App.Current.MainPage.Navigation.PopModalAsync();
                 IsBusy = false;
             }
         }
 
-        private bool OnCanUsePhotoCommand(ICloseable window)
+        private bool OnCanUsePhotoCommand()
         {
-            return IsBusy == false && window != null && _stream != null && _stream.Length > 0;
+            return IsBusy == false && _stream != null && _stream.Length > 0;
         }
 
         private void OnRetakePhotoCommand()
@@ -135,7 +144,7 @@ namespace CanonCameraExternal_Sample.ViewModels
                 IsBusy = true;
                 _isPhoto = false;
                 _cameraService.StartLiveView();
-                PhotoState = State.Live;
+                _photoState = State.Live;
             }
             finally
             {
@@ -145,22 +154,22 @@ namespace CanonCameraExternal_Sample.ViewModels
 
         private bool OnCanRetakePhotoCommand()
         {
-            return IsBusy == false && PhotoState != State.Live && _isPhoto && _isDownloaded;
+            return IsBusy == false && _photoState != State.Live && _isPhoto && _isDownloaded;
         }
 
-        private void OnCancelCommand(ICloseable window)
+        private async void OnCancelCommand()
         {
-            if (OnCanCancelCommand(window) == false)
+            if (OnCanCancelCommand() == false)
             {
                 throw new InvalidOperationException(nameof(OnCanCancelCommand));
             }
 
-            window.Close();
+           await App.Current.MainPage.Navigation.PopModalAsync();
         }
 
-        private bool OnCanCancelCommand(ICloseable window)
+        private bool OnCanCancelCommand()
         {
-            return window != null;
+            return true;
         }
 
         #endregion
@@ -188,11 +197,18 @@ namespace CanonCameraExternal_Sample.ViewModels
             set { SetProperty(ref _heading, value); }
         }
 
-        private State _state = State.Loading;
-        public State PhotoState
+        private bool _photoStateLive = false;
+        public bool PhotoStateLive
         {
-            get { return _state; }
-            set { SetProperty(ref _state, value); }
+            get { return _photoStateLive; }
+            set { SetProperty(ref _photoStateLive, value); }
+        }
+
+        private bool _photoStatePreview = false;
+        public bool PhotoStatePreview
+        {
+            get { return _photoStateLive; }
+            set { SetProperty(ref _photoStatePreview, value); }
         }
 
         public SKBitmap LiveViewCanvasBackground
